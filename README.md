@@ -8,3 +8,11 @@ The effectiveness of this net has already been shown by applications to nonlinea
 ## Requirements
 * Ubuntu 18.04/20.04 x64 - Any currently supported release
 * Python2.7
+
+## Installation
+```
+$ wget https://bootstrap.pypa.io/get-pip.py
+$ sudo python get-pip.py
+$ sudo apt install -y gv
+$ sudo apt install -y gnuplot
+```
