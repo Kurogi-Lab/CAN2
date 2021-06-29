@@ -7,6 +7,12 @@ The effectiveness of this net has already been shown by applications to nonlinea
 
 <img src="function_approximation_by_CAN2.png">
 
+For example, suppose you want to learn a nonlinear function y = f (x) as shown by the broken line in the figure.  <br>
+①Divide the input area by weight vector (The divided area is called the Voronoi area) <br>
+②Each region has an associative matrix M, and linear approximation is performed using the associative matrix.  <br>
+③Given the input vector x, it looks for the weight vector wc that is closest to the input vector.  <br>
+④The prediction can be obtained by using the associative matrix Mc in this weight vector wc. 
+
 ## Requirements
 * Ubuntu 18.04/20.04 x64 - Any currently supported release
 * Python2.7
