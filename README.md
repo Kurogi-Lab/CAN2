@@ -15,7 +15,7 @@ For example, suppose you want to learn a nonlinear function y = f (x) as shown b
 
 ## Requirements
 * Ubuntu 18.04/20.04 x64 - Any currently supported release
-* Python2.7
+* Python3.8 or Python2.7
 
 ## Installation
 ```
