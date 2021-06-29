@@ -41,6 +41,11 @@ $ pip3 install chainer
 $ sudo pip3 install cython
 ```
 
+### OpenCV
+```
+$ conda install opencv
+```
+
 ### Other
 ```
 $ sudo apt install -y gv
