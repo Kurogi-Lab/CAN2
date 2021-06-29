@@ -46,11 +46,12 @@ $ sudo pip3 install cython
 $ conda install opencv
 ```
 
-### Other
+### Other software
 ```
 $ sudo apt install -y gv
 $ sudo apt install -y gnuplot
 ```
+
 ## Examples
 ### function approximation
 
