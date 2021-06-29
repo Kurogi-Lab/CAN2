@@ -18,9 +18,31 @@ For example, suppose you want to learn a nonlinear function y = f (x) as shown b
 * Python3.8 or Python2.7
 
 ## Installation
+### Anaconda
 ```
-$ wget https://bootstrap.pypa.io/get-pip.py
-$ sudo python get-pip.py
+$ cd ~/Downloads
+$ wget https://repo.anaconda.com/archive/Anaconda3-2020.11-Linux-x86_64.sh
+$ sh Anaconda3-2020.11-Linux-x86_64.sh
+$ conda create --name py27 python=2.7 anaconda
+$ conda create -n py27 python=2.7 anaconda
+$ conda activate py27 (python2.7)
+$ conda deactivate 　 (python3.8)
+```
+
+### Chainer
+```
+$ sudo apt install -y python3-pip
+$ pip3 install cupy
+$ pip3 install chainer
+```
+
+### Cython
+```
+$ sudo pip3 install cython
+```
+
+### Other
+```
 $ sudo apt install -y gv
 $ sudo apt install -y gnuplot
 ```
