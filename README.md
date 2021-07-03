@@ -40,11 +40,6 @@ $ pip3 install cupy
 $ pip3 install chainer
 ```
 
-### Cython
-```
-$ sudo pip3 install cython
-```
-
 ### OpenCV
 ```
 $ conda install opencv
