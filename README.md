@@ -17,6 +17,10 @@ Consider a system that inputs and outputs K-dimensional vectors <img src="https:
 
 <img src="https://latex.codecogs.com/gif.latex?y_{j}\triangleq&space;f(\textbf{x}_{j})&plus;d_{j}"/>
 
+<img src="https://latex.codecogs.com/gif.latex?\hat{y}\triangleq\hat{y_{c}}\triangleq&space;\textbf{M}_{c}&space;\tilde{\textbf{x}}"/>
+
+<img src="https://latex.codecogs.com/gif.latex?c\triangleq&space;\underset{i\in&space;l}{\arg\min}&space;\left&space;\|\textbf{x}-\textbf{w}_{i}&space;\right&space;\|"/>
+
 ## Requirements
 * Ubuntu 18.04/20.04 x64 - Any currently supported release
 * Python3.8 or Python2.7
