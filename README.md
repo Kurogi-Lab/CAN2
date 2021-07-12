@@ -22,6 +22,8 @@ Consider a system that inputs and outputs K-dimensional vectors <img src="https:
 <img src="https://latex.codecogs.com/gif.latex?c\triangleq&space;\underset{i\in&space;l}{\arg\min}&space;\left&space;\|\textbf{x}-\textbf{w}_{i}&space;\right&space;\|"/>
 
 ## Requirements
+### Compatible operating systems
+The below list contains distribution versions with compatibility.However, it may work on other operating systems.
 * Ubuntu 18.04/20.04 x64 - Any currently supported release
 * Python3.8 or Python2.7
 
