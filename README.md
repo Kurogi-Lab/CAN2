@@ -53,6 +53,7 @@ $ conda install opencv
 ```
 $ sudo apt install -y gv
 $ sudo apt install -y gnuplot
+$ sudo apt install -y xterm
 ```
 
 ## Examples
