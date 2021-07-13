@@ -17,8 +17,10 @@ Suppose you want to learn a nonlinear function <img src="https://latex.codecogs.
 
 <img src="https://user-images.githubusercontent.com/49471144/125510657-82077e97-918e-494a-9f0a-9a36a0924438.png" width="700px"/>
 
-
 ③Given the input vector x, it looks for the weight vector wc that is closest to the input vector. <br>
+
+<img src="https://user-images.githubusercontent.com/49471144/125511004-fee2d4f0-d062-4170-b9d7-5cb79eae2a65.png" width="800px"/>
+
 ④The prediction can be obtained by using the associative matrix Mc in this weight vector wc. <br>
 
 <img src="function_approximation_by_CAN2.png">
