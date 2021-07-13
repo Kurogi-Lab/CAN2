@@ -47,6 +47,8 @@ The below list contains distribution versions with compatibility. However, it ma
 * Python3.8
 
 ## Installation
+We installed the following software to operate the CAN2. However, it may work with other software. 
+
 ### Anaconda
 ```
 $ cd ~/Downloads
