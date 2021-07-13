@@ -4,14 +4,15 @@ The competitive associative net CAN2 is a neural network that learns a nonlinear
 The effectiveness of this net has already been shown by applications to nonlinear time-varying plant control, estimation of recipitation, learning problem of nonlinear function and other problems. <br>
 
 ### Function approximation by CAN2
+The diagram of function approximation by CAN2 is shown below.<br>
+Suppose you want to learn a nonlinear function <img src="https://latex.codecogs.com/gif.latex?y=f(x)"/>, as shown by the dashed line in the diagram.<br>
 
-<img src="function_approximation_by_CAN2.png">
-
-For example, suppose you want to learn a nonlinear function y = f (x) as shown by the broken line in the figure. <br>
-①Divide the input area by weight vector (The divided area is called the Voronoi area) <br>
+①The CAN2 divides the input area by weight vector. (The divided area is called the Voronoi area)<br>
 ②Each region has an associative matrix M, and linear approximation is performed using the associative matrix. <br>
 ③Given the input vector x, it looks for the weight vector wc that is closest to the input vector. <br>
 ④The prediction can be obtained by using the associative matrix Mc in this weight vector wc. <br>
+
+<img src="function_approximation_by_CAN2.png">
 
 Consider a system that inputs and outputs K-dimensional vectors <img src="https://latex.codecogs.com/gif.latex?\textbf{x}_{j}\triangleq&space;(x_{j1},x_{j2},\cdots,x_{jk})^{T}&space;\in&space;\mathbb{R}^{k\times1}"/> and scalar values <img src="https://latex.codecogs.com/gif.latex?y_{j}&space;\in&space;\mathbb{R}"/>
 
