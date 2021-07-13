@@ -24,9 +24,16 @@ Consider a system that inputs and outputs K-dimensional vectors <img src="https:
 
 ## Requirements
 ### Compatible operating systems
-The below list contains distribution versions with compatibility.However, it may work on other operating systems.
-* Ubuntu 18.04/20.04 x64 - Any currently supported release
-* Python3.8 or Python2.7
+The below list contains distribution versions with compatibility. However, it may work on other operating systems.
+* Ubuntu 12.04 LTS
+* Ubuntu 14.04 LTS
+* Ubuntu 16.04 LTS
+* Ubuntu 18.04 LTS
+* Ubuntu 20.04 LTS
+
+### System dependencies
+* Python2.7
+* Pytohn3.8
 
 ## Installation
 ### Anaconda
