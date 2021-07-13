@@ -10,6 +10,10 @@ Suppose you want to learn a nonlinear function <img src="https://latex.codecogs.
 　　　　　　　　　<img src="https://user-images.githubusercontent.com/49471144/125508173-2dac6131-b529-4d7e-bff0-b8832cb4181f.png" width="500px"/>
 
 ①The CAN2 divides the input area by weight vector. (The divided area is called the Voronoi area)<br>
+
+ &ensp &ensp&ensp<img src="https://user-images.githubusercontent.com/49471144/125510016-91682a9b-715f-472f-bd8f-5b7451dd8780.png" width="600px"/>
+
+
 ②Each region has an associative matrix M, and linear approximation is performed using the associative matrix. <br>
 ③Given the input vector x, it looks for the weight vector wc that is closest to the input vector. <br>
 ④The prediction can be obtained by using the associative matrix Mc in this weight vector wc. <br>
