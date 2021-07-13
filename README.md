@@ -7,6 +7,8 @@ The effectiveness of this net has already been shown by applications to nonlinea
 The diagram of function approximation by CAN2 is shown below.<br>
 Suppose you want to learn a nonlinear function <img src="https://latex.codecogs.com/gif.latex?y=f(x)"/>, as shown by the dashed line in the diagram.<br>
 
+　　　　　　　　　<img src="https://user-images.githubusercontent.com/49471144/125508173-2dac6131-b529-4d7e-bff0-b8832cb4181f.png" width="500px"/>
+
 ①The CAN2 divides the input area by weight vector. (The divided area is called the Voronoi area)<br>
 ②Each region has an associative matrix M, and linear approximation is performed using the associative matrix. <br>
 ③Given the input vector x, it looks for the weight vector wc that is closest to the input vector. <br>
