@@ -33,7 +33,7 @@ The below list contains distribution versions with compatibility. However, it ma
 
 ### System dependencies
 * Python2.7
-* Pytohn3.8
+* Python3.8
 
 ## Installation
 ### Anaconda
