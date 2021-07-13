@@ -7,14 +7,17 @@ The effectiveness of this net has already been shown by applications to nonlinea
 The diagram of function approximation by CAN2 is shown below.<br>
 Suppose you want to learn a nonlinear function <img src="https://latex.codecogs.com/gif.latex?y=f(x)"/>, as shown by the dashed line in the diagram.<br>
 
-　　　　　　　　　<img src="https://user-images.githubusercontent.com/49471144/125508173-2dac6131-b529-4d7e-bff0-b8832cb4181f.png" width="500px"/>
+<img src="https://user-images.githubusercontent.com/49471144/125508173-2dac6131-b529-4d7e-bff0-b8832cb4181f.png" width="500px"/>
 
 ①The CAN2 divides the input area by weight vector. (The divided area is called the Voronoi area)<br>
 
- &ensp &ensp&ensp<img src="https://user-images.githubusercontent.com/49471144/125510016-91682a9b-715f-472f-bd8f-5b7451dd8780.png" width="600px"/>
-
+<img src="https://user-images.githubusercontent.com/49471144/125510016-91682a9b-715f-472f-bd8f-5b7451dd8780.png" width="600px"/>
 
 ②Each region has an associative matrix M, and linear approximation is performed using the associative matrix. <br>
+
+<img src="https://user-images.githubusercontent.com/49471144/125510657-82077e97-918e-494a-9f0a-9a36a0924438.png" width="700px"/>
+
+
 ③Given the input vector x, it looks for the weight vector wc that is closest to the input vector. <br>
 ④The prediction can be obtained by using the associative matrix Mc in this weight vector wc. <br>
 
