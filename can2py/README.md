@@ -1,5 +1,7 @@
 # can2py
-## Learning curve
+## Description
+## Examples
+### Learning curve
 
 ```
 export fn=Geo1d  ntrain=1000 restest=50 extest=10 k=1;python makesamples.py -msd $fn,$ntrain,$restest,$extest 
