@@ -1,7 +1,7 @@
 # can2c
 ## Description
 ## Examples
-### Command
+
 ```
 make
 export m_cpu=0
