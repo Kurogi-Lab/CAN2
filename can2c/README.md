@@ -1,5 +1,6 @@
 # can2c
-## Example
+## Description
+## Examples
 ### Command
 ```
 make
