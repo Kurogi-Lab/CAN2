@@ -79,7 +79,28 @@ $ sudo apt install -y gnuplot
 $ sudo apt install -y xterm
 ```
 
-## Examples
+## Execution examples
+Execution examples of regression and time-series IOS prediction by the single and bagging CAN2s are shown below. See [1], [2] and [3] for the details of regression, bagging, IOS prediction by CAN2, respectively. 
+
+### Set the root directory
+```
+$ export d0=$PWD;echo $d0 #set the root directory involving data, can2py, can2comp, etc.
+```
+
+### Data preparation
+#### Regression data (Fig.1) : made by the following steps
+```
+$ cd ${d0}/can2py
+$ export fn=Geo1d ntrain=100 restest=50 extest=10 k=1;
+$ python makesamples.py -msd $fn,$ntrain,$restest,$extest
+$ dst=${d0}/data/${fn}_${ntrain}_${restest}_${extest}
+$ mkdir -p $dst
+$ cp tmp/train.csv tmp/test.csv $dst
+```
+
+#### Time-series data (Fig.2): see [3] for data creation via using GMP:${d0}/data/lorenz1e-8T0.025n10000p256m1_gmp.txt
+Fig1 Fig2
+
 ### function approximation
 
 ```
