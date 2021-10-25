@@ -101,6 +101,74 @@ $ cp tmp/train.csv tmp/test.csv $dst
 #### Time-series data (Fig.2): see [3] for data creation via using GMP:${d0}/data/lorenz1e-8T0.025n10000p256m1_gmp.txt
 Fig1 Fig2
 
+#### C program
+##### Regression
+###### Single CAN2
+```
+$ cd $d0/can2comp;make
+$ export fn=Geo1d ntrain=100 restest=50 extest=10 k=1;
+$ export dst=${d0}/data/${fn}_${ntrain}_${restest}_${extest}
+$ export fntrain=$dst/train.csv fntest=$dst/test.csv fnpred=predict+.dat
+$ make data-clean;
+$ export N=30 seed=0 k=1 T=100;
+$ ensrs $fntrain -1:$fntest $N k:$k T:$T BIAS:1 Lstd:0:2 ib:0:0:0:0 vm2:-1 seed:$seed Tpinv:-1 nop:1 DISP:0
+#(or) ensrs $fntrain 2:1:1:1 $N bg:$fntest k:$k T:$T BIAS:1 Lstd:0:2 ib:0:0:0:0 vm2:-1 seed:$seed Tpinv:-1 nop:1 export fntest=$fntest fnpred=./result-ensrs/tmp/train+test+s${s}0j0k${k}N${N}pred.dat;../sh/show${k}dpred.sh
+```
+#Results (see Fig.3) (smallest MSEtst=1.161e-05 (MSE for the test data) is achieved with N=30)
+#100(0.030s) 7.274e-05 5.076e-04 #ep(time),MSEtr,MSEtst k1 n100:71 N20 s0
+#100(0.033s) 6.660e-06 1.161e-05 #ep(time),MSEtr,MSEtst k1 n100:71 N30 s0 ***
+#100(0.031s) 1.563e-05 3.368e-04 #ep(time),MSEtr,MSEtst k1 n100:71 N40 s0
+
+###### Bagging CAN2 
+```
+$ cd $d0/can2comp;make
+$ export N=50 a=2.2 b=100 seed=0 k=1 T=100;
+$ make data-clean;
+$ ensrs $fntrain 2:$b:$a:1 $N bg:$fntest k:$k T:$T BIAS:1 Lstd:0:2 ib:0:0:0:0 vm2:-1 seed:$seed Tpinv:-1 nop:1
+$ export fntest=$fntest fnpred=predict+.dat;../sh/show${k}dpred.sh 
+```
+#Results (see Fig.4) (stably small MSE w.r.t. change of N)
+#[100,-1](1.5s) 1.706e-05 #[T,Tpinv](time) n220,71 k1 N40 b100 a2.2 s0 nop1 m_cpu6
+#[100,-1](1.6s) 1.186e-05 #[T,Tpinv](time) n220,71 k1 N50 b100 a2.2 s0 nop1 m_cpu6***
+#[100,-1](1.8s) 1.616e-05 #[T,Tpinv](time) n220,71 k1 N60 b100 a2.2 s0 nop1 m_cpu6
+
+Fig3 Fig4
+
+##### Time-series IOS prediction (IOS:iterated one-step ahead prediction) 
+###### Single CAN2
+```
+$ cd $d0/can2comp;make
+$ export fn=$d0/data/lorenz1e-8T0.025n10000p256m1_gmp.txt
+$ export T=100 Tpinv=-1 k=8 N=50 seed=1 tp0=2000 tpD=1 Ey=15 a=1 b=1 nop=1 n_compare=6 v_thresh=0.2 vmin=3 vmin2=0 v_ratio=0.5 width=0.2 l_mode=1 gamma=1.4e-4 nentropy_thresh=0.7 n_display=5 rot_x=50 rot_y=350 y=-18.5:18.5:0:1
+$ make data-clean;
+$ ensrs $fn 2:${b}:${a}:${seed} $N-$N:1 t:0-2000:$tp0-$(($tp0+500)):$tpD:$Ey bg:/dev/null ib:0:0:0:0 k:$k g:$gamma w:$width T:$T vt:$v_thresh vr:$v_ratio lossall:1 DISP:2 y:$y x:$y nop:1 Tpinv:-1
+#To see the result saved in tmp/pred2000-2500.dat, do
+$ cat > tmp/y.plt <<EOF
+$ set grid;set term png;set output "tmp/y.png";
+$ plot "tmp/pred2000-2500.dat" using 2:1 w l t "yp", "" using 2:3 w l t "y", "" using 2:(\$1-\$3) w l t "err=yp-y"
+$ EOF
+gnuplot tmp/y.plt;eog tmp/y.png
+```
+#Results (see Fig.5)(H:predictable horison with the error threshold Ey=15)
+#[100,-1](0.2s) #[T,Tinv] k8 N40 b1(nens1) a1 seed1 nop1 m_cpu6 0-2000:2000-2500:15H126
+#[100,-1](0.3s) #[T,Tinv] k8 N50 b1(nens1) a1 seed1 nop1 m_cpu6 0-2000:2000-2500:15H153***
+#[100,-1](0.3s) #[T,Tinv] k8 N60 b1(nens1) a1 seed1 nop1 m_cpu6 0-2000:2000-2500:15H24
+
+###### Bagging CAN2
+```
+$ cd $d0/can2comp; make
+$ export fn=$d0/data/lorenz1e-8T0.025n10000p256m1_gmp.txt
+$ export T=100 Tpinv=-1 k=8 N=50 seed=1 tp0=2000 tpD=1 Ey=15 a=0.7 b=20 nop=1 n_compare=6 v_thresh=0.2 vmin=3 vmin2=0 v_ratio=0.5 width=0.2 l_mode=1 gamma=1.4e-4 nentropy_thresh=0.7 n_display=5 rot_x=50 rot_y=350 y=-18.5:18.5:0:1
+$ make data-clean;
+$ ensrs $fn 2:${b}:${a}:${seed} $N-$N:1 t:0-2000:$tp0-$(($tp0+500)):$tpD:$Ey bg:/dev/null ib:0:0:0:0 k:$k g:$gamma w:$width T:$T vt:$v_thresh vr:$v_ratio lossall:1 DISP:2 y:$y x:$y nop:1 Tpinv:-1
+```
+#Results (see Fig.6; longest predictable horizon H=224 is achieved with N=60)
+#[100,-1](0.9s) #[T,Tinv] k8 N40 b20(nens1) a0.7 seed1 nop1 m_cpu6 0-2000:2000-2500:15H157
+#[100,-1](1.0s) #[T,Tinv] k8 N50 b20(nens1) a0.7 seed1 nop1 m_cpu6 0-2000:2000-2500:15H224 ***
+#[100,-1](1.3s) #[T,Tinv] k8 N60 b20(nens1) a0.7 seed1 nop1 m_cpu6 0-2000:2000-2500:15H199
+
+Fig5 Fig6
+
 ### function approximation
 
 ```
