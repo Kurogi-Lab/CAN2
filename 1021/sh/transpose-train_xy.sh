@@ -1,0 +1,6 @@
+#!/bin/bash
+export m=$2 n=$3
+#echo "\$1=$1,\$2=$2,\$3=$3"
+cat $1|awk 'BEGIN{m=ENVIRON["m"];n=ENVIRON["n"]}{str="";for(j=0;j<n;j++){for(i=0;i<m;i++){str=str" "$(i*n+j+1);}}; print str" "$NF}' 
+#cat $1|awk 'BEGIN{m=ENVIRON["m"];n=ENVIRON["n"]}{str="";for(k=1;k<=NF;k++){i=int((k-1)/n)+1; j=(k-1)%n+1; a[i,j]=$k; print i,j,a[i,j];};for(j=1;j<n;j++){for(i=1;i<m;i++){str=str" "a[i,j];}}; print str}' 
+#cat $1|awk 'BEGIN{m=ENVIRON["m"];n=ENVIRON["n"]}{str="";for(k=1;k<=NF;k++){i=int(k/n); j=k%n; a[i,j]=$k;print i,j,a[i,j];};for(j=1;j<n;j++){for(i=1;i<m;i++){str=str" "a[i,j];}}; print str}' 

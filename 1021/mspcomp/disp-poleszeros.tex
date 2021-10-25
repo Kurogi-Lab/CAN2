@@ -1,0 +1,212 @@
+\documentclass[a4j]{jarticle}
+\def\cmd{
+fb=disp-poleszeros
+platex $fb.tex 
+dvi2pdf.sh $fb.dvi 
+cp $fb.pdf /media/sf_D_DRIVE/cdata/kurolab/20160526$fb.pdf
+}
+%f=gpcstability;platex $f;platex $f;dvi2pdf.sh $f;evince $f.pdf
+%\usepackage{udline}
+%\usepackage{ulem}
+\usepackage{color}
+%\usepackage{jumoline}\setlength{\UnderlineDepth}{3pt}
+\usepackage{longtable}
+\topmargin=-10mm
+\textheight=25cm
+\textwidth=17cm
+\oddsidemargin=-10mm
+\evensidemargin=\oddsidemargin
+%\usepackage[fleqn]{amsmath}
+\usepackage{amssymb}
+\usepackage{amscd}
+\usepackage{multirow}
+\usepackage{color}
+%\usepackage{amssymb}
+%\usepackage{graphicx}
+\usepackage{url,amsmath,times,array}
+\usepackage{graphicx,psfrag}
+\usepackage{amsmath}
+\usepackage{multirow}
+\usepackage{epsfig}
+\usepackage{ulem}
+\def\uw#1{\uwave{#1}}
+\def\uw#1{\uline{#1}}
+\usepackage{times}%???
+\usepackage{url}
+
+\def\red{\color[named]{Red}}
+\def\blue{\color[named]{Blue}}
+\def\black{\color[named]{Black}}
+\def\correctbegin{\color[named]{Red}}
+\def\correctend{\color[named]{Black}}
+\def\reffig#1{Fig.\,{{\ref{#1}}}}
+\def\reftable#1{Table\,\ref{#1}}
+\def\reffig#1{図\,{{\ref{#1}}}}
+\def\reftable#1{表\,\ref{#1}}
+\def\refeq#1{(\ref{#1})}
+
+\def\argmin#1{\underset{#1}{\mbox{argmin~}}}
+\def\vec#1{\mbox{\boldmath$#1$}}
+\def\mat#1{#1}
+\def\mat#1{\mbox{\boldmath$#1$}}
+%\def\R{{\Bbb R}}
+\def\argmax#1{\underset{#1}{\mbox{argmax~}}}
+\def\argmin#1{\underset{#1}{\mbox{argmin~}}}
+\def\sgn#1{\mbox{sgn($#1$)}}
+\def\sgn{\mbox{sgn}}
+\def\c#1{^{#1}}
+\def\argmin#1{\underset{#1}{\mbox{argmin}}}
+\def\leqq{\le}
+\def\geqq{\ge}
+\def\G{G}
+\def\deltah{\delta\vec{h}}
+\def\norm#1{\Vert#1\Vert}
+\def\refsec#1{Sect.\,{\ref{#1}}}%\def\refsec#1{Sect.~{\ref{#1}}}
+%\def\refeq#1{Eq.(\ref{#1})}
+%\def\refeqs#1#2{Eqs.(\ref{#1})-(\ref{#2})}
+%\def\refeqstwo#1#2{Eqs.(\ref{#1}) and (\ref{#2})}
+%
+\def\refeq#1{(\ref{#1})}
+\def\refeqs#1#2{(\ref{#1})-(\ref{#2})}
+\def\refeqstwo#1#2{(\ref{#1}) and (\ref{#2})}
+%\def\reffig#1{Fig.~{\mathrm{\ref{#1}}}}%\def\reffig#1{Fig.~{\roman{\ref{#1}}}}
+\def\reffig#1{Fig.\,{{\ref{#1}}}}
+\def\reftable#1{Table\,\ref{#1}}
+%\def\width{\theta_{W}}
+%\def\width{W_b}
+\def\width{r_W}
+\def\ncomp{r_L}
+\def\nbig{r_U}
+\def\aratio{r_{\alpha}}
+%%%
+\def\ncomp{\theta_{n}}
+\def\ncomp{\theta_{c}}
+\def\width{\theta_W}
+\def\width{W_\theta}
+\def\ncomp{n_L}
+\def\nbig{n_U}
+\def\nbig{\theta_U}
+\def\aratio{\theta_{\alpha}}
+\def\eratio{\theta_{H}}
+\def\reinitratio{\theta_{r}}
+\def\conpset{\varDelta X}
+\def\Dx{D_x}
+\def\Dxi{D_{\xi}}
+\def\Dx{d_x}
+\def\Dxi{d_{\xi}}
+\def\ncomp{n_L}
+\def\ncomp{n_{\theta}}
+\def\compset{D}
+\def\compset{\varDelta X}
+\def\compset{B}
+\def\T{\tau}
+\def\T{L}
+\def\L{P}
+\def\M{Q}
+\def\P{P}
+\def\Q{R}
+\def\Q{M}
+%\def\R{R}
+\def\It{m}
+\def\deg{$^{\circ}$~}
+\def\deg{[deg]~}
+\def\deg#1{[deg]{#1}}
+\def\deg{$^{\circ}$C}
+\def\mm{mm}
+\def\mm{[mm]~}
+\def\mm#1{[mm]{#1}}
+\def\argmin#1{\underset{#1}{\mbox{argmin~}}}
+\def\pop{\mbox{\scriptsize pop}}
+\def\gen{\mbox{\scriptsize gen}}
+\def\bags{^{\sharp},}
+\def\bag{\mbox{\scriptsize bag}}
+\def\expo#1{e^{#1}}%%%%%%%the above is by kurogi
+\def\ib{\mbox{\scriptsize ib}}
+\def\d{^{d}}
+\def\d{^{(1)}}
+\def\diff#1#2{#1^{(1)}_{#2}}
+\def\diff#1#2{#1^{1}_{#2}}
+\def\diff#1#2{#1^{\scriptsize(1)}_{#2}}
+%\def\can{^{\scriptsize\cal c}}
+\def\can{^{\scriptsize\frak C}}
+\def\can{^{\scriptsize\frak c}}
+\def\can{^{\scriptsize\copyright}}
+\def\can{^{\scriptsize\flat}}
+\def\can{{\mbox{\scriptsize [can2]}}}
+\def\plant{{\mbox{\scriptsize [p]}}}
+\def\Settle{\mbox{\scriptsize S}}\def\OS{\mbox{\scriptsize O}}
+\def\st#1#2#3{{#1}^{#2}_{#3}}%vector,top subscript,bottom subscript
+\def\sth#1#2#3{\widehat{{#1}}^{#2}_{#3}}
+\def\stt#1#2#3{\widetilde{{#1}}^{#2}_{#3}}
+\def\sttt#1#2#3{\widetilde{\widetilde{{#1}}}^{#2}_{#3}}
+\def\stc#1#2#3{\check{{#1}}^{#2}_{#3}}
+\def\vtc#1#2#3{\check{\vec{#1}}^{#2}_{#3}}
+\def\stb#1#2#3{\overline{{#1}}^{#2}_{#3}}
+\def\vt#1#2#3{\vec{#1}^{#2}_{#3}}%vector,top subscript,bottom subscript
+\def\vth#1#2#3{\widehat{\vec{#1}}^{#2}_{#3}}
+\def\vtt#1#2#3{\widetilde{\vec{#1}}^{#2}_{#3}}
+\def\Dsth#1#2#3{\varDelta\widehat{{#1}}^{#2}_{#3}}
+\def\Dvtt#1#2#3{\varDelta\widetilde{\vec{#1}}^{#2}_{#3}}
+\def\Dsth#1#2#3{\widehat{\varDelta{#1}}^{#2}_{#3}}
+\def\Dst#1#2#3{\varDelta{#1}^{#2}_{#3}}
+\def\Dvtt#1#2#3{\widetilde{\varDelta\vec{#1}}^{#2}_{#3}}
+\def\vtb#1#2#3{\overline{\vec{#1}}^{#2}_{#3}}
+\def\ST{$t_{\rm\scriptsize ST}$}
+\def\OS{$x_{\rm\scriptsize OS}$}
+\def\ST{{\rm\scriptsize ST}}
+\def\OS{{\rm\scriptsize OS}}
+\def\ST{{\rm\tiny ST}}
+\def\OS{{\rm\tiny OS}}
+\def\O{{\rm\tiny O}}
+\def\S{{\rm\tiny S}}
+\def\IT{\rm\tiny it}
+\def\CANj#1{{\rm CAN2}^{#1}}
+\def\CAN#1#2{${\rm CAN2}^{#1}_{\scriptsize\rm{#2}}$}
+\def\ch#1{[#1]}%angle brackets, cheverons
+\def\sij#1#2#3{\def\b{}\def\t{#2}\ifx\b\t{#1}_{#3}\else{#1}^{\ch{#2}}_{#3}\fi}
+\def\vij#1#2#3{\def\b{}\def\t{#2}\ifx\b\t{\vec{#1}}_{#3}\else{\vec{#1}}^{\ch{#2}}_{#3}\fi}
+\def\rij#1#2#3{\def\b{}\def\t{#2}\ifx\b\t{\rm #1}_{#3}\else{\rm #1}^{\ch{#2}}_{#3}\fi}
+\def\kg{{\rm kg}}
+\def\ds{\displaystyle}
+
+\def\RealNumSet{\Bbb R}
+\def\vP{\vec{P}}
+\def\vA{\vec{A}}
+\def\vB{\vec{B}}
+\def\vQ{\vec{Q}}
+\def\vA{{\vec{M}^y}}
+\def\vB{{\vec{M}^u}}
+\def\vA{\Ah}
+\def\vB{\bh}
+\def\Ah{{\widetilde{\vec{A}}}}
+\def\bh{{\widetilde{\vec{b}}}}
+\def\ch{{\widetilde{\vec{c}}}}
+\def\ha{\widehat{a}}
+\def\ta{\widetilde{a}}
+\def\hb{\widehat{b}}
+%\def\RealNumSet{\bbbr}
+%\setcounter{tocdepth}{3}
+\begin{document}
+Mm4-poles.eps:連想行列の極 M1[4],M2[2],M3[8],M4[8], a1(m=0),a2(m=60)\\
+\includegraphics[width=\textwidth]{Mm4-poles.eps}\\
+%Mm4-zeors.eps\\\includegraphics[width=\textwidth]{Mm4-zeros.eps}\\
+Mm4-rf-poles.eps: 連想行列の極 M1[4],M2[2],M3[8],M4[8]\\
+\includegraphics[width=\textwidth]{Mm4-rf-poles.eps}\\
+%Mm4-rf-zeros.eps\\\includegraphics[width=\textwidth]{Mm4-rf-zeros.eps}\\
+Ma-poles.eps: 連想行列の極 M1[4],M2[2],M3[8],M4[8]=22 + a1(m=0),a2(m=60)\\
+\includegraphics[width=\textwidth]{Ma-poles.eps}\\
+Ma-rf-poles.eps連想行列の極 M1[4],M2[2],M3[8],M4[8]=22 + a1(m=0),a2(m=60)\\
+\includegraphics[width=\textwidth]{Ma-rf-poles.eps}\\
+gpc-poleszeros.eps:列(M1[4],M2[2],M3[8],M4[8])×行(a1極,a1零,a2極,a2零)\\
+\includegraphics[width=\textwidth]{gpc-poleszeros.eps}\\
+gpc-rf-poleszeros.eps:列(M1[4],M2[2],M3[8],M4[8])×行(a1極,a1零,a2極,a2零)\\
+\includegraphics[width=\textwidth]{gpc-rf-poleszeros.eps}\\
+gpc-poles.eps:a1×(M1[4],M2[2],M3[8],M4[8])+a2×(M1[4],M2[2],M3[8],M4[8])?\\
+\includegraphics[width=\textwidth]{gpc-poles.eps}\\
+gpc-rf-poles.eps\\
+\includegraphics[width=\textwidth]{gpc-rf-poles.eps}\\
+gpc-t-APi-ST.eps\\
+\includegraphics[width=\textwidth,height=10cm]{gpc-t-APi-ST.eps}\\
+gpc-t-APi-OS.eps\\
+\includegraphics[width=\textwidth,height=10cm]{gpc-t-APi-OS.eps}
+\end{document}

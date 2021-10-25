@@ -1,0 +1,1213 @@
+rm --force -rf *.dat *.gpl *.obj *.png *.net tmp/ result/ result-ensrs2ge/ result-nn3/
+#start:oob4speakerdigit+RX_20191113.py -sp fhs:fms:mkk:mko:mmt:mnh:mym -tx zero:ichi:ni:san:si:go:roku:nana:hachi:kyu -L 1:2:3:4:5:6:7:8:9:10 -dr ../../12voicedata_ueki_all_k8 -R 0.8 -RX 0 -mbas 2:100:0.7:1 -s -1 -N 40 -sX -1 -FD pP1 -nx 10 -nr=4 -na=23 -nG 3 -sG 0.5 -nlz norm 
+#start time:2019-12-01 22:02:01.930793
+my Child returned: <subprocess.Popen object at 0x7f51158f03d0>
+#m0:fhs excludes fms-zero10-R0.8-fhs-si9-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes fms-si9-R0.8-fhs-ichi8-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes fms-nana4-R0.8-fhs-san6-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes fms-roku8-R0.8-fhs-roku2-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes fms-si8-R0.8-fhs-kyu7-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes fms-hachi1-R0.8-fhs-hachi3-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes fms-zero8-R0.8-fhs-ichi5-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes fms-si3-R0.8-fhs-nana4-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes fms-san10-R0.8-fhs-zero7-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes fms-kyu9-R0.8-fhs-san7-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes fms-ni9-R0.8-fhs-ni1-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes fms-kyu10-R0.8-fhs-hachi3-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes fms-si1-R0.8-fhs-kyu6-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes fms-zero1-R0.8-fhs-san5-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes fms-hachi8-R0.8-fhs-hachi1-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mkk-zero8-R0.8-fhs-ichi5-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mkk-ichi6-R0.8-fhs-ichi2-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mkk-go10-R0.8-fhs-ichi8-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mkk-hachi10-R0.8-fhs-kyu6-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mkk-nana1-R0.8-fhs-roku1-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mkk-nana10-R0.8-fhs-roku7-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mkk-ichi1-R0.8-fhs-zero6-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mkk-si7-R0.8-fhs-roku9-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mkk-ichi8-R0.8-fhs-san5-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mkk-si9-R0.8-fhs-san2-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mkk-si1-R0.8-fhs-kyu8-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mkk-zero10-R0.8-fhs-si5-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mkk-roku4-R0.8-fhs-go8-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mkk-kyu6-R0.8-fhs-si5-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mkk-zero2-R0.8-fhs-zero7-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mkk-kyu7-R0.8-fhs-go5-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mkk-si10-R0.8-fhs-zero7-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mkk-ni1-R0.8-fhs-go6-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mkk-kyu3-R0.8-fhs-nana4-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mkk-hachi3-R0.8-fhs-zero6-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mkk-nana5-R0.8-fhs-si7-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mkk-ichi3-R0.8-fhs-go1-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mmt-si7-R0.8-fhs-ichi6-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mmt-si10-R0.8-fhs-si8-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mmt-san8-R0.8-fhs-hachi9-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mmt-zero7-R0.8-fhs-si7-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mmt-roku1-R0.8-fhs-ichi3-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mmt-ichi4-R0.8-fhs-nana9-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mmt-san3-R0.8-fhs-san6-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mmt-nana5-R0.8-fhs-san2-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mmt-go8-R0.8-fhs-roku7-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mmt-hachi3-R0.8-fhs-ichi9-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mmt-go9-R0.8-fhs-go6-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mmt-kyu8-R0.8-fhs-zero3-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mmt-go7-R0.8-fhs-hachi4-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mmt-nana9-R0.8-fhs-si9-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mmt-san7-R0.8-fhs-roku1-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mmt-roku7-R0.8-fhs-hachi1-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mmt-zero2-R0.8-fhs-roku10-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mko-si8-R0.8-fhs-hachi4-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mko-roku7-R0.8-fhs-hachi8-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mko-kyu6-R0.8-fhs-hachi4-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mko-kyu2-R0.8-fhs-ichi9-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mko-san7-R0.8-fhs-zero8-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mko-roku5-R0.8-fhs-go2-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mko-go10-R0.8-fhs-ichi10-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mko-nana3-R0.8-fhs-ni9-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mko-zero6-R0.8-fhs-go6-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mko-si6-R0.8-fhs-go6-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mko-si7-R0.8-fhs-hachi9-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mko-ichi5-R0.8-fhs-san3-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mko-hachi1-R0.8-fhs-go10-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mko-roku2-R0.8-fhs-san1-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mko-si1-R0.8-fhs-san6-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mko-roku6-R0.8-fhs-san7-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mko-san6-R0.8-fhs-ichi9-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mko-zero2-R0.8-fhs-ichi8-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mko-go1-R0.8-fhs-ni4-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mko-san10-R0.8-fhs-ichi1-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mko-ichi7-R0.8-fhs-hachi10-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mym-san6-R0.8-fhs-go6-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mym-nana10-R0.8-fhs-hachi10-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mym-san4-R0.8-fhs-san2-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mym-go7-R0.8-fhs-nana8-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mym-kyu5-R0.8-fhs-roku1-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mym-roku5-R0.8-fhs-hachi3-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mym-go10-R0.8-fhs-san10-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mym-nana5-R0.8-fhs-san5-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mym-ni2-R0.8-fhs-go10-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mym-zero8-R0.8-fhs-hachi3-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mym-zero3-R0.8-fhs-go5-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mym-roku4-R0.8-fhs-si10-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mym-si10-R0.8-fhs-hachi9-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mym-zero1-R0.8-fhs-go5-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mym-roku6-R0.8-fhs-roku1-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mym-roku7-R0.8-fhs-nana2-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mym-si4-R0.8-fhs-hachi1-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mym-ni3-R0.8-fhs-san5-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mym-nana1-R0.8-fhs-go10-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mym-zero6-R0.8-fhs-si6-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mnh-roku4-R0.8-fhs-roku4-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mnh-kyu6-R0.8-fhs-ni2-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mnh-ni3-R0.8-fhs-nana9-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mnh-roku5-R0.8-fhs-si6-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mnh-ichi9-R0.8-fhs-nana1-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mnh-nana6-R0.8-fhs-ni5-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mnh-ni5-R0.8-fhs-nana1-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mnh-kyu1-R0.8-fhs-ichi7-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mnh-hachi3-R0.8-fhs-zero4-pP1F4x23G3x0.5.dat from negative examples.
+#m0:fhs excludes mnh-ichi4-R0.8-fhs-kyu8-pP1F4x23G3x0.5.dat from negative examples.
+#n_train=593
+Executing1 ensrs train_xy.dat 2:100:0.7:1 40-40 k:92 ib:0:0:0:0 y:-1:1:-1:1 x:0:0:0:1 DISP:0 bg:/dev/null >> ./tmp/ensrs.log
+#Ltst(n49.5*593)3.334e-01 Lib(n50.5*593)2.569e-13 H8.150e-01, nTest293.7=294.5=exp(-0.70)*nGiven593method:2:100:0.7:1N40-40.
+my Child returned: <subprocess.Popen object at 0x7f5116a2d090>
+my Child returned: <subprocess.Popen object at 0x7f5116a2d090>
+FP:fms-ichi4-R0.8-mym-ni8-pP1F4x23G3x0.5.dat yp=0.59244557 m=fhs s=fms s2=mym
+FP:fms-si7-R0.8-mmt-san3-pP1F4x23G3x0.5.dat yp=0.25474905 m=fhs s=fms s2=mmt
+FP:fms-zero6-R0.8-mnh-nana3-pP1F4x23G3x0.5.dat yp=0.22764129 m=fhs s=fms s2=mnh
+FP:fms-go7-R0.8-mkk-roku7-pP1F4x23G3x0.5.dat yp=0.11137437 m=fhs s=fms s2=mkk
+FP:fms-ni10-R0.8-mym-hachi6-pP1F4x23G3x0.5.dat yp=0.127936 m=fhs s=fms s2=mym
+FP:fms-kyu6-R0.8-mkk-si6-pP1F4x23G3x0.5.dat yp=0.0038468981 m=fhs s=fms s2=mkk
+FN:fhs-kyu6-R0.8-mym-roku7-pP1F4x23G3x0.5.dat yp=-0.56760975 m=fhs s=fhs s2=mym
+FN:fhs-ni5-R0.8-mkk-ni10-pP1F4x23G3x0.5.dat yp=-0.66713403 m=fhs s=fhs s2=mkk
+FN:fhs-ichi8-R0.8-mkk-ichi3-pP1F4x23G3x0.5.dat yp=-0.48842097 m=fhs s=fhs s2=mkk
+FN:fhs-roku4-R0.8-mym-nana5-pP1F4x23G3x0.5.dat yp=-0.37861698 m=fhs s=fhs s2=mym
+FN:fhs-zero10-R0.8-mnh-zero7-pP1F4x23G3x0.5.dat yp=-0.057516383 m=fhs s=fhs s2=mnh
+FN:fhs-ni4-R0.8-mym-roku7-pP1F4x23G3x0.5.dat yp=-0.55264717 m=fhs s=fhs s2=mym
+FN:fhs-zero4-R0.8-mko-go10-pP1F4x23G3x0.5.dat yp=-0.73492088 m=fhs s=fhs s2=mko
+FN:fhs-hachi10-R0.8-mnh-nana6-pP1F4x23G3x0.5.dat yp=-0.3806248 m=fhs s=fhs s2=mnh
+FN:fhs-ichi6-R0.8-mkk-kyu2-pP1F4x23G3x0.5.dat yp=-0.87734403 m=fhs s=fhs s2=mkk
+FN:fhs-si9-R0.8-mnh-kyu3-pP1F4x23G3x0.5.dat yp=-0.087835466 m=fhs s=fhs s2=mnh
+FN:fhs-kyu5-R0.8-mkk-nana2-pP1F4x23G3x0.5.dat yp=-0.61770686 m=fhs s=fhs s2=mkk
+FN:fhs-roku2-R0.8-mym-zero7-pP1F4x23G3x0.5.dat yp=-0.83408273 m=fhs s=fhs s2=mym
+FN:fhs-hachi1-R0.8-mym-nana8-pP1F4x23G3x0.5.dat yp=-0.1682823 m=fhs s=fhs s2=mym
+FN:fhs-kyu1-R0.8-mkk-roku2-pP1F4x23G3x0.5.dat yp=-0.14348518 m=fhs s=fhs s2=mkk
+FN:fhs-kyu2-R0.8-mmt-hachi9-pP1F4x23G3x0.5.dat yp=-0.55354481 m=fhs s=fhs s2=mmt
+FN:fhs-zero5-R0.8-mmt-ichi4-pP1F4x23G3x0.5.dat yp=-0.6669289 m=fhs s=fhs s2=mmt
+FN:fhs-roku3-R0.8-fms-ni4-pP1F4x23G3x0.5.dat yp=-0.02589204 m=fhs s=fhs s2=fms
+FN:fhs-kyu4-R0.8-mko-hachi2-pP1F4x23G3x0.5.dat yp=-0.31999381 m=fhs s=fhs s2=mko
+FN:fhs-go6-R0.8-mko-go5-pP1F4x23G3x0.5.dat yp=-0.15017837 m=fhs s=fhs s2=mko
+FN:fhs-go1-R0.8-mmt-zero1-pP1F4x23G3x0.5.dat yp=-0.70889844 m=fhs s=fhs s2=mmt
+FN:fhs-go9-R0.8-mnh-san1-pP1F4x23G3x0.5.dat yp=-0.078454294 m=fhs s=fhs s2=mnh
+FN:fhs-ichi10-R0.8-mym-zero6-pP1F4x23G3x0.5.dat yp=-0.7038782 m=fhs s=fhs s2=mym
+FN:fhs-hachi7-R0.8-mym-ni10-pP1F4x23G3x0.5.dat yp=-0.3628678 m=fhs s=fhs s2=mym
+FN:fhs-ichi7-R0.8-mmt-zero5-pP1F4x23G3x0.5.dat yp=-0.10857577 m=fhs s=fhs s2=mmt
+FN:fhs-kyu7-R0.8-mym-roku9-pP1F4x23G3x0.5.dat yp=-0.38996805 m=fhs s=fhs s2=mym
+FN:fhs-ni8-R0.8-mmt-hachi3-pP1F4x23G3x0.5.dat yp=-0.40371944 m=fhs s=fhs s2=mmt
+FN:fhs-ni7-R0.8-mkk-zero5-pP1F4x23G3x0.5.dat yp=-0.21560181 m=fhs s=fhs s2=mkk
+FN:fhs-ichi1-R0.8-mym-si10-pP1F4x23G3x0.5.dat yp=-0.3496495 m=fhs s=fhs s2=mym
+FN:fhs-ni6-R0.8-mkk-ichi8-pP1F4x23G3x0.5.dat yp=-0.35944254 m=fhs s=fhs s2=mkk
+FN:fhs-go3-R0.8-mym-zero6-pP1F4x23G3x0.5.dat yp=-0.86748331 m=fhs s=fhs s2=mym
+FN:fhs-roku8-R0.8-fms-go1-pP1F4x23G3x0.5.dat yp=-0.29592132 m=fhs s=fhs s2=fms
+FN:fhs-roku6-R0.8-fms-ni7-pP1F4x23G3x0.5.dat yp=-0.75352267 m=fhs s=fhs s2=fms
+FN:fhs-zero8-R0.8-fms-go10-pP1F4x23G3x0.5.dat yp=-0.54315496 m=fhs s=fhs s2=fms
+FN:fhs-kyu3-R0.8-mym-si2-pP1F4x23G3x0.5.dat yp=-0.63811964 m=fhs s=fhs s2=mym
+FN:fhs-go4-R0.8-mmt-hachi9-pP1F4x23G3x0.5.dat yp=-0.91698571 m=fhs s=fhs s2=mmt
+FN:fhs-kyu8-R0.8-mnh-kyu5-pP1F4x23G3x0.5.dat yp=-0.55920061 m=fhs s=fhs s2=mnh
+FN:fhs-roku1-R0.8-mkk-kyu9-pP1F4x23G3x0.5.dat yp=-0.45352886 m=fhs s=fhs s2=mkk
+FN:fhs-ni10-R0.8-mym-ni2-pP1F4x23G3x0.5.dat yp=-0.38571823 m=fhs s=fhs s2=mym
+FN:fhs-ichi9-R0.8-mym-roku4-pP1F4x23G3x0.5.dat yp=-0.20335019 m=fhs s=fhs s2=mym
+FN:fhs-roku9-R0.8-mnh-kyu10-pP1F4x23G3x0.5.dat yp=-0.18491467 m=fhs s=fhs s2=mnh
+FN:fhs-go8-R0.8-mnh-zero3-pP1F4x23G3x0.5.dat yp=-0.77779308 m=fhs s=fhs s2=mnh
+FN:fhs-si3-R0.8-mym-san2-pP1F4x23G3x0.5.dat yp=-0.0089590012 m=fhs s=fhs s2=mym
+FN:fhs-si7-R0.8-mnh-si7-pP1F4x23G3x0.5.dat yp=-0.048323252 m=fhs s=fhs s2=mnh
+FN:fhs-nana4-R0.8-mkk-kyu3-pP1F4x23G3x0.5.dat yp=-0.72770549 m=fhs s=fhs s2=mkk
+FN:fhs-zero7-R0.8-mkk-si5-pP1F4x23G3x0.5.dat yp=-0.33267701 m=fhs s=fhs s2=mkk
+FN:fhs-hachi2-R0.8-mnh-san4-pP1F4x23G3x0.5.dat yp=-0.15623039 m=fhs s=fhs s2=mnh
+FN:fhs-san1-R0.8-mnh-ichi7-pP1F4x23G3x0.5.dat yp=-0.8349737 m=fhs s=fhs s2=mnh
+FN:fhs-roku10-R0.8-mmt-ichi3-pP1F4x23G3x0.5.dat yp=-0.092279775 m=fhs s=fhs s2=mmt
+FN:fhs-kyu9-R0.8-mkk-san2-pP1F4x23G3x0.5.dat yp=-0.25131836 m=fhs s=fhs s2=mkk
+FN:fhs-ichi5-R0.8-mko-san3-pP1F4x23G3x0.5.dat yp=-0.089742467 m=fhs s=fhs s2=mko
+FN:fhs-go10-R0.8-mko-ni2-pP1F4x23G3x0.5.dat yp=-0.85469801 m=fhs s=fhs s2=mko
+FP:mkk-ni7-R0.8-mmt-ichi6-pP1F4x23G3x0.5.dat yp=0.19830421 m=fhs s=mkk s2=mmt
+FP:mmt-roku2-R0.8-mym-san3-pP1F4x23G3x0.5.dat yp=0.11527876 m=fhs s=mmt s2=mym
+FP:mmt-hachi1-R0.8-mkk-si6-pP1F4x23G3x0.5.dat yp=0.16391018 m=fhs s=mmt s2=mkk
+FP:mnh-san8-R0.8-mko-kyu7-pP1F4x23G3x0.5.dat yp=0.12069416 m=fhs s=mnh s2=mko
+FP:mnh-ni2-R0.8-mym-ni7-pP1F4x23G3x0.5.dat yp=0.30720949 m=fhs s=mnh s2=mym
+0.485 0.978 0.022 0.515 0.105 = 48 483 11 51 62 # 593 fhs 0.8 0 2:100:0.7:1 40 #TP,TN,FP,FN,ER=...#n,m,R,RX,mbas,N
+#elapsed time:614.488s(0:10:14.487)@2019-12-01 22:12:16.418669 for m0:fhs
+rm --force -rf *.dat *.gpl *.obj *.png *.net tmp/ result/ result-ensrs2ge/ result-nn3/
+my Child returned: <subprocess.Popen object at 0x7f5114de2550>
+#m1:fms excludes fhs-si5-R0.8-fms-go3-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes fhs-roku3-R0.8-fms-ni4-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes fhs-si4-R0.8-fms-si4-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes fhs-san10-R0.8-fms-si9-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes fhs-roku8-R0.8-fms-go1-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes fhs-roku6-R0.8-fms-ni7-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes fhs-si6-R0.8-fms-san10-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes fhs-zero8-R0.8-fms-go10-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes fhs-roku7-R0.8-fms-si6-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes fhs-zero6-R0.8-fms-ni4-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes fhs-nana10-R0.8-fms-si9-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes fhs-go5-R0.8-fms-zero3-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes fhs-ni1-R0.8-fms-ichi1-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes fhs-si1-R0.8-fms-zero9-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mkk-san10-R0.8-fms-si2-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mkk-san7-R0.8-fms-roku4-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mkk-nana3-R0.8-fms-ichi5-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mkk-san8-R0.8-fms-zero8-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mkk-san2-R0.8-fms-hachi9-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mkk-si3-R0.8-fms-kyu8-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mkk-si8-R0.8-fms-roku3-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mkk-san1-R0.8-fms-si5-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mkk-zero9-R0.8-fms-hachi8-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mkk-roku5-R0.8-fms-si2-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mkk-hachi6-R0.8-fms-si5-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mkk-ichi9-R0.8-fms-go3-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mkk-san4-R0.8-fms-san5-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mkk-go2-R0.8-fms-nana9-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mkk-kyu9-R0.8-fms-hachi9-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mkk-si6-R0.8-fms-si7-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mkk-ni6-R0.8-fms-zero7-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mkk-roku9-R0.8-fms-nana2-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mmt-roku8-R0.8-fms-nana5-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mmt-ni10-R0.8-fms-roku8-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mmt-zero1-R0.8-fms-ichi9-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mmt-hachi7-R0.8-fms-zero2-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mmt-ichi10-R0.8-fms-ni3-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mmt-zero6-R0.8-fms-go4-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mmt-si3-R0.8-fms-si9-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mmt-ichi5-R0.8-fms-hachi5-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mmt-ni3-R0.8-fms-hachi2-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mmt-nana3-R0.8-fms-kyu6-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mko-hachi10-R0.8-fms-roku3-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mko-ni10-R0.8-fms-kyu8-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mko-go6-R0.8-fms-ni10-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mko-si4-R0.8-fms-san9-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mko-si9-R0.8-fms-nana8-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mko-nana6-R0.8-fms-nana3-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mko-roku9-R0.8-fms-hachi1-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mko-zero9-R0.8-fms-kyu4-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mko-ichi2-R0.8-fms-ni1-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mko-kyu10-R0.8-fms-zero8-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mko-hachi7-R0.8-fms-nana6-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mko-go2-R0.8-fms-ichi1-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mko-kyu3-R0.8-fms-hachi10-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mym-go6-R0.8-fms-zero6-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mym-si1-R0.8-fms-si5-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mym-go9-R0.8-fms-san4-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mym-go4-R0.8-fms-ni3-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mym-san2-R0.8-fms-hachi6-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mym-san5-R0.8-fms-san1-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mym-ichi10-R0.8-fms-si1-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mym-kyu1-R0.8-fms-san8-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mym-ni10-R0.8-fms-nana4-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mym-go2-R0.8-fms-ni1-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mym-kyu10-R0.8-fms-zero10-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mym-hachi3-R0.8-fms-zero8-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mym-ni4-R0.8-fms-san10-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mnh-roku10-R0.8-fms-kyu10-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mnh-nana3-R0.8-fms-nana2-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mnh-zero6-R0.8-fms-go10-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mnh-zero3-R0.8-fms-si10-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mnh-si5-R0.8-fms-kyu10-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mnh-go5-R0.8-fms-hachi2-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mnh-kyu10-R0.8-fms-kyu10-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mnh-hachi2-R0.8-fms-nana10-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mnh-ichi8-R0.8-fms-go3-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mnh-zero10-R0.8-fms-san8-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mnh-ni6-R0.8-fms-san4-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mnh-si2-R0.8-fms-kyu10-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mnh-san2-R0.8-fms-si7-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mnh-hachi6-R0.8-fms-si3-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mnh-nana9-R0.8-fms-hachi1-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mnh-ichi3-R0.8-fms-roku2-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mnh-zero5-R0.8-fms-zero1-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mnh-si10-R0.8-fms-ichi5-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mnh-kyu4-R0.8-fms-ichi5-pP1F4x23G3x0.5.dat from negative examples.
+#m1:fms excludes mnh-hachi7-R0.8-fms-si1-pP1F4x23G3x0.5.dat from negative examples.
+#n_train=610
+Executing1 ensrs train_xy.dat 2:100:0.7:1 40-40 k:92 ib:0:0:0:0 y:-1:1:-1:1 x:0:0:0:1 DISP:0 bg:/dev/null >> ./tmp/ensrs.log
+#Ltst(n49.6*610)3.183e-01 Lib(n50.4*610)2.815e-13 H8.176e-01, nTest302.8=302.9=exp(-0.70)*nGiven610method:2:100:0.7:1N40-40.
+my Child returned: <subprocess.Popen object at 0x7f5114dd9dd0>
+my Child returned: <subprocess.Popen object at 0x7f5114dd9dd0>
+FN:fms-ichi5-R0.8-mym-si4-pP1F4x23G3x0.5.dat yp=-0.32641346 m=fms s=fms s2=mym
+FN:fms-si9-R0.8-fhs-ichi8-pP1F4x23G3x0.5.dat yp=-0.13379125 m=fms s=fms s2=fhs
+FN:fms-roku6-R0.8-mko-kyu8-pP1F4x23G3x0.5.dat yp=-0.72830705 m=fms s=fms s2=mko
+FN:fms-ni3-R0.8-mkk-ni5-pP1F4x23G3x0.5.dat yp=-0.7730829 m=fms s=fms s2=mkk
+FN:fms-san5-R0.8-mkk-kyu1-pP1F4x23G3x0.5.dat yp=-0.43731355 m=fms s=fms s2=mkk
+FN:fms-nana6-R0.8-mym-nana8-pP1F4x23G3x0.5.dat yp=-0.39467074 m=fms s=fms s2=mym
+FN:fms-go1-R0.8-mnh-zero10-pP1F4x23G3x0.5.dat yp=-0.77139146 m=fms s=fms s2=mnh
+FN:fms-ichi6-R0.8-mkk-ichi9-pP1F4x23G3x0.5.dat yp=-0.40798003 m=fms s=fms s2=mkk
+FN:fms-ichi4-R0.8-mym-ni8-pP1F4x23G3x0.5.dat yp=-0.52456303 m=fms s=fms s2=mym
+FN:fms-si7-R0.8-mmt-san3-pP1F4x23G3x0.5.dat yp=-0.59751688 m=fms s=fms s2=mmt
+FN:fms-ni6-R0.8-mkk-go2-pP1F4x23G3x0.5.dat yp=-0.49817131 m=fms s=fms s2=mkk
+FN:fms-ni5-R0.8-mko-kyu7-pP1F4x23G3x0.5.dat yp=-0.045283717 m=fms s=fms s2=mko
+FN:fms-ichi2-R0.8-mnh-hachi1-pP1F4x23G3x0.5.dat yp=-0.86640057 m=fms s=fms s2=mnh
+FN:fms-ni4-R0.8-mkk-roku5-pP1F4x23G3x0.5.dat yp=-0.23186173 m=fms s=fms s2=mkk
+FN:fms-go6-R0.8-mmt-hachi10-pP1F4x23G3x0.5.dat yp=-0.47630541 m=fms s=fms s2=mmt
+FN:fms-hachi5-R0.8-mko-ichi9-pP1F4x23G3x0.5.dat yp=-0.27726365 m=fms s=fms s2=mko
+FN:fms-zero4-R0.8-mko-go10-pP1F4x23G3x0.5.dat yp=-0.20264033 m=fms s=fms s2=mko
+FN:fms-san8-R0.8-mkk-go7-pP1F4x23G3x0.5.dat yp=-0.2275411 m=fms s=fms s2=mkk
+FN:fms-zero9-R0.8-mko-hachi6-pP1F4x23G3x0.5.dat yp=-0.69463723 m=fms s=fms s2=mko
+FN:fms-kyu1-R0.8-mym-san6-pP1F4x23G3x0.5.dat yp=-0.048972103 m=fms s=fms s2=mym
+FN:fms-ichi9-R0.8-mkk-nana6-pP1F4x23G3x0.5.dat yp=-0.52232178 m=fms s=fms s2=mkk
+FN:fms-go3-R0.8-mym-kyu2-pP1F4x23G3x0.5.dat yp=-0.79810176 m=fms s=fms s2=mym
+FN:fms-zero6-R0.8-mnh-nana3-pP1F4x23G3x0.5.dat yp=-0.10584812 m=fms s=fms s2=mnh
+FN:fms-san6-R0.8-mko-san8-pP1F4x23G3x0.5.dat yp=-0.50699705 m=fms s=fms s2=mko
+FN:fms-go8-R0.8-mmt-hachi5-pP1F4x23G3x0.5.dat yp=-0.16960997 m=fms s=fms s2=mmt
+FN:fms-ni7-R0.8-mym-roku7-pP1F4x23G3x0.5.dat yp=-0.13563649 m=fms s=fms s2=mym
+FN:fms-go9-R0.8-mko-kyu9-pP1F4x23G3x0.5.dat yp=-0.24392341 m=fms s=fms s2=mko
+FN:fms-ni2-R0.8-mmt-san4-pP1F4x23G3x0.5.dat yp=-0.63033738 m=fms s=fms s2=mmt
+FN:fms-roku5-R0.8-mnh-kyu8-pP1F4x23G3x0.5.dat yp=-0.71984738 m=fms s=fms s2=mnh
+FN:fms-roku2-R0.8-mym-roku6-pP1F4x23G3x0.5.dat yp=-0.58975708 m=fms s=fms s2=mym
+FN:fms-roku9-R0.8-mkk-si2-pP1F4x23G3x0.5.dat yp=-0.072634151 m=fms s=fms s2=mkk
+FN:fms-roku10-R0.8-mym-san5-pP1F4x23G3x0.5.dat yp=-0.19035866 m=fms s=fms s2=mym
+FN:fms-si3-R0.8-fhs-nana4-pP1F4x23G3x0.5.dat yp=-0.15522714 m=fms s=fms s2=fhs
+FN:fms-san4-R0.8-mnh-roku5-pP1F4x23G3x0.5.dat yp=-0.076707907 m=fms s=fms s2=mnh
+FN:fms-hachi2-R0.8-mkk-nana2-pP1F4x23G3x0.5.dat yp=-0.28181941 m=fms s=fms s2=mkk
+FN:fms-zero5-R0.8-mkk-go3-pP1F4x23G3x0.5.dat yp=-0.092055673 m=fms s=fms s2=mkk
+FN:fms-go7-R0.8-mkk-roku7-pP1F4x23G3x0.5.dat yp=-0.49246303 m=fms s=fms s2=mkk
+FN:fms-hachi10-R0.8-mkk-zero7-pP1F4x23G3x0.5.dat yp=-0.32399664 m=fms s=fms s2=mkk
+FN:fms-ni8-R0.8-mko-nana3-pP1F4x23G3x0.5.dat yp=-0.37399232 m=fms s=fms s2=mko
+FN:fms-go2-R0.8-mmt-hachi5-pP1F4x23G3x0.5.dat yp=-0.37244576 m=fms s=fms s2=mmt
+FN:fms-ni10-R0.8-mym-hachi6-pP1F4x23G3x0.5.dat yp=-0.68028097 m=fms s=fms s2=mym
+FN:fms-ichi7-R0.8-mmt-kyu1-pP1F4x23G3x0.5.dat yp=-0.45847542 m=fms s=fms s2=mmt
+FN:fms-ichi3-R0.8-mmt-roku1-pP1F4x23G3x0.5.dat yp=-0.027976069 m=fms s=fms s2=mmt
+FN:fms-roku1-R0.8-mkk-si9-pP1F4x23G3x0.5.dat yp=-0.089132573 m=fms s=fms s2=mkk
+FN:fms-kyu9-R0.8-fhs-san7-pP1F4x23G3x0.5.dat yp=-0.37519791 m=fms s=fms s2=fhs
+FN:fms-ichi10-R0.8-mkk-ichi6-pP1F4x23G3x0.5.dat yp=-0.40143706 m=fms s=fms s2=mkk
+FN:fms-ni9-R0.8-fhs-ni1-pP1F4x23G3x0.5.dat yp=-0.71513418 m=fms s=fms s2=fhs
+FN:fms-kyu6-R0.8-mkk-si6-pP1F4x23G3x0.5.dat yp=-0.31935419 m=fms s=fms s2=mkk
+FN:fms-zero2-R0.8-mnh-kyu6-pP1F4x23G3x0.5.dat yp=-0.36183324 m=fms s=fms s2=mnh
+FN:fms-go10-R0.8-mko-si6-pP1F4x23G3x0.5.dat yp=-0.67205323 m=fms s=fms s2=mko
+FN:fms-san2-R0.8-mym-ichi9-pP1F4x23G3x0.5.dat yp=-0.60424826 m=fms s=fms s2=mym
+FN:fms-go5-R0.8-mmt-kyu7-pP1F4x23G3x0.5.dat yp=-0.43734402 m=fms s=fms s2=mmt
+FN:fms-nana5-R0.8-mko-hachi5-pP1F4x23G3x0.5.dat yp=-0.047370244 m=fms s=fms s2=mko
+FN:fms-zero1-R0.8-fhs-san5-pP1F4x23G3x0.5.dat yp=-0.13379446 m=fms s=fms s2=fhs
+FN:fms-si4-R0.8-mko-nana8-pP1F4x23G3x0.5.dat yp=-0.27221825 m=fms s=fms s2=mko
+FN:fms-roku3-R0.8-mym-go9-pP1F4x23G3x0.5.dat yp=-0.59137571 m=fms s=fms s2=mym
+FN:fms-hachi7-R0.8-mnh-ichi8-pP1F4x23G3x0.5.dat yp=-0.75508015 m=fms s=fms s2=mnh
+FN:fms-zero3-R0.8-mmt-ni1-pP1F4x23G3x0.5.dat yp=-0.67549828 m=fms s=fms s2=mmt
+FP:fhs-ni7-R0.8-mkk-zero5-pP1F4x23G3x0.5.dat yp=0.14733837 m=fms s=fhs s2=mkk
+FP:fhs-zero1-R0.8-mko-go7-pP1F4x23G3x0.5.dat yp=0.19792999 m=fms s=fhs s2=mko
+FP:mkk-go3-R0.8-mko-kyu9-pP1F4x23G3x0.5.dat yp=0.085019039 m=fms s=mkk s2=mko
+FP:mym-nana6-R0.8-mnh-zero1-pP1F4x23G3x0.5.dat yp=0.20514674 m=fms s=mym s2=mnh
+0.420 0.992 0.008 0.580 0.102 = 42 506 4 58 62 # 610 fms 0.8 0 2:100:0.7:1 40 #TP,TN,FP,FN,ER=...#n,m,R,RX,mbas,N
+#elapsed time:1242.491s(0:20:42.490)@2019-12-01 22:22:44.421579 for m1:fms
+rm --force -rf *.dat *.gpl *.obj *.png *.net tmp/ result/ result-ensrs2ge/ result-nn3/
+my Child returned: <subprocess.Popen object at 0x7f5114dd99d0>
+#m2:mkk excludes fms-hachi9-R0.8-mkk-zero5-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes fms-ni3-R0.8-mkk-ni5-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes fms-san5-R0.8-mkk-kyu1-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes fms-ichi6-R0.8-mkk-ichi9-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes fms-ni6-R0.8-mkk-go2-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes fms-ni4-R0.8-mkk-roku5-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes fms-san7-R0.8-mkk-zero10-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes fms-san8-R0.8-mkk-go7-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes fms-hachi4-R0.8-mkk-si5-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes fms-zero7-R0.8-mkk-si10-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes fms-ichi9-R0.8-mkk-nana6-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes fms-roku9-R0.8-mkk-si2-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes fms-hachi2-R0.8-mkk-nana2-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes fms-zero5-R0.8-mkk-go3-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes fms-go7-R0.8-mkk-roku7-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes fms-hachi10-R0.8-mkk-zero7-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes fms-kyu2-R0.8-mkk-zero7-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes fms-roku1-R0.8-mkk-si9-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes fms-ichi10-R0.8-mkk-ichi6-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes fms-kyu6-R0.8-mkk-si6-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes fms-ichi8-R0.8-mkk-ichi8-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes fhs-ni5-R0.8-mkk-ni10-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes fhs-ichi8-R0.8-mkk-ichi3-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes fhs-ichi6-R0.8-mkk-kyu2-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes fhs-kyu5-R0.8-mkk-nana2-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes fhs-kyu1-R0.8-mkk-roku2-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes fhs-ichi3-R0.8-mkk-go4-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes fhs-go2-R0.8-mkk-go10-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes fhs-ni7-R0.8-mkk-zero5-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes fhs-ni6-R0.8-mkk-ichi8-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes fhs-san7-R0.8-mkk-san7-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes fhs-roku1-R0.8-mkk-kyu9-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes fhs-nana4-R0.8-mkk-kyu3-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes fhs-zero7-R0.8-mkk-si5-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes fhs-kyu9-R0.8-mkk-san2-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes mmt-ichi7-R0.8-mkk-go2-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes mmt-roku9-R0.8-mkk-kyu5-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes mmt-ni8-R0.8-mkk-san9-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes mmt-ichi1-R0.8-mkk-ichi6-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes mmt-hachi10-R0.8-mkk-hachi1-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes mmt-hachi1-R0.8-mkk-si6-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes mmt-zero3-R0.8-mkk-hachi5-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes mmt-go4-R0.8-mkk-roku1-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes mmt-kyu4-R0.8-mkk-go7-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes mmt-hachi9-R0.8-mkk-san5-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes mmt-kyu10-R0.8-mkk-hachi3-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes mmt-zero5-R0.8-mkk-go9-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes mmt-roku3-R0.8-mkk-ichi6-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes mko-kyu4-R0.8-mkk-san10-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes mko-si2-R0.8-mkk-ichi9-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes mko-kyu1-R0.8-mkk-san2-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes mko-ichi9-R0.8-mkk-go6-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes mko-hachi5-R0.8-mkk-roku4-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes mko-san5-R0.8-mkk-kyu7-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes mko-roku4-R0.8-mkk-san1-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes mko-nana1-R0.8-mkk-hachi3-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes mko-si5-R0.8-mkk-kyu8-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes mko-san1-R0.8-mkk-kyu6-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes mym-zero9-R0.8-mkk-roku10-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes mym-hachi4-R0.8-mkk-hachi9-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes mym-ni8-R0.8-mkk-kyu8-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes mym-go8-R0.8-mkk-ichi7-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes mym-roku8-R0.8-mkk-hachi7-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes mym-san7-R0.8-mkk-ichi9-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes mym-san1-R0.8-mkk-go9-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes mym-kyu2-R0.8-mkk-go4-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes mym-go1-R0.8-mkk-kyu5-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes mym-si6-R0.8-mkk-hachi6-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes mym-go5-R0.8-mkk-go7-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes mym-roku3-R0.8-mkk-kyu6-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes mym-nana4-R0.8-mkk-go6-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes mym-hachi9-R0.8-mkk-zero3-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes mym-si2-R0.8-mkk-nana8-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes mym-zero2-R0.8-mkk-hachi8-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes mnh-si3-R0.8-mkk-hachi5-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes mnh-zero2-R0.8-mkk-zero10-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes mnh-ni10-R0.8-mkk-go4-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes mnh-zero1-R0.8-mkk-san8-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes mnh-go4-R0.8-mkk-hachi2-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes mnh-si4-R0.8-mkk-nana4-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes mnh-go7-R0.8-mkk-ni6-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes mnh-hachi8-R0.8-mkk-hachi3-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes mnh-go2-R0.8-mkk-nana7-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes mnh-hachi9-R0.8-mkk-roku4-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes mnh-go3-R0.8-mkk-ichi4-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes mnh-zero7-R0.8-mkk-roku9-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes mnh-ichi6-R0.8-mkk-nana7-pP1F4x23G3x0.5.dat from negative examples.
+#m2:mkk excludes mnh-si1-R0.8-mkk-hachi7-pP1F4x23G3x0.5.dat from negative examples.
+#n_train=610
+Executing1 ensrs train_xy.dat 2:100:0.7:1 40-40 k:92 ib:0:0:0:0 y:-1:1:-1:1 x:0:0:0:1 DISP:0 bg:/dev/null >> ./tmp/ensrs.log
+#Ltst(n49.6*610)2.679e-01 Lib(n50.4*610)3.393e-13 H8.357e-01, nTest302.8=302.9=exp(-0.70)*nGiven610method:2:100:0.7:1N40-40.
+my Child returned: <subprocess.Popen object at 0x7f51158e7890>
+my Child returned: <subprocess.Popen object at 0x7f51158e7890>
+FP:fhs-go6-R0.8-mko-go5-pP1F4x23G3x0.5.dat yp=0.11097214 m=mkk s=fhs s2=mko
+FP:fhs-kyu8-R0.8-mnh-kyu5-pP1F4x23G3x0.5.dat yp=0.08670176 m=mkk s=fhs s2=mnh
+FN:mkk-kyu8-R0.8-mmt-ni6-pP1F4x23G3x0.5.dat yp=-0.18667522 m=mkk s=mkk s2=mmt
+FN:mkk-go1-R0.8-mym-si10-pP1F4x23G3x0.5.dat yp=-0.6493436 m=mkk s=mkk s2=mym
+FN:mkk-roku3-R0.8-mmt-kyu9-pP1F4x23G3x0.5.dat yp=-0.053813022 m=mkk s=mkk s2=mmt
+FN:mkk-ni7-R0.8-mmt-ichi6-pP1F4x23G3x0.5.dat yp=-0.26925735 m=mkk s=mkk s2=mmt
+FN:mkk-go5-R0.8-mnh-ni8-pP1F4x23G3x0.5.dat yp=-0.16485103 m=mkk s=mkk s2=mnh
+FN:mkk-ni5-R0.8-mko-si10-pP1F4x23G3x0.5.dat yp=-0.065860442 m=mkk s=mkk s2=mko
+FN:mkk-go3-R0.8-mko-kyu9-pP1F4x23G3x0.5.dat yp=-0.78121012 m=mkk s=mkk s2=mko
+FN:mkk-nana1-R0.8-fhs-roku1-pP1F4x23G3x0.5.dat yp=-0.20101085 m=mkk s=mkk s2=fhs
+FN:mkk-zero5-R0.8-mko-roku9-pP1F4x23G3x0.5.dat yp=-0.22872014 m=mkk s=mkk s2=mko
+FN:mkk-go6-R0.8-mko-hachi5-pP1F4x23G3x0.5.dat yp=-0.32076746 m=mkk s=mkk s2=mko
+FN:mkk-ichi4-R0.8-mmt-hachi3-pP1F4x23G3x0.5.dat yp=-0.47956717 m=mkk s=mkk s2=mmt
+FN:mkk-si4-R0.8-mym-hachi9-pP1F4x23G3x0.5.dat yp=-0.078012168 m=mkk s=mkk s2=mym
+FN:mkk-si8-R0.8-fms-roku3-pP1F4x23G3x0.5.dat yp=-0.48194284 m=mkk s=mkk s2=fms
+FN:mkk-zero4-R0.8-mmt-ichi7-pP1F4x23G3x0.5.dat yp=-0.72966085 m=mkk s=mkk s2=mmt
+FN:mkk-ni9-R0.8-mym-kyu10-pP1F4x23G3x0.5.dat yp=-0.35639215 m=mkk s=mkk s2=mym
+FN:mkk-go7-R0.8-mym-zero9-pP1F4x23G3x0.5.dat yp=-0.44569617 m=mkk s=mkk s2=mym
+FN:mkk-ni3-R0.8-mmt-roku5-pP1F4x23G3x0.5.dat yp=-0.15883226 m=mkk s=mkk s2=mmt
+FN:mkk-ni4-R0.8-mko-kyu1-pP1F4x23G3x0.5.dat yp=-0.66637124 m=mkk s=mkk s2=mko
+FN:mkk-zero9-R0.8-fms-hachi8-pP1F4x23G3x0.5.dat yp=-0.28491556 m=mkk s=mkk s2=fms
+FN:mkk-roku5-R0.8-fms-si2-pP1F4x23G3x0.5.dat yp=-0.27630721 m=mkk s=mkk s2=fms
+FN:mkk-kyu1-R0.8-mmt-ichi8-pP1F4x23G3x0.5.dat yp=-0.28072331 m=mkk s=mkk s2=mmt
+FN:mkk-ichi9-R0.8-fms-go3-pP1F4x23G3x0.5.dat yp=-0.18723042 m=mkk s=mkk s2=fms
+FN:mkk-san4-R0.8-fms-san5-pP1F4x23G3x0.5.dat yp=-0.18033805 m=mkk s=mkk s2=fms
+FN:mkk-go2-R0.8-fms-nana9-pP1F4x23G3x0.5.dat yp=-0.19643364 m=mkk s=mkk s2=fms
+FN:mkk-hachi7-R0.8-mym-si1-pP1F4x23G3x0.5.dat yp=-0.42204184 m=mkk s=mkk s2=mym
+FN:mkk-ichi2-R0.8-mko-zero4-pP1F4x23G3x0.5.dat yp=-0.050414731 m=mkk s=mkk s2=mko
+FN:mkk-ni2-R0.8-mmt-ichi8-pP1F4x23G3x0.5.dat yp=-0.26070529 m=mkk s=mkk s2=mmt
+FN:mkk-roku2-R0.8-mmt-ni3-pP1F4x23G3x0.5.dat yp=-0.21016624 m=mkk s=mkk s2=mmt
+FN:mkk-hachi3-R0.8-fhs-zero6-pP1F4x23G3x0.5.dat yp=-0.054754418 m=mkk s=mkk s2=fhs
+FN:mkk-ni6-R0.8-fms-zero7-pP1F4x23G3x0.5.dat yp=-0.55830409 m=mkk s=mkk s2=fms
+FN:mkk-zero3-R0.8-mko-roku9-pP1F4x23G3x0.5.dat yp=-0.23266283 m=mkk s=mkk s2=mko
+FN:mkk-ni8-R0.8-mmt-san4-pP1F4x23G3x0.5.dat yp=-0.54097162 m=mkk s=mkk s2=mmt
+FN:mkk-nana5-R0.8-fhs-si7-pP1F4x23G3x0.5.dat yp=-0.10160629 m=mkk s=mkk s2=fhs
+FN:mkk-roku6-R0.8-mmt-hachi2-pP1F4x23G3x0.5.dat yp=-0.39027538 m=mkk s=mkk s2=mmt
+FN:mkk-ni10-R0.8-mmt-roku8-pP1F4x23G3x0.5.dat yp=-0.5684956 m=mkk s=mkk s2=mmt
+FN:mkk-go8-R0.8-mmt-si6-pP1F4x23G3x0.5.dat yp=-0.012878478 m=mkk s=mkk s2=mmt
+FN:mkk-ichi3-R0.8-fhs-go1-pP1F4x23G3x0.5.dat yp=-0.20568983 m=mkk s=mkk s2=fhs
+FP:mmt-nana9-R0.8-fhs-si9-pP1F4x23G3x0.5.dat yp=0.052912561 m=mkk s=mmt s2=fhs
+FP:mym-nana10-R0.8-fhs-hachi10-pP1F4x23G3x0.5.dat yp=0.31001913 m=mkk s=mym s2=fhs
+FP:mym-nana7-R0.8-mmt-go4-pP1F4x23G3x0.5.dat yp=0.14593565 m=mkk s=mym s2=mmt
+FP:mym-nana9-R0.8-mmt-ichi3-pP1F4x23G3x0.5.dat yp=0.1092439 m=mkk s=mym s2=mmt
+FP:mym-ichi2-R0.8-mmt-zero3-pP1F4x23G3x0.5.dat yp=0.050748528 m=mkk s=mym s2=mmt
+FP:mym-zero10-R0.8-mnh-zero5-pP1F4x23G3x0.5.dat yp=0.29191719 m=mkk s=mym s2=mnh
+FP:mym-ichi1-R0.8-mmt-go10-pP1F4x23G3x0.5.dat yp=0.20435978 m=mkk s=mym s2=mmt
+FP:mym-nana8-R0.8-mko-hachi8-pP1F4x23G3x0.5.dat yp=0.33292366 m=mkk s=mym s2=mko
+FP:mnh-roku2-R0.8-mym-nana8-pP1F4x23G3x0.5.dat yp=0.14973378 m=mkk s=mnh s2=mym
+FP:mnh-si5-R0.8-fms-kyu10-pP1F4x23G3x0.5.dat yp=0.21388016 m=mkk s=mnh s2=fms
+FP:mnh-ni8-R0.8-mko-roku7-pP1F4x23G3x0.5.dat yp=0.21825003 m=mkk s=mnh s2=mko
+FP:mnh-si10-R0.8-fms-ichi5-pP1F4x23G3x0.5.dat yp=0.36650933 m=mkk s=mnh s2=fms
+0.630 0.973 0.027 0.370 0.084 = 63 496 14 37 51 # 610 mkk 0.8 0 2:100:0.7:1 40 #TP,TN,FP,FN,ER=...#n,m,R,RX,mbas,N
+#elapsed time:1878.637s(0:31:18.636)@2019-12-01 22:33:20.567329 for m2:mkk
+rm --force -rf *.dat *.gpl *.obj *.png *.net tmp/ result/ result-ensrs2ge/ result-nn3/
+my Child returned: <subprocess.Popen object at 0x7f5114dd9a10>
+#m3:mko excludes fms-roku6-R0.8-mko-kyu8-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes fms-nana10-R0.8-mko-san1-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes fms-ni5-R0.8-mko-kyu7-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes fms-hachi5-R0.8-mko-ichi9-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes fms-zero4-R0.8-mko-go10-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes fms-zero9-R0.8-mko-hachi6-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes fms-si6-R0.8-mko-zero1-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes fms-si10-R0.8-mko-zero10-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes fms-san6-R0.8-mko-san8-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes fms-go9-R0.8-mko-kyu9-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes fms-ni8-R0.8-mko-nana3-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes fms-go10-R0.8-mko-si6-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes fms-si5-R0.8-mko-zero4-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes fms-nana5-R0.8-mko-hachi5-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes fms-roku4-R0.8-mko-hachi3-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes fms-si4-R0.8-mko-nana8-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes fms-kyu4-R0.8-mko-go5-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes fhs-nana9-R0.8-mko-ni10-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes fhs-nana1-R0.8-mko-kyu6-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes fhs-nana2-R0.8-mko-hachi2-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes fhs-zero4-R0.8-mko-go10-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes fhs-kyu4-R0.8-mko-hachi2-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes fhs-go6-R0.8-mko-go5-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes fhs-san6-R0.8-mko-si1-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes fhs-roku5-R0.8-mko-si1-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes fhs-nana7-R0.8-mko-si2-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes fhs-zero1-R0.8-mko-go7-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes fhs-ichi5-R0.8-mko-san3-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes fhs-go10-R0.8-mko-ni2-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mkk-ichi5-R0.8-mko-si4-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mkk-nana7-R0.8-mko-si8-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mkk-san3-R0.8-mko-zero6-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mkk-ni5-R0.8-mko-si10-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mkk-go3-R0.8-mko-kyu9-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mkk-zero5-R0.8-mko-roku9-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mkk-go6-R0.8-mko-hachi5-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mkk-zero7-R0.8-mko-hachi10-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mkk-nana6-R0.8-mko-roku10-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mkk-ni4-R0.8-mko-kyu1-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mkk-hachi9-R0.8-mko-san7-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mkk-nana8-R0.8-mko-zero4-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mkk-kyu10-R0.8-mko-roku5-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mkk-ichi2-R0.8-mko-zero4-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mkk-si2-R0.8-mko-ni5-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mkk-zero3-R0.8-mko-roku9-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mkk-hachi1-R0.8-mko-zero5-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mmt-ni7-R0.8-mko-ni9-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mmt-roku4-R0.8-mko-si6-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mmt-nana10-R0.8-mko-san2-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mmt-ichi2-R0.8-mko-san6-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mmt-zero4-R0.8-mko-ichi2-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mmt-roku5-R0.8-mko-roku6-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mmt-roku10-R0.8-mko-nana2-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mmt-kyu9-R0.8-mko-ni3-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mmt-si5-R0.8-mko-hachi4-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mmt-ni1-R0.8-mko-ichi7-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mmt-hachi6-R0.8-mko-kyu4-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mmt-ni5-R0.8-mko-ni2-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mmt-si1-R0.8-mko-si2-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mmt-hachi8-R0.8-mko-go7-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mmt-zero9-R0.8-mko-nana1-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mmt-san5-R0.8-mko-roku5-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mmt-kyu1-R0.8-mko-kyu4-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mmt-si6-R0.8-mko-kyu2-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mym-nana3-R0.8-mko-ni8-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mym-ichi5-R0.8-mko-kyu10-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mym-ni5-R0.8-mko-ni2-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mym-ichi9-R0.8-mko-ni6-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mym-go3-R0.8-mko-zero5-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mym-ichi8-R0.8-mko-zero8-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mym-roku1-R0.8-mko-nana5-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mym-hachi5-R0.8-mko-go8-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mym-ni1-R0.8-mko-kyu5-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mym-kyu4-R0.8-mko-si5-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mym-zero4-R0.8-mko-hachi2-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mym-nana8-R0.8-mko-hachi8-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mnh-nana8-R0.8-mko-hachi7-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mnh-nana2-R0.8-mko-roku4-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mnh-roku7-R0.8-mko-ni8-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mnh-san3-R0.8-mko-go1-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mnh-roku9-R0.8-mko-nana1-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mnh-hachi10-R0.8-mko-zero4-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mnh-nana4-R0.8-mko-kyu4-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mnh-san5-R0.8-mko-go7-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mnh-san8-R0.8-mko-kyu7-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mnh-ni1-R0.8-mko-zero6-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mnh-ni8-R0.8-mko-roku7-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mnh-ichi2-R0.8-mko-nana5-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mnh-si8-R0.8-mko-zero2-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mnh-go10-R0.8-mko-ichi8-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mnh-zero4-R0.8-mko-roku9-pP1F4x23G3x0.5.dat from negative examples.
+#m3:mko excludes mnh-go8-R0.8-mko-san2-pP1F4x23G3x0.5.dat from negative examples.
+#n_train=606
+Executing1 ensrs train_xy.dat 2:100:0.7:1 40-40 k:92 ib:0:0:0:0 y:-1:1:-1:1 x:0:0:0:1 DISP:0 bg:/dev/null >> ./tmp/ensrs.log
+#Ltst(n49.6*606)3.511e-01 Lib(n50.4*606)4.784e-13 H8.470e-01, nTest300.6=300.9=exp(-0.70)*nGiven606method:2:100:0.7:1N40-40.
+my Child returned: <subprocess.Popen object at 0x7f51158e7290>
+my Child returned: <subprocess.Popen object at 0x7f51158e7290>
+FP:fms-ni7-R0.8-mym-roku7-pP1F4x23G3x0.5.dat yp=0.034387366 m=mko s=fms s2=mym
+FP:fhs-ichi10-R0.8-mym-zero6-pP1F4x23G3x0.5.dat yp=0.093881216 m=mko s=fhs s2=mym
+FP:mkk-san4-R0.8-fms-san5-pP1F4x23G3x0.5.dat yp=0.18216946 m=mko s=mkk s2=fms
+FP:mmt-ichi4-R0.8-fhs-nana9-pP1F4x23G3x0.5.dat yp=0.23701626 m=mko s=mmt s2=fhs
+FP:mmt-ichi1-R0.8-mkk-ichi6-pP1F4x23G3x0.5.dat yp=0.20325137 m=mko s=mmt s2=mkk
+FN:mko-hachi10-R0.8-fms-roku3-pP1F4x23G3x0.5.dat yp=-0.79856443 m=mko s=mko s2=fms
+FN:mko-go3-R0.8-mym-nana3-pP1F4x23G3x0.5.dat yp=-0.41338335 m=mko s=mko s2=mym
+FN:mko-ni1-R0.8-mnh-nana5-pP1F4x23G3x0.5.dat yp=-0.64344691 m=mko s=mko s2=mnh
+FN:mko-ni10-R0.8-fms-kyu8-pP1F4x23G3x0.5.dat yp=-0.83682248 m=mko s=mko s2=fms
+FN:mko-nana10-R0.8-mym-hachi6-pP1F4x23G3x0.5.dat yp=-0.55190605 m=mko s=mko s2=mym
+FN:mko-zero10-R0.8-mym-kyu2-pP1F4x23G3x0.5.dat yp=-0.62170742 m=mko s=mko s2=mym
+FN:mko-san4-R0.8-mnh-hachi3-pP1F4x23G3x0.5.dat yp=-0.046805734 m=mko s=mko s2=mnh
+FN:mko-ni7-R0.8-mmt-nana8-pP1F4x23G3x0.5.dat yp=-0.23247239 m=mko s=mko s2=mmt
+FN:mko-san3-R0.8-mym-si9-pP1F4x23G3x0.5.dat yp=-0.39195579 m=mko s=mko s2=mym
+FN:mko-ni4-R0.8-mmt-roku10-pP1F4x23G3x0.5.dat yp=-0.47014716 m=mko s=mko s2=mmt
+FN:mko-zero8-R0.8-mnh-nana7-pP1F4x23G3x0.5.dat yp=-0.22395263 m=mko s=mko s2=mnh
+FN:mko-nana7-R0.8-mym-go2-pP1F4x23G3x0.5.dat yp=-0.21225352 m=mko s=mko s2=mym
+FN:mko-si4-R0.8-fms-san9-pP1F4x23G3x0.5.dat yp=-0.51126233 m=mko s=mko s2=fms
+FN:mko-zero7-R0.8-mnh-hachi1-pP1F4x23G3x0.5.dat yp=-0.42021841 m=mko s=mko s2=mnh
+FN:mko-go8-R0.8-mmt-nana5-pP1F4x23G3x0.5.dat yp=-0.28511105 m=mko s=mko s2=mmt
+FN:mko-san7-R0.8-fhs-zero8-pP1F4x23G3x0.5.dat yp=-0.30369009 m=mko s=mko s2=fhs
+FN:mko-roku5-R0.8-fhs-go2-pP1F4x23G3x0.5.dat yp=-0.18245778 m=mko s=mko s2=fhs
+FN:mko-si9-R0.8-fms-nana8-pP1F4x23G3x0.5.dat yp=-0.7478563 m=mko s=mko s2=fms
+FN:mko-roku8-R0.8-mnh-roku4-pP1F4x23G3x0.5.dat yp=-0.12347858 m=mko s=mko s2=mnh
+FN:mko-roku1-R0.8-mnh-zero6-pP1F4x23G3x0.5.dat yp=-0.033011497 m=mko s=mko s2=mnh
+FN:mko-nana6-R0.8-fms-nana3-pP1F4x23G3x0.5.dat yp=-0.20226817 m=mko s=mko s2=fms
+FN:mko-nana3-R0.8-fhs-ni9-pP1F4x23G3x0.5.dat yp=-0.055278003 m=mko s=mko s2=fhs
+FN:mko-san9-R0.8-mmt-nana7-pP1F4x23G3x0.5.dat yp=-0.46413764 m=mko s=mko s2=mmt
+FN:mko-roku9-R0.8-fms-hachi1-pP1F4x23G3x0.5.dat yp=-0.69476017 m=mko s=mko s2=fms
+FN:mko-ichi9-R0.8-mkk-go6-pP1F4x23G3x0.5.dat yp=-0.60686561 m=mko s=mko s2=mkk
+FN:mko-hachi5-R0.8-mkk-roku4-pP1F4x23G3x0.5.dat yp=-0.56448421 m=mko s=mko s2=mkk
+FN:mko-ichi4-R0.8-mym-roku4-pP1F4x23G3x0.5.dat yp=-0.044526101 m=mko s=mko s2=mym
+FN:mko-zero9-R0.8-fms-kyu4-pP1F4x23G3x0.5.dat yp=-0.32472929 m=mko s=mko s2=fms
+FN:mko-nana5-R0.8-mym-si1-pP1F4x23G3x0.5.dat yp=-0.086478352 m=mko s=mko s2=mym
+FN:mko-zero3-R0.8-mnh-zero2-pP1F4x23G3x0.5.dat yp=-0.54416212 m=mko s=mko s2=mnh
+FN:mko-hachi6-R0.8-mym-kyu10-pP1F4x23G3x0.5.dat yp=-0.28478353 m=mko s=mko s2=mym
+FN:mko-san5-R0.8-mkk-kyu7-pP1F4x23G3x0.5.dat yp=-0.64610981 m=mko s=mko s2=mkk
+FN:mko-roku10-R0.8-mnh-kyu3-pP1F4x23G3x0.5.dat yp=-0.15287401 m=mko s=mko s2=mnh
+FN:mko-ichi10-R0.8-mmt-kyu6-pP1F4x23G3x0.5.dat yp=-0.22560837 m=mko s=mko s2=mmt
+FN:mko-roku4-R0.8-mkk-san1-pP1F4x23G3x0.5.dat yp=-0.086780953 m=mko s=mko s2=mkk
+FN:mko-nana9-R0.8-mym-si6-pP1F4x23G3x0.5.dat yp=-0.027589556 m=mko s=mko s2=mym
+FN:mko-hachi1-R0.8-fhs-go10-pP1F4x23G3x0.5.dat yp=-0.050015287 m=mko s=mko s2=fhs
+FN:mko-roku2-R0.8-fhs-san1-pP1F4x23G3x0.5.dat yp=-0.48664796 m=mko s=mko s2=fhs
+FN:mko-roku6-R0.8-fhs-san7-pP1F4x23G3x0.5.dat yp=-0.67899037 m=mko s=mko s2=fhs
+FN:mko-ni5-R0.8-mym-go6-pP1F4x23G3x0.5.dat yp=-0.18905602 m=mko s=mko s2=mym
+FN:mko-nana1-R0.8-mkk-hachi3-pP1F4x23G3x0.5.dat yp=-0.091229482 m=mko s=mko s2=mkk
+FN:mko-nana2-R0.8-mym-zero7-pP1F4x23G3x0.5.dat yp=-0.028913698 m=mko s=mko s2=mym
+FN:mko-zero2-R0.8-fhs-ichi8-pP1F4x23G3x0.5.dat yp=-0.54085955 m=mko s=mko s2=fhs
+FN:mko-go1-R0.8-fhs-ni4-pP1F4x23G3x0.5.dat yp=-0.67309434 m=mko s=mko s2=fhs
+FN:mko-san10-R0.8-fhs-ichi1-pP1F4x23G3x0.5.dat yp=-0.36302871 m=mko s=mko s2=fhs
+FN:mko-go4-R0.8-mym-kyu7-pP1F4x23G3x0.5.dat yp=-0.57748123 m=mko s=mko s2=mym
+FN:mko-nana8-R0.8-mym-go4-pP1F4x23G3x0.5.dat yp=-0.411092 m=mko s=mko s2=mym
+FN:mko-hachi4-R0.8-mnh-ni1-pP1F4x23G3x0.5.dat yp=-0.058527576 m=mko s=mko s2=mnh
+FN:mko-go5-R0.8-mnh-si4-pP1F4x23G3x0.5.dat yp=-0.5287289 m=mko s=mko s2=mnh
+FN:mko-san1-R0.8-mkk-kyu6-pP1F4x23G3x0.5.dat yp=-0.73937323 m=mko s=mko s2=mkk
+FN:mko-go7-R0.8-mmt-ichi4-pP1F4x23G3x0.5.dat yp=-0.32655319 m=mko s=mko s2=mmt
+FN:mko-ni2-R0.8-mnh-zero8-pP1F4x23G3x0.5.dat yp=-0.37087728 m=mko s=mko s2=mnh
+FN:mko-kyu3-R0.8-fms-hachi10-pP1F4x23G3x0.5.dat yp=-0.21048639 m=mko s=mko s2=fms
+FN:mko-ni9-R0.8-mym-nana6-pP1F4x23G3x0.5.dat yp=-0.58797867 m=mko s=mko s2=mym
+FP:mym-roku9-R0.8-mnh-ni4-pP1F4x23G3x0.5.dat yp=0.0081321087 m=mko s=mym s2=mnh
+FP:mym-roku10-R0.8-mnh-ichi1-pP1F4x23G3x0.5.dat yp=0.38184441 m=mko s=mym s2=mnh
+FP:mnh-san7-R0.8-mym-go1-pP1F4x23G3x0.5.dat yp=0.033759309 m=mko s=mnh s2=mym
+FP:mnh-ichi7-R0.8-mym-go5-pP1F4x23G3x0.5.dat yp=0.42787333 m=mko s=mnh s2=mym
+FP:mnh-zero8-R0.8-mmt-san3-pP1F4x23G3x0.5.dat yp=0.10195442 m=mko s=mnh s2=mmt
+0.460 0.980 0.020 0.540 0.106 = 46 496 10 54 64 # 606 mko 0.8 0 2:100:0.7:1 40 #TP,TN,FP,FN,ER=...#n,m,R,RX,mbas,N
+#elapsed time:2501.093s(0:41:41.092)@2019-12-01 22:43:43.023366 for m3:mko
+rm --force -rf *.dat *.gpl *.obj *.png *.net tmp/ result/ result-ensrs2ge/ result-nn3/
+my Child returned: <subprocess.Popen object at 0x7f5114dd9f90>
+#m4:mmt excludes fms-nana2-R0.8-mmt-ichi7-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes fms-si7-R0.8-mmt-san3-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes fms-kyu3-R0.8-mmt-go2-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes fms-go6-R0.8-mmt-hachi10-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes fms-go8-R0.8-mmt-hachi5-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes fms-san3-R0.8-mmt-nana3-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes fms-ni2-R0.8-mmt-san4-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes fms-kyu5-R0.8-mmt-san7-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes fms-go2-R0.8-mmt-hachi5-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes fms-ichi7-R0.8-mmt-kyu1-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes fms-ichi3-R0.8-mmt-roku1-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes fms-kyu8-R0.8-mmt-si7-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes fms-go5-R0.8-mmt-kyu7-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes fms-san9-R0.8-mmt-zero10-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes fms-zero3-R0.8-mmt-ni1-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes fms-nana8-R0.8-mmt-ni1-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes fhs-si2-R0.8-mmt-si7-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes fhs-nana8-R0.8-mmt-si3-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes fhs-hachi3-R0.8-mmt-si4-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes fhs-hachi9-R0.8-mmt-roku6-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes fhs-kyu2-R0.8-mmt-hachi9-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes fhs-zero5-R0.8-mmt-ichi4-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes fhs-kyu10-R0.8-mmt-ichi2-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes fhs-go1-R0.8-mmt-zero1-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes fhs-ichi7-R0.8-mmt-zero5-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes fhs-ni8-R0.8-mmt-hachi3-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes fhs-ni3-R0.8-mmt-nana9-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes fhs-zero3-R0.8-mmt-nana10-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes fhs-go7-R0.8-mmt-go9-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes fhs-go4-R0.8-mmt-hachi9-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes fhs-zero2-R0.8-mmt-hachi4-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes fhs-roku10-R0.8-mmt-ichi3-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mkk-kyu4-R0.8-mmt-zero2-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mkk-kyu8-R0.8-mmt-ni6-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mkk-roku3-R0.8-mmt-kyu9-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mkk-ni7-R0.8-mmt-ichi6-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mkk-hachi2-R0.8-mmt-zero5-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mkk-hachi5-R0.8-mmt-go1-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mkk-ichi4-R0.8-mmt-hachi3-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mkk-zero4-R0.8-mmt-ichi7-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mkk-ichi10-R0.8-mmt-hachi4-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mkk-kyu5-R0.8-mmt-roku7-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mkk-ni3-R0.8-mmt-roku5-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mkk-kyu1-R0.8-mmt-ichi8-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mkk-hachi4-R0.8-mmt-roku4-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mkk-go9-R0.8-mmt-go10-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mkk-go4-R0.8-mmt-ichi10-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mkk-nana2-R0.8-mmt-zero4-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mkk-ni2-R0.8-mmt-ichi8-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mkk-roku2-R0.8-mmt-ni3-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mkk-ichi7-R0.8-mmt-zero10-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mkk-ni8-R0.8-mmt-san4-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mkk-roku7-R0.8-mmt-si5-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mkk-roku6-R0.8-mmt-hachi2-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mkk-ni10-R0.8-mmt-roku8-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mkk-go8-R0.8-mmt-si6-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mko-zero4-R0.8-mmt-zero10-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mko-zero1-R0.8-mmt-roku10-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mko-ni7-R0.8-mmt-nana8-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mko-ni4-R0.8-mmt-roku10-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mko-go8-R0.8-mmt-nana5-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mko-nana4-R0.8-mmt-ni8-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mko-san9-R0.8-mmt-nana7-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mko-ni6-R0.8-mmt-roku9-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mko-ichi10-R0.8-mmt-kyu6-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mko-go9-R0.8-mmt-go9-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mko-ni8-R0.8-mmt-kyu3-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mko-ichi3-R0.8-mmt-nana7-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mko-si3-R0.8-mmt-nana10-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mko-go7-R0.8-mmt-ichi4-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mko-san2-R0.8-mmt-hachi7-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mym-san3-R0.8-mmt-ichi2-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mym-ichi7-R0.8-mmt-hachi10-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mym-ichi6-R0.8-mmt-zero2-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mym-zero5-R0.8-mmt-zero5-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mym-si9-R0.8-mmt-zero1-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mym-si3-R0.8-mmt-nana8-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mym-nana7-R0.8-mmt-go4-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mym-hachi8-R0.8-mmt-kyu8-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mym-san10-R0.8-mmt-zero9-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mym-ichi4-R0.8-mmt-roku7-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mym-kyu9-R0.8-mmt-si2-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mym-nana9-R0.8-mmt-ichi3-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mym-roku2-R0.8-mmt-ni7-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mym-ichi2-R0.8-mmt-zero3-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mym-san9-R0.8-mmt-hachi2-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mym-kyu8-R0.8-mmt-hachi1-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mym-ichi1-R0.8-mmt-go10-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mym-ni9-R0.8-mmt-si5-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mym-ni6-R0.8-mmt-go5-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mnh-go1-R0.8-mmt-zero10-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mnh-kyu9-R0.8-mmt-si10-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mnh-kyu5-R0.8-mmt-nana10-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mnh-nana7-R0.8-mmt-kyu9-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mnh-kyu7-R0.8-mmt-si8-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mnh-san4-R0.8-mmt-hachi1-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mnh-kyu8-R0.8-mmt-ni4-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mnh-si7-R0.8-mmt-san1-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mnh-ichi10-R0.8-mmt-si2-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mnh-hachi5-R0.8-mmt-roku6-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mnh-kyu2-R0.8-mmt-zero5-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mnh-san10-R0.8-mmt-zero8-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mnh-roku1-R0.8-mmt-zero10-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mnh-san6-R0.8-mmt-san1-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mnh-nana1-R0.8-mmt-zero3-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mnh-zero8-R0.8-mmt-san3-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mnh-roku8-R0.8-mmt-si5-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mnh-si6-R0.8-mmt-nana1-pP1F4x23G3x0.5.dat from negative examples.
+#m4:mmt excludes mnh-si9-R0.8-mmt-zero8-pP1F4x23G3x0.5.dat from negative examples.
+#n_train=589
+Executing1 ensrs train_xy.dat 2:100:0.7:1 40-40 k:92 ib:0:0:0:0 y:-1:1:-1:1 x:0:0:0:1 DISP:0 bg:/dev/null >> ./tmp/ensrs.log
+#Ltst(n49.7*589)3.199e-01 Lib(n50.3*589)2.588e-13 H8.148e-01, nTest292.9=292.5=exp(-0.70)*nGiven589method:2:100:0.7:1N40-40.
+my Child returned: <subprocess.Popen object at 0x7f51158e7890>
+my Child returned: <subprocess.Popen object at 0x7f51158e7890>
+FP:fms-roku5-R0.8-mnh-kyu8-pP1F4x23G3x0.5.dat yp=0.0048636633 m=mmt s=fms s2=mnh
+FP:fhs-ni4-R0.8-mym-roku7-pP1F4x23G3x0.5.dat yp=0.032654035 m=mmt s=fhs s2=mym
+FP:fhs-hachi10-R0.8-mnh-nana6-pP1F4x23G3x0.5.dat yp=0.0035220769 m=mmt s=fhs s2=mnh
+FP:fhs-go3-R0.8-mym-zero6-pP1F4x23G3x0.5.dat yp=0.27823851 m=mmt s=fhs s2=mym
+FP:fhs-roku8-R0.8-fms-go1-pP1F4x23G3x0.5.dat yp=0.20654308 m=mmt s=fhs s2=fms
+FP:fhs-roku9-R0.8-mnh-kyu10-pP1F4x23G3x0.5.dat yp=0.23881172 m=mmt s=fhs s2=mnh
+FN:mmt-si7-R0.8-fhs-ichi6-pP1F4x23G3x0.5.dat yp=-0.001112695 m=mmt s=mmt s2=fhs
+FN:mmt-go1-R0.8-mym-ni7-pP1F4x23G3x0.5.dat yp=-0.71366739 m=mmt s=mmt s2=mym
+FN:mmt-san8-R0.8-fhs-hachi9-pP1F4x23G3x0.5.dat yp=-0.005629323 m=mmt s=mmt s2=fhs
+FN:mmt-roku8-R0.8-fms-nana5-pP1F4x23G3x0.5.dat yp=-0.21257237 m=mmt s=mmt s2=fms
+FN:mmt-zero7-R0.8-fhs-si7-pP1F4x23G3x0.5.dat yp=-0.49385367 m=mmt s=mmt s2=fhs
+FN:mmt-kyu5-R0.8-mnh-ichi2-pP1F4x23G3x0.5.dat yp=-0.30373644 m=mmt s=mmt s2=mnh
+FN:mmt-roku2-R0.8-mym-san3-pP1F4x23G3x0.5.dat yp=-0.095082294 m=mmt s=mmt s2=mym
+FN:mmt-roku1-R0.8-fhs-ichi3-pP1F4x23G3x0.5.dat yp=-0.63815536 m=mmt s=mmt s2=fhs
+FN:mmt-ni7-R0.8-mko-ni9-pP1F4x23G3x0.5.dat yp=-0.46942641 m=mmt s=mmt s2=mko
+FN:mmt-ichi4-R0.8-fhs-nana9-pP1F4x23G3x0.5.dat yp=-0.40943942 m=mmt s=mmt s2=fhs
+FN:mmt-roku4-R0.8-mko-si6-pP1F4x23G3x0.5.dat yp=-0.19906306 m=mmt s=mmt s2=mko
+FN:mmt-kyu3-R0.8-mym-kyu6-pP1F4x23G3x0.5.dat yp=-0.012582007 m=mmt s=mmt s2=mym
+FN:mmt-ni8-R0.8-mkk-san9-pP1F4x23G3x0.5.dat yp=-0.65804603 m=mmt s=mmt s2=mkk
+FN:mmt-hachi4-R0.8-mym-nana8-pP1F4x23G3x0.5.dat yp=-0.8081709 m=mmt s=mmt s2=mym
+FN:mmt-ni10-R0.8-fms-roku8-pP1F4x23G3x0.5.dat yp=-0.14062087 m=mmt s=mmt s2=fms
+FN:mmt-go8-R0.8-fhs-roku7-pP1F4x23G3x0.5.dat yp=-0.35815127 m=mmt s=mmt s2=fhs
+FN:mmt-zero4-R0.8-mko-ichi2-pP1F4x23G3x0.5.dat yp=-0.29008587 m=mmt s=mmt s2=mko
+FN:mmt-go6-R0.8-mym-zero6-pP1F4x23G3x0.5.dat yp=-0.45834315 m=mmt s=mmt s2=mym
+FN:mmt-go9-R0.8-fhs-go6-pP1F4x23G3x0.5.dat yp=-0.22783213 m=mmt s=mmt s2=fhs
+FN:mmt-kyu8-R0.8-fhs-zero3-pP1F4x23G3x0.5.dat yp=-0.30522194 m=mmt s=mmt s2=fhs
+FN:mmt-ichi6-R0.8-mym-zero9-pP1F4x23G3x0.5.dat yp=-0.17440955 m=mmt s=mmt s2=mym
+FN:mmt-go10-R0.8-mym-ichi10-pP1F4x23G3x0.5.dat yp=-0.46029545 m=mmt s=mmt s2=mym
+FN:mmt-go7-R0.8-fhs-hachi4-pP1F4x23G3x0.5.dat yp=-0.57297233 m=mmt s=mmt s2=fhs
+FN:mmt-hachi1-R0.8-mkk-si6-pP1F4x23G3x0.5.dat yp=-0.41470775 m=mmt s=mmt s2=mkk
+FN:mmt-roku10-R0.8-mko-nana2-pP1F4x23G3x0.5.dat yp=-0.45251659 m=mmt s=mmt s2=mko
+FN:mmt-si4-R0.8-mym-ichi2-pP1F4x23G3x0.5.dat yp=-0.38217612 m=mmt s=mmt s2=mym
+FN:mmt-zero3-R0.8-mkk-hachi5-pP1F4x23G3x0.5.dat yp=-0.78007765 m=mmt s=mmt s2=mkk
+FN:mmt-kyu9-R0.8-mko-ni3-pP1F4x23G3x0.5.dat yp=-0.51720637 m=mmt s=mmt s2=mko
+FN:mmt-go4-R0.8-mkk-roku1-pP1F4x23G3x0.5.dat yp=-0.11887854 m=mmt s=mmt s2=mkk
+FN:mmt-si5-R0.8-mko-hachi4-pP1F4x23G3x0.5.dat yp=-0.65530578 m=mmt s=mmt s2=mko
+FN:mmt-go2-R0.8-mym-nana8-pP1F4x23G3x0.5.dat yp=-0.80769037 m=mmt s=mmt s2=mym
+FN:mmt-ni9-R0.8-mym-hachi2-pP1F4x23G3x0.5.dat yp=-0.27405228 m=mmt s=mmt s2=mym
+FN:mmt-ni1-R0.8-mko-ichi7-pP1F4x23G3x0.5.dat yp=-0.15615915 m=mmt s=mmt s2=mko
+FN:mmt-kyu4-R0.8-mkk-go7-pP1F4x23G3x0.5.dat yp=-0.67797102 m=mmt s=mmt s2=mkk
+FN:mmt-ichi3-R0.8-mym-ichi1-pP1F4x23G3x0.5.dat yp=-0.23861759 m=mmt s=mmt s2=mym
+FN:mmt-ichi8-R0.8-mnh-si7-pP1F4x23G3x0.5.dat yp=-0.24794703 m=mmt s=mmt s2=mnh
+FN:mmt-hachi6-R0.8-mko-kyu4-pP1F4x23G3x0.5.dat yp=-0.049469152 m=mmt s=mmt s2=mko
+FN:mmt-ni5-R0.8-mko-ni2-pP1F4x23G3x0.5.dat yp=-0.75302621 m=mmt s=mmt s2=mko
+FN:mmt-si1-R0.8-mko-si2-pP1F4x23G3x0.5.dat yp=-0.3538535 m=mmt s=mmt s2=mko
+FN:mmt-nana9-R0.8-fhs-si9-pP1F4x23G3x0.5.dat yp=-0.95329562 m=mmt s=mmt s2=fhs
+FN:mmt-san4-R0.8-mym-hachi5-pP1F4x23G3x0.5.dat yp=-0.42383949 m=mmt s=mmt s2=mym
+FN:mmt-kyu10-R0.8-mkk-hachi3-pP1F4x23G3x0.5.dat yp=-0.28267362 m=mmt s=mmt s2=mkk
+FN:mmt-ni3-R0.8-fms-hachi2-pP1F4x23G3x0.5.dat yp=-0.55809309 m=mmt s=mmt s2=fms
+FN:mmt-roku7-R0.8-fhs-hachi1-pP1F4x23G3x0.5.dat yp=-0.65533033 m=mmt s=mmt s2=fhs
+FN:mmt-zero10-R0.8-mym-ni9-pP1F4x23G3x0.5.dat yp=-0.60452528 m=mmt s=mmt s2=mym
+FN:mmt-ni6-R0.8-mym-si9-pP1F4x23G3x0.5.dat yp=-0.81945778 m=mmt s=mmt s2=mym
+FN:mmt-go3-R0.8-mym-ni4-pP1F4x23G3x0.5.dat yp=-0.78226607 m=mmt s=mmt s2=mym
+FN:mmt-kyu7-R0.8-mnh-kyu9-pP1F4x23G3x0.5.dat yp=-0.1102037 m=mmt s=mmt s2=mnh
+FN:mmt-nana8-R0.8-mym-hachi6-pP1F4x23G3x0.5.dat yp=-0.72325285 m=mmt s=mmt s2=mym
+FN:mmt-si6-R0.8-mko-kyu2-pP1F4x23G3x0.5.dat yp=-0.24253853 m=mmt s=mmt s2=mko
+FN:mmt-roku3-R0.8-mkk-ichi6-pP1F4x23G3x0.5.dat yp=-0.45635772 m=mmt s=mmt s2=mkk
+FP:mym-hachi2-R0.8-mnh-ichi7-pP1F4x23G3x0.5.dat yp=0.15463066 m=mmt s=mym s2=mnh
+FP:mnh-roku10-R0.8-fms-kyu10-pP1F4x23G3x0.5.dat yp=0.034915508 m=mmt s=mnh s2=fms
+0.485 0.984 0.016 0.515 0.100 = 48 482 8 51 59 # 589 mmt 0.8 0 2:100:0.7:1 40 #TP,TN,FP,FN,ER=...#n,m,R,RX,mbas,N
+#elapsed time:3112.234s(0:51:52.234)@2019-12-01 22:53:54.164833 for m4:mmt
+rm --force -rf *.dat *.gpl *.obj *.png *.net tmp/ result/ result-ensrs2ge/ result-nn3/
+my Child returned: <subprocess.Popen object at 0x7f5114dd9050>
+#m5:mnh excludes fms-hachi6-R0.8-mnh-hachi1-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes fms-go1-R0.8-mnh-zero10-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes fms-ichi2-R0.8-mnh-hachi1-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes fms-zero6-R0.8-mnh-nana3-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes fms-nana1-R0.8-mnh-zero1-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes fms-si2-R0.8-mnh-ichi4-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes fms-roku5-R0.8-mnh-kyu8-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes fms-san4-R0.8-mnh-roku5-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes fms-ni1-R0.8-mnh-zero9-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes fms-zero2-R0.8-mnh-kyu6-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes fms-hachi7-R0.8-mnh-ichi8-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes fms-roku7-R0.8-mnh-nana3-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes fhs-san2-R0.8-mnh-si10-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes fhs-ichi4-R0.8-mnh-ni9-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes fhs-zero10-R0.8-mnh-zero7-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes fhs-hachi10-R0.8-mnh-nana6-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes fhs-si9-R0.8-mnh-kyu3-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes fhs-san8-R0.8-mnh-si5-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes fhs-nana3-R0.8-mnh-kyu5-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes fhs-go9-R0.8-mnh-san1-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes fhs-ni9-R0.8-mnh-hachi10-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes fhs-hachi4-R0.8-mnh-nana10-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes fhs-kyu8-R0.8-mnh-kyu5-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes fhs-roku9-R0.8-mnh-kyu10-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes fhs-go8-R0.8-mnh-zero3-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes fhs-si7-R0.8-mnh-si7-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes fhs-hachi2-R0.8-mnh-san4-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes fhs-san1-R0.8-mnh-ichi7-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes fhs-si8-R0.8-mnh-nana6-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mkk-go5-R0.8-mnh-ni8-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mkk-zero6-R0.8-mnh-go1-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mkk-nana4-R0.8-mnh-ichi10-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mkk-san5-R0.8-mnh-san1-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mmt-kyu6-R0.8-mnh-go10-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mmt-zero8-R0.8-mnh-hachi5-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mmt-kyu2-R0.8-mnh-go5-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mmt-kyu5-R0.8-mnh-ichi2-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mmt-hachi5-R0.8-mnh-go6-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mmt-roku6-R0.8-mnh-go1-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mmt-nana4-R0.8-mnh-roku5-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mmt-si9-R0.8-mnh-roku5-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mmt-ni4-R0.8-mnh-ni10-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mmt-san1-R0.8-mnh-nana4-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mmt-san6-R0.8-mnh-hachi7-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mmt-ichi8-R0.8-mnh-si7-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mmt-nana2-R0.8-mnh-zero1-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mmt-nana7-R0.8-mnh-ichi1-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mmt-si8-R0.8-mnh-roku10-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mmt-kyu7-R0.8-mnh-kyu9-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mmt-hachi2-R0.8-mnh-nana7-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mmt-nana1-R0.8-mnh-go8-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mko-san8-R0.8-mnh-zero6-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mko-ni1-R0.8-mnh-nana5-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mko-ichi6-R0.8-mnh-nana10-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mko-kyu8-R0.8-mnh-hachi1-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mko-roku3-R0.8-mnh-kyu8-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mko-san4-R0.8-mnh-hachi3-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mko-hachi2-R0.8-mnh-go8-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mko-zero8-R0.8-mnh-nana7-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mko-ichi8-R0.8-mnh-nana10-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mko-zero7-R0.8-mnh-hachi1-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mko-hachi9-R0.8-mnh-kyu7-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mko-roku8-R0.8-mnh-roku4-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mko-roku1-R0.8-mnh-zero6-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mko-zero3-R0.8-mnh-zero2-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mko-roku10-R0.8-mnh-kyu3-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mko-ichi1-R0.8-mnh-kyu9-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mko-hachi4-R0.8-mnh-ni1-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mko-go5-R0.8-mnh-si4-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mko-zero5-R0.8-mnh-roku2-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mko-kyu5-R0.8-mnh-roku4-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mko-ni2-R0.8-mnh-zero8-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mym-zero7-R0.8-mnh-zero10-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mym-hachi1-R0.8-mnh-hachi9-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mym-hachi7-R0.8-mnh-roku3-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mym-nana6-R0.8-mnh-zero1-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mym-hachi10-R0.8-mnh-ni1-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mym-kyu3-R0.8-mnh-kyu4-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mym-kyu7-R0.8-mnh-ichi6-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mym-si7-R0.8-mnh-zero10-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mym-nana2-R0.8-mnh-go4-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mym-kyu6-R0.8-mnh-nana10-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mym-ni7-R0.8-mnh-si7-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mym-si5-R0.8-mnh-hachi10-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mym-ichi3-R0.8-mnh-si4-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mym-hachi2-R0.8-mnh-ichi7-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mym-hachi6-R0.8-mnh-san10-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mym-roku9-R0.8-mnh-ni4-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mym-si8-R0.8-mnh-roku5-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mym-san8-R0.8-mnh-ni7-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mym-zero10-R0.8-mnh-zero5-pP1F4x23G3x0.5.dat from negative examples.
+#m5:mnh excludes mym-roku10-R0.8-mnh-ichi1-pP1F4x23G3x0.5.dat from negative examples.
+#n_train=606
+Executing1 ensrs train_xy.dat 2:100:0.7:1 40-40 k:92 ib:0:0:0:0 y:-1:1:-1:1 x:0:0:0:1 DISP:0 bg:/dev/null >> ./tmp/ensrs.log
+#Ltst(n49.6*606)3.597e-01 Lib(n50.4*606)3.200e-13 H8.498e-01, nTest300.6=300.9=exp(-0.70)*nGiven606method:2:100:0.7:1N40-40.
+my Child returned: <subprocess.Popen object at 0x7f51158e7890>
+my Child returned: <subprocess.Popen object at 0x7f51158e7890>
+FP:fms-nana6-R0.8-mym-nana8-pP1F4x23G3x0.5.dat yp=0.040516886 m=mnh s=fms s2=mym
+FP:fms-nana10-R0.8-mko-san1-pP1F4x23G3x0.5.dat yp=0.16948152 m=mnh s=fms s2=mko
+FP:fms-nana7-R0.8-mym-san10-pP1F4x23G3x0.5.dat yp=0.022525617 m=mnh s=fms s2=mym
+FP:fms-kyu9-R0.8-fhs-san7-pP1F4x23G3x0.5.dat yp=0.28468143 m=mnh s=fms s2=fhs
+FP:fhs-ni3-R0.8-mmt-nana9-pP1F4x23G3x0.5.dat yp=0.016798538 m=mnh s=fhs s2=mmt
+FP:fhs-ni2-R0.8-mym-san2-pP1F4x23G3x0.5.dat yp=0.015344448 m=mnh s=fhs s2=mym
+FP:fhs-roku6-R0.8-fms-ni7-pP1F4x23G3x0.5.dat yp=0.16808643 m=mnh s=fhs s2=fms
+FP:fhs-go10-R0.8-mko-ni2-pP1F4x23G3x0.5.dat yp=0.092443596 m=mnh s=fhs s2=mko
+FP:mmt-roku9-R0.8-mkk-kyu5-pP1F4x23G3x0.5.dat yp=0.011410886 m=mnh s=mmt s2=mkk
+FP:mmt-kyu9-R0.8-mko-ni3-pP1F4x23G3x0.5.dat yp=0.19937941 m=mnh s=mmt s2=mko
+FP:mko-roku2-R0.8-fhs-san1-pP1F4x23G3x0.5.dat yp=0.087964189 m=mnh s=mko s2=fhs
+FP:mko-zero2-R0.8-fhs-ichi8-pP1F4x23G3x0.5.dat yp=0.11893456 m=mnh s=mko s2=fhs
+FP:mko-go4-R0.8-mym-kyu7-pP1F4x23G3x0.5.dat yp=0.059870665 m=mnh s=mko s2=mym
+FN:mnh-ichi5-R0.8-mym-si3-pP1F4x23G3x0.5.dat yp=-0.029916477 m=mnh s=mnh s2=mym
+FN:mnh-go1-R0.8-mmt-zero10-pP1F4x23G3x0.5.dat yp=-0.70037708 m=mnh s=mnh s2=mmt
+FN:mnh-kyu9-R0.8-mmt-si10-pP1F4x23G3x0.5.dat yp=-0.02500237 m=mnh s=mnh s2=mmt
+FN:mnh-nana2-R0.8-mko-roku4-pP1F4x23G3x0.5.dat yp=-0.25752628 m=mnh s=mnh s2=mko
+FN:mnh-roku7-R0.8-mko-ni8-pP1F4x23G3x0.5.dat yp=-0.38215183 m=mnh s=mnh s2=mko
+FN:mnh-zero9-R0.8-mym-zero5-pP1F4x23G3x0.5.dat yp=-0.61605022 m=mnh s=mnh s2=mym
+FN:mnh-roku2-R0.8-mym-nana8-pP1F4x23G3x0.5.dat yp=-0.48515438 m=mnh s=mnh s2=mym
+FN:mnh-kyu5-R0.8-mmt-nana10-pP1F4x23G3x0.5.dat yp=-0.034823295 m=mnh s=mnh s2=mmt
+FN:mnh-si3-R0.8-mkk-hachi5-pP1F4x23G3x0.5.dat yp=-0.057022069 m=mnh s=mnh s2=mkk
+FN:mnh-nana3-R0.8-fms-nana2-pP1F4x23G3x0.5.dat yp=-0.059446302 m=mnh s=mnh s2=fms
+FN:mnh-san7-R0.8-mym-go1-pP1F4x23G3x0.5.dat yp=-0.22529593 m=mnh s=mnh s2=mym
+FN:mnh-hachi1-R0.8-mym-si2-pP1F4x23G3x0.5.dat yp=-0.081372117 m=mnh s=mnh s2=mym
+FN:mnh-zero1-R0.8-mkk-san8-pP1F4x23G3x0.5.dat yp=-0.085993038 m=mnh s=mnh s2=mkk
+FN:mnh-san1-R0.8-mym-san3-pP1F4x23G3x0.5.dat yp=-0.39746321 m=mnh s=mnh s2=mym
+FN:mnh-go4-R0.8-mkk-hachi2-pP1F4x23G3x0.5.dat yp=-0.40558645 m=mnh s=mnh s2=mkk
+FN:mnh-si4-R0.8-mkk-nana4-pP1F4x23G3x0.5.dat yp=-0.48290139 m=mnh s=mnh s2=mkk
+FN:mnh-roku9-R0.8-mko-nana1-pP1F4x23G3x0.5.dat yp=-0.61478729 m=mnh s=mnh s2=mko
+FN:mnh-go7-R0.8-mkk-ni6-pP1F4x23G3x0.5.dat yp=-0.33923852 m=mnh s=mnh s2=mkk
+FN:mnh-hachi8-R0.8-mkk-hachi3-pP1F4x23G3x0.5.dat yp=-0.026564964 m=mnh s=mnh s2=mkk
+FN:mnh-hachi10-R0.8-mko-zero4-pP1F4x23G3x0.5.dat yp=-0.54556458 m=mnh s=mnh s2=mko
+FN:mnh-nana4-R0.8-mko-kyu4-pP1F4x23G3x0.5.dat yp=-0.59939864 m=mnh s=mnh s2=mko
+FN:mnh-go9-R0.8-mym-kyu5-pP1F4x23G3x0.5.dat yp=-0.2866351 m=mnh s=mnh s2=mym
+FN:mnh-si5-R0.8-fms-kyu10-pP1F4x23G3x0.5.dat yp=-0.88842319 m=mnh s=mnh s2=fms
+FN:mnh-go5-R0.8-fms-hachi2-pP1F4x23G3x0.5.dat yp=-0.37411898 m=mnh s=mnh s2=fms
+FN:mnh-hachi4-R0.8-mym-zero7-pP1F4x23G3x0.5.dat yp=-0.23145621 m=mnh s=mnh s2=mym
+FN:mnh-roku5-R0.8-fhs-si6-pP1F4x23G3x0.5.dat yp=-0.44647735 m=mnh s=mnh s2=fhs
+FN:mnh-san4-R0.8-mmt-hachi1-pP1F4x23G3x0.5.dat yp=-0.24200194 m=mnh s=mnh s2=mmt
+FN:mnh-san5-R0.8-mko-go7-pP1F4x23G3x0.5.dat yp=-0.19942728 m=mnh s=mnh s2=mko
+FN:mnh-ichi7-R0.8-mym-go5-pP1F4x23G3x0.5.dat yp=-0.42699652 m=mnh s=mnh s2=mym
+FN:mnh-san8-R0.8-mko-kyu7-pP1F4x23G3x0.5.dat yp=-0.83552263 m=mnh s=mnh s2=mko
+FN:mnh-ni1-R0.8-mko-zero6-pP1F4x23G3x0.5.dat yp=-0.077290805 m=mnh s=mnh s2=mko
+FN:mnh-ni8-R0.8-mko-roku7-pP1F4x23G3x0.5.dat yp=-0.4394445 m=mnh s=mnh s2=mko
+FN:mnh-roku3-R0.8-mym-ichi8-pP1F4x23G3x0.5.dat yp=-0.4845066 m=mnh s=mnh s2=mym
+FN:mnh-si7-R0.8-mmt-san1-pP1F4x23G3x0.5.dat yp=-0.35497685 m=mnh s=mnh s2=mmt
+FN:mnh-go2-R0.8-mkk-nana7-pP1F4x23G3x0.5.dat yp=-0.48515769 m=mnh s=mnh s2=mkk
+FN:mnh-hachi5-R0.8-mmt-roku6-pP1F4x23G3x0.5.dat yp=-0.009407279 m=mnh s=mnh s2=mmt
+FN:mnh-ni6-R0.8-fms-san4-pP1F4x23G3x0.5.dat yp=-0.44240242 m=mnh s=mnh s2=fms
+FN:mnh-hachi9-R0.8-mkk-roku4-pP1F4x23G3x0.5.dat yp=-0.22523459 m=mnh s=mnh s2=mkk
+FN:mnh-kyu2-R0.8-mmt-zero5-pP1F4x23G3x0.5.dat yp=-0.22030449 m=mnh s=mnh s2=mmt
+FN:mnh-san10-R0.8-mmt-zero8-pP1F4x23G3x0.5.dat yp=-0.12181373 m=mnh s=mnh s2=mmt
+FN:mnh-si2-R0.8-fms-kyu10-pP1F4x23G3x0.5.dat yp=-0.29838553 m=mnh s=mnh s2=fms
+FN:mnh-go10-R0.8-mko-ichi8-pP1F4x23G3x0.5.dat yp=-0.30310648 m=mnh s=mnh s2=mko
+FN:mnh-ni5-R0.8-fhs-nana1-pP1F4x23G3x0.5.dat yp=-0.22670015 m=mnh s=mnh s2=fhs
+FN:mnh-roku1-R0.8-mmt-zero10-pP1F4x23G3x0.5.dat yp=-0.41026996 m=mnh s=mnh s2=mmt
+FN:mnh-hachi6-R0.8-fms-si3-pP1F4x23G3x0.5.dat yp=-0.44739605 m=mnh s=mnh s2=fms
+FN:mnh-san6-R0.8-mmt-san1-pP1F4x23G3x0.5.dat yp=-0.69195272 m=mnh s=mnh s2=mmt
+FN:mnh-zero4-R0.8-mko-roku9-pP1F4x23G3x0.5.dat yp=-0.095701381 m=mnh s=mnh s2=mko
+FN:mnh-nana1-R0.8-mmt-zero3-pP1F4x23G3x0.5.dat yp=-0.84445716 m=mnh s=mnh s2=mmt
+FN:mnh-zero8-R0.8-mmt-san3-pP1F4x23G3x0.5.dat yp=-0.40473559 m=mnh s=mnh s2=mmt
+FN:mnh-hachi3-R0.8-fhs-zero4-pP1F4x23G3x0.5.dat yp=-0.28275748 m=mnh s=mnh s2=fhs
+FN:mnh-ni2-R0.8-mym-ni7-pP1F4x23G3x0.5.dat yp=-0.81837205 m=mnh s=mnh s2=mym
+FN:mnh-go3-R0.8-mkk-ichi4-pP1F4x23G3x0.5.dat yp=-0.10307386 m=mnh s=mnh s2=mkk
+FN:mnh-ichi3-R0.8-fms-roku2-pP1F4x23G3x0.5.dat yp=-0.68974207 m=mnh s=mnh s2=fms
+FN:mnh-zero5-R0.8-fms-zero1-pP1F4x23G3x0.5.dat yp=-0.38561408 m=mnh s=mnh s2=fms
+FN:mnh-si10-R0.8-fms-ichi5-pP1F4x23G3x0.5.dat yp=-0.47109373 m=mnh s=mnh s2=fms
+FN:mnh-ichi4-R0.8-fhs-kyu8-pP1F4x23G3x0.5.dat yp=-0.43058536 m=mnh s=mnh s2=fhs
+FN:mnh-si9-R0.8-mmt-zero8-pP1F4x23G3x0.5.dat yp=-0.32249464 m=mnh s=mnh s2=mmt
+FN:mnh-ni7-R0.8-mym-ichi3-pP1F4x23G3x0.5.dat yp=-0.43712714 m=mnh s=mnh s2=mym
+FN:mnh-san9-R0.8-mym-si9-pP1F4x23G3x0.5.dat yp=-0.088852848 m=mnh s=mnh s2=mym
+FN:mnh-hachi7-R0.8-fms-si1-pP1F4x23G3x0.5.dat yp=-0.20373395 m=mnh s=mnh s2=fms
+0.400 0.974 0.026 0.600 0.120 = 40 493 13 60 73 # 606 mnh 0.8 0 2:100:0.7:1 40 #TP,TN,FP,FN,ER=...#n,m,R,RX,mbas,N
+#elapsed time:3738.507s(1:02:18.506)@2019-12-01 23:04:20.437495 for m5:mnh
+rm --force -rf *.dat *.gpl *.obj *.png *.net tmp/ result/ result-ensrs2ge/ result-nn3/
+my Child returned: <subprocess.Popen object at 0x7f5114de2510>
+#m6:mym excludes fms-ichi5-R0.8-mym-si4-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes fms-nana6-R0.8-mym-nana8-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes fms-ichi4-R0.8-mym-ni8-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes fms-nana9-R0.8-mym-zero2-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes fms-hachi3-R0.8-mym-si2-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes fms-kyu1-R0.8-mym-san6-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes fms-go3-R0.8-mym-kyu2-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes fms-ni7-R0.8-mym-roku7-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes fms-go4-R0.8-mym-san4-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes fms-roku2-R0.8-mym-roku6-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes fms-roku10-R0.8-mym-san5-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes fms-nana7-R0.8-mym-san10-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes fms-nana3-R0.8-mym-roku5-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes fms-ni10-R0.8-mym-hachi6-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes fms-kyu7-R0.8-mym-zero3-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes fms-san2-R0.8-mym-ichi9-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes fms-san1-R0.8-mym-roku8-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes fms-roku3-R0.8-mym-go9-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes fms-ichi1-R0.8-mym-zero9-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes fhs-hachi6-R0.8-mym-si1-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes fhs-kyu6-R0.8-mym-roku7-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes fhs-san3-R0.8-mym-zero6-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes fhs-zero9-R0.8-mym-hachi5-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes fhs-roku4-R0.8-mym-nana5-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes fhs-ni4-R0.8-mym-roku7-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes fhs-roku2-R0.8-mym-zero7-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes fhs-san9-R0.8-mym-go9-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes fhs-hachi1-R0.8-mym-nana8-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes fhs-nana5-R0.8-mym-nana10-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes fhs-ichi2-R0.8-mym-zero4-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes fhs-ichi10-R0.8-mym-zero6-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes fhs-hachi7-R0.8-mym-ni10-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes fhs-kyu7-R0.8-mym-roku9-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes fhs-san5-R0.8-mym-nana7-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes fhs-ichi1-R0.8-mym-si10-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes fhs-go3-R0.8-mym-zero6-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes fhs-ni2-R0.8-mym-san2-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes fhs-kyu3-R0.8-mym-si2-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes fhs-ni10-R0.8-mym-ni2-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes fhs-ichi9-R0.8-mym-roku4-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes fhs-hachi8-R0.8-mym-si4-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes fhs-nana6-R0.8-mym-hachi6-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes fhs-si3-R0.8-mym-san2-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes fhs-si10-R0.8-mym-roku8-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes fhs-san4-R0.8-mym-nana10-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mkk-roku8-R0.8-mym-roku10-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mkk-go1-R0.8-mym-si10-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mkk-zero1-R0.8-mym-ni9-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mkk-hachi8-R0.8-mym-ni3-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mkk-san9-R0.8-mym-hachi1-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mkk-san6-R0.8-mym-san8-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mkk-si4-R0.8-mym-hachi9-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mkk-ni9-R0.8-mym-kyu10-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mkk-roku10-R0.8-mym-ichi9-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mkk-go7-R0.8-mym-zero9-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mkk-roku1-R0.8-mym-ni1-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mkk-si5-R0.8-mym-hachi1-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mkk-hachi7-R0.8-mym-si1-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mkk-kyu2-R0.8-mym-ni5-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mkk-nana9-R0.8-mym-roku3-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mmt-san9-R0.8-mym-san10-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mmt-go5-R0.8-mym-zero8-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mmt-go1-R0.8-mym-ni7-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mmt-roku2-R0.8-mym-san3-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mmt-kyu3-R0.8-mym-kyu6-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mmt-hachi4-R0.8-mym-nana8-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mmt-nana6-R0.8-mym-zero4-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mmt-go6-R0.8-mym-zero6-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mmt-ni2-R0.8-mym-san4-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mmt-san10-R0.8-mym-roku6-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mmt-ichi6-R0.8-mym-zero9-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mmt-go10-R0.8-mym-ichi10-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mmt-si4-R0.8-mym-ichi2-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mmt-go2-R0.8-mym-nana8-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mmt-ichi9-R0.8-mym-san2-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mmt-ni9-R0.8-mym-hachi2-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mmt-ichi3-R0.8-mym-ichi1-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mmt-si2-R0.8-mym-ichi5-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mmt-san4-R0.8-mym-hachi5-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mmt-zero10-R0.8-mym-ni9-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mmt-ni6-R0.8-mym-si9-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mmt-go3-R0.8-mym-ni4-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mmt-nana8-R0.8-mym-hachi6-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mko-go3-R0.8-mym-nana3-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mko-si10-R0.8-mym-go6-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mko-nana10-R0.8-mym-hachi6-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mko-zero10-R0.8-mym-kyu2-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mko-san3-R0.8-mym-si9-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mko-nana7-R0.8-mym-go2-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mko-ichi4-R0.8-mym-roku4-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mko-nana5-R0.8-mym-si1-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mko-hachi6-R0.8-mym-kyu10-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mko-nana9-R0.8-mym-si6-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mko-hachi3-R0.8-mym-go4-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mko-ni5-R0.8-mym-go6-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mko-nana2-R0.8-mym-zero7-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mko-go4-R0.8-mym-kyu7-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mko-hachi8-R0.8-mym-ni5-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mko-kyu7-R0.8-mym-ni7-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mko-kyu9-R0.8-mym-san9-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mko-nana8-R0.8-mym-go4-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mko-ni3-R0.8-mym-zero4-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mko-ni9-R0.8-mym-nana6-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mnh-ichi5-R0.8-mym-si3-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mnh-kyu3-R0.8-mym-kyu10-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mnh-zero9-R0.8-mym-zero5-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mnh-roku2-R0.8-mym-nana8-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mnh-san7-R0.8-mym-go1-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mnh-hachi1-R0.8-mym-si2-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mnh-san1-R0.8-mym-san3-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mnh-go6-R0.8-mym-kyu3-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mnh-roku6-R0.8-mym-kyu5-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mnh-go9-R0.8-mym-kyu5-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mnh-ni4-R0.8-mym-san2-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mnh-ni9-R0.8-mym-nana2-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mnh-hachi4-R0.8-mym-zero7-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mnh-ichi1-R0.8-mym-ichi9-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mnh-ichi7-R0.8-mym-go5-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mnh-nana10-R0.8-mym-ichi7-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mnh-roku3-R0.8-mym-ichi8-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mnh-nana5-R0.8-mym-go5-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mnh-ni2-R0.8-mym-ni7-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mnh-ni7-R0.8-mym-ichi3-pP1F4x23G3x0.5.dat from negative examples.
+#m6:mym excludes mnh-san9-R0.8-mym-si9-pP1F4x23G3x0.5.dat from negative examples.
+#n_train=574
+Executing1 ensrs train_xy.dat 2:100:0.7:1 40-40 k:92 ib:0:0:0:0 y:-1:1:-1:1 x:0:0:0:1 DISP:0 bg:/dev/null >> ./tmp/ensrs.log
+#Ltst(n49.6*574)3.707e-01 Lib(n50.4*574)4.219e-13 H8.507e-01, nTest284.7=285.0=exp(-0.70)*nGiven574method:2:100:0.7:1N40-40.
+my Child returned: <subprocess.Popen object at 0x7f5114dd9350>
+my Child returned: <subprocess.Popen object at 0x7f5114dd9350>
+FP:fms-zero5-R0.8-mkk-go3-pP1F4x23G3x0.5.dat yp=0.027098393 m=mym s=fms s2=mkk
+FP:fms-hachi10-R0.8-mkk-zero7-pP1F4x23G3x0.5.dat yp=0.075143012 m=mym s=fms s2=mkk
+FP:mkk-nana5-R0.8-fhs-si7-pP1F4x23G3x0.5.dat yp=0.043596176 m=mym s=mkk s2=fhs
+FP:mkk-ni10-R0.8-mmt-roku8-pP1F4x23G3x0.5.dat yp=0.19292774 m=mym s=mkk s2=mmt
+FP:mko-ni7-R0.8-mmt-nana8-pP1F4x23G3x0.5.dat yp=0.17514114 m=mym s=mko s2=mmt
+FP:mko-san5-R0.8-mkk-kyu7-pP1F4x23G3x0.5.dat yp=0.09616015 m=mym s=mko s2=mkk
+FN:mym-go6-R0.8-fms-zero6-pP1F4x23G3x0.5.dat yp=-0.55511 m=mym s=mym s2=fms
+FN:mym-san6-R0.8-fhs-go6-pP1F4x23G3x0.5.dat yp=-0.099907044 m=mym s=mym s2=fhs
+FN:mym-nana10-R0.8-fhs-hachi10-pP1F4x23G3x0.5.dat yp=-0.20171585 m=mym s=mym s2=fhs
+FN:mym-san3-R0.8-mmt-ichi2-pP1F4x23G3x0.5.dat yp=-0.37309766 m=mym s=mym s2=mmt
+FN:mym-nana3-R0.8-mko-ni8-pP1F4x23G3x0.5.dat yp=-0.35542102 m=mym s=mym s2=mko
+FN:mym-ichi5-R0.8-mko-kyu10-pP1F4x23G3x0.5.dat yp=-0.56030758 m=mym s=mym s2=mko
+FN:mym-zero7-R0.8-mnh-zero10-pP1F4x23G3x0.5.dat yp=-0.17912987 m=mym s=mym s2=mnh
+FN:mym-san4-R0.8-fhs-san2-pP1F4x23G3x0.5.dat yp=-0.62120513 m=mym s=mym s2=fhs
+FN:mym-go7-R0.8-fhs-nana8-pP1F4x23G3x0.5.dat yp=-0.595679 m=mym s=mym s2=fhs
+FN:mym-kyu5-R0.8-fhs-roku1-pP1F4x23G3x0.5.dat yp=-0.23904788 m=mym s=mym s2=fhs
+FN:mym-hachi4-R0.8-mkk-hachi9-pP1F4x23G3x0.5.dat yp=-0.49526009 m=mym s=mym s2=mkk
+FN:mym-ni8-R0.8-mkk-kyu8-pP1F4x23G3x0.5.dat yp=-0.26393157 m=mym s=mym s2=mkk
+FN:mym-go3-R0.8-mko-zero5-pP1F4x23G3x0.5.dat yp=-0.3491543 m=mym s=mym s2=mko
+FN:mym-go10-R0.8-fhs-san10-pP1F4x23G3x0.5.dat yp=-0.32272446 m=mym s=mym s2=fhs
+FN:mym-nana6-R0.8-mnh-zero1-pP1F4x23G3x0.5.dat yp=-0.58127886 m=mym s=mym s2=mnh
+FN:mym-go4-R0.8-fms-ni3-pP1F4x23G3x0.5.dat yp=-0.36342007 m=mym s=mym s2=fms
+FN:mym-ichi6-R0.8-mmt-zero2-pP1F4x23G3x0.5.dat yp=-0.58213507 m=mym s=mym s2=mmt
+FN:mym-go8-R0.8-mkk-ichi7-pP1F4x23G3x0.5.dat yp=-0.55989465 m=mym s=mym s2=mkk
+FN:mym-kyu3-R0.8-mnh-kyu4-pP1F4x23G3x0.5.dat yp=-0.56857743 m=mym s=mym s2=mnh
+FN:mym-zero5-R0.8-mmt-zero5-pP1F4x23G3x0.5.dat yp=-0.34896454 m=mym s=mym s2=mmt
+FN:mym-kyu7-R0.8-mnh-ichi6-pP1F4x23G3x0.5.dat yp=-0.44656081 m=mym s=mym s2=mnh
+FN:mym-si7-R0.8-mnh-zero10-pP1F4x23G3x0.5.dat yp=-0.68568694 m=mym s=mym s2=mnh
+FN:mym-go2-R0.8-fms-ni1-pP1F4x23G3x0.5.dat yp=-0.26270497 m=mym s=mym s2=fms
+FN:mym-san7-R0.8-mkk-ichi9-pP1F4x23G3x0.5.dat yp=-0.546021 m=mym s=mym s2=mkk
+FN:mym-si3-R0.8-mmt-nana8-pP1F4x23G3x0.5.dat yp=-0.039841424 m=mym s=mym s2=mmt
+FN:mym-kyu6-R0.8-mnh-nana10-pP1F4x23G3x0.5.dat yp=-0.44052834 m=mym s=mym s2=mnh
+FN:mym-nana7-R0.8-mmt-go4-pP1F4x23G3x0.5.dat yp=-0.032601486 m=mym s=mym s2=mmt
+FN:mym-ichi8-R0.8-mko-zero8-pP1F4x23G3x0.5.dat yp=-0.2941271 m=mym s=mym s2=mko
+FN:mym-kyu2-R0.8-mkk-go4-pP1F4x23G3x0.5.dat yp=-0.36351329 m=mym s=mym s2=mkk
+FN:mym-hachi3-R0.8-fms-zero8-pP1F4x23G3x0.5.dat yp=-0.18925199 m=mym s=mym s2=fms
+FN:mym-hachi8-R0.8-mmt-kyu8-pP1F4x23G3x0.5.dat yp=-0.33666661 m=mym s=mym s2=mmt
+FN:mym-roku4-R0.8-fhs-si10-pP1F4x23G3x0.5.dat yp=-0.72547719 m=mym s=mym s2=fhs
+FN:mym-nana9-R0.8-mmt-ichi3-pP1F4x23G3x0.5.dat yp=-0.17083839 m=mym s=mym s2=mmt
+FN:mym-roku2-R0.8-mmt-ni7-pP1F4x23G3x0.5.dat yp=-0.90623313 m=mym s=mym s2=mmt
+FN:mym-roku1-R0.8-mko-nana5-pP1F4x23G3x0.5.dat yp=-0.25438188 m=mym s=mym s2=mko
+FN:mym-go1-R0.8-mkk-kyu5-pP1F4x23G3x0.5.dat yp=-0.71714392 m=mym s=mym s2=mkk
+FN:mym-roku6-R0.8-fhs-roku1-pP1F4x23G3x0.5.dat yp=-0.057842855 m=mym s=mym s2=fhs
+FN:mym-roku7-R0.8-fhs-nana2-pP1F4x23G3x0.5.dat yp=-0.45871845 m=mym s=mym s2=fhs
+FN:mym-ichi3-R0.8-mnh-si4-pP1F4x23G3x0.5.dat yp=-0.38767884 m=mym s=mym s2=mnh
+FN:mym-hachi2-R0.8-mnh-ichi7-pP1F4x23G3x0.5.dat yp=-0.33508047 m=mym s=mym s2=mnh
+FN:mym-si6-R0.8-mkk-hachi6-pP1F4x23G3x0.5.dat yp=-0.63017514 m=mym s=mym s2=mkk
+FN:mym-go5-R0.8-mkk-go7-pP1F4x23G3x0.5.dat yp=-0.20626784 m=mym s=mym s2=mkk
+FN:mym-roku3-R0.8-mkk-kyu6-pP1F4x23G3x0.5.dat yp=-0.50410015 m=mym s=mym s2=mkk
+FN:mym-ichi2-R0.8-mmt-zero3-pP1F4x23G3x0.5.dat yp=-0.32312305 m=mym s=mym s2=mmt
+FN:mym-san9-R0.8-mmt-hachi2-pP1F4x23G3x0.5.dat yp=-0.13236743 m=mym s=mym s2=mmt
+FN:mym-hachi6-R0.8-mnh-san10-pP1F4x23G3x0.5.dat yp=-0.51506382 m=mym s=mym s2=mnh
+FN:mym-ni1-R0.8-mko-kyu5-pP1F4x23G3x0.5.dat yp=-0.095882999 m=mym s=mym s2=mko
+FN:mym-roku9-R0.8-mnh-ni4-pP1F4x23G3x0.5.dat yp=-0.54571401 m=mym s=mym s2=mnh
+FN:mym-nana4-R0.8-mkk-go6-pP1F4x23G3x0.5.dat yp=-0.47855718 m=mym s=mym s2=mkk
+FN:mym-kyu8-R0.8-mmt-hachi1-pP1F4x23G3x0.5.dat yp=-0.035181229 m=mym s=mym s2=mmt
+FN:mym-kyu4-R0.8-mko-si5-pP1F4x23G3x0.5.dat yp=-0.30241114 m=mym s=mym s2=mko
+FN:mym-hachi9-R0.8-mkk-zero3-pP1F4x23G3x0.5.dat yp=-0.022000197 m=mym s=mym s2=mkk
+FN:mym-san8-R0.8-mnh-ni7-pP1F4x23G3x0.5.dat yp=-0.17236051 m=mym s=mym s2=mnh
+FN:mym-zero6-R0.8-fhs-si6-pP1F4x23G3x0.5.dat yp=-0.3294138 m=mym s=mym s2=fhs
+FN:mym-zero10-R0.8-mnh-zero5-pP1F4x23G3x0.5.dat yp=-0.30468452 m=mym s=mym s2=mnh
+FN:mym-ichi1-R0.8-mmt-go10-pP1F4x23G3x0.5.dat yp=-0.34556861 m=mym s=mym s2=mmt
+FN:mym-roku10-R0.8-mnh-ichi1-pP1F4x23G3x0.5.dat yp=-0.71474253 m=mym s=mym s2=mnh
+FN:mym-nana8-R0.8-mko-hachi8-pP1F4x23G3x0.5.dat yp=-0.5745933 m=mym s=mym s2=mko
+FN:mym-si2-R0.8-mkk-nana8-pP1F4x23G3x0.5.dat yp=-0.16110089 m=mym s=mym s2=mkk
+FP:mnh-nana1-R0.8-mmt-zero3-pP1F4x23G3x0.5.dat yp=0.0083441459 m=mym s=mnh s2=mmt
+FP:mnh-ichi4-R0.8-fhs-kyu8-pP1F4x23G3x0.5.dat yp=0.51069938 m=mym s=mnh s2=fhs
+0.410 0.983 0.017 0.590 0.117 = 41 466 8 59 67 # 574 mym 0.8 0 2:100:0.7:1 40 #TP,TN,FP,FN,ER=...#n,m,R,RX,mbas,N
+#elapsed time:4336.124s(1:12:16.123)@2019-12-01 23:14:18.054443 for m6:mym
+0.485 0.978 0.022 0.515 0.105 = 48 483 11 51 62 # 593 fhs 0.8 0 2:100:0.7:1 40 #TP,TN,FP,FN,ER=...#n,m,R,RX,mbas,N
+0.420 0.992 0.008 0.580 0.102 = 42 506 4 58 62 # 610 fms 0.8 0 2:100:0.7:1 40 #TP,TN,FP,FN,ER=...#n,m,R,RX,mbas,N
+0.630 0.973 0.027 0.370 0.084 = 63 496 14 37 51 # 610 mkk 0.8 0 2:100:0.7:1 40 #TP,TN,FP,FN,ER=...#n,m,R,RX,mbas,N
+0.460 0.980 0.020 0.540 0.106 = 46 496 10 54 64 # 606 mko 0.8 0 2:100:0.7:1 40 #TP,TN,FP,FN,ER=...#n,m,R,RX,mbas,N
+0.485 0.984 0.016 0.515 0.100 = 48 482 8 51 59 # 589 mmt 0.8 0 2:100:0.7:1 40 #TP,TN,FP,FN,ER=...#n,m,R,RX,mbas,N
+0.400 0.974 0.026 0.600 0.120 = 40 493 13 60 73 # 606 mnh 0.8 0 2:100:0.7:1 40 #TP,TN,FP,FN,ER=...#n,m,R,RX,mbas,N
+0.410 0.983 0.017 0.590 0.117 = 41 466 8 59 67 # 574 mym 0.8 0 2:100:0.7:1 40 #TP,TN,FP,FN,ER=...#n,m,R,RX,mbas,N
+#TP0.470 TN0.981 FP0.019 FN0.530 ER0.105 RC0.470 PR0.828 F0.600 k92 pP1F4x23G3x0.5N40b100 4336.124s(1:12:16.123)
+cat ../../12voicedata_ueki_all_k8/result-R0.8pP1F4x23G3x0.5N40b100.dat|awk 'BEGIN{n=0;TP=TN=FP=FN=ERR=0}{n+=$13;TP+=$7;TN+=$8;FP+=$9;FN+=$10;ERR+=$11}END{RC=TP/(TP+FN);PR=TP/(TP+FP);F=2*RC*PR/(RC+PR);printf("#TP%.3f TN%.3f FP%.3f FN%.3f ER%.3f RC%.3f PR%.3f F%.3f k92 pP1F4x23G3x0.5N40b100 4336.124s(1:12:16.123)\n",TP/(TP+FN),TN/(FP+TN),FP/(FP+TN),FN/(TP+FN),ERR/n,RC,PR,F)}'>>../../12voicedata_ueki_all_k8/result-R0.8pP1F4x23G3x0.5N40b100.dat
+my Child returned: <subprocess.Popen object at 0x7f5114de2c90>
+#Do "cat ../../12voicedata_ueki_all_k8/result-R0.8pP1F4x23G3x0.5N40b100.dat" to see the result
+my Child returned: <subprocess.Popen object at 0x7f5114de2c90>

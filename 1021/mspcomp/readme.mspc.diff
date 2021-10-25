@@ -1,0 +1,1063 @@
+4,5c4,10
+< 20190529  : 
+< ########################
+---
+> 20191227
+> ##(10) 制御時のM選択 from here
+> #####
+> export d1=../result-mspc170129/a0.7b1tt100
+> export Na=(0 4 6 6 8 2)
+> export mL1=(0 20 50 20 50 20 50)
+> export obj=(0 "ST" "ST" "OS" "OS");
+7,384d11
+< #export d0=../result-mspc170129; if [ ! -e $d0 ]; then mkdir $d0;fi
+< #rm -rf $d0
+< export d0=../result-mspc190522; if [ ! -e $d0 ]; then mkdir $d0;fi
+< #f0=apc_crane.c;f1=apc_crane_bak.c;cp $f0 $f1;
+< #ny=5;nu=5;sed -e s/"AP_ny "/"AP_ny ${ny}\/\/"/ -e s/"AP_nu "/"AP_nu ${nu}\/\/"/ $f1 > $f0 ; make CC=icc   ##1st trial
+< #f0=apc_crane.c;f1=apc_crane_bak.c;cp $f0 $f1;
+< export d1=${d0}/a${a}b${b}tt${tt}; if [ ! -e $d1 ]; then mkdir $d1;fi
+< #export d1=${d0}/a${a}b${b}tt${tt}nu${nu}; if [ ! -e $d1 ]; then mkdir $d1;fi
+< ##make all-clean;make CC=icc;    #uncomment if necessary
+< tS="tS:0.01"; #デフォールトのサンプリング周期tS="tS:0.01";#export tS="tS:0.1"; #デフォールトのサンプリング周期tS="tS:0.01";#export tS="tS:0.25"; #デフォールトのサンプリング周期tS="tS:0.01";
+< ######
+< #仮想サンプリング周期はAP_TS1=0.5 (see apc_crane.c)";
+< export cmS0="10 60" NN="2 4 6 8" it=10 update=0 umax="umax:10:1";sh mspctrain160518.sh #-->$d1/f1234.dat学習時
+< #export AcmS0=($cmS0);export cmS1=`seq 10 5 60`
+< export cmS1=`seq 10 5 60` fS="f1 f2 f12 f3 f4 f34" umax="umax:10:0" NM=8 DISP=0;source $d1/f1234.dat;sh mspctest160920.sh #テスト時
+< cp $d1/f1234.dat $d1/f12345.dat
+< cat $d1/f1234.dat|awk '{printf("#%s\n",$0);}'
+< cat $d1/mspcresult.dat|awk '{printf("#%s\n",$0);}'
+< 
+< ### BestST Ne10 cmS0="20 50" NN="10 11" it=10 cmS1=`seq 20 5 50` 
+< #f1 #20.10(19.80 20.50 0.23) 58.0(43.0 97.0 17.7) #mean(min,max;rmse) of ST and OS
+< #f2 #23.77(21.80 26.50 1.41) 14.4(0.0 33.0 13.4) #mean(min,max;rmse) of ST and OS
+< #f12 #21.49(20.70 22.50 0.70) 38.3(26.0 48.0 6.5) #mean(min,max;rmse) of ST and OS
+< ### BestOS
+< #f3 #28.03(27.00 29.10 0.67) 6.1(3.0 9.0 1.7) #mean(min,max;rmse) of ST and OS
+< #f4 #30.86(24.80 32.60 2.56) 1.3(0.0 4.0 1.4) #mean(min,max;rmse) of ST and OS
+< #f34 #28.97(27.80 31.10 1.05) 1.0(0.0 4.0 1.3) #mean(min,max;rmse) of ST and OS
+< #cat $d1/f1234.dat
+< #export N1=10 f1=${d1}/net_cr2cm20N10ny4nu4iti2IS2r5T100ur0.8uT5it7; 	#BestST+0.01OS: 19.9 52  7 #ST[s] OS[mm] it for cr2cm20N10ny4nu4iti2IS2r5T100ur0.8uT5
+< #export N2=10 f2=${d1}/net_cr2cm50N10ny4nu4iti2IS2r5T100ur0.8uT5it9; 	#BestST+0.01OS: 22.9 28  9 #ST[s] OS[mm] it for cr2cm50N10ny4nu4iti2IS2r5T100ur0.8uT5
+< #export N3=11 f3=${d1}/net_cr2cm20N11ny4nu4iti2IS2r5T100ur0.8uT5it6; 	#BestOS+0.01ST: 27.6  7  6 #ST[s] OS[mm] it for cr2cm20N11ny4nu4iti2IS2r5T100ur0.8uT5
+< #export N4=10 f4=${d1}/net_cr2cm50N10ny4nu4iti2IS2r5T100ur0.8uT5it7; 	#BestOS+0.01ST: 32.6  2  7 #ST[s] OS[mm] it for cr2cm50N10ny4nu4iti2IS2r5T100ur0.8uT5
+< #
+< ### BestST Ne20 cmS0="20 50" NN="10 11" cmS1=`seq 10 5 60` 
+< #f1 #22.12(19.80 28.90 3.45) 72.0(43.0 123.0 28.4) #mean(min,max;rmse) of ST and OS
+< #f2 #24.83(21.80 30.80 2.40) 21.1(0.0 73.0 24.3) #mean(min,max;rmse) of ST and OS
+< #f12 #21.54(20.50 22.90 0.77) 39.5(25.0 62.0 12.9) #mean(min,max;rmse) of ST and OS
+< ### BestOS
+< #f3 #27.70(26.60 29.10 0.74) 6.4(3.0 9.0 1.4) #mean(min,max;rmse) of ST and OS
+< #f4 #31.29(24.80 33.60 2.20) 1.5(0.0 5.0 1.7) #mean(min,max;rmse) of ST and OS
+< #f34 #28.67(26.80 30.40 0.84) 0.7(0.0 3.0 1.0) #mean(min,max;rmse) of ST and OS
+< #cat $d1/f1234.dat
+< #cat $d1/f1234.dat
+< #export N1=10 f1=${d1}/net_cr2cm20N10ny4nu4iti2IS2r5T100ur0.8uT5it7; 	#BestST+0.01OS: 19.9 52  7 #ST[s] OS[mm] it for cr2cm20N10ny4nu4iti2IS2r5T100ur0.8uT5
+< #export N2=10 f2=${d1}/net_cr2cm50N10ny4nu4iti2IS2r5T100ur0.8uT5it9; 	#BestST+0.01OS: 22.9 28  9 #ST[s] OS[mm] it for cr2cm50N10ny4nu4iti2IS2r5T100ur0.8uT5
+< #export N3=11 f3=${d1}/net_cr2cm20N11ny4nu4iti2IS2r5T100ur0.8uT5it6; 	#BestOS+0.01ST: 27.6  7  6 #ST[s] OS[mm] it for cr2cm20N11ny4nu4iti2IS2r5T100ur0.8uT5
+< #export N4=10 f4=${d1}/net_cr2cm50N10ny4nu4iti2IS2r5T100ur0.8uT5it7; 	#BestOS+0.01ST: 32.6  2  7 #ST[s] OS[mm] it for cr2cm50N10ny4nu4iti2IS2r5T100ur0.8uT5
+< 
+< 
+< ### BestST Ne20 cmS0="20 50" NN="3 4 5 6 7 8 9" cmS1=`seq 10 5 60`
+< #f1 #23.06(16.70 29.50 4.92) 128.2(71.0 178.0 42.2) #mean(min,max;rmse) of ST and OS
+< #f2 #31.64(18.40 39.40 6.09) 353.5(27.0 465.0 123.0) #mean(min,max;rmse) of ST and OS
+< #f12 #21.73(17.50 32.80 4.48) 65.6(0.0 187.0 58.8) #mean(min,max;rmse) of ST and OS
+< ### BestOS
+< #f3 #24.65(23.40 25.20 0.53) 4.5(0.0 26.0 7.9) #mean(min,max;rmse) of ST and OS
+< #f4 #29.55(22.90 33.70 3.54) 0.3(0.0 2.0 0.6) #mean(min,max;rmse) of ST and OS
+< #f34 #26.70(24.20 29.70 1.59) 4.2(0.0 18.0 6.5) #mean(min,max;rmse) of ST and OS
+< #cat $d1/f1234.dat
+< #export N1=4 f1=${d1}/net_cr2cm20N4ny4nu4iti2IS2r5T100ur0.8uT5it6; 	#BestST+0.01OS: 17.0 71  6 #ST[s] OS[mm] it for cr2cm20N4ny4nu4iti2IS2r5T100ur0.8uT5
+< #export N2=6 f2=${d1}/net_cr2cm50N6ny4nu4iti2IS2r5T100ur0.8uT5it6; 	#BestST+0.01OS: 18.4 27  6 #ST[s] OS[mm] it for cr2cm50N6ny4nu4iti2IS2r5T100ur0.8uT5
+< #export N3=9 f3=${d1}/net_cr2cm20N9ny4nu4iti2IS2r5T100ur0.8uT5it7; 	#BestOS+0.01ST: 25.2  0  7 #ST[s] OS[mm] it for cr2cm20N9ny4nu4iti2IS2r5T100ur0.8uT5
+< #export N4=9 f4=${d1}/net_cr2cm50N9ny4nu4iti2IS2r5T100ur0.8uT5it5; 	#BestOS+0.01ST: 29.0  0  5 #ST[s] OS[mm] it for cr2cm50N9ny4nu4iti2IS2r5T100ur0.8uT5
+< 
+< ### BestST ### BestST Ne20 cmS0="20 50" NN="6 8" it=10 cmS1=`seq 10 2 60`
+< #f1 #18.98(16.60 20.70 1.20) 55.6(40.0 78.0 13.2) #mean(min,max;rmse) of ST and OS
+< #f2 #33.70(17.30 61.10 8.94) 346.2(27.0 524.0 130.0) #mean(min,max;rmse) of ST and OS
+< #f12 #21.63(18.40 28.80 2.98) 56.6(10.0 161.0 40.5) #mean(min,max;rmse) of ST and OS
+< ### BestOS
+< #f3 #29.55(24.80 32.10 1.59) 0.9(0.0 9.0 2.1) #mean(min,max;rmse) of ST and OS
+< #f4 #40.63(37.40 47.10 1.83) 2.2(0.0 27.0 5.7) #mean(min,max;rmse) of ST and OS
+< #f34 #34.17(32.20 37.60 1.28) 1.2(0.0 9.0 2.4) #mean(min,max;rmse) of ST and OS
+< 
+< 
+< ### BestST Ne20 cmS0="10 50" NN="6 8" it=10 cmS1=`seq 10 2 50`
+< #f1 #19.70(19.10 20.10 0.33) 59.4(46.0 85.0 12.6) #mean(min,max;rmse) of ST and OS
+< #f2 #32.82(17.30 61.10 9.54) 355.3(27.0 524.0 135.4) #mean(min,max;rmse) of ST and OS
+< #f12 #24.34(18.00 30.90 4.49) 121.3(19.0 326.0 75.4) #mean(min,max;rmse) of ST and OS
+< ### BestOS
+< #f3 #22.72(22.40 23.10 0.19) 18.9(12.0 25.0 3.8) #mean(min,max;rmse) of ST and OS
+< #f4 #40.37(37.40 47.10 1.86) 0.2(0.0 2.0 0.6) #mean(min,max;rmse) of ST and OS
+< #f34 #34.11(31.00 39.90 1.97) 0.3(0.0 5.0 1.1) #mean(min,max;rmse) of ST and OS
+< 
+< ### BestST Ne20 cmS0="10 50" NN="6 8" it=10 cmS1=`seq 10 5 50`
+< #f1 #19.67(19.10 20.10 0.32) 62.2(48.0 88.0 14.5) #mean(min,max;rmse) of ST and OS
+< #f2 #30.01(18.40 38.60 5.54) 356.9(27.0 465.0 135.5) #mean(min,max;rmse) of ST and OS
+< #f12 #26.99(20.80 31.70 4.05) 140.3(19.0 292.0 85.3) #mean(min,max;rmse) of ST and OS
+< ### BestOS
+< #f3 #22.76(22.50 23.10 0.19) 18.9(12.0 25.0 3.9) #mean(min,max;rmse) of ST and OS
+< #f4 #41.30(39.70 47.10 2.12) 0.4(0.0 2.0 0.8) #mean(min,max;rmse) of ST and OS
+< #f34 #33.41(31.60 35.00 1.07) 0.0(0.0 0.0 0.0) #mean(min,max;rmse) of ST and OS
+< 
+< ### BestST  Ne20 cmS0="20 60" NN="6 8" it=10 cmS1=`seq 20 5 60`
+< #f1 #18.62(16.60 20.10 1.14) 58.8(43.0 78.0 13.2) #mean(min,max;rmse) of ST and OS
+< #f2 #24.32(23.00 26.90 1.32) 14.3(2.0 43.0 14.1) #mean(min,max;rmse) of ST and OS
+< #f12 #23.43(22.30 24.30 0.58) 17.3(5.0 40.0 10.9) #mean(min,max;rmse) of ST and OS
+< ### BestOS
+< #f3 #29.26(24.80 31.90 2.15) 1.7(0.0 9.0 3.0) #mean(min,max;rmse) of ST and OS
+< #f4 #46.51(46.20 47.00 0.30) 0.0(0.0 0.0 0.0) #mean(min,max;rmse) of ST and OS
+< #f34 #37.02(36.20 38.20 0.60) 0.1(0.0 1.0 0.3) #mean(min,max;rmse) of ST and OS
+< 
+< ### BestST Ne20 cmS0="10 60" NN="6 8" it=10 cmS1=`seq 10 5 60`
+< #f1 #19.26(16.90 20.10 0.93) 65.1(48.0 88.0 14.5) #mean(min,max;rmse) of ST and OS
+< #f2 #24.16(23.00 26.90 1.24) 12.5(2.0 43.0 13.4) #mean(min,max;rmse) of ST and OS
+< #f12 #22.47(22.00 23.40 0.42) 24.8(13.0 55.0 12.0) #mean(min,max;rmse) of ST and OS
+< ### BestOS
+< #f3 #23.03(22.50 24.60 0.62) 19.7(12.0 28.0 4.4) #mean(min,max;rmse) of ST and OS
+< #f4 #46.46(46.10 47.00 0.29) 0.0(0.0 0.0 0.0) #mean(min,max;rmse) of ST and OS
+< #f34 #37.30(32.10 39.80 1.94) 0.0(0.0 0.0 0.0) #mean(min,max;rmse) of ST and OS
+< 
+< ### BestST Ne20 cmS0="20 50" NN="6 8" it=10 cmS1=`seq 20 2 50`
+< #f1 #19.12(17.80 20.10 0.67) 53.8(42.0 72.0 9.6) #mean(min,max;rmse) of ST and OS
+< #f2 #30.04(17.30 38.60 5.83) 362.6(27.0 524.0 143.5) #mean(min,max;rmse) of ST and OS
+< #f12 #21.44(18.40 28.80 3.19) 62.1(15.0 161.0 42.9) #mean(min,max;rmse) of ST and OS
+< ### BestOS
+< #f3 #29.51(26.60 31.20 1.30) 0.1(0.0 1.0 0.3) #mean(min,max;rmse) of ST and OS
+< #f4 #40.36(37.40 47.10 2.10) 0.3(0.0 2.0 0.7) #mean(min,max;rmse) of ST and OS
+< #f34 #34.14(32.20 37.60 1.39) 0.2(0.0 3.0 0.8) #mean(min,max;rmse) of ST and OS
+< 
+< ### BestST Ne20 cmS0="20 50" NN="6 8" it=10 cmS1=`seq 20 5 50`
+< #f1 #19.11(17.80 20.10 0.75) 53.6(43.0 72.0 10.1) #mean(min,max;rmse) of ST and OS
+< #f2 #29.69(18.40 38.60 6.23) 365.1(27.0 465.0 146.8) #mean(min,max;rmse) of ST and OS
+< #f12 #24.44(19.60 29.60 4.02) 92.9(27.0 172.0 58.4) #mean(min,max;rmse) of ST and OS
+< ### BestOS
+< #f3 #29.51(26.70 31.30 1.44) 0.1(0.0 1.0 0.3) #mean(min,max;rmse) of ST and OS
+< #f4 #41.59(39.70 47.10 2.32) 0.6(0.0 2.0 0.9) #mean(min,max;rmse) of ST and OS
+< #f34 #34.34(32.00 36.60 1.45) 0.6(0.0 3.0 1.0) #mean(min,max;rmse) of ST and OS
+< 
+< BestST cmS0="10 60" NN="6 8" it=10 cmS1=`seq 10 5 60`
+< #f1 #19.26(16.90 20.10 0.93) 65.1(48.0 88.0 14.5) #mean(min,max;rmse) of ST and OS
+< #f2 #24.16(23.00 26.90 1.24) 12.5(2.0 43.0 13.4) #mean(min,max;rmse) of ST and OS
+< #f12 #22.48(21.80 23.50 0.55) 23.8(13.0 54.0 11.3) #mean(min,max;rmse) of ST and OS
+< ### BestOS
+< #f3 #23.03(22.50 24.60 0.62) 19.7(12.0 28.0 4.4) #mean(min,max;rmse) of ST and OS
+< #f4 #46.46(46.10 47.00 0.29) 0.0(0.0 0.0 0.0) #mean(min,max;rmse) of ST and OS
+< #f34 #37.69(36.20 39.80 1.05) 0.0(0.0 0.0 0.0) #mean(min,max;rmse) of ST and OS
+< 
+< 
+< ### BestST cmS0="20 50" NN="2 4 6 8" it=10 export cmS1="10 15 20 25 30 35 40 45 50 55 60" ???
+< #gccCAN2
+< #gccCAN2
+< #gccCAN2### BestST cmS0="20 50" NN="2 4 6 8" it=10 export cmS1="10 15 20 25 30 35 40 45 50 55 60" ???
+< #gccCAN2#f1 #20.59(20.00 22.20 0.70) 66.1(50.0 99.0 15.9) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f2 #22.01(20.40 28.60 2.80) 83.4(67.0 133.0 19.9) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f12 #21.62(20.00 28.50 2.92) 84.2(66.0 126.0 17.6) #mean(min,max;rmse) of ST and OS
+< #gccCAN2### BestOS
+< #gccCAN2#f3 #20.59(20.00 22.20 0.70) 66.1(50.0 99.0 15.9) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f4 #28.85(24.10 40.00 5.63) 13.3(2.0 21.0 6.6) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f34 #20.61(19.20 22.20 0.85) 54.0(40.0 74.0 11.8) #mean(min,max;rmse) of ST and OS
+< #gccCAN2
+< #gccCAN2### BestST cmS0="20 50" NN="6 8" cmS1=`seq 20 5 50`?
+< #gccCAN2#f1 #23.06(16.70 29.50 4.92) 128.2(71.0 178.0 42.2) #mean(min,max;rmse) of ST and OS     smallest mean,min GOOD
+< #gccCAN2#f2 #31.64(18.40 39.40 6.09) 353.5(27.0 465.0 123.0) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f12 #23.33(17.90 27.50 3.21) 116.9(1.0 204.0 62.3) #mean(min,max;rmse) of ST and OS  ***smallest maxST but ...NG?
+< #gccCAN2### BestOS
+< #gccCAN2#f3 #29.22(24.80 31.90 1.95) 1.4(0.0 9.0 2.8) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f4 #41.30(39.50 47.10 2.06) 2.9(0.0 27.0 7.7) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f34 #33.53(31.90 34.90 0.86) 0.3(0.0 2.0 0.6) #mean(min,max;rmse) of ST and OS  ***smallest maxOS
+< #gccCAN2
+< #gccCAN2### BestST cmS0="20 50" NN="6 8" it=10 cmS1=`seq 20 5 50` 
+< #gccCAN2#f1 #43.19(42.10 45.00 0.98) 399.0(339.0 435.0 32.2) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f2 #20.17(19.90 20.50 0.24) 39.9(29.0 62.0 10.9) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f12 #32.13(26.00 34.80 2.65) 136.0(109.0 158.0 18.1) #mean(min,max;rmse) of ST and OS
+< #gccCAN2### BestOS
+< #gccCAN2#f3 #43.19(42.10 45.00 0.98) 399.0(339.0 435.0 32.2) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f4 #2.00(2.00 2.00 0.00) 25.0(25.0 25.0 0.0) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f34 #2.00(2.00 2.00 0.00) 25.0(25.0 25.0 0.0) #mean(min,max;rmse) of ST and OS
+< #gccCAN2
+< #gccCAN2### BestST cmS0="20 50" NN="4 5 6 7 8" it=10 cmS1=`seq 20 2 50`
+< #gccCAN2#f1 #43.18(42.10 45.00 0.92) 388.3(287.0 432.0 44.4) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f2 #30.04(17.30 38.60 5.83) 362.6(27.0 524.0 143.5) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f12 #31.93(21.20 35.90 4.31) 227.6(38.0 373.0 93.2) #mean(min,max;rmse) of ST and OS
+< #gccCAN2### BestOS
+< #gccCAN2#f3 #33.24(27.10 41.40 5.62) 111.9(64.0 247.0 52.7) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f4 #30.69(30.10 31.30 0.38) 0.0(0.0 0.0 0.0) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f34 #39.16(27.00 44.00 4.17) 171.1(78.0 298.0 53.1) #mean(min,max;rmse) of ST and OS
+< #gccCAN2
+< #gccCAN2### BestST  cmS0="20 60" NN="4 5 6 7 8" cmS1=`seq 20 2 60`
+< #gccCAN2#f1 #24.58(17.00 29.50 4.08) 141.3(71.0 178.0 35.7) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f2 #20.68(18.30 24.50 2.21) 16.3(0.0 70.0 19.6) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f12 #19.20(15.80 20.50 1.28) 45.4(13.0 86.0 27.3) #mean(min,max;rmse) of ST and OS
+< #gccCAN2### BestOS
+< #gccCAN2#f3 #29.65(24.80 32.10 1.76) 1.1(0.0 9.0 2.3) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f4 #71.08(54.00 87.00 7.83) 0.1(0.0 3.0 0.6) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f34 #29.94(24.60 35.60 2.73) 1.2(0.0 11.0 2.4) #mean(min,max;rmse) of ST and OS
+< #gccCAN2
+< #gccCAN2### BestST cmS0="20 60" NN="4 5 6 7 8" it=10  cmS1=`seq 10 2 80`
+< #gccCAN2#f1 #47.46(41.70 65.00 7.01) 402.3(282.0 557.0 74.3) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f2 #25.15(23.40 28.00 1.29) 18.3(0.0 73.0 24.1) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f12 #28.14(20.00 45.60 5.87) 158.3(60.0 335.0 76.5) #mean(min,max;rmse) of ST and OS
+< #gccCAN2### BestOS
+< #gccCAN2#f3 #33.68(27.10 43.30 5.16) 102.8(64.0 247.0 40.2) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f4 #70.89(47.50 98.60 9.20) 2.1(0.0 40.0 8.5) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f34 #32.89(28.60 39.30 2.72) 53.0(16.0 134.0 29.0) #mean(min,max;rmse) of ST and OS
+< #gccCAN2
+< #gccCAN2### BestST  cmS0="20 60" NN="4 5 6 7 8" it=10 cmS1=`seq 10 2 70` 
+< #gccCAN2#f1 #24.26(16.70 30.90 5.14) 136.9(71.0 209.0 43.2) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f2 #21.73(16.50 27.50 3.11) 18.3(0.0 70.0 21.1) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f12 #18.50(15.30 20.50 1.73) 47.4(13.0 96.0 30.9) #mean(min,max;rmse) of ST and OS
+< #gccCAN2### BestOS
+< #gccCAN2#f3 #35.79(34.40 37.00 0.50) 20.7(19.0 24.0 1.1) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f4 #46.55(46.00 47.20 0.33) 0.0(0.0 0.0 0.0) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f34 #36.29(34.50 39.40 1.13) 0.1(0.0 1.0 0.2) #mean(min,max;rmse) of ST and OS
+< #gccCAN2
+< #gccCAN2
+< #gccCAN2### BestST cmS0="20 60" NN="4 5 6 7 8" it=10 cmS1=`seq 30 2 50`
+< #gccCAN2#f1 #25.55(23.10 27.70 1.44) 149.7(114.0 174.0 19.2) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f2 #20.62(18.80 23.30 1.83) 18.8(0.0 70.0 25.1) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f12 #19.88(19.20 20.40 0.38) 43.1(13.0 71.0 19.3) #mean(min,max;rmse) of ST and OS
+< #gccCAN2### BestOS
+< #gccCAN2#f3 #29.45(26.60 31.10 1.46) 0.2(0.0 1.0 0.4) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f4 #46.75(46.20 47.00 0.26) 0.0(0.0 0.0 0.0) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f34 #36.86(35.60 38.40 0.92) 0.0(0.0 0.0 0.0) #mean(min,max;rmse) of ST and OS
+< #gccCAN2
+< #gccCAN2### BestST cmS0="20 50" NN="4 5 6 7 8" cmS1=`seq 20 2 50` 
+< #gccCAN2#f1 #23.26(17.00 27.70 3.79) 130.1(71.0 174.0 33.8) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f2 #30.04(17.30 38.60 5.83) 362.6(27.0 524.0 143.5) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f12 #22.58(19.00 26.80 2.60) 82.0(0.0 204.0 71.6) #mean(min,max;rmse) of ST and OS
+< #gccCAN2### BestOS
+< #gccCAN2#f3 #29.51(26.60 31.20 1.30) 0.1(0.0 1.0 0.3) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f4 #30.69(30.10 31.30 0.38) 0.0(0.0 0.0 0.0) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f34 #28.69(25.80 30.40 1.29) 0.2(0.0 3.0 0.8) #mean(min,max;rmse) of ST and OS
+< #gccCAN2
+< #gccCAN2### BestST cmS0="20 60" "NN="2 4 6 8" cmS1=`seq 20 5 60`
+< #gccCAN2#f1 #24.47(17.00 29.50 4.34) 140.0(71.0 178.0 37.5) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f2 #20.64(18.30 24.50 2.44) 20.1(0.0 62.0 21.3) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f12 #19.24(15.80 20.60 1.36) 45.6(13.0 84.0 27.8) #mean(min,max;rmse) of ST and OS #GOOD
+< #gccCAN2### BestOS
+< #gccCAN2#f3 #29.26(24.80 31.90 2.15) 1.7(0.0 9.0 3.0) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f4 #46.51(46.20 47.00 0.30) 0.0(0.0 0.0 0.0) #mean(min,max;rmse) of ST and OS   #Very GOOD
+< #gccCAN2#f34 #37.22(35.60 37.90 0.70) 0.0(0.0 0.0 0.0) #mean(min,max;rmse) of ST and OS  #same...->No effectiveness
+< #gccCAN2
+< #gccCAN2### BestST cmS0="10 60" NN="2 4 6 8" cmS1="10 15 20 25 30 35 40 45 50 55 60" 
+< #gccCAN2#f1 #23.64(17.70 27.30 3.69) 129.4(86.0 164.0 29.2) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f2 #21.52(18.30 26.20 2.90) 16.5(0.0 62.0 20.8) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f12 #22.42(20.20 24.70 1.27) 10.6(1.0 45.0 15.3) #mean(min,max;rmse) of ST and OS
+< #gccCAN2### BestOS
+< #gccCAN2#f3 #23.03(22.50 24.60 0.62) 19.7(12.0 28.0 4.4) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f4 #46.46(46.10 47.00 0.29) 0.0(0.0 0.0 0.0) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f34 #37.69(36.20 39.80 1.05) 0.0(0.0 0.0 0.0) #mean(min,max;rmse) of ST and OS
+< #gccCAN2
+< #gccCAN2
+< #gccCAN2### BestST cmS0="30 60" NN="2 4 6 8" cmS1="30 35 40 45 50 55 60"
+< #gccCAN2#f1 #20.94(18.40 31.20 4.22) 65.1(14.0 205.0 58.5) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f2 #20.37(18.30 24.30 2.22) 23.4(0.0 62.0 22.7) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f12 #23.01(22.00 24.40 0.84) 12.0(2.0 40.0 12.9) #mean(min,max;rmse) of ST and OS
+< #gccCAN2### BestOS
+< #gccCAN2#f3 #22.06(21.20 23.50 0.77) 37.3(11.0 65.0 16.9) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f4 #46.59(46.20 47.00 0.29) 0.0(0.0 0.0 0.0) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f34 #34.37(31.20 37.10 2.39) 2.0(0.0 12.0 4.1) #mean(min,max;rmse) of ST and OS
+< #gccCAN2
+< #gccCAN2### BestST cmS0="30 60" "NN="6 8" 
+< #gccCAN2#f1 #20.94(18.40 31.20 4.22) 65.1(14.0 205.0 58.5) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f2 #24.67(23.30 26.90 1.31) 16.3(2.0 43.0 15.4) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f12 #22.46(21.80 23.00 0.36) 18.9(8.0 35.0 9.6) #mean(min,max;rmse) of ST and OS
+< #gccCAN2### BestOS
+< #gccCAN2#f3 #22.06(21.20 23.50 0.77) 37.3(11.0 65.0 16.9) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f4 #46.59(46.20 47.00 0.29) 0.0(0.0 0.0 0.0) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f34 #34.37(31.20 37.10 2.39) 2.0(0.0 12.0 4.1) #mean(min,max;rmse) of ST and OS
+< #gccCAN2
+< #gccCAN2### BestST #export cmS0="20 70", NN="6 8 10" same for it=10 20
+< #gccCAN2#f1 #23.69(19.80 31.80 4.82) 80.1(43.0 123.0 32.6) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f2 #25.41(23.10 32.60 2.67) 35.2(0.0 118.0 36.3) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f12 #20.03(16.00 23.30 2.14) 37.5(4.0 78.0 25.6) #mean(min,max;rmse) of ST and OS #GOOD
+< #gccCAN2### BestOS
+< #gccCAN2#f3 #28.49(24.70 31.90 2.54) 5.9(0.0 28.0 9.5) #mean(min,max;rmse) of ST and OS    #Best
+< #gccCAN2#f4 #40.08(33.90 47.40 4.17) 31.0(0.0 154.0 47.2) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f34 #29.40(21.30 34.30 3.99) 10.2(0.0 75.0 21.2) #mean(min,max;rmse) of ST and OS #Wose than f3 ??NG?
+< #gccCAN2
+< #gccCAN2### BestST #cmS0="20 60", NN="6 8 10" cmS1="20 25 30 35 40 45 50 55 60 65"
+< #gccCAN2#f1 #18.38(16.20 20.10 1.30) 62.6(43.0 97.0 17.0) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f2 #24.31(23.00 26.90 1.26) 19.2(2.0 63.0 19.8) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f12 #23.71(22.40 24.70 0.67) 21.1(5.0 61.0 16.8) #mean(min,max;rmse) of ST and OS #NG
+< #gccCAN2### BestOS
+< #gccCAN2#f3 #28.80(24.70 31.90 2.46) 3.7(0.0 22.0 6.7) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f4 #46.54(46.20 47.00 0.29) 0.0(0.0 0.0 0.0) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f34 #37.43(35.60 39.30 0.91) 0.1(0.0 1.0 0.3) #mean(min,max;rmse) of ST and OS #NG
+< #gccCAN2
+< #gccCAN2### BestST cmS0="10 60" NN="4 6 8" cmS1="10 15 20 25 30 35 40 45 50 55 60" 
+< #gccCAN2#f1 #23.64(17.70 27.30 3.69) 129.4(86.0 164.0 29.2) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f2 #21.52(18.30 26.20 2.90) 16.5(0.0 62.0 20.8) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f12 #22.42(20.20 24.70 1.27) 10.6(1.0 45.0 15.3) #mean(min,max;rmse) of ST and OS
+< #gccCAN2### BestOS
+< #gccCAN2#f3 #23.03(22.50 24.60 0.62) 19.7(12.0 28.0 4.4) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f4 #46.46(46.10 47.00 0.29) 0.0(0.0 0.0 0.0) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f34 #37.69(36.20 39.80 1.05) 0.0(0.0 0.0 0.0) #mean(min,max;rmse) of ST and OS
+< #gccCAN2
+< #gccCAN2
+< #gccCAN2### BestST cmS0="20 70" NN="6 8" cmS1="30 35 40 45 50 55 60"
+< #gccCAN2#f1 #18.23(16.60 19.50 0.99) 63.3(47.0 78.0 11.5) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f2 #31.99(23.70 41.80 6.20) 3.9(0.0 8.0 3.1) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f12 #22.99(21.10 26.60 1.63) 32.9(9.0 107.0 31.6) #mean(min,max;rmse) of ST and OS
+< #gccCAN2### BestOS
+< #gccCAN2#f3 #28.94(24.80 31.90 2.30) 2.1(0.0 9.0 3.3) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f4 #39.80(37.20 43.40 2.04) 25.1(0.0 76.0 31.3) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f34 #29.77(21.30 33.80 4.21) 12.3(0.0 75.0 25.8) #mean(min,max;rmse) of ST and OS
+< #gccCAN2
+< #gccCAN2### BestST #export cmS0="20 70 "NN="4 5 6 7 8" 
+< #gccCAN2#f1 #25.58(17.00 30.90 4.58) 149.1(71.0 209.0 39.9) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f2 #22.95(21.50 25.90 1.13) 43.1(14.0 91.0 25.1) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f12 #23.33(18.00 30.40 4.49) 88.5(38.0 185.0 51.5) #mean(min,max;rmse) of ST and OS
+< #gccCAN2### BestOS
+< #gccCAN2#f3 #28.49(24.70 31.90 2.54) 5.9(0.0 28.0 9.5) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f4 #31.53(30.10 34.10 1.21) 2.2(0.0 10.0 3.3) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f34 #31.65(29.80 35.60 1.95) 4.0(0.0 22.0 6.9) #mean(min,max;rmse) of ST and OS
+< #gccCAN2
+< #gccCAN2### BestST #export cmS0="20 70"NN="2 4 6 8" 
+< #gccCAN2#f1 #25.58(17.00 30.90 4.58) 149.1(71.0 209.0 39.9) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f2 #19.10(16.10 20.30 1.47) 29.3(17.0 49.0 10.7) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f12 #17.44(15.80 18.40 0.89) 63.6(27.0 88.0 20.6) #mean(min,max;rmse) of ST and OS
+< #gccCAN2### BestOS
+< #gccCAN2#f3 #28.49(24.70 31.90 2.54) 5.9(0.0 28.0 9.5) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f4 #31.53(30.10 34.10 1.21) 2.2(0.0 10.0 3.3) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f34 #31.65(29.80 35.60 1.95) 4.0(0.0 22.0 6.9) #mean(min,max;rmse) of ST and OS
+< #gccCAN2
+< #gccCAN2
+< #gccCAN2### BestST result for cmS0="10 50"
+< #gccCAN2#f1 #23.29(17.70 27.30 3.90) 125.0(86.0 164.0 29.9) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f2 #30.01(18.40 38.60 5.54) 356.9(27.0 465.0 135.5) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f12 #26.21(17.90 33.00 4.79) 169.9(66.0 240.0 60.5) #mean(min,max;rmse) of ST and OS #NG
+< #gccCAN2### BestOS
+< #gccCAN2#f3 #22.76(22.50 23.10 0.19) 18.9(12.0 25.0 3.9) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f4 #41.30(39.70 47.10 2.12) 0.4(0.0 2.0 0.8) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f34 #32.90(31.80 34.50 0.74) 0.6(0.0 4.0 1.3) #mean(min,max;rmse) of ST and OS   #NG?
+< #gccCAN2
+< #gccCAN2### BestST export cmS0="25 50"
+< #gccCAN2#f1 #22.92(18.80 28.10 4.14) 112.0(90.0 151.0 23.9) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f2 #30.05(18.40 38.60 6.66) 374.3(27.0 465.0 156.7) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f12 #24.68(19.60 29.70 3.23) 104.5(29.0 180.0 44.6) #mean(min,max;rmse) of ST and OS
+< #gccCAN2### BestOS
+< #gccCAN2#f3 #24.28(23.30 25.20 0.83) 2.7(0.0 10.0 3.6) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f4 #41.70(39.70 47.10 2.49) 0.7(0.0 2.0 0.9) #mean(min,max;rmse) of ST and OS
+< #gccCAN2#f34 #30.22(24.30 35.70 3.31) 164.2(0.0 701.0 256.7) #mean(min,max;rmse) of ST and OS
+< 
+< ##################
+< 20190520 : 
+< ########################
+< GLOBAL int Ne=10;//evaluation period;mseの保存時間=MSE eval_period=Ne*AP_TS1=Ne*0.5 for swiching CAN2 ユニット選択のための過去誤差計算範囲
+< 
+< ##################
+< 20180905  : 
+< ########################
+< #[1]  (8-2-3)のgpcMA2poles+.mac でGzmode:1とした。
+<      N_2=N_y=20,N_u=19
+<      k_y=k_u=4    AP_ny 4 in apc_crane.c
+< f0=apc_crane.c;f1=apc_crane_bak.c;cp $f0 $f1;
+< ny=5;nu=5;sed -e s/"AP_ny "/"AP_ny ${ny}\/\/"/ -e s/"AP_nu "/"AP_nu ${nu}\/\/"/ $f1 > $f0 ; make CC=icc   ##1st trial
+<      lamgda_u=0.01
+<      Ne=5        in apc_crane.c
+< 
+< ny=nu=5
+< #Ne=10
+< ### BestST
+< #f1 #2.00(2.00 2.00 0.00) 15.0(15.0 15.0 0.0) #mean(min,max;rmse) of ST and OS
+< #f2 #2.00(2.00 2.00 0.00) 15.0(15.0 15.0 0.0) #mean(min,max;rmse) of ST and OS
+< #f12 #2.00(2.00 2.00 0.00) 15.0(15.0 15.0 0.0) #mean(min,max;rmse) of ST and OS
+< ### BestOS
+< #f3 #2.00(2.00 2.00 0.00) 15.0(15.0 15.0 0.0) #mean(min,max;rmse) of ST and OS
+< #f4 #2.00(2.00 2.00 0.00) 15.0(15.0 15.0 0.0) #mean(min,max;rmse) of ST and OS
+< #f34 #2.00(2.00 2.00 0.00) 15.0(15.0 15.0 0.0) #mean(min,max;rmse) of ST and OS
+< nu=ny=4
+< #Ne=5
+< ## BestST
+< f1 #23.06(16.70 29.50 4.92) 128.2(71.0 178.0 42.2) #mean(min,max;rmse) of ST and OS
+< f2 #31.64(18.40 39.40 6.09) 353.5(27.0 465.0 123.0) #mean(min,max;rmse) of ST and OS
+< f12 #24.49(16.00 32.30 4.76) 85.2(0.0 172.0 61.1) #mean(min,max;rmse) of ST and OS
+< ## BestOS
+< f3 #29.22(24.80 31.90 1.95) 1.4(0.0 9.0 2.8) #mean(min,max;rmse) of ST and OS
+< f4 #41.30(39.50 47.10 2.06) 2.9(0.0 27.0 7.7) #mean(min,max;rmse) of ST and OS
+< f34 #33.33(32.40 34.00 0.41) 2.7(0.0 18.0 5.5) #mean(min,max;rmse) of ST and OS
+< 
+< #Ne=8
+< #f1 #23.06(16.70 29.50 4.92) 128.2(71.0 178.0 42.2) #mean(min,max;rmse) of ST and OS
+< #f2 #31.64(18.40 39.40 6.09) 353.5(27.0 465.0 123.0) #mean(min,max;rmse) of ST and OS
+< #f12 #24.04(17.90 29.00 4.25) 115.5(0.0 252.0 99.2) #mean(min,max;rmse) of ST and OS
+< ### BestOS
+< #f3 #29.22(24.80 31.90 1.95) 1.4(0.0 9.0 2.8) #mean(min,max;rmse) of ST and OS
+< #f4 #41.30(39.50 47.10 2.06) 2.9(0.0 27.0 7.7) #mean(min,max;rmse) of ST and OS
+< #f34 #33.78(32.40 34.90 0.81) 0.9(0.0 5.0 1.6) #mean(min,max;rmse) of ST and OS
+386,423c13,73
+< #Ne=10
+< ### BestST
+< #f1 #23.06(16.70 29.50 4.92) 128.2(71.0 178.0 42.2) #mean(min,max;rmse) of ST and OS     smallest mean,min GOOD
+< #f2 #31.64(18.40 39.40 6.09) 353.5(27.0 465.0 123.0) #mean(min,max;rmse) of ST and OS
+< #f12 #23.33(17.90 27.50 3.21) 116.9(1.0 204.0 62.3) #mean(min,max;rmse) of ST and OS  ***smallest maxST but ...NG?
+< ### BestOS
+< #f3 #29.22(24.80 31.90 1.95) 1.4(0.0 9.0 2.8) #mean(min,max;rmse) of ST and OS
+< #f4 #41.30(39.50 47.10 2.06) 2.9(0.0 27.0 7.7) #mean(min,max;rmse) of ST and OS
+< #f34 #33.53(31.90 34.90 0.86) 0.3(0.0 2.0 0.6) #mean(min,max;rmse) of ST and OS  ***smallest maxOS
+< 
+< ### BestST cmS0="20 50" NN="6 8" it=10 export cmS1="10 15 20 25 30 35 40 45 50 55 60" 20190530 why different from above
+< #f1 #23.19(20.40 34.90 4.63) 113.2(22.0 615.0 174.0) #mean(min,max;rmse) of ST and OS
+< #f2 #26.05(20.10 32.60 3.32) 16.9(0.0 88.0 26.3) #mean(min,max;rmse) of ST and OS
+< #f12 #22.60(19.40 28.60 2.63) 41.7(1.0 182.0 53.7) #mean(min,max;rmse) of ST and OS
+< ### BestOS
+< #f3 #40.41(25.60 50.00 7.80) 655.8(0.0 1180.0 374.2) #mean(min,max;rmse) of ST and OS
+< #f4 #32.43(31.90 32.80 0.24) 4.2(3.0 6.0 1.3) #mean(min,max;rmse) of ST and OS
+< #f34 #28.65(19.90 37.70 5.41) 158.4(4.0 345.0 110.7) #mean(min,max;rmse) of ST and OS
+< 
+< #Ne=12
+< ## BestST
+< #f1 #23.06(16.70 29.50 4.92) 128.2(71.0 178.0 42.2) #mean(min,max;rmse) of ST and OS
+< #f2 #31.64(18.40 39.40 6.09) 353.5(27.0 465.0 123.0) #mean(min,max;rmse) of ST and OS
+< #f12 #20.80(17.20 27.60 3.04) 45.0(0.0 136.0 44.8) #mean(min,max;rmse) of ST and OS
+< ### BestOS
+< #f3 #29.22(24.80 31.90 1.95) 1.4(0.0 9.0 2.8) #mean(min,max;rmse) of ST and OS
+< #f4 #41.30(39.50 47.10 2.06) 2.9(0.0 27.0 7.7) #mean(min,max;rmse) of ST and OS
+< #f34 #34.56(32.60 40.60 2.16) 2.0(0.0 11.0 3.8) #mean(min,max;rmse) of ST and OS
+< 
+< #Ne=20
+< ### BestST cmS0="20 50" NN="6 8" it=10 export cmS1="10 15 20 25 30 35 40 45 50 55 60" 201904??
+< #f1 #23.06(16.70 29.50 4.92) 128.2(71.0 178.0 42.2) #mean(min,max;rmse) of ST and OS
+< #f2 #31.64(18.40 39.40 6.09) 353.5(27.0 465.0 123.0) #mean(min,max;rmse) of ST and OS
+< #f12 #21.73(17.50 32.80 4.48) 65.6(0.0 187.0 58.8) #mean(min,max;rmse) of ST and OS  **smallest mean,---,---,std for ST
+< ### BestOS
+< #f3 #29.22(24.80 31.90 1.95) 1.4(0.0 9.0 2.8) #mean(min,max;rmse) of ST and OS
+< #f4 #41.30(39.50 47.10 2.06) 2.9(0.0 27.0 7.7) #mean(min,max;rmse) of ST and OS
+< #f34 #34.33(32.00 36.60 1.36) 1.1(0.0 8.0 2.4) #mean(min,max;rmse) of ST and OS **smallest mean,min,max,std
+---
+> export cmS1="60" fS="f3 f4 f34" NM=10 DISP=0 LAMBDA="" umax="umax:10:1"; source $d1/f12345.dat;sh mspctest160920.sh #N=8,2,6,10
+> fplt="gpc-t-Api.plt"
+> cat /dev/null > $fplt
+> echo "set term postscript eps enhanced color; set nokey" >>$fplt
+> echo "set xlabel \"{/=16 {/Arial-Italic t}} [s]\"" >>$fplt
+> for OBJ in OS ;do #  for OBJ in ST OS ;do
+>   for mX in $cmS1 ;do 
+>     echo "set output \"gpc-t-APi-mX${mX}${OBJ}-xdX1.eps\"" >>$fplt
+>     echo -n "set ytics (">>$fplt
+>     n=0
+>     if [ $OBJ = "ST" ]; then
+>       N12=`expr ${Na[1]} + ${Na[2]}`
+>       for M in 1 2 ; do #for ST
+>         for nM in `seq 1 ${Na[$M]}`; do
+>           echo -n "\"{/=16 {/Arial-Italic M(${mL1[${M}]},${nM},O_{${obj[$M]}})}}\" $n" >>$fplt
+>           n=`expr ${n} + 1`;
+>           if [ $n -ne $N12 ]; then echo -n "," >> $fplt ; fi
+>         done
+>       done
+>       echo ")" >> $fplt
+>       echo "plot [][] \"tmp/t-AP_i-m${mX}f1.dat\" using 1:(\$3)  w l, \"tmp/t-AP_i-m${mX}f2.dat\" using 1:(\$3+$N1)  w l, \"tmp/t-AP_i-m${mX}f12.dat\" using 1:((\$2-1)*$N1+\$3)  w l notitle">>$fplt
+>     else 
+>       n=0
+>       N34=`expr ${Na[3]} + ${Na[4]}`
+>       for M in 3 4 ; do  #for OS
+>         for nM in `seq 1 ${Na[$M]}`; do
+>           echo -n "\"{/=16 {/Arial-Italic M(${mL1[${M}]},${nM},O_{${obj[$M]}})}}\" $n" >>$fplt
+> #          echo -n "\"M(${mL1[${M}]},${nM},${obj[$M]})\" $n" >>$fplt
+> #          echo -n "\"M(${mL1[${M}]},${nM},${obj[$M]})\" $n" >>$fplt
+>           n=`expr ${n} + 1`;
+>           if [ $n -ne $N34 ]; then echo -n "," >> $fplt ; fi
+>         done
+>       done
+>       echo ")">>$fplt
+>       echo "plot [][] \"tmp/t-AP_i-m${mX}f3.dat\" using 1:(\$3)  w l, \"tmp/t-AP_i-m${mX}f4.dat\" using 1:(\$3+$N3)  w l, \"tmp/t-AP_i-m${mX}f34.dat\" using 1:((\$2-1)*$N3+\$3)  w l notitle">>$fplt
+>     fi
+>   done
+> done
+> echo "quit" >> $fplt
+> gnuplot $fplt
+> #####(10) 制御時のM選択 hyoji
+> fplt="gpc-t-Api.plt"
+> cat /dev/null > $fplt
+> echo "set term postscript eps enhanced color; " >>$fplt
+> echo "set output \"gpc-t-APi-OS.eps\"" >>$fplt
+> ##
+> echo -n "set ytics (">>$fplt
+> n=0
+> N34=`expr ${Na[3]} + ${Na[4]}`
+> for M in 3 4 ; do  #for OS
+>   for nM in `seq 1 ${Na[$M]}`; do
+>     echo -n "\"M(${mL1[${M}]},${nM},${obj[$M]})\" $n" >>$fplt
+> #    echo -n "\"M${P}-${nM}\" `expr ${n}`" >>$fplt
+>     n=`expr ${n} + 1`;
+>     if [ $n -ne $N34 ]; then echo -n "," >> $fplt ; fi
+>   done
+> done
+> echo ")">>$fplt
+> echo "plot [][] \"tmp/t-AP_i-m${cmS1}f3.dat\" using 1:(\$3)  w l, \"tmp/t-AP_i-m${cmS1}f4.dat\" using 1:(\$3+$N3)  w l, \"tmp/t-AP_i-m${cmS1}f34.dat\" using 1:((\$2-1)*$N3+\$3)  w l notitle">>$fplt
+> echo "quit" >> $fplt
+> gnuplot $fplt
+425,427c75
+< ##################
+< 20180905  : 下の20170131+20170202の確認
+< ########################
+---
+> gv -scale=5.0 gpc-t-APi-OS.eps&
+429,519c77,87
+< #(8-1) GPCの複数の場合の実験　### #20150831(5)linear model from iconip2014exp3.sh　参照
+< ##########################
+< export a=0.7 b=1 tt=100;
+< #export d0=../result-mspc170129; if [ ! -e $d0 ]; then mkdir $d0;fi
+< #rm -rf $d0
+< export d0=../result-mspc190522; if [ ! -e $d0 ]; then mkdir $d0;fi
+< #f0=apc_crane.c;f1=apc_crane_bak.c;cp $f0 $f1;
+< #ny=5;nu=5;sed -e s/"AP_ny "/"AP_ny ${ny}\/\/"/ -e s/"AP_nu "/"AP_nu ${nu}\/\/"/ $f1 > $f0 ; make CC=icc   ##1st trial
+< #f0=apc_crane.c;f1=apc_crane_bak.c;cp $f0 $f1;
+< export d1=${d0}/a${a}b${b}tt${tt}; if [ ! -e $d1 ]; then mkdir $d1;fi
+< #export d1=${d0}/a${a}b${b}tt${tt}nu${nu}; if [ ! -e $d1 ]; then mkdir $d1;fi
+< ##make all-clean;make CC=icc;    #uncomment if necessary
+< tS="tS:0.01"; #デフォールトのサンプリング周期tS="tS:0.01";#export tS="tS:0.1"; #デフォールトのサンプリング周期tS="tS:0.01";#export tS="tS:0.25"; #デフォールトのサンプリング周期tS="tS:0.01";
+< ######
+< #仮想サンプリング周期はAP_TS1=0.5 (see apc_crane.c)";
+< export cmS0="20 50" NN="10 11" it=10 update=0 umax="umax:10:1";sh mspctrain160518.sh #-->$d1/f1234.dat学習時
+< #export cmS0="20 50" NN="10 11" it=10 update=0 umax="umax:10:1";sh mspctrain160518.sh #-->$d1/f1234.dat学習時 ICONIP2019?
+< export cmS1=`seq 10 5 60` fS="f1 f2 f12 f3 f4 f34" umax="umax:10:0" NM=8 DISP=0;source $d1/f1234.dat;sh mspctest160920.sh #テスト時
+< #export cmS0="20 50" NN="2 4 6 8" it=10 update=0 umax="umax:10:1";sh mspctrain160518.sh #-->$d1/f1234.dat学習時
+< #export cmS1="10 15 20 25 30 35 40 45 50 55 60" fS="f1 f2 f12 f3 f4 f34" umax="umax:10:0" NM=8 DISP=0;source $d1/f1234.dat;sh mspctest160920.sh #テスト時
+< cp $d1/f1234.dat $d1/f12345.dat
+< cat $d1/f1234.dat|awk '{printf("#%s\n",$0);}'
+< cat $d1/mspcresult.dat|awk '{printf("#%s\n",$0);}'
+< ####
+< #### BestST  Ne10 cmS0="20 50" NN="10 11" it=10 cmS1=`seq 10 5 60` #ICONIP2019?
+< ##f1 #22.12(19.80 28.90 3.45) 72.0(43.0 123.0 28.4) #mean(min,max;rmse) of ST and OS
+< ##f2 #24.83(21.80 30.80 2.40) 21.1(0.0 73.0 24.3) #mean(min,max;rmse) of ST and OS
+< ##f12 #21.58(20.70 22.50 0.69) 39.0(25.0 61.0 10.1) #mean(min,max;rmse) of ST and OS
+< #### BestOS
+< ##f3 #27.70(26.60 29.10 0.74) 6.4(3.0 9.0 1.4) #mean(min,max;rmse) of ST and OS
+< ##f4 #31.29(24.80 33.60 2.20) 1.5(0.0 5.0 1.7) #mean(min,max;rmse) of ST and OS
+< ##f34 #29.04(27.80 31.10 1.03) 1.3(0.0 4.0 1.4) #mean(min,max;rmse) of ST and OS
+< #cat $d1/f1234.dat
+< #export N1=10 f1=${d1}/net_cr2cm20N10ny4nu4iti2IS2r5T100ur0.8uT5it7; 	#BestST+0.01OS: 19.9 52  7 #ST[s] OS[mm] it for cr2cm20N10ny4nu4iti2IS2r5T100ur0.8uT5
+< #export N2=10 f2=${d1}/net_cr2cm50N10ny4nu4iti2IS2r5T100ur0.8uT5it9; 	#BestST+0.01OS: 22.9 28  9 #ST[s] OS[mm] it for cr2cm50N10ny4nu4iti2IS2r5T100ur0.8uT5
+< #export N3=11 f3=${d1}/net_cr2cm20N11ny4nu4iti2IS2r5T100ur0.8uT5it6; 	#BestOS+0.01ST: 27.6  7  6 #ST[s] OS[mm] it for cr2cm20N11ny4nu4iti2IS2r5T100ur0.8uT5
+< #export N4=10 f4=${d1}/net_cr2cm50N10ny4nu4iti2IS2r5T100ur0.8uT5it7; 	#BestOS+0.01ST: 32.6  2  7 #ST[s] OS[mm] it for cr2cm50N10ny4nu4iti2IS2r5T100ur0.8uT5
+< #### BestST Ne10 cmS0="20 50" NN="10 11" it=10 cmS1=`seq 20 5 50` 
+< ##f1 #20.10(19.80 20.50 0.23) 58.0(43.0 97.0 17.7) #mean(min,max;rmse) of ST and OS
+< ##f2 #23.77(21.80 26.50 1.41) 14.4(0.0 33.0 13.4) #mean(min,max;rmse) of ST and OS
+< ##f12 #21.49(20.70 22.50 0.70) 38.3(26.0 48.0 6.5) #mean(min,max;rmse) of ST and OS
+< #### BestOS
+< ##f3 #28.03(27.00 29.10 0.67) 6.1(3.0 9.0 1.7) #mean(min,max;rmse) of ST and OS
+< ##f4 #30.86(24.80 32.60 2.56) 1.3(0.0 4.0 1.4) #mean(min,max;rmse) of ST and OS
+< ##f34 #28.97(27.80 31.10 1.05) 1.0(0.0 4.0 1.3) #mean(min,max;rmse) of ST and OS
+< #cat $d1/f1234.dat
+< #export N1=10 f1=${d1}/net_cr2cm20N10ny4nu4iti2IS2r5T100ur0.8uT5it7; 	#BestST+0.01OS: 19.9 52  7 #ST[s] OS[mm] it for cr2cm20N10ny4nu4iti2IS2r5T100ur0.8uT5
+< #export N2=10 f2=${d1}/net_cr2cm50N10ny4nu4iti2IS2r5T100ur0.8uT5it9; 	#BestST+0.01OS: 22.9 28  9 #ST[s] OS[mm] it for cr2cm50N10ny4nu4iti2IS2r5T100ur0.8uT5
+< #export N3=11 f3=${d1}/net_cr2cm20N11ny4nu4iti2IS2r5T100ur0.8uT5it6; 	#BestOS+0.01ST: 27.6  7  6 #ST[s] OS[mm] it for cr2cm20N11ny4nu4iti2IS2r5T100ur0.8uT5
+< #export N4=10 f4=${d1}/net_cr2cm50N10ny4nu4iti2IS2r5T100ur0.8uT5it7; 	#BestOS+0.01ST: 32.6  2  7 #ST[s] OS[mm] it for cr2cm50N10ny4nu4iti2IS2r5T100ur0.8uT5
+< #
+< #### BestST #Ne=20 export cmS0="20 50" NN="4 6 8" it=10 cmS1=`seq 10 5 60`
+< ##f1 #23.06(16.70 29.50 4.92) 128.2(71.0 178.0 42.2) #mean(min,max;rmse) of ST and OS  #smallest --,min,max,--
+< ##f2 #31.64(18.40 39.40 6.09) 353.5(27.0 465.0 123.0) #mean(min,max;rmse) of ST and OS
+< ##f12 #21.73(17.50 32.80 4.48) 65.6(0.0 187.0 58.8) #mean(min,max;rmse) of ST and OS   #smallest mean,--,--,rmse for ST
+< #### BestST Ne10 cmS0="20 50" NN="10 11" it=10 cmS1=`seq 20 5 50` 
+< ##f1 #20.10(19.80 20.50 0.23) 58.0(43.0 97.0 17.7) #mean(min,max;rmse) of ST and OS
+< ##f2 #23.77(21.80 26.50 1.41) 14.4(0.0 33.0 13.4) #mean(min,max;rmse) of ST and OS
+< ##f12 #21.49(20.70 22.50 0.70) 38.3(26.0 48.0 6.5) #mean(min,max;rmse) of ST and OS
+< #### BestOS
+< ##f3 #28.03(27.00 29.10 0.67) 6.1(3.0 9.0 1.7) #mean(min,max;rmse) of ST and OS
+< ##f4 #30.86(24.80 32.60 2.56) 1.3(0.0 4.0 1.4) #mean(min,max;rmse) of ST and OS
+< ##f34 #28.97(27.80 31.10 1.05) 1.0(0.0 4.0 1.3) #mean(min,max;rmse) of ST and OS
+< #cat $d1/f1234.dat
+< #export N1=10 f1=${d1}/net_cr2cm20N10ny4nu4iti2IS2r5T100ur0.8uT5it7; 	#BestST+0.01OS: 19.9 52  7 #ST[s] OS[mm] it for cr2cm20N10ny4nu4iti2IS2r5T100ur0.8uT5
+< #export N2=10 f2=${d1}/net_cr2cm50N10ny4nu4iti2IS2r5T100ur0.8uT5it9; 	#BestST+0.01OS: 22.9 28  9 #ST[s] OS[mm] it for cr2cm50N10ny4nu4iti2IS2r5T100ur0.8uT5
+< #export N3=11 f3=${d1}/net_cr2cm20N11ny4nu4iti2IS2r5T100ur0.8uT5it6; 	#BestOS+0.01ST: 27.6  7  6 #ST[s] OS[mm] it for cr2cm20N11ny4nu4iti2IS2r5T100ur0.8uT5
+< #export N4=10 f4=${d1}/net_cr2cm50N10ny4nu4iti2IS2r5T100ur0.8uT5it7; 	#BestOS+0.01ST: 32.6  2  7 #ST[s] OS[mm] it for cr2cm50N10ny4nu4iti2IS2r5T100ur0.8uT5
+< #### BestOS
+< ##f3 #29.22(24.80 31.90 1.95) 1.4(0.0 9.0 2.8) #mean(min,max;rmse) of ST and OS
+< ##f4 #41.30(39.50 47.10 2.06) 2.9(0.0 27.0 7.7) #mean(min,max;rmse) of ST and OS
+< ##f34 #34.33(32.00 36.60 1.36) 1.1(0.0 8.0 2.4) #mean(min,max;rmse) of ST and OS  #smallest mean,min,max,rmse
+< ##cat $d1/f1234.dat
+< ##export N1=4 f1=${d1}/net_cr2cm20N4ny4nu4iti2IS2r5T100ur0.8uT5it6; 	#BestST+0.01OS: 17.0 71  6 #ST[s] OS[mm] it for cr2cm20N4ny4nu4iti2IS2r5T100ur0.8uT5
+< ##export N2=6 f2=${d1}/net_cr2cm50N6ny4nu4iti2IS2r5T100ur0.8uT5it6; 	#BestST+0.01OS: 18.4 27  6 #ST[s] OS[mm] it for cr2cm50N6ny4nu4iti2IS2r5T100ur0.8uT5
+< ##export N3=6 f3=${d1}/net_cr2cm20N6ny4nu4iti2IS2r5T100ur0.8uT5it5; 	#BestOS+0.01ST: 29.4  0  5 #ST[s] OS[mm] it for cr2cm20N6ny4nu4iti2IS2r5T100ur0.8uT5
+< ##export N4=8 f4=${d1}/net_cr2cm50N8ny4nu4iti2IS2r5T100ur0.8uT5it6; 	#BestOS+0.01ST: 39.7  2  6 #ST[s] OS[mm] it for cr2cm50N8ny4nu4iti2IS2r5T100ur0.8uT5
+< ##########################################
+< source $d1/f12345.dat
+< export Na=(0 $N1 $N2 $N3 $N4 2) #配列array にパラメタ設定, 第0要素はダミー，第５要素はプラントP1(m=10)とP2(m=10)用
+< export NM=${Na[1]};for i in 2 3 4 ;do if [ $NM -lt ${Na[$i]} ]; then NM=${Na[$i]}; fi ;done #NMに最大値8を設定
+< echo "#Na[@]=${Na[@]}, Na[1]=${Na[1]}, Na[2]=${Na[2]}", Na[3]=${Na[3]}", Na[4]=${Na[4]}, NM=$NM"; #確認
+< #Na[@]=1 8 2 6 8 2, Na[1]=8, Na[2]=2, Na[3]=6, Na[4]=8, NM=8
+< export fa=(0 $f1 $f2 $f3 $f4 2)
+< export NMA=0;for i in 1 2 3 4 ;do NMA=`expr ${NMA} + ${Na[$i]}`; done #NM
+< export mL1=(0 20 50 20 50 20 50); #学習は20,50 N1,N2,N3,N4に対する学習モデルの荷重質量m、最後の20,50はプラントモデルのm
+< export obj=(0 "ST" "ST" "OS" "OS");  #N1,N2,N3,N4に対する制御目的#export obj=(0 "S" "S" "O" "O");  #N1,N2,N3,N4に対する制御目的 #
+< export mX1=(0 10 20 30 40 50 60); #テストを10-60
+< export mX2=(0 30 40); #結果を論文に表示するためのテスト集合
+< export mX2=(0 20 50); #結果を論文に表示するためのテスト集合
+< export mX2=(0 10 60); #結果を論文に表示するためのテスト集合 ICONIP2019
+---
+> #results using only stable M
+> f34 #35.20(35.20 35.20 0.00) 16.0(16.0 16.0 0.0) #mean(min,max;rmse) of ST and OS with using only M(20,4,OS)
+> f34 #34.70(34.70 34.70 0.00) 22.0(22.0 22.0 0.0) #mean(min,max;rmse) of ST and OS with using only M(50,7,OS)
+> f34 #33.90(33.90 33.90 0.00) 8.0(8.0 8.0 0.0) #mean(min,max;rmse) of ST and OS with selecting M from all M
+> #############################################
+> #test with only M(20,4,OS) for weights=10,15,...,60
+> export cmS1="10 15 20 25 30 35 40 45 50 55 60" fS="f34" umax="umax:10:0" NM=8 DISP=0;source $d1/f1234.dat;sh mspctest190625.sh #テスト時
+> 
+> f34 #31.75(30.40 35.20 1.58) 2.5(0.0 16.0 4.8) #mean(min,max;rmse) of ST and OS with only M(20,4,OS)
+> f34 #33.85(31.90 36.40 1.18) 0.7(0.0 7.0 2.0) #mean(min,max;rmse) of ST and OS  with only M(20,4,OS) and time>20
+> f34 #34.33(32.00 36.60 1.36) 1.1(0.0 8.0 2.4) #mean(min,max;rmse) of ST and OS  with selecting M
+521,565c89,90
+< ##########################
+< #(8-2) GPCの複数の場合の極零の表示実験　
+< ##########################
+< #(8-2-1) obtain M[1..26] for f1,f2,f3,f4 -->M1234.dat
+< #########################
+< export a=0.7 b=1 tt=100;
+< #export d0=../result-mspc170123e; 
+< export d1=${d0}/a${a}b${b}tt${tt}; 
+< source  ${d1}/f12345.dat
+< export fM=$d0/M
+< cat /dev/null> tmp/M.dat;
+< for nf in 1 2 3 4; do #for nf in 1 2 3 4 5; do#for nf in 1 2 3 5; do #
+<   N=${Na[nf]}
+<   f=${fa[nf]}
+<  echo "## $f" >> tmp/M.dat
+<  fM=${fM}${nf}
+<  for cm in 20; do # any cm
+<   cmd="emulate_crane4 it:1:1 r:5 cr:2 cm:$cm cC:10 ck:15 ky:0.1 umax:10 tt:$tt kxt:1 method:12:$N:$b:$a:0:${f} N:${N} DISP:0 listSS:1 T:100 N2s:12 LAMBDA:0.01";$cmd
+<  done;#for cm
+< done;#for ff
+< cp tmp/M.dat $fM.dat
+< ####original GPC
+< cat $fM.dat|awk 'BEGIN{i=1;}{if(substr($1,1,1)!="#"){printf("M[%d]:[%s,%s,%s,%s,%s,%s,%s,%s];\n",i++,$5,$6,$7,$8,$1,$2,$3,$4);}}' >$fM.mac #original
+< fMA=$d0/MA.mac; cat $fM.mac > $fMA
+< cat $fMA    #-->M[1..24]  #../result-mspc170129/MA.mac
+< #########################
+< #(8-2-2) obtain M[1..24], a[1..2] for cm=10 60 --> $d0/MA.mac 
+< #########################
+< ### make fMA
+< ###
+< fps=$d0/result-ab.dat
+< cat /dev/null > $fps	
+< for imX in 1 2 ;do #for mX in 10 60; do   ##### m=10, 60
+<  mX=${mX2[$imX]}
+<  cmd="d0:\"$d0\";m:${mX};TS:0.5;batch(\"plantmodeling.mac\");quit();";
+<  echo "Executing $cmd |maxima"
+<  echo $cmd |maxima > /dev/null;#-->$d0/m${mX}TS${TS}/result-ab.dat
+<  cat $d0/m${mX}TS0.5/result-ab.dat >> $fps
+<  echo "" >> $fps
+< done; #for m
+< fMA=$d0/MA.mac; 
+< cat $fps|awk 'BEGIN{i=ENVIRON["NMA"]+1;}{printf("M[%d]:[%s,%s,%s,%s,%s,%s,%s,%s];\n",i++,$1,$2,$3,$4,$5,$6,$7,$8);}' >> $fMA #M[25..26]=a[1..2]for check?
+< cat $fps|awk 'BEGIN{i=1;}{printf("a[%d]:[%s,%s,%s,%s,%s,%s,%s,%s];\n",i++,$1,$2,$3,$4,$5,$6,$7,$8);}' >> $fMA 
+< cat $fMA  ##-->M[1..24],a[1..2] #20190521 M[1..26],a[1..2]
+< ##########################
+---
+> #export cmS1="10" fS="f1 f2 f12 f3 f4 f34" 
+> #############################################
+567a93,95
+> export mX1=(0 10 20 30 40 50 60); #テストを10-60
+> export mX2=(0 10 60); #結果を論文に表示するためのテスト集合
+> 
+573,596c101,102
+<       cmd="display2d:false;batch(\"$fMA\");TS:0.5;nP:${nP};nM:${nM};lu:0.24;Gzmode:0;batch(\"gpcMA2poles+.mac\");quit();";#same as the result with Gzmode:1
+< #      cmd="display2d:false;batch(\"$fMA\");TS:0.5;nP:${nP};nM:${nM};lu:0.24;Gzmode:4;batch(\"gpcMA2poles+.mac\");quit();";#same as the result with Gzmode:1
+< #      cmd="display2d:false;batch(\"$fMA\");TS:0.5;nP:${nP};nM:${nM};lu:0.24;Gzmode:1;batch(\"gpcMA2poles+.mac\");quit();";
+< #gpcMA0poles+.macは,再考したもの
+< #      cmd="display2d:false;batch(\"$fMA\");TS:0.5;nP:${nP};nM:${nM};lu:0.24;bw:1;UnotDU:0;Gzmode:3;batch(\"gpcMA0poles+.mac\");quit();";
+< #      cmd="display2d:false;batch(\"$fMA\");TS:0.5;nP:${nP};nM:${nM};lu:0.24;bw:1;UnotDU:0;Gzmode:2;batch(\"gpcMA0poles+.mac\");quit();";
+< #      cmd="display2d:false;batch(\"$fMA\");TS:0.5;nP:${nP};nM:${nM};lu:0.24;bw:1;UnotDU:0;Gzmode:1;batch(\"gpcMA0poles+.mac\");quit();";
+< #      cmd="display2d:false;batch(\"$fMA\");TS:0.5;nP:${nP};nM:${nM};lu:0.24;bw:1;UnotDU:0;Gzmode:0;batch(\"gpcMA0poles+.mac\");quit();";
+< #gpcMA0poles.macはGzのオーバーフローを除く新しい手法
+< #      cmd="display2d:false;batch(\"$fMA\");TS:0.5;nP:${nP};nM:${nM};lu:0.24;bw:1;UnotDU:0;batch(\"gpcMA0poles.mac\");quit();";
+< #      cmd="display2d:false;batch(\"$fMA\");TS:0.5;nP:${nP};nM:${nM};lu:0.24;bw:1;UnotDU:1;batch(\"gpcMA0poles.mac\");quit();";
+< #      cmd="display2d:false;batch(\"$fMA\");TS:0.5;nP:${nP};nM:${nM};lu:0.24;bw:1;batch(\"gpcMA0poles.mac\");quit();";
+< #      cmd="display2d:false;batch(\"$fMA\");TS:0.5;nP:${nP};nM:${nM};lu:0.24;bw:50;batch(\"gpcMA0poles.mac\");quit();";
+< #      cmd="display2d:false;batch(\"$fMA\");TS:0.5;nP:${nP};nM:${nM};lu:0.01;bw:1;batch(\"gpcMA0poles.mac\");quit();";
+< # lu:10.0以上でm60M5-2(プラントm=60に対しM5-2(m=60のプラントモデル)をGPCで使うとの極半径が１未満となり、
+< #  GPCがうまくいくことを示していることが確かめられる
+< #      cmd="display2d:false;batch(\"$fMA\");TS:0.5;nP:${nP};nM:${nM};lu:10.0;bw:1;batch(\"gpcMA0poles.mac\");quit();";
+< # gpcMA1poles.macはGzのオーバーフローを除く元々の手法
+< #      cmd="display2d:false;batch(\"$fMA\");TS:0.5;nP:${nP};nM:${nM};lu:10.0;batch(\"gpcMA1poles.mac\");quit();";
+< #      cmd="display2d:false;batch(\"$fMA\");TS:0.5;nP:${nP};nM:${nM};lu:0.01;batch(\"gpcMA1poles.mac\");quit();";
+< # luを無限大にすると，gpcで求まるuは0になり、gpcの応答はplantの固有応答((9)の解)と同じになるはずなので、確かめた。
+< # 極の半径がr=1e-4程度の大きさの解が得られたが、理論では0になるはず？それを除くと(9)の配置とほぼ同じようだ。
+< #      cmd="display2d:false;batch(\"$fMA\");TS:0.5;nP:${nP};nM:${nM};lu:10000000.0;batch(\"gpcMA1poles.mac\");quit();";
+<       echo "Execute echo $cmd|maxima;"
+---
+>       cmd="display2d:false;batch(\"$fMA\");TS:0.5;nP:${nP};nM:${nM};lu:0.24;Gzmode:0;batch(\"gpcMA2poles+.mac\");quit();";
+>       echo "Execute $cmd|maxima;"
+600c106,108
+< done #for nP in 1 2; do
+---
+> done ;#for nP in 1 2; do
+> 
+> 
+602,669d109
+< ################
+< #(8-2-4-1) gpc 極零の表示 M毎
+< ################
+< ######
+< fplt="gpc-poleszeros.plt"
+< for irf in 0 1; do #irf=0 for 極座標, 1 for 直交座標
+<   if [ $irf = 0 ]; then 
+<   rf=""; 
+< cat > $fplt <<EOF
+< unset key
+< set size ratio -1
+< set grid
+< set parametric 
+< rr=3;r=1;
+< rr=1.5;r=1;
+< set xrange [-rr:rr];set yrange [-rr:rr]
+< unset xtics;unset ytics
+< set xtics (-r,0,r);set ytics (-r,0,r)
+< set pointsize 0.6
+< EOF
+<   else #if [ $irf = 0 ]; then 
+< rf="-rf"; 
+< cat > $fplt <<EOF
+< unset key
+< set size ratio -1
+< set grid
+< set xrange [0:1.5];set yrange [-0.2:1.2]
+< #set xtics (0,0.5,1,1.5);set ytics (0,.2,.4,.6,.8,1)
+< set xtics (0,0.5,1,1.5);set ytics (0,.5,1)
+< set pointsize 0.8
+< EOF
+<   fi
+<   for pz in poles zeros; do
+<     if [ $pz = poles ]; then i0=6; fi
+<     if [ $pz = zeros ]; then i0=7; fi
+<     for nmX in 1 2; do 
+<       mX=${mX2[$nmX]}; # 
+<       C=0;
+<       for nmL in 1 2 3 4 5; do #M=1,2 for ST, 3,4 for OS
+<         nM=0;
+<         echo "" >> ${fplt}
+<         echo "unset multiplot" >> $fplt
+<         echo "set term postscript eps enhanced color; set output \"gpc${rf}-$pz-mX${mX}mL${mL1[${nmL}]}${obj[${nmL}]}.eps\";" >> $fplt
+<         echo "set multiplot layout 4,6" >> $fplt #if [ ${nmL} -lt 5 ]; then echo "set multiplot layout 3,6" >> $fplt else echo "set multiplot layout 1,2" >> $fplt  fi
+< 	echo "set lmargin 5;set rmargin 3" >> $fplt
+< 	echo "set tmargin 0;set bmargin 0" >> $fplt
+<         for n in `seq 1 ${Na[${nmL}]}` ; do # echo ${Na[@]} = 0 10 10 11 10 2
+<           nM=`expr ${nM} + 1`
+<           i=0;
+<           if [ ${nmL} -lt 5 ]; then
+<             echo "set label 1 at graph -0.3,1.2 \"{/=12 {/Arial-Italic H(${mX2[$nmX]},${mL1[${nmL}]},${n},{${obj[${nmL}]}} )}}\"" >> $fplt;
+< #            echo "set label 1 at graph -0.3,1.2 \"{/=12 {/Arial-Italic H(${mX2[$nmX]},${mL1[${nmL}]},${n},O_{${obj[${nmL}]}} )}}\"" >> $fplt;
+<           else # using actual plant model 
+<             echo "set label 1 at graph 0.0,1.2 \"H(${mX2[$nmX]},${mL1[`expr $n + 4`]})\"" >> $fplt;
+<           fi
+<           if [ $irf = 0 ]; then #polar form
+<             echo "plot [0:2*pi] r*cos(t),r*sin(t) t \"\", \"tmp/gpc${rf}-${pz}-P${nmX}M${nM}.dat\" using 1:2 w lp pt 6 lt 1" >> $fplt
+<           else   #rectangular form
+<             echo "plot \"tmp/gpc${rf}-${pz}-P${nmX}M${nM}.dat\" using 1:2 w lp pt 6 lt 1 " >> $fplt
+<           fi
+<           i=`expr $i + 1`;
+<         done; #for n in `seq 1 ${Na[$nmL]}` ; do
+<       done; #for M in 1 2 3 4 ; do
+<     done #for nmX in 1 2; do 
+<   done; #for pz in poles zeros; do
+<   echo ";quit" >> $fplt 
+<   gnuplot $fplt
+< done;# for irf in 0 1;do
+671,681d110
+< #上記2.1 view the figs
+< for nmL in 1 2;do for nmX in 1 2;do gv -scale=5.0 gpc-poles-mX${mX2[$nmX]}mL${mL1[${nmL}]}${obj[${nmL}]}.eps& done;done #H(mX,mL,l,ST)の極
+< for nmL in 3 4;do for nmX in 1 2;do gv -scale=5.0 gpc-poles-mX${mX2[$nmX]}mL${mL1[${nmL}]}${obj[${nmL}]}.eps& done;done #H(mX,mL,l,OS)の極
+< for nmL in 5 ;do for nmX in 1 2 ;do gv -scale=5.0 gpc-poles-mX${mX2[$nmX]}mL${mL1[${nmL}]}${obj[${nmL}]}.eps& done;done #H(mX,mL)の極
+< #
+< for nmL in 1 2;do for nmX in 1 2;do gv -scale=5.0 gpc-rf-poles-mX${mX2[$nmX]}mL${mL1[${nmL}]}${obj[${nmL}]}.eps& done;done #H(mX,mL,l,ST)の極 直交形式
+< for nmL in 3 4;do for nmX in 1 2;do gv -scale=5.0 gpc-rf-poles-mX${mX2[$nmX]}mL${mL1[${nmL}]}${obj[${nmL}]}.eps& done;done #H(mX,mL,l,OS)の極 直交形式
+< for nmL in 5 ;do for nmX in 1 2 ;do gv -scale=5.0 gpc-rf-poles-mX${mX2[$nmX]}mL${mL1[${nmL}]}${obj[${nmL}]}.eps& done;done #H(mX,mL)の極　　　直交形式
+< #
+< for nmL in 1 2;do for nmX in 1 2;do gv -scale=5.0 gpc-zeros-mX${mX2[$nmX]}mL${mL1[${nmL}]}${obj[${nmL}]}.eps& done;done #H(mX,mL,l,ST)の零
+< for nmL in 3 4;do for nmX in 1 2;do gv -scale=5.0 gpc-zeros-mX${mX2[$nmX]}mL${mL1[${nmL}]}${obj[${nmL}]}.eps& done;done #H(mX,mL,l,OS)の零
+683,698d111
+< ###############
+< #(9) 学習モデルおよびプラントの極と零　(5)参照？
+< ###############
+< #export d0=../result-mspc170123e;mkdir -p $d0
+< fMa=$d0/Ma.mac; cat $d0/M1234.mac > $fMa #M1234.mac made at (8-2-1) #../result-mspc170123e/Ma.mac
+< #fMa=$d0/Ma.mac; cat $d0/M1235.mac > $fMa #M1235.mac made at (8-2-1) #../result-mspc170123e/Ma.mac
+< fps=$d0/result-ab.dat                    #made at (8-2-2)
+< NMAa=`expr $NMA + 2`
+< cat $fps|awk 'BEGIN{i=ENVIRON["NMA"]+1;}{printf("M[%d]:[%s,%s,%s,%s,%s,%s,%s,%s];\n",i++,$1,$2,$3,$4,$5,$6,$7,$8);}' >> $fMa
+< for nM in `seq 1 $NMAa`; do  
+<   cmd="display2d:false;batch(\"$fMa\");TS:0.5;n:${nM};Gzmode:0;batch(\"M2poles.mac\");quit();";#default
+< #  cmd="display2d:false;batch(\"$fMa\");TS:0.5;n:${nM};Gzmode:1;batch(\"M2poles.mac\");quit();";
+< #  cmd="display2d:false;batch(\"$fMa\");TS:0.5;n:${nM};batch(\"M2poles.mac\");quit();";
+<   echo "Executing $cmd |maxima"
+<   echo $cmd |maxima >/dev/null;
+< done; #for nM in `seq 1 $NMAa`; do 
+700,773d112
+< ###極零表示 Ma
+< fplt="Ma.plt"
+< for irf in 0 1; do #irf=0 for 極座標, 1 for 直交座標
+<   if [ $irf = 0 ]; then 
+<   rf=""; 
+< cat > $fplt <<EOF
+< unset key
+< set size ratio -1
+< set grid
+< set parametric 
+< rr=1.5;r=1;
+< set xrange [-rr:rr];set yrange [-rr:rr]
+< unset xtics;unset ytics
+< set xtics (-r,0,r);set ytics (-r,0,r)
+< set pointsize 0.6
+< EOF
+<   else #if [ $irf = 0 ]; then 
+< rf="rf-"; 
+< cat > $fplt <<EOF
+< unset key
+< set size ratio -1
+< set grid
+< set xrange [0:1.5];set yrange [-0.2:1.2]
+< #set xtics (0,0.5,1,1.5);set ytics (0,.2,.4,.6,.8,1)
+< set xtics (0,0.5,1,1.5);set ytics (0,.5,1)
+< set pointsize 0.8
+< EOF
+<   fi
+<   for pz in poles zeros; do
+<     if [ $pz = poles ]; then i0=6; fi
+<     if [ $pz = zeros ]; then i0=7; fi
+<     for nP in 1; do # nouse
+<       C=0;nM=0;
+<       m=${mX2[$nP]}; # 
+<       for M in 1 2 3 4 5; do
+<         echo "" >> $fplt
+<         echo "unset multiplot" >> $fplt
+<         if [ $M -lt 5 ];then
+<           echo "set term postscript eps enhanced color; set output \"model-${rf}$pz-mL${mL1[${M}]}${obj[$M]}.eps\";" >> $fplt
+<         else
+<           echo "set term postscript eps enhanced color; set output \"model-${rf}$pz-P${mL1[${M}]}.eps\";" >> $fplt
+<         fi
+<         echo "set multiplot layout 4,6" >> $fplt #      echo "set multiplot layout 2,5" >> $fplt
+<         echo "set lmargin 5;set rmargin 3" >> $fplt
+<         echo "set tmargin 0;set bmargin 0" >> $fplt
+<         for n in `seq 1 ${Na[$M]}` ; do
+<           nM=`expr $nM + 1`
+<           echo "" >> $fplt;
+<           if [ $M -lt 5 ]; then 
+<             echo "set label 1 at graph -0.3,1.2 \"{/=12 {/Arial-Italic M(${mL1[${M}]},${n},{${obj[${M}]}} )}}\"" >> $fplt;
+< #            echo "set label 1 at graph -0.3,1.2 \"{/=12 {/Arial-Italic M(${mL1[${M}]},${n},O_{${obj[${M}]}} )}}\"" >> $fplt;
+< #            echo "set label 1 at graph -0.3,1.2 \"{/=12 {/Arial-Italic M(${mX2[$nmX]},${mL1[${nmL}]},${n},O_{${obj[${nmL}]}} )}}\"" >> $fplt;
+< #            echo "set label 1 at graph 0,1.2 \"M(${mL1[${M}]},${n},${obj[$M]})\"" >> $fplt;
+<           else
+<             echo "set label 1 at graph 0,1.2 \"{/=12 {/Arial-Italic P(${mL1[`expr $n + 4`]})}}\"" >> $fplt;
+< #            echo "set label 1 at graph 0,1.2 \"P(${mL1[`expr $n + 4`]})\"" >> $fplt;
+<           fi
+<           i=0;
+<           if [ $irf = 0 ]; then #polar form
+<             echo -n "plot [0:2*pi] r*cos(t),r*sin(t), \"tmp/${rf}${pz}-M${nM}.dat\" using 1:2 w lp pt 6 lt 1" >> $fplt
+<           else   #rectangular form
+<             echo -n "plot \"tmp/${rf}${pz}-M${nM}.dat\" using 1:2 w lp pt 6 lt 1" >> $fplt
+<           fi
+<           i=`expr $i + 1`;
+<         done; #for n in `seq 1 ${Na[$M0]}` ; do
+<       done; #for M in 1 2 3 4 ; do
+<     done #for nP in 1 2; do 
+<   done; #for pz in poles zeros; do
+<   echo ";quit" >> $fplt 
+<   gnuplot $fplt
+< done;# for irf in 0 1;do
+< ## 2.1 view figs
+< for nmL in 1 2 3 4;do gv -scale=5.0 model-poles-mL${mL1[${nmL}]}${obj[$nmL]}.eps& done    #M(mL,l,O)の極
+< for nmL in 5;do gv -scale=5.0 model-poles-P${mL1[${nmL}]}.eps& done                       #P(mL)の極
+775,831d113
+< for nmL in 1 2 3 4;do gv -scale=5.0 model-zeros-mL${mL1[${nmL}]}${obj[$nmL]}.eps& done   #M(mL,l,O)のゼロ
+< for nmL in 5;do gv -scale=5.0 model-zeros-P${mL1[${nmL}]}.eps& done                       #P(mL)のゼロ
+< ###############
+< #(10) 制御時のM選択
+< ###############
+< for usexdX in 0 1 ;do #usexdX=1 for use crane.x and crane.dX 0 for nouse
+<   export cmS1="50";#for ICONIP2019
+< #  export cmS1="";for imX in 1 2 ;do  cmS1="$cmS1 ${mX2[$imX]}"; done
+<   export fS="f1 f2 f12 f3 f4 f34" NM=10 DISP=0 LAMBDA="" umax="umax:10:$usexdX"; source $d1/f12345.dat;sh mspctest160920.sh #N=8,2,6,10
+<   #####
+<   fplt="gpc-t-Api.plt"
+<   cat /dev/null > $fplt
+<   echo "set term postscript eps enhanced color; set nokey" >>$fplt
+<   echo "set xlabel \"{/=16 {/Arial-Italic t}} [s]\"" >>$fplt
+<   for OBJ in ST OS ;do
+<     for mX in $cmS1 ;do 
+<       echo "set output \"gpc-t-APi-mX${mX}${OBJ}-xdX${usexdX}.eps\"" >>$fplt
+<       echo -n "set ytics (">>$fplt
+<       n=0
+<       if [ $OBJ = "ST" ]; then
+<         N12=`expr ${Na[1]} + ${Na[2]}`
+<         Nsum1=`echo ${N12}+0.5|bc`
+<         for M in 2 1 ; do #for ST
+<           for nM in `seq 1 ${Na[$M]}`; do
+<             echo -n "\"{/=16 {/Arial-Italic M(${mL1[${M}]},${nM},{${obj[$M]}})}}\" $n" >>$fplt
+< #            echo -n "\"{/=16 {/Arial-Italic M(${mL1[${M}]},${nM},O_{${obj[$M]}})}}\" $n" >>$fplt
+<             n=`expr ${n} + 1`;
+<             if [ $n -ne $N12 ]; then echo -n "," >> $fplt ; fi
+<           done
+<         done
+<         echo ")" >> $fplt
+<         echo "plot [][-1:${Nsum1}] \"tmp/t-AP_i-m${mX}f1.dat\" using 1:(\$3+$N2)  w l lw 2, \"tmp/t-AP_i-m${mX}f2.dat\" using 1:(\$3)  w l lw 2, \"tmp/t-AP_i-m${mX}f12.dat\" using 1:((2-\$2)*$N2+\$3)  w l lw 2 notitle">>$fplt
+< #        echo "plot [][-1:${Nsum1}] \"tmp/t-AP_i-m${mX}f1.dat\" using 1:(\$3)  w l, \"tmp/t-AP_i-m${mX}f2.dat\" using 1:(\$3+$N1)  w l, \"tmp/t-AP_i-m${mX}f12.dat\" using 1:((\$2-1)*$N1+\$3)  w l notitle">>$fplt
+<       else 
+<         n=0
+<         N34=`expr ${Na[3]} + ${Na[4]}`
+<         Nsum1=`echo ${N34}+0.5|bc`
+<         for M in 4 3 ; do  #for OS
+<           for nM in `seq 1 ${Na[$M]}`; do
+<             echo -n "\"{/=16 {/Arial-Italic M(${mL1[${M}]},${nM},{${obj[$M]}})}}\" $n" >>$fplt
+< #            echo -n "\"{/=16 {/Arial-Italic M(${mL1[${M}]},${nM},O_{${obj[$M]}})}}\" $n" >>$fplt
+<   #          echo -n "\"M(${mL1[${M}]},${nM},${obj[$M]})\" $n" >>$fplt
+<   #          echo -n "\"M(${mL1[${M}]},${nM},${obj[$M]})\" $n" >>$fplt
+<             n=`expr ${n} + 1`;
+<             if [ $n -ne $N34 ]; then echo -n "," >> $fplt ; fi
+<           done
+<         done
+<         echo ")">>$fplt
+<         echo "plot [0:50][-1:${Nsum1}] \"tmp/t-AP_i-m${mX}f3.dat\" using 1:(\$3+$N4)  w l lw 4 lt 1 lc rgb \"green\", \"tmp/t-AP_i-m${mX}f4.dat\" using 1:(\$3)  w l lw 4 lt 1 lc rgb \"blue\", \"tmp/t-AP_i-m${mX}f34.dat\" using 1:((2-\$2)*$N4+\$3)  w l lw 1 lt 1 lc rgb \"black\"">>$fplt
+< #       echo "plot [][-1:${Nsum1}] \"tmp/t-AP_i-m${mX}f3.dat\" using 1:(\$3)  w l, \"tmp/t-AP_i-m${mX}f4.dat\" using 1:(\$3+$N3)  w l, \"tmp/t-AP_i-m${mX}f34.dat\" using 1:((\$2-1)*$N3+\$3)  w l notitle">>$fplt
+<       fi
+<     done
+<   done
+<   echo "quit" >> $fplt
+<   gnuplot $fplt
+< done #for ixdX in 0 1: do 
+< #2.1, 2.3
+833,834d114
+< gv -scale=5.0 gpc-t-APi-mX${mX2[1]}OS-xdX0.eps&
+< gv -scale=5.0 gpc-t-APi-mX${mX2[2]}OS-xdX0.eps&
+836,848d115
+< gv -scale=5.0 gpc-t-APi-mX${mX2[1]}ST-xdX0.eps&# gv -scale=5.0 gpc-t-APi-mX10ST-xdX0.eps& #
+< gv -scale=5.0 gpc-t-APi-mX${mX2[2]}ST-xdX0.eps&#gv -scale=5.0 gpc-t-APi-mX10OS-xdX0.eps& #
+< ## time-course ICONIP2019
+< for usexdX in 0 1 ;do #usexdX=1 for use crane.x and crane.dX 0 for nouse
+<   export cmS1="60";#for ICONIP2019
+<   export fS="f3 f4 f34" NM=12 DISP=1 LAMBDA="" umax="umax:10:$usexdX"; source $d1/f12345.dat;sh mspctest160920.sh #N=8,2,6,10
+< #  export fS="f1 f2 f12 f3 f4 f34" NM=12 DISP=1 LAMBDA="" umax="umax:10:$usexdX"; source $d1/f12345.dat;sh mspctest160920.sh #N=8,2,6,10
+< done
+< #
+< ## BestOS
+< f3 #27.10(27.10 27.10 0.00) 7.0(7.0 7.0 0.0) #mean(min,max;rmse) of ST and OS
+< f4 #31.50(31.50 31.50 0.00) 5.0(5.0 5.0 0.0) #mean(min,max;rmse) of ST and OS
+< f34 #28.60(28.60 28.60 0.00) 4.0(4.0 4.0 0.0) #mean(min,max;rmse) of ST and OS
+851,852d117
+< gv -scale=5.0 gpc-t-APi-mX60ST-xdX0.eps&
+< gv -scale=5.0 gpc-t-APi-mX60OS-xdX0.eps&
+854,857d118
+< gv -scale=5.0 gpc-t-APi-mX10ST-xdX1.eps&
+< gv -scale=5.0 gpc-t-APi-mX10OS-xdX1.eps&
+< gv -scale=5.0 gpc-t-APi-mX60ST-xdX1.eps&
+< gv -scale=5.0 gpc-t-APi-mX60OS-xdX1.eps&
+859,862d119
+< gv -scale=5.0 gpc-t-APi-mX10ST.eps&
+< gv -scale=5.0 gpc-t-APi-mX60ST.eps&
+< gv -scale=5.0 gpc-t-APi-mX10OS.eps&
+< gv -scale=5.0 gpc-t-APi-mX60OS.eps&
+864,868d120
+< ????
+< fplt="gpc-t-Api.plt"
+< cat /dev/null > $fplt
+< echo "set term postscript eps enhanced color; " >>$fplt
+< echo "set output \"gpc-t-APi-ST.eps\"" >>$fplt
+870,898d121
+< echo -n "set ytics (">>$fplt
+< n=0
+< N12=`expr ${Na[1]} + ${Na[2]}`
+< for M in 1 2 ; do #for ST
+<   for nM in `seq 1 ${Na[$M]}`; do
+<     echo -n "\"M(${mL1[${M}]},${nM},${obj[$M]})\" $n" >>$fplt
+<     n=`expr ${n} + 1`;
+<     if [ $n -ne $N12 ]; then echo -n "," >> $fplt ; fi
+<   done
+< done
+< echo ")" >> $fplt
+< echo "plot [][] \"tmp/t-AP_i-m${cmS1}f1.dat\" using 1:(\$3)  w l, \"tmp/t-AP_i-m${cmS1}f2.dat\" using 1:(\$3+$N1)  w l, \"tmp/t-AP_i-m${cmS1}f12.dat\" using 1:((\$2-1)*$N1+\$3)  w l notitle">>$fplt
+< echo "set output \"gpc-t-APi-OS.eps\"" >>$fplt
+< ##
+< echo -n "set ytics (">>$fplt
+< n=0
+< N34=`expr ${Na[3]} + ${Na[4]}`
+< for M in 3 4 ; do  #for OS
+<   for nM in `seq 1 ${Na[$M]}`; do
+<     echo -n "\"M(${mL1[${M}]},${nM},${obj[$M]})\" $n" >>$fplt
+< #    echo -n "\"M${P}-${nM}\" `expr ${n}`" >>$fplt
+<     n=`expr ${n} + 1`;
+<     if [ $n -ne $N34 ]; then echo -n "," >> $fplt ; fi
+<   done
+< done
+< echo ")">>$fplt
+< echo "plot [][] \"tmp/t-AP_i-m${cmS1}f3.dat\" using 1:(\$3)  w l, \"tmp/t-AP_i-m${cmS1}f4.dat\" using 1:(\$3+$N3)  w l, \"tmp/t-AP_i-m${cmS1}f34.dat\" using 1:((\$2-1)*$N3+\$3)  w l notitle">>$fplt
+< echo "quit" >> $fplt
+< gnuplot $fplt
+900c123,130
+< ##################################################################
+---
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> ############################################
+904c134
+< 下の例で、学習時に
+---
+> したの例で、学習時に
+908c138
+< のオプションumax="umax:10:1"を指定し、emulate_crane.cの
+---
+> のオプションumax="umax:10:1"を師弟し、emulate_crane.cの
+916,917d145
+< 
+< 
+1020c248,249
+< export cmS1="10 15 20 25 30 35 40 45 50 55 60" fS="f1 f2 f12 f3 f4 f34" umax="umax:10:0" NM=8 DISP=0;source $d1/f1234.dat;sh mspctest160920.sh #テスト時
+---
+> #export cmS1="10 15 20 25 30 35 40 45 50 55 60" fS="f1 f2 f12 f3 f4 f34" umax="umax:10:0" NM=8 DISP=0;source $d1/f1234.dat;sh mspctest160920.sh #テスト時
+> export cmS1="10 15 20 25 30 35 40 45 50 55 60" fS="f1 f2 f12 f3 f4 f34 f14 f32" umax="umax:10:0" NM=8 DISP=0;source $d1/f1234.dat;sh mspctest190625.sh #テスト時
+1039a269
+> ### BestOS
+1043a274
+> 
+1141d371
+< export mX2=(0 20 50); #結果を論文に表示するためのテスト集合
+1174a405,406
+> #fps=../result-mspc160518/result-ab.dat               #made at 20160527 (1)  
+> #export d0=../result-mspc170123e;#mkdir -p $d0
+1177,1178c409
+< for imX in 1 2 ;do #for mX in 10 60; do   ##### m=10, 60
+<  mX=${mX2[$imX]}
+---
+> for mX in 10 60; do   ##### m=10, 60
+1224c455
+< done #for nP in 1 2; do
+---
+> done ;#for nP in 1 2; do
+1276,1277c507
+<             echo "set label 1 at graph -0.3,1.2 \"{/=12 {/Arial-Italic H(${mX2[$nmX]},${mL1[${nmL}]},${n},{${obj[${nmL}]}} )}}\"" >> $fplt;
+< #            echo "set label 1 at graph -0.3,1.2 \"{/=12 {/Arial-Italic H(${mX2[$nmX]},${mL1[${nmL}]},${n},O_{${obj[${nmL}]}} )}}\"" >> $fplt;
+---
+>             echo "set label 1 at graph -0.3,1.2 \"{/=12 {/Arial-Italic H(${mX2[$nmX]},${mL1[${nmL}]},${n},O_{${obj[${nmL}]}} )}}\"" >> $fplt;
+1365c595
+<       m=${mX2[$nP]}; # 
+---
+>       m=${mX2[$nP]}; #      if [ $nP = 1 ]; then m=10; else m=60; fi
+1381,1382c611
+<             echo "set label 1 at graph -0.3,1.2 \"{/=12 {/Arial-Italic M(${mL1[${M}]},${n},{${obj[${M}]}} )}}\"" >> $fplt;
+< #            echo "set label 1 at graph -0.3,1.2 \"{/=12 {/Arial-Italic M(${mL1[${M}]},${n},O_{${obj[${M}]}} )}}\"" >> $fplt;
+---
+>             echo "set label 1 at graph -0.3,1.2 \"{/=12 {/Arial-Italic M(${mL1[${M}]},${n},O_{${obj[${M}]}} )}}\"" >> $fplt;
+1415,1416c644
+<   export cmS1="";for imX in 1 2 ;do  cmS1="$cmS1 ${mX2[$imX]}"; done
+<   export fS="f1 f2 f12 f3 f4 f34" NM=10 DISP=0 LAMBDA="" umax="umax:10:$usexdX"; source $d1/f12345.dat;sh mspctest160920.sh #N=8,2,6,10
+---
+>   export cmS1="10 60" fS="f1 f2 f12 f3 f4 f34" NM=10 DISP=0 LAMBDA="" umax="umax:10:$usexdX"; source $d1/f12345.dat;sh mspctest160920.sh #N=8,2,6,10
+1431,1432c659
+<             echo -n "\"{/=16 {/Arial-Italic M(${mL1[${M}]},${nM},{${obj[$M]}})}}\" $n" >>$fplt
+< #            echo -n "\"{/=16 {/Arial-Italic M(${mL1[${M}]},${nM},O_{${obj[$M]}})}}\" $n" >>$fplt
+---
+>             echo -n "\"{/=16 {/Arial-Italic M(${mL1[${M}]},${nM},O_{${obj[$M]}})}}\" $n" >>$fplt
+1444,1445c671
+<             echo -n "\"{/=16 {/Arial-Italic M(${mL1[${M}]},${nM},{${obj[$M]}})}}\" $n" >>$fplt
+< #            echo -n "\"{/=16 {/Arial-Italic M(${mL1[${M}]},${nM},O_{${obj[$M]}})}}\" $n" >>$fplt
+---
+>             echo -n "\"{/=16 {/Arial-Italic M(${mL1[${M}]},${nM},O_{${obj[$M]}})}}\" $n" >>$fplt
+1518c744
+< export cmS1="60" fS="f1" LAMBDA="" umax="umax:10:0" DISP=1; source $d1/f12345.dat; sh mspctest160518.sh
+---
+> export cmS1="60" fS="f1" DISP=1 LAMBDA="" ; source $d1/f12345.dat; sh mspctest160518.sh

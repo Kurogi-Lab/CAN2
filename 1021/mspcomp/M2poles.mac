@@ -1,0 +1,78 @@
+/*display2d:false;batch(\"$fMa\");TS:0.5;n:${nM};batch(\"M2poles.mac\");quit();*/
+/*rf:r(absolute value) and f(frequency) of z=r* exp(j 2\pi f TS)*/
+/*display2d:false;batch("../result-mspc170129/Ma.mac");TS:0.5;n:1;batch("M2poles.mac");quit(); |maxima*/
+
+if not scalarp(n) then (display2d:false,batch("../result-mspc170129/Ma.mac"),TS:0.5,n:1);
+
+load(eigen);/*eigenパッケージ;http://ynomura.dip.jp/archives/2009/02/maxima_3.htmlでバグ報告*/
+rec2pol(z):=(if abs(z)>0 then float(abs(z)+%i*(imagpart(log(z))/2/%pi/TS)) else 0); 
+pol2rec(z):=(if z=0 then 0 else (t:imagpart(z*2*%pi*TS),float(realpart(z)*cos(t))+%i*float(realpart(z)*sin(t))));
+
+if not scalarp(Gzmode) then Gzmode:0;
+/*yの極*/
+/*ceA:z^4-M[n][1]*z^3-M[n][2]*z^2-M[n][3]*z^1-M[n][4]=0;特性方程式 characteristic equation of a*/
+ceA:(if Gzmode=0 then z^4-M[n][1]*z^3-M[n][2]*z^2-M[n][3]*z^1-M[n][4]
+else num(rat((z^4-M[n][1]*z^3-M[n][2]*z^2-M[n][3]*z^1-M[n][4])*(z-1)/z)));
+
+pG:allroots(ceA=0);
+pGr:[];for i:1 step 1 thru length(pG) do pGr:append(pGr,[rec2pol(rhs(pG[i]))]);
+zero:1e-10;
+pGr0:[];pGr1m:[];pGr1p:[];pGr2p:[];pGr2m:[];
+for i:1 thru length(pG) do 
+if pGr[i]=0 then pGr0:append(pGr0,[0]) 
+elseif abs(imagpart(pGr[i])-1)<zero then pGr1m:append(pGr1m,[pGr[i]]) 
+elseif imagpart(pGr[i])<-zero then pGr2m:append(pGr2m,[pGr[i]]) 
+elseif imagpart(pGr[i])<+zero then pGr1p:append(pGr1p,[pGr[i]]) 
+else pGr2p:append(pGr2p,[pGr[i]]);
+/*pGr0;pGr1m;pGr2m;pGr1p;pGr2p;*/
+spGr1m:(lessp(a,b):=realpart(a) < realpart(b),sort(pGr1m,'lessp));
+spGr1p:(lessp(a,b):=realpart(a) < realpart(b),sort(pGr1p,'lessp));
+spGr1mr:reverse(spGr1m);
+spGr1pr:reverse(spGr1p);
+spGr2m:(lessp(a,b):=imagpart(a) < imagpart(b),sort(pGr2m,'lessp));
+spGr2p:(lessp(a,b):=imagpart(a) < imagpart(b),sort(pGr2p,'lessp));
+spGr:append(pGr0,spGr1m,spGr2m,spGr1pr,spGr1p,spGr2p,spGr1mr,pGr0);
+spG:[];for i:1 step 1 thru length(spGr) do spG:append(spG,[pol2rec(spGr[i])]);
+fp:openw(concat("tmp/poles-M",n,".dat"));
+for i:1 step 1 thru length(spG) do printf(fp,"~g ~g~%",realpart(spG[i]),imagpart(spG[i]));
+close(fp);
+
+/*極pol*/
+pGr:[];for i:1 step 1 thru length(pG) do pGr:append(pGr,[rec2pol(rhs(pG[i]))]);
+spGr:(lessp(a,b):=realpart(a) < realpart(b),sort(pGr,'lessp));/*sort by angle*/
+fp:openw(concat("tmp/rf-poles-M",n,".dat"));
+for i:1 step 1 thru length(pG) do printf(fp,"~g ~g~%",realpart(spGr[i]),abs(imagpart(spGr[i])));
+close(fp);
+
+/*零*/
+ceA:M[n][5]*z^3+M[n][6]*z^2+M[n][7]*z^1+M[n][8]=0;/*特性方程式 characteristic equation of a*/
+pA:=allroots(ceA);/*極　poles of A*/
+pG:allroots(ceA);
+
+pGr:[];for i:1 step 1 thru length(pG) do pGr:append(pGr,[rec2pol(rhs(pG[i]))]);
+zero:1e-10;
+pGr0:[];pGr1m:[];pGr1p:[];pGr2p:[];pGr2m:[];
+for i:1 thru length(pG) do 
+if pGr[i]=0 then pGr0:append(pGr0,[0]) 
+elseif abs(imagpart(pGr[i])-1)<zero then pGr1m:append(pGr1m,[pGr[i]]) 
+elseif imagpart(pGr[i])<-zero then pGr2m:append(pGr2m,[pGr[i]]) 
+elseif imagpart(pGr[i])<+zero then pGr1p:append(pGr1p,[pGr[i]]) 
+else pGr2p:append(pGr2p,[pGr[i]]);
+/*pGr0;pGr1m;pGr2m;pGr1p;pGr2p;*/
+spGr1m:(lessp(a,b):=realpart(a) < realpart(b),sort(pGr1m,'lessp));
+spGr1p:(lessp(a,b):=realpart(a) < realpart(b),sort(pGr1p,'lessp));
+spGr1mr:reverse(spGr1m);
+spGr1pr:reverse(spGr1p);
+spGr2m:(lessp(a,b):=imagpart(a) < imagpart(b),sort(pGr2m,'lessp));
+spGr2p:(lessp(a,b):=imagpart(a) < imagpart(b),sort(pGr2p,'lessp));
+spGr:append(pGr0,spGr1m,spGr2m,spGr1pr,spGr1p,spGr2p,spGr1mr,pGr0);
+spG:[];for i:1 step 1 thru length(spGr) do spG:append(spG,[pol2rec(spGr[i])]);
+fp:openw(concat("tmp/zeros-M",n,".dat"));
+for i:1 step 1 thru length(spG) do printf(fp,"~g ~g~%",realpart(spG[i]),imagpart(spG[i]));
+close(fp);
+/*零pol*/
+pGr:[];for i:1 step 1 thru length(pG) do pGr:append(pGr,[rec2pol(rhs(pG[i]))]);
+spGr:(lessp(a,b):=realpart(a) < realpart(b),sort(pGr,'lessp));/*sort by angle*/
+fp:openw(concat("tmp/rf-zeros-M",n,".dat"));
+for i:1 step 1 thru length(pG) do printf(fp,"~g ~g~%",realpart(spGr[i]),abs(imagpart(spGr[i])));
+close(fp);

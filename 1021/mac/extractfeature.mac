@@ -1,0 +1,55 @@
+display2d:false;
+batch("tmp/M.mac");
+n:1;
+G:1;
+for i:1 step 1 thru 8 do G:G-M[n][i]*z^(-i);
+H:M[n][9]/G;
+H:rat(H);/*有理式*/
+H1:num(H);/*分子*/
+H2:denom(H);/*分母*/
+pH:allroots(H2=0);/*極*/
+Q2:coeff(H2,z,8);for i:1 step 1 thru 8 do Q2:Q2*(z-rhs(pH[i]));
+for i:1 step 1 thru 8 do (QI:ratsubst(rhs(pH[i]),z,factor((z-rhs(pH[i]))/Q2)),c[i]:float(ratsubst(rhs(pH[i]),z,H1*QI)));
+for i:1 step 1 thru 8 do print(i,realpart(c[i]),imagpart(c[i]));
+
+float(realpart(Q));
+float(imagpart(Q));
+
+
+pQ:allroots(Q=0);
+Q:coeff(H2,z,8);for i:1 step 1 thru 8 do Q:Q*(z-rhs(pH[i]));
+pQ:allroots(Q=0);
+
+ratsubst(rhs(pH[1]),z,factor((z-rhs(pH[1])*H)));
+
+/****************/
+PHs:solve(rH2=0,z);/* does not work this case?*/
+realpart(subst(rhs(pH[1]),z,H));
+imagpart(subst(rhs(pH[1]),z,H));
+
+ratsubst(rhs(pH[1]),z,H)
+bfloat(realpart(ratsubst(rhs(pH[1]),z,rH2)));
+
+A1:limit(H*(z-rhs(pH[1])), z, rhs(pH[1]));
+imagpart(limit(H*(z-rhs(pH[1])), z, rhs(pH[1])));
+
+ratsubst(rhs(pH[1]),z,H*(z-rhs(pH[1])));
+
+
+realpart(subst(rhs(pH[1]),z,H));
+imagpart(subst(rhs(pH[1]),z,H));
+
+Qi:coeff(rH2,z,8);
+for i:1 step 1 thru 8 do Qi:Qi*(z-rhs(pH[i]));
+/**check Qi==rH2 ?*/
+float(coeff(Qi,z,7)-coeff(rH2,z,7));/*-9.961497900605836E+47???*/
+P:rat(1/Qi);
+realpart(subst(rhs(pH[1]),z,P*(z-rhs(pH[1]))));/*=0*/
+realpart(ratsubst(rhs(pH[1]),z,P*(z-rhs(pH[1]))));/*=0*/
+float(ratsubst(rhs(pH[1]),z,P*(z-rhs(pH[1]))));
+float(ratsubst(rhs(pH[1]),z,P*(z-pH[1])));
+realpart(float(ratsubst(rhs(pH[1]),z,P*(z-rhs(pH[1])))));
+imagpart(float(ratsubst(rhs(pH[1]),z,P*(z-rhs(pH[1])))));
+
+
+partfrac(H,z);

@@ -1,0 +1,17 @@
+﻿1          #0:time-series,1:function,3:ijcnn04,4:range-data,No.1
+1 0       #dimensionality k1 k2					
+/home/kuro/sotu/2021/can2m/data/Geo1d_100_50_10/train.csv						       	        
+/home/kuro/sotu/2021/can2m/data/Geo1d_100_50_10/test.csv	#BAGGING==NoBAG || Task1==1
+0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00:0.000000e+00:0.000000e+00:0.000000e+00   #y-normalization[ymin0:ymax0]->[ymin1:ymax1]
+in          init-net			                
+30          number-of-cells				          	
+6           n_compare					
+2.000000e-01 3 -1     v_thresh vmin vmin2	         		
+5.000000e+00           v_ratio				                
+2.000000e-01 5.000000e-02 7.000000e-01   width,gamma  #window width                         
+ex          execution						
+1 5.000000e-02 7.000000e-01   #<0:online,1:batch>, <gamma0>, <entropy_thresh>     
+100        i_times number of learning iterations	        
+100 50 350    number-of-display, rot_x, rot_z			       
+ssp0_      #prediction of training data -> predict0.dat    
+qu         

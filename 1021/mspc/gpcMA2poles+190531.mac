@@ -1,0 +1,120 @@
+/*method No.2 */
+/*display2d:false;batch("../result-mspc170119/MA.mac");TS:0.5;nP:1;nM:1;*/
+/*if not scalarp(nP) then (display2d:false,batch("../result-mspc170129/MA.mac"),TS:0.5,nP:1,nM:6,lu:0.24,bw:1);*//*for debug*/
+
+if not scalarp(nP) then (display2d:false,batch("../result-mspc170129/MA.mac"),TS:0.5,nP:2,nM:3); /*batch("gpcMA2poles+.mac");quit();|maxima;*/
+if not scalarp(lu) then lu:0.24;/*lambda_u;定義されてなければ0.01に設定*/
+
+a1:M[nM][1];a2:M[nM][2];a3:M[nM][3];a4:M[nM][4];b1:M[nM][5];b2:M[nM][6];b3:M[nM][7];b4:M[nM][8];/*学習モデル*/
+at1:a1+1;at2:a2-a1;at3:a3-a2;at4:a4-a3;at5:-a4;/*差分モデル*/
+At:matrix([at1,at2,at3,at4,at5],[1,0,0,0,0],[0,1,0,0,0],[0,0,1,0,0],[0,0,0,1,0]);
+AtT:transpose(At);
+load(eigen);/*eigenパッケージ;http://ynomura.dip.jp/archives/2009/02/maxima_3.htmlでバグ報告*/
+bt:columnvector([1,0,0,0,0]);/*bt:matrix([1],[0],[0],[0],[0]);*/
+btT:transpose(bt);
+b5:0;
+ct:columnvector([b1,b2,b3,b4,b5]);/*ct:([[b1],[b2],[b3],[b4],[b5]]);はダメ*/
+ctT:transpose(ct);
+Q:ct.ctT;
+P[20]:Q;
+for i:19 next i-1 while i>0 do (P[i]:Q+AtT.P[i+1].At-(lu+btT.P[i+1].bt)^(-1)*AtT.P[i+1].bt.btT.P[i+1].At);/*Pの更新 Riccati iteration*/
+/*for i:19 next i-1 while i>0 do P[i]:Q+AtT.P[i+1].At-(lu+btT.P[i+1].bt)^(-1)*AtT.P[i+1].bt.btT.P[i+1].At;*//*Pの更新 Riccati iteration*/
+/*P[1];*/
+kT:(lu+btT.P[1].bt)^(-1)*btT.P[1].At;
+Z:columnvector([1,1/z,1/z^2,1/z^3,1/z^4]);/*Z:columnvector([1,z^(-1),z^(-2),z^(-3),z^(-4)]);*/
+hzl:1/(b1+b2/z+b3/z^2+b4/z^3);/*hzl:(b1+b2*z^(-1)+b3*(z)^(-2)+b4*z^(-3))^(-1);*/
+hz:hzl*Z;
+kThz:kT.hz;
+
+a1:a[nP][1];a2:a[nP][2];a3:a[nP][3];a4:a[nP][4];b1:a[nP][5];b2:a[nP][6];b3:a[nP][7];b4:a[nP][8];/*制御対象*/
+
+if not scalarp(Gzmode) then Gzmode:0;
+
+Gz0:(if Gzmode=0 then rat(((1-1/z)*(b1/z+b2/z^2+b3/z^3+b4/z^4)*kThz)/((1-(a1/z^1+a2/z^2+a3/z^3+a4/z^4))*(1-1/z^1)+(b1/z^1+b2/z^2+b3/z^3+b4/z^4)*kThz))
+elseif Gzmode=1 then  rat((        (b1/z+b2/z^2+b3/z^3+b4/z^4)*kThz)/((1-(a1/z^1+a2/z^2+a3/z^3+a4/z^4))*(1-1/z^1)+(b1/z^1+b2/z^2+b3/z^3+b4/z^4)*kThz)));
+elseif Gzmode=4 then  rat((        (b1/z+b2/z^2+b3/z^3+b4/z^4)*kThz)/((1-(a1/z^1+a2/z^2+a3/z^3+a4/z^4))*(1-1/z^1)+(b1/z^1+b2/z^2+b3/z^3+b4/z^4)*kThz)));
+
+f(fz):=(fzr:rat(fz),f0:0,for iz:0 thru 8 do (f0:f0+float(coeff(fzr,z,iz))*z^iz),f0);/*get float coefficients*/
+zeroth:1e-20;
+searchia0(fz):=(i0:1,for iz:1 thru 8 do (if coeff(fz,z,iz) # 0 then i0:iz),i0);/* fzの最高次数を求める*/
+
+ia0:searchia0(denom(rat(Gz0)));
+a0:coeff(denom(rat(Gz0)),z,ia0);
+ga0(fz):=(g0:0,for iz:0 thru 8 do (ai:float(coeff(fz,z,iz)/a0), if abs(ai) > zeroth then g0:g0+ai*z^iz),g0);
+Gz0A:ga0(denom(rat(Gz0)));/*Gz0の分母１項の分子*/
+Gz0B:ga0(num(rat(Gz0)));  /*Gz0の分母１項の分母*/
+Gz:Gz0B/Gz0A;
+
+rec2pol(z):=(if abs(z)>0 then float(abs(z)+%i*(imagpart(log(z))/2/%pi/TS)) else 0); 
+pol2rec(z):=(if z=0 then 0 else (t:imagpart(z*2*%pi*TS),float(realpart(z)*cos(t))+%i*float(realpart(z)*sin(t))));
+
+/*Gz:rat(((b1*z^(-1)+b2*z^(-2)+b3*z^(-3)+b4*z^(-4))*kThz)/((1-(a1*z^(-1)+a2*z^(-2)+a3*z^(-3)+a4*z^(-4)))*(1-z^(-1))+(b1*z^(-1)+b2*z^(-2)+b3*(z)^(-3)+b4*z^(-4))*kThz));*//*一巡伝達関数とその有理化*/
+Gzbunbo:denom(Gz);/*分母の抽出*/
+
+/*極*/
+pG:allroots(Gzbunbo=0);
+/**/
+pGr:[];for i:1 step 1 thru length(pG) do pGr:append(pGr,[rec2pol(rhs(pG[i]))]);
+zero:1e-10;
+pGr0:[];pGr1m:[];pGr1p:[];pGr2p:[];pGr2m:[];
+for i:1 thru length(pG) do 
+if pGr[i]=0 then pGr0:append(pGr0,[0]) 
+elseif abs(imagpart(pGr[i])-1)<zero then pGr1m:append(pGr1m,[pGr[i]]) 
+elseif imagpart(pGr[i])<-zero then pGr2m:append(pGr2m,[pGr[i]]) 
+elseif imagpart(pGr[i])<+zero then pGr1p:append(pGr1p,[pGr[i]]) 
+else pGr2p:append(pGr2p,[pGr[i]]);
+/*pGr0;pGr1m;pGr2m;pGr1p;pGr2p;*/
+spGr1m:(lessp(a,b):=realpart(a) < realpart(b),sort(pGr1m,'lessp));
+spGr1p:(lessp(a,b):=realpart(a) < realpart(b),sort(pGr1p,'lessp));
+spGr1mr:reverse(spGr1m);
+spGr1pr:reverse(spGr1p);
+spGr2m:(lessp(a,b):=imagpart(a) < imagpart(b),sort(pGr2m,'lessp));
+spGr2p:(lessp(a,b):=imagpart(a) < imagpart(b),sort(pGr2p,'lessp));
+spGr:append(pGr0,spGr1m,spGr2m,spGr1pr,spGr1p,spGr2p,spGr1mr,pGr0);
+/*極save polar form*/
+spG:[];for i:1 step 1 thru length(spGr) do spG:append(spG,[pol2rec(spGr[i])]);
+fp:openw(concat("tmp/gpc-poles-P",nP,"M",nM,".dat"));
+for i:1 step 1 thru length(spG) do printf(fp,"~g ~g~%",realpart(spG[i]),imagpart(spG[i]));
+printf(fp,"~g ~g~%",realpart(spG[1]),imagpart(spG[1])); /*20190522 for close the loop*/
+close(fp);
+
+/*極save rectangular form*/
+pGr:[];for i:1 step 1 thru length(pG) do pGr:append(pGr,[rec2pol(rhs(pG[i]))]);
+spGr:(lessp(a,b):=realpart(a) < realpart(b),sort(pGr,'lessp));/*sort by angle*/
+fp:openw(concat("tmp/gpc-rf-poles-P",nP,"M",nM,".dat"));
+for i:1 step 1 thru length(pG) do printf(fp,"~g ~g~%",realpart(spGr[i]),abs(imagpart(spGr[i])));
+close(fp);
+
+/*零*/
+Gzbunshi:num(Gz);/*分子の抽出*/
+pG:allroots(Gzbunshi=0);
+/**/
+pGr:[];for i:1 step 1 thru length(pG) do pGr:append(pGr,[rec2pol(rhs(pG[i]))]);
+zero:1e-10;
+pGr0:[];pGr1m:[];pGr1p:[];pGr2p:[];pGr2m:[];
+for i:1 thru length(pG) do 
+if pGr[i]=0 then pGr0:append(pGr0,[0]) 
+elseif abs(imagpart(pGr[i])-1)<zero then pGr1m:append(pGr1m,[pGr[i]]) 
+elseif imagpart(pGr[i])<-zero then pGr2m:append(pGr2m,[pGr[i]]) 
+elseif imagpart(pGr[i])<+zero then pGr1p:append(pGr1p,[pGr[i]]) 
+else pGr2p:append(pGr2p,[pGr[i]]);
+/*pGr0;pGr1m;pGr2m;pGr1p;pGr2p;*/
+spGr1m:(lessp(a,b):=realpart(a) < realpart(b),sort(pGr1m,'lessp));
+spGr1p:(lessp(a,b):=realpart(a) < realpart(b),sort(pGr1p,'lessp));
+spGr1mr:reverse(spGr1m);
+spGr1pr:reverse(spGr1p);
+spGr2m:(lessp(a,b):=imagpart(a) < imagpart(b),sort(pGr2m,'lessp));
+spGr2p:(lessp(a,b):=imagpart(a) < imagpart(b),sort(pGr2p,'lessp));
+spGr:append(pGr0,spGr1m,spGr2m,spGr1pr,spGr1p,spGr2p,spGr1mr,pGr0);
+spG:[];for i:1 step 1 thru length(spGr) do spG:append(spG,[pol2rec(spGr[i])]);
+/*零save polar form*/
+fp:openw(concat("tmp/gpc-zeros-P",nP,"M",nM,".dat"));
+for i:1 step 1 thru length(spG) do printf(fp,"~g ~g~%",realpart(spG[i]),imagpart(spG[i]));
+printf(fp,"~g ~g~%",realpart(spG[1]),imagpart(spG[1])); /*20190522for close the loop*/
+close(fp);
+/*零save rectangular form*/
+pGr:[];for i:1 step 1 thru length(pG) do pGr:append(pGr,[rec2pol(rhs(pG[i]))]);
+spGr:(lessp(a,b):=realpart(a) < realpart(b),sort(pGr,'lessp));/*sort by angle*/
+fp:openw(concat("tmp/gpc-rf-zeros-P",nP,"M",nM,".dat"));
+for i:1 step 1 thru length(pG) do printf(fp,"~g ~g~%",realpart(spGr[i]),abs(imagpart(spGr[i])));
+close(fp);

@@ -1,0 +1,13 @@
+#/bin/bash
+cat $1|awk 'BEGIN{FS=" "}{
+for(i=1; i<=NF; i++) {a[NR,i]=$i}} NF>p{p = NF }END{
+  for(j=1; j<=p; j++){
+    mj=0.0
+    for(i=1; i<=NR; i++){
+      mj+=a[i,j]
+    }
+    printf("%e ",mj/NR);
+  }
+  printf("\n")
+}'
+#    printf("%e ",m[i]/NR)

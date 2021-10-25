@@ -1,0 +1,393 @@
+#start time:2021-06-19 08:47:20.124500
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-zero1-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-zero2-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-zero3-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-zero4-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-zero5-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-zero6-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-zero7-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-zero8-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-zero9-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-ichi1-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-ichi2-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-ichi3-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-ichi4-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-ichi5-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-ichi6-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-ichi7-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-ichi8-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-ichi9-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-ni1-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-ni2-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-ni3-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-ni4-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-ni5-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-ni6-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-ni7-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-ni8-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-ni9-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-san1-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-san2-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-san3-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-san4-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-san5-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-san6-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-san7-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-san8-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-san9-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-si1-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-si2-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-si3-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-si4-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-si5-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-si6-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-si7-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-si8-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-si9-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-go1-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-go2-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-go3-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-go4-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-go5-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-go6-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-go7-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-go8-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-go9-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-roku1-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-roku2-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-roku3-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-roku4-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-roku5-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-roku6-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-roku7-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-roku8-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-roku9-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-nana1-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-nana2-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-nana3-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-nana4-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-nana5-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-nana6-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-nana7-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-nana8-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-nana9-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-hachi1-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-hachi2-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-hachi3-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-hachi4-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-hachi5-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-hachi6-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-hachi7-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-hachi8-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-hachi9-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-kyu1-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-kyu2-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-kyu3-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-kyu4-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-kyu5-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-kyu6-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-kyu7-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-kyu8-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fhs-kyu9-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-zero1-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-zero2-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-zero3-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-zero4-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-zero5-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-zero6-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-zero7-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-zero8-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-zero9-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-ichi1-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-ichi2-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-ichi3-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-ichi4-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-ichi5-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-ichi6-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-ichi7-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-ichi8-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-ichi9-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-ni1-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-ni2-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-ni3-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-ni4-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-ni5-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-ni6-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-ni7-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-ni8-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-ni9-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-san1-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-san2-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-san3-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-san4-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-san5-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-san6-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-san7-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-san8-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-san9-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-si1-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-si2-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-si3-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-si4-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-si5-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-si6-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-si7-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-si8-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-si9-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-go1-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-go2-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-go3-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-go4-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-go5-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-go6-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-go7-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-go8-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-go9-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-roku1-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-roku2-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-roku3-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-roku4-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-roku5-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-roku6-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-roku7-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-roku8-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-roku9-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-nana1-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-nana2-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-nana3-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-nana4-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-nana5-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-nana6-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-nana7-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-nana8-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-nana9-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-hachi1-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-hachi2-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-hachi3-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-hachi4-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-hachi5-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-hachi6-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-hachi7-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-hachi8-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-hachi9-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-kyu1-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-kyu2-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-kyu3-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-kyu4-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-kyu5-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-kyu6-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-kyu7-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-kyu8-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/fms-kyu9-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-zero1-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-zero2-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-zero3-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-zero4-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-zero5-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-zero6-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-zero7-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-zero8-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-zero9-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-ichi1-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-ichi2-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-ichi3-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-ichi4-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-ichi5-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-ichi6-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-ichi7-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-ichi8-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-ichi9-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-ni1-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-ni2-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-ni3-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-ni4-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-ni5-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-ni6-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-ni7-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-ni8-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-ni9-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-san1-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-san2-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-san3-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-san4-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-san5-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-san6-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-san7-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-san8-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-san9-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-si1-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-si2-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-si3-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-si4-R1-MFCCl20m20n22E1.dat exists: Omit calc because ow=="?0"
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mkk-si5-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-si5-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-si5-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mkk-si6-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-si6-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-si6-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mkk-si7-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-si7-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-si7-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mkk-si8-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-si8-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-si8-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mkk-si9-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-si9-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-si9-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mkk-go1-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-go1-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-go1-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mkk-go2-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-go2-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-go2-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mkk-go3-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-go3-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-go3-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mkk-go4-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-go4-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-go4-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mkk-go5-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-go5-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-go5-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mkk-go6-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-go6-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-go6-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mkk-go7-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-go7-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-go7-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mkk-go8-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-go8-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-go8-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mkk-go9-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-go9-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-go9-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mkk-roku1-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-roku1-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-roku1-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mkk-roku2-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-roku2-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-roku2-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mkk-roku3-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-roku3-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-roku3-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mkk-roku4-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-roku4-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-roku4-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mkk-roku5-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-roku5-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-roku5-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mkk-roku6-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-roku6-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-roku6-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mkk-roku7-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-roku7-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-roku7-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mkk-roku8-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-roku8-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-roku8-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mkk-roku9-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-roku9-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-roku9-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mkk-nana1-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-nana1-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-nana1-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mkk-nana2-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-nana2-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-nana2-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mkk-nana3-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-nana3-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-nana3-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mkk-nana4-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-nana4-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-nana4-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mkk-nana5-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-nana5-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-nana5-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mkk-nana6-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-nana6-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-nana6-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mkk-nana7-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-nana7-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-nana7-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mkk-nana8-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-nana8-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-nana8-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mkk-nana9-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-nana9-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-nana9-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mkk-hachi1-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-hachi1-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-hachi1-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mkk-hachi2-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-hachi2-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-hachi2-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mkk-hachi3-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-hachi3-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-hachi3-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mkk-hachi4-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-hachi4-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-hachi4-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mkk-hachi5-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-hachi5-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-hachi5-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mkk-hachi6-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-hachi6-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-hachi6-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mkk-hachi7-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-hachi7-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-hachi7-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mkk-hachi8-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-hachi8-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-hachi8-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mkk-hachi9-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-hachi9-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-hachi9-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mkk-kyu1-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-kyu1-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-kyu1-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mkk-kyu2-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-kyu2-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-kyu2-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mkk-kyu3-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-kyu3-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-kyu3-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mkk-kyu4-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-kyu4-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-kyu4-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mkk-kyu5-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-kyu5-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-kyu5-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mkk-kyu6-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-kyu6-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-kyu6-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mkk-kyu7-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-kyu7-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-kyu7-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mkk-kyu8-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-kyu8-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-kyu8-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mkk-kyu9-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-kyu9-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mkk-kyu9-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mko-zero1-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-zero1-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-zero1-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mko-zero2-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-zero2-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-zero2-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mko-zero3-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-zero3-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-zero3-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mko-zero4-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-zero4-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-zero4-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mko-zero5-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-zero5-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-zero5-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mko-zero6-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-zero6-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-zero6-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mko-zero7-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-zero7-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-zero7-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mko-zero8-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-zero8-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-zero8-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mko-zero9-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-zero9-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-zero9-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mko-ichi1-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-ichi1-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-ichi1-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mko-ichi2-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-ichi2-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-ichi2-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mko-ichi3-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-ichi3-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-ichi3-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mko-ichi4-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-ichi4-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-ichi4-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mko-ichi5-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-ichi5-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-ichi5-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mko-ichi6-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-ichi6-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-ichi6-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mko-ichi7-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-ichi7-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-ichi7-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mko-ichi8-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-ichi8-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-ichi8-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mko-ichi9-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-ichi9-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-ichi9-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mko-ni1-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-ni1-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-ni1-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mko-ni2-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-ni2-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-ni2-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mko-ni3-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-ni3-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-ni3-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mko-ni4-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-ni4-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-ni4-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mko-ni5-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-ni5-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-ni5-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mko-ni6-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-ni6-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-ni6-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mko-ni7-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-ni7-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-ni7-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mko-ni8-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-ni8-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-ni8-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mko-ni9-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-ni9-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-ni9-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mko-san1-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-san1-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-san1-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mko-san2-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-san2-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-san2-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mko-san3-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-san3-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-san3-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mko-san4-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-san4-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-san4-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mko-san5-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-san5-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-san5-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mko-san6-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-san6-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-san6-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mko-san7-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-san7-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-san7-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mko-san8-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-san8-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-san8-R1-MFCCl20m20n22E1.dat created
+python f2b.py -fmt f -yin /home/kuro/data/12voicedata_ueki_all_m/mko-san9-R1.dat -yout tmp/tmp.flt && cat tmp/tmp.flt|frame -l 160 -p 80 | mfcc -l 160 -f 8 -m 20 -n 22 -a 0.97 -E > tmp/mfcc.bin && python print_mfcc.py tmp/mfcc.bin 21 > /home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-san9-R1-MFCCl20m20n22E1.dat
+#/home/kuro/data/12voicedata_ueki_all_MFCCl20m20n20ER1_Ku20omp6/mko-san9-R1-MFCCl20m20n22E1.dat created

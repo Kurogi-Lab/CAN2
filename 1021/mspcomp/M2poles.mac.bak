@@ -1,0 +1,44 @@
+/*display2d:false;batch(\"$fMa\");TS:0.5;n:${nM};batch(\"M2poles.mac\");quit();*/
+/*rf:r(absolute value) and f(frequency) of z=r* exp(j 2\pi f TS)*/
+/*display2d:false;batch("../result-mspc170129/Ma.mac");TS:0.5;n:1;batch("M2poles.mac");quit(); |maxima*/
+
+if not scalarp(n) then (display2d:false,batch("../result-mspc170129/Ma.mac"),TS:0.5,n:1);
+
+rf(z):=[float(abs(z))*%i+float(abs(imagpart(log(z))/2/%pi/TS))];
+load(eigen);/*eigenパッケージ;http://ynomura.dip.jp/archives/2009/02/maxima_3.htmlでバグ報告*/
+/*yの極*/
+ceA:z^4-M[n][1]*z^3-M[n][2]*z^2-M[n][3]*z^1-M[n][4]=0;/*特性方程式 characteristic equation of a*/
+pA:allroots(ceA);/*極　poles of A*/
+/**/
+pAr:[];for i:1 step 1 thru length(pA) do pAr:append(pAr,[rhs(pA[i])]);
+spAr:(lessp(a,b):=abs(a) < abs(b),lesspi(a,b):=imagpart(a) < imagpart(b),sort(sort(pAr,'lesspi),'lessp));
+/**/
+fp:openw(concat("tmp/poles-M",n,".dat"));
+for i:1 step 1 thru length(pA) do printf(fp,"~g ~g~%",realpart(spAr[i]),imagpart(spAr[i]));
+/*for i:1 step 1 thru length(pA) do printf(fp,"~g ~g~%",realpart(rhs(pA[i])),imagpart(rhs(pA[i])));*/
+close(fp);
+
+/*r and f (frequency;)*/
+rfL:[];for i:1 step 1 thru length(pA) do rfL:append(rfL,rf(rhs(pA[i])));
+srfL:(lessp(a,b):=imagpart(a) < imagpart(b),sort(rfL,'lessp));
+fp:openw(concat("tmp/rf-poles-M",n,".dat"));
+for i:1 step 1 thru length(pA) do printf(fp,"~g ~g~%",imagpart(srfL[i]),realpart(srfL[i]));
+close(fp);
+/*零*/
+ceA:M[n][5]*z^3+M[n][6]*z^2+M[n][7]*z^1+M[n][8]=0;/*特性方程式 characteristic equation of a*/
+pA:=allroots(ceA);/*極　poles of A*/
+/**/
+pAr:[];for i:1 step 1 thru length(pA) do pAr:append(pAr,[rhs(pA[i])]);
+spAr:(lessp(a,b):=abs(a) < abs(b),lesspi(a,b):=imagpart(a) < imagpart(b),sort(sort(pAr,'lesspi),'lessp));
+/**/
+fp:openw(concat("tmp/zeros-M",n,".dat"));
+for i:1 step 1 thru length(pA) do printf(fp,"~g ~g~%",realpart(spAr[i]),imagpart(spAr[i]));
+/*for i:1 step 1 thru length(pA) do printf(fp,"~g ~g~%",realpart(rhs(pA[i])),imagpart(rhs(pA[i])));*/
+close(fp);
+/*rf*/
+rfL:[];for i:1 step 1 thru length(pA) do rfL:append(rfL,rf(rhs(pA[i])));
+srfL:(lessp(a,b):=imagpart(a) < imagpart(b),sort(rfL,'lessp));
+srfL:sort(rfL,'lessp); /*sort(rfL);*/
+fp:openw(concat("tmp/rf-zeros-M",n,".dat"));
+for i:1 step 1 thru length(pA) do printf(fp,"~g ~g~%",imagpart(srfL[i]),realpart(srfL[i]));
+close(fp);

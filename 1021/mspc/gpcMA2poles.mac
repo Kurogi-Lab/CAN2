@@ -1,0 +1,60 @@
+/*method No.2 */
+/*display2d:false;batch("../result-mspc170119/MA.mac");TS:0.5;nP:1;nM:1;*/
+a1:M[nM][1];a2:M[nM][2];a3:M[nM][3];a4:M[nM][4];b1:M[nM][5];b2:M[nM][6];b3:M[nM][7];b4:M[nM][8];/*学習モデル*/
+at1:a1+1;at2:a2-a1;at3:a3-a2;at4:a4-a3;at5:-a4;/*差分モデル*/
+lu:0.01;
+At:matrix([at1,at2,at3,at4,at5],[1,0,0,0,0],[0,1,0,0,0],[0,0,1,0,0],[0,0,0,1,0]);
+AtT:transpose(At);
+load(eigen);/*eigenパッケージ;http://ynomura.dip.jp/archives/2009/02/maxima_3.htmlでバグ報告*/
+bt:columnvector([1,0,0,0,0]);/*bt:matrix([1],[0],[0],[0],[0]);*/
+btT:transpose(bt);
+b5:0;
+ct:columnvector([b1,b2,b3,b4,b5]);/*ct:([[b1],[b2],[b3],[b4],[b5]]);はダメ*/
+ctT:transpose(ct);
+Q:ct.ctT;
+P[20]:Q;
+for i:19 next i-1 while i>0 do P[i]:Q+AtT.P[i+1].At-(lu+btT.P[i+1].bt)^(-1)*AtT.P[i+1].bt.btT.P[i+1].At;/*Pの更新 Riccati iteration*/
+P[1];
+kT:(lu+btT.P[1].bt)^(-1)*btT.P[1].At;
+Z:columnvector([1,z^(-1),z^(-2),z^(-3),z^(-4)]);
+hzl:(b1+b2*z^(-1)+b3*(z)^(-2)+b4*z^(-3))^(-1);
+hz:hzl*Z;
+kThz:kT.hz;
+
+a1:a[nP][1];a2:a[nP][2];a3:a[nP][3];a4:a[nP][4];b1:a[nP][5];b2:a[nP][6];b3:a[nP][7];b4:a[nP][8];/*制御対象*/
+
+Gz:rat(((b1*z^(-1)+b2*z^(-2)+b3*z^(-3)+b4*z^(-4))*kThz)/((1-(a1*z^(-1)+a2*z^(-2)+a3*z^(-3)+a4*z^(-4)))*(1-z^(-1))+(b1*z^(-1)+b2*z^(-2)+b3*(z)^(-3)+b4*z^(-4))*kThz));/*一巡伝達関数とその有理化*/
+Gzbunbo:denom(Gz);/*分母の抽出*/
+/*rf: r(absolute value) and f(frequency) of z=r* exp(j 2\pi f TS)*/
+rf(z):=[float(abs(z))*%i+float(abs(imagpart(log(z))/2/%pi/TS))];
+/*極*/
+pG:allroots(Gzbunbo=0);
+fp:openw(concat("tmp/gpc-poles-P",nP,"M",nM,".dat"));
+for i:1 step 1 thru length(pG) do printf(fp,"~g ~g~%",realpart(rhs(pG[i])),imagpart(rhs(pG[i])));
+close(fp);
+/*rf*/
+rfL:[];for i:1 step 1 thru length(pG) do rfL:append(rfL,rf(rhs(pG[i])));srfL:sort(rfL);
+fp:openw(concat("tmp/gpc-rf-poles-P",nP,"M",nM,".dat"));
+for i:1 step 1 thru length(pG) do printf(fp,"~g ~g~%",imagpart(srfL[i]),realpart(srfL[i]));
+close(fp);
+/*零*/
+Gzbunshi:num(Gz);/*分子の抽出*/
+pG:allroots(Gzbunshi=0);
+fp:openw(concat("tmp/gpc-zeros-P",nP,"M",nM,".dat"));
+for i:1 step 1 thru length(pG) do printf(fp,"~g ~g~%",realpart(rhs(pG[i])),imagpart(rhs(pG[i])));
+close(fp);
+/*rf*/
+rfL:[];for i:1 step 1 thru length(pG) do rfL:append(rfL,rf(rhs(pG[i])));srfL:sort(rfL);
+fp:openw(concat("tmp/gpc-rf-zeros-P",nP,"M",nM,".dat"));
+for i:1 step 1 thru length(pG) do printf(fp,"~g ~g~%",imagpart(srfL[i]),realpart(srfL[i]));
+close(fp);
+/*uの極？*/
+pG:allroots(coeff(Gzbunbo,z,5)*z^5-Gzbunshi=0);
+fp:openw(concat("tmp/gpc-upoles-P",nP,"M",nM,".dat"));
+for i:1 step 1 thru length(pG) do printf(fp,"~g ~g~%",realpart(rhs(pG[i])),imagpart(rhs(pG[i])));
+close(fp);
+/*rf*/
+rfL:[];for i:1 step 1 thru length(pG) do rfL:append(rfL,rf(rhs(pG[i])));srfL:sort(rfL);
+fp:openw(concat("tmp/gpc-rf-upoles-P",nP,"M",nM,".dat"));
+for i:1 step 1 thru length(pG) do printf(fp,"~g ~g~%",realpart(rhs(pG[i])),imagpart(rhs(pG[i])));
+close(fp);

@@ -1,0 +1,188 @@
+﻿<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html> <head>
+<title>Execution examples</title>
+</head>
+
+ <meta charset="UTF-8">
+
+  <title>Document</title>
+
+<style>
+
+  .box_head{
+    width:100px;
+    margin: 0em;
+    border: solid 3px #000000;
+    background-color: #ccc;
+  }
+
+  p{
+  color:blue;
+  }
+
+</style>
+
+</head>
+
+<body>
+
+<!--  <div class="box_head">
+
+    <p>表示したい文字列</p>
+
+  </div>
+-->
+
+
+<h1>Execution examples</h1>
+See [1] for the basis of the CAN2, [2] for bagging CAN2, [3] for IOS prediction by CAN2.
+<ol>
+  <li> Set the root directory: <br>
+      <div><p>
+      export d0=$PWD #set the root directory involving data, can2py, can2comp, etc.<br>
+      </p></div>
+  <li> Data preparation: <br>
+      <ul>
+	<li> Regression data: made by the following steps<br>
+	    <div><p>
+	    cd ${d0}/can2py<br>
+	    export fn=Geo1d  ntrain=100 restest=50 extest=10 k=1;<br>
+	    python makesamples.py -msd $fn,$ntrain,$restest,$extest <br>
+	    dst=${d0}/data/${fn}_${ntrain}_${restest}_${extest}<br>
+	    mkdir -p $dst<br>
+	    cp tmp/train.csv tmp/test.csv $dst<br>
+	    </p></div>
+
+	<li> Time-series data (see [3] for data creation): <br>
+	    ${d0}/data/lorenz1e-8T0.025n10000p256m1_gmp.txt<br>
+</ul>
+  <li> C programs
+      <ul>
+	<li> Regression
+	    <ol>
+	      <li> single CAN2 
+		  <div><p>
+		  cd $d0/can2comp;make<br>
+		  export fn=Geo1d ntrain=100 restest=50 extest=10 k=1;<br>
+		  export dst=${d0}/data/${fn}_${ntrain}_${restest}_${extest}<br>
+		  export fntrain=$dst/train.csv fntest=$dst/test.csv fnpred=predict+.dat<br>
+		  make data-clean;<br>
+		  export N=30 seed=0 k=1 T=100;<br>
+		  ensrs $fntrain -1:$fntest $N k:$k T:$T BIAS:1 Lstd:0:2 ib:0:0:0:0 vm2:-1 seed:$seed Tpinv:-1 nop:1 DISP:0<br>
+		  #(or) ensrs $fntrain 2:1:1:1 $N bg:$fntest k:$k T:$T BIAS:1 Lstd:0:2 ib:0:0:0:0 vm2:-1 seed:$seed Tpinv:-1 nop:1 
+		  export fntest=$fntest fnpred=./result-ensrs/tmp/train+test+s${s}0j0k${k}N${N}pred.dat;../sh/show${k}dpred.sh<br>
+		  </p></div>
+		  #Results<br>
+		  #100(0.030s) 7.274e-05 5.076e-04 #ep(time),MSEtr,MSEtst k1 n100:71 N20 s0<br>
+		  #100(0.033s) 6.660e-06 1.161e-05 #ep(time),MSEtr,MSEtst k1 n100:71 N30 s0 ***<br>
+		  #100(0.031s) 1.563e-05 3.368e-04 #ep(time),MSEtr,MSEtst k1 n100:71 N40 s0<br>
+	      <li> Bagging CAN2 (see [2])
+		  <div><p>
+		  cd $d0/can2comp;make<br>
+		  export N=50 a=2.2 b=100 seed=0 k=1 T=100;<br>
+		  make data-clean;<br>
+		  ensrs $fntrain 2:$b:$a:1 $N bg:$fntest k:$k T:$T BIAS:1 Lstd:0:2 ib:0:0:0:0 vm2:-1 seed:$seed Tpinv:-1 nop:1<br>
+		  export fntest=$fntest fnpred=predict+.dat;../sh/show${k}dpred.sh
+		  </p></div>
+		  #Results<br>
+		  #[100,-1](1.5s) 1.706e-05 #[T,Tpinv](time) n220,71 k1 N40 b100 a2.2 s0 nop1 m_cpu6<br>
+		  #[100,-1](1.6s) 1.186e-05 #[T,Tpinv](time) n220,71 k1 N50 b100 a2.2 s0 nop1 m_cpu6***<br>
+		  #[100,-1](1.8s) 1.616e-05 #[T,Tpinv](time) n220,71 k1 N60 b100 a2.2 s0 nop1 m_cpu6<br>
+	    </ol>
+	<li> Time-series IOS prediction (IOS:iterated one-step ahead prediction)
+	    <ol>
+	      <li> single CAN2 
+		  <div><p>
+		  cd $d0/can2comp;make<br>
+		  export fn=$d0/data/lorenz1e-8T0.025n10000p256m1_gmp.txt<br>
+		  export T=100 Tpinv=-1 k=8 N=50 seed=1 tp0=2000 tpD=1 Ey=15 a=1 b=1 nop=1 n_compare=6 v_thresh=0.2 vmin=3 vmin2=0 v_ratio=0.5 width=0.2 l_mode=1 gamma=1.4e-4 nentropy_thresh=0.7 n_display=5 rot_x=50 rot_y=350 y=-18.5:18.5:0:1 <br>
+		  make data-clean;<br>
+		  ensrs $fn 2:${b}:${a}:${seed} $N-$N:1 t:0-2000:$tp0-$(($tp0+500)):$tpD:$Ey bg:/dev/null ib:0:0:0:0 k:$k g:$gamma w:$width T:$T vt:$v_thresh vr:$v_ratio lossall:1 DISP:2 y:$y x:$y nop:1 Tpinv:-1<br>
+		  [100,-1](0.2s) #[T,Tinv] k8 N40 b1(nens1) a1 seed1 nop1 m_cpu6 0-2000:2000-2500:15H126<br>
+		  [100,-1](0.3s) #[T,Tinv] k8 N50 b1(nens1) a1 seed1 nop1 m_cpu6 0-2000:2000-2500:15H153***<br>
+		  [100,-1](0.3s) #[T,Tinv] k8 N60 b1(nens1) a1 seed1 nop1 m_cpu6 0-2000:2000-2500:15H24<br>
+</p></div>
+	      <li> Bagging CAN2 <br>
+		  <div><p>
+		  cd $d0/can2comp; make<br>
+		  export fn=$d0/data/lorenz1e-8T0.025n10000p256m1_gmp.txt<br>
+		  export T=100 Tpinv=-1 k=8 N=50 seed=1 tp0=2000 tpD=1 Ey=15 a=0.7 b=20 nop=1 n_compare=6 v_thresh=0.2 vmin=3 vmin2=0 v_ratio=0.5 width=0.2 l_mode=1 gamma=1.4e-4 nentropy_thresh=0.7 n_display=5 rot_x=50 rot_y=350 y=-18.5:18.5:0:1 <br>
+		  make data-clean;<br>
+		  ensrs $fn 2:${b}:${a}:${seed} $N-$N:1 t:0-2000:$tp0-$(($tp0+500)):$tpD:$Ey bg:/dev/null ib:0:0:0:0 k:$k g:$gamma w:$width T:$T vt:$v_thresh vr:$v_ratio lossall:1 DISP:2 y:$y x:$y nop:1 Tpinv:-1<br>
+		  #results
+		  #[100,-1](0.9s) #[T,Tinv] k8 N40 b20(nens1) a0.7 seed1 nop1 m_cpu6 0-2000:2000-2500:15H157<br>
+		  #[100,-1](1.0s) #[T,Tinv] k8 N50 b20(nens1) a0.7 seed1 nop1 m_cpu6 0-2000:2000-2500:15H224 ***<br>
+		  #[100,-1](1.3s) #[T,Tinv] k8 N60 b20(nens1) a0.7 seed1 nop1 m_cpu6 0-2000:2000-2500:15H199<br>
+		  </p></div>
+	    </ol>
+      </ul>
+  <li> Python programs
+      <ul>
+	<li> Regression<br>
+	    <ol>
+	      <li> single CAN2<br>
+		  <div><p>
+		  cd ${d0}/can2py<br>
+		  export fn=Geo1d  ntrain=100 restest=50 extest=10 k=1;<br>
+		  export fntrain=$dst/train.csv fntest=$dst/test.csv fnpred=$dst/pred.csv<br>
+		  export T=100 N=100 k=1;<br>
+		  make data-clean<br>
+		  python can2.py -fn $fntrain,$fntest,$fnpred -k $k -in $N,6,0.2,3,0,0.5,0.2 -ex 1,0.05,2.2,$T,5,50,350 --gpu -1 -DISP 1 -nop 1<br>
+		  ../sh/show${k}dpred.sh
+		  </p></div>
+		  #results<br>
+		  #100(1.050s) 7.310e-06 4.198e-05 #ep(time),MSEtr,MSE n100,71 k1 N90 T100,1000 seed0 nop1<br>
+		  #100(1.228s) 5.843e-06 2.627e-05 #ep(time),MSEtr,MSE n100,71 k1 N100 T100,1000 seed0 nop1<br>
+		  #100(1.249s) 5.843e-06 2.627e-05 #ep(time),MSEtr,MSE n100,71 k1 N110 T100,1000 seed0 nop1<br>
+	      <li> Bagging CAN2
+		  <div><p>
+		  cd ${d0}/can2py<br>
+export T=100 N=60 k=1 Tpinv=-1 seed=1 m_cpu=0 b=100 a=2.2 nop=1<br>
+		  make data-clean<br>
+		  python ensrs.py -fn $fntrain,$fntest,$fnpred -k $k,0 -in $N,6,0.2,3,0,0.5,0.2 -ex 1,0.05,0.7,$T,5,50,350 -DISP 0 -Tpinv $Tpinv -s $seed -nop $nop -bag $b,$a,$seed,$m_cpu<br>
+		  ../sh/show${k}dpred.sh
+		  </p></div>
+		  #results<br>
+		  #[100,-1](53.1s) 3.052e-05 #[T,Tpinv] MSE n100,71 k1 N40 b100 a2.2 s1 m6 seed1 nop1<br>
+		  #[100,-1](55.5s) 2.105e-05 #[T,Tpinv] MSE n100,71 k1 N50 b100 a2.2 s1 m6 seed1 nop1***<br>
+		  #[100,-1](74.9s) 2.275e-05 #[T,Tpinv] MSE n100,71 k1 N60 b100 a2.2 s1 m6 seed1 nop1<br>
+		  <br>
+	    </ol>
+	<li> Time series prediction
+	    <ol>
+	      <li> Single CAN2 (try the following command with different seed=0,1,2,...)
+		  <div><p>
+		  export T=100 Tpinv=-1 k=10 N=50 seed=2 tp0=2000 tpD=1 Ey=15 nop=1 n_compare=6 v_thresh=0.2 vmin=3 vmin2=0 v_ratio=0.5 width=0.2 l_mode=1 gamma0=0.05 nentropy_thresh=0.7 n_display=5 rot_x=50 rot_y=350 y=-18.5,18.5,0,1<br>
+		  export fn=$d0/data/lorenz1e-8T0.025n10000p256m1_gmp.txt<br>
+		  export fns=$d0/data/lorenz1e-8T0.025n10000p256m1_gmp+null+N50k10s${seed}.net<br>
+		  make data-clean<br>
+		  python can2.py -fn $fn -k $k -t 0-2000:$tp0-$(($tp0+500)):$tpD:$Ey -in $N,$n_compare,$v_thresh,$vmin,$vmin2,$v_ratio,$width -ex $l_mode,$gamma0,$nentropy_thresh,$T,$n_display,$rot_x,$rot_y --gpu -1 -DISP 1 -Tpinv $Tpinv -s $seed -nop $nop -y " $y" -fns $fns
+		  </p></div>
+		  #results<br>
+		  #100(16.821s) 4.635e-05 1.238e-04 #ep(time),MSEtr,MSE n1990,500 k10 N50 T100,-1 seed0 nop1 t0-2000:2000-2500:1:15H22 predTime0.018s<br>
+		  #100(16.885s) 4.113e-05 1.174e-04 #ep(time),MSEtr,MSE n1990,500 k10 N50 T100,-1 seed1 nop1 t0-2000:2000-2500:1:15H194 predTime0.018s<br>
+		  #100(17.034s) 4.211e-05 1.293e-04 #ep(time),MSEtr,MSE n1990,500 k10 N50 T100,-1 seed2 nop1 t0-2000:2000-2500:1:15H101 predTime0.017s<br>
+#    ...<br>
+	      <li> Bagging CAN2<br>
+		  <div><p>
+		  export T=100 Tpinv=-1 k=10 N=50 seed=10 b=20 a=1.0 tp0=2000 Ey=15 nop=1 n_compare=6 v_thresh=0.2 vmin=3 vmin2=0 v_ratio=0.5 width=0.2 l_mode=1 gamma0=0.05 nentropy_thresh=0.7 n_display=5 rot_x=50 rot_y=350 y=-18.5,18.5,0,1 m_cpu=0 fn=$d0/data/lorenz1e-8T0.025n10000p256m1_gmp.txt <br>
+		  make data-clean<br>
+		  python ensrs.py -fn $fn,,tmp/msp${tp0}.dat -k $k -t 0-2000:$tp0-$(($tp0+500):1:$Ey -in $N,$n_compare,$v_thresh,$vmin,$vmin2,$v_ratio,$width -ex $l_mode,$gamma0,$nentropy_thresh,$T,$n_display,$rot_x,$rot_y --gpu -1 -DISP 0 -Tpinv $Tpinv -nop $nop -y " $y" -bag $b,$a,$seed,$m_cpu
+		  </p></div>
+		  #results<br>
+		  #[100,-1](226.9s) #[T,Tpinv] k10 N50 b20a1.0s10m6 nop1 t0-2000:2000-2500:1:15H159 seed0<br>
+		  #[100,-1](227.1s) #[T,Tpinv] k10 N50 b20a1.0s0m6 nop1 t0-2000:2000-2500:1:15H158 seed1<br>
+	    </ol>
+      </ul>
+  <li> References:
+[1] S.Kurogi: Asymptotic optimality of competitive associative nets and its Application to incremental learning of nonlinear functions,
+	    Systems and Communications in Japan, Vol.J86-D-II, No.2, pp.184-194 (2003)<br>
+[2] S.Kurogi: Improving generalization performance via out-of-bag estimate using variable size of bags, J. Japanese Neural Network Society, Vol.J.16, No.2, pp.81-92 (2009)<br>
+[3] D.Miyazaki, K.Matsuo, and S.Kurogi: Entropy of LOO Predictable Horizons to Select a Learning Machine and a Representative
+	    Prediction of Chaotic Time Series, ICONIP 2020, CCIS 1333, pp. 778-787 (2020) <br>
+<hr>
+<address></address>
+<!-- hhmts start -->
+Last modified: Wed Oct 20 16:55:23 JST 2021
+<!-- hhmts end -->
+</body> </html>

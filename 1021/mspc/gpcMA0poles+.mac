@@ -1,0 +1,116 @@
+/*method No.1 */
+/*display2d:false;batch("../result-mspc170129/MA.mac");TS:0.5;nP:1;nM:4;lu:0.24;bw:1;*/
+/*batch("gpcMA0poles+.mac");quit(); |maxima;*/
+/*display2d:false;batch("../result-mspc170129/MA.mac");TS:0.5;nP:1;nM:8;lu:0.24;bw:1;UnotDU:0;batch("gpcMA0poles+.mac");quit();*/
+
+if not scalarp(nP) then (display2d:false,batch("../result-mspc170129/MA.mac"),TS:0.5,nP:1,nM:6,lu:0.24,bw:1);/*for debug*/
+
+load(eigen);/*eigenパッケージ;http://ynomura.dip.jp/archives/2009/02/maxima_3.htmlでバグ報告*/
+
+a1:M[nM][1];a2:M[nM][2];a3:M[nM][3];a4:M[nM][4];b1:M[nM][5];b2:M[nM][6];b3:M[nM][7];b4:M[nM][8];/*学習モデル*/
+if not scalarp(bw) then bw:1.0;/*bw;定義されてなければ1に設定；仮想サンプリングがbiの重みを変えているとの仮定*/
+b1:b1*bw;
+b2:b2*bw;
+b3:b3*bw;
+b4:b4*bw;
+
+/*step response*/
+Ny:24;Nu:1;
+for i:0 thru Ny+Nu do (g[-i]:0,u[-i]:0,u[i]:1);
+for i:1 thru Ny+Nu do (g[i]:a1*g[i-1]+a2*g[i-2]+a3*g[i-3]+a4*g[i-4]+b1*u[i-1]+b2*u[i-2]+b3*u[i-3]+b4*u[i-4]);
+gm[i,j]:=g[i-j+1];
+G:genmatrix(gm,Ny,Nu);
+GT:transpose(G);
+if not scalarp(lu) then lu:0.01;/*lambda_u;定義されてなければ0.01に設定*/
+
+/*I:ident(Nu);*/
+K:((GT.G+lu)^(-1))*GT;
+k1T:row(K,1);/*行を取り出す*/
+
+/*du[t+j]=0(j>=0) or  u[t+j]=u[t-1](j>=0)の固有応答y1pとその伝達関数hyb*/
+yp[0,0]:1;yp[0,-1]:0;yp[0,-2]:0;yp[0,-3]:0; /*1 array with minus index*/
+yp[1,0]:0;yp[1,-1]:1;yp[1,-2]:0;yp[1,-3]:0; /*1/z*/
+yp[2,0]:0;yp[2,-1]:0;yp[2,-2]:1;yp[2,-3]:0; /*1/z^2*/
+yp[3,0]:0;yp[3,-1]:0;yp[3,-2]:0;yp[3,-3]:1; /*1/z^3*/
+/*ny:4;yp:ident[ny];*/
+for i:0 thru 3 do (for j:1 thru Ny do (yp[i,j]:a1*yp[i,j-1]+a2*yp[i,j-2]+a3*yp[i,j-3]+a4*yp[i,j-4]));
+hyb:genmatrix(lambda([i,j],1+(yp[0,i]+yp[1,i]/z+yp[2,i]/z^2+yp[3,i]/z^3)*(z-1)/z),Ny,Nu);
+/*                            △△△△△△△△△△△△△△△△△△△△△△△△△△△=dy[t],dy[t-1],dy[t-2],dy[t-3]による応答?*/
+
+/*du[t+j]=0(j>=0) or  u[t+j]=u[t-1](j>=0)の固有応答y1pとその伝達関数hyb*/
+du[0,0]:1;du[0,-1]:0;du[0,-2]:0;du[0,-3]:0; /*1 array with minus index*/
+du[1,0]:0;du[1,-1]:1;du[1,-2]:0;du[1,-3]:0; /*1/z*/
+du[2,0]:0;du[2,-1]:0;du[2,-2]:1;du[2,-3]:0; /*1/z^2*/
+du[3,0]:0;du[3,-1]:0;du[3,-2]:0;du[3,-3]:1; /*1/z^3*/
+for i:0 thru 3 do (for t:0 thru Ny do du[i,t]:0);
+for i:0 thru 3 do (for j:-4 thru 0 do (y1p[i,j]:0));
+for i:0 thru 3 do (for j:1 thru Ny do (y1p[i,j]:a1*y1p[i,j-1]+a2*y1p[i,j-2]+a3*yp[i,j-3]+a4*y1p[i,j-4]+b1*du[i,j-1]+b2*du[i,j-2]+b3*du[i,j-3]+b4*du[i,j-4]));
+
+hub:genmatrix(lambda([i,j],(y1p[0,i]+y1p[1,i]/z+y1p[2,i]/z^2+y1p[3,i]/z^3)*(z-1)/z),Ny,Nu);
+
+/*hub:genmatrix(lambda([i,j],y1p[1,i]/z+y1p[2,i]/z^2+y1p[3,i]/z^3)*(z-1)/z),Ny,Nu);*/
+/*                           △△△△△△△△△△△△△△△△△△△△△△△△=du[t-1],du[t-2],du[t-3]による応答?*/
+
+
+/*閉ループ伝達関数*/
+a1:a[nP][1];a2:a[nP][2];a3:a[nP][3];a4:a[nP][4];b1:a[nP][5];b2:a[nP][6];b3:a[nP][7];b4:a[nP][8];/*プラントモデル*/
+/**/
+r:genmatrix(lambda([i,j],1),Ny,1);
+
+f(fz):=(fzr:rat(fz),f0:0,for iz:0 thru 8 do (f0:f0+float(coeff(fzr,z,iz))*z^iz),f0);/*get float coefficients*/
+/*Gz0:rat((f(b1*z^3+b2*z^2+b3*z+b4)*k1T.r)/((z^4-a1*z^3-a2*z^2-a3*z-a4)*(1-1/z+k1T.hub)+f(b1*z^3+b2*z^2+b3*z+b4)*k1T.hyb));*/
+
+B:f((b1*z^3+b2*z^2+b3*z+b4)*k1T.r);/*Gz0:B/(A1B/A1A+C)の分子*/
+C:f((b1*z^3+b2*z^2+b3*z+b4)*k1T.hyb);/*Gz0:B/(A1B/A1A+C)の分子*/
+A1:rat(z^4-a1*z^3-a2*z^2-a3*z-a4)*(1-1/z+k1T.hub);/*Gz0の分母１項*/
+zeroth:1e-20;
+searchia0(fz):=(i0:1,for iz:1 thru 8 do (if coeff(fz,z,iz) # 0 then i0:iz),i0);/* fzの最高次数を求める*/
+ia0:searchia0(denom(rat(A1)));
+a0:coeff(denom(rat(A1)),z,ia0);
+ga0(fz):=(g0:0,for iz:0 thru 8 do (ai:float(coeff(fz,z,iz)/a0), if abs(ai) > zeroth then g0:g0+ai*z^iz),g0);
+A1A:ga0(denom(rat(A1)));/*Gz0の分母１項の分子*/
+A1B:ga0(num(rat(A1)));  /*Gz0の分母１項の分母*/
+
+if not scalarp(Gzmode) then Gzmode:3;
+Gz0:(if Gzmode=0 then rat(B/(A1B/A1A+C)) 
+elseif Gzmode=1 then rat(B/(A1B/A1A+C)-1) 
+elseif Gzmode=2 then rat(B/(A1B/A1A+C)-z/(z-1))
+elseif Gzmode=3 then rat( (1-1/z)*B/(A1B/A1A+C))) ;
+
+zeroth:1e-20;
+ia0:searchia0(denom(rat(Gz0)));
+searchia0(fz):=(i0:1,for iz:1 thru 8 do (if coeff(fz,z,iz) # 0 then i0:iz),i0);/* fzの最高次数を求める*/
+a0:coeff(denom(rat(Gz0)),z,ia0);
+ga0(fz):=(g0:0,for iz:0 thru 8 do (ai:float(coeff(fz,z,iz)/a0), if abs(ai) > zeroth then g0:g0+ai*z^iz),g0);
+Gz0A:ga0(denom(rat(Gz0)));
+Gz0B:ga0(num(rat(Gz0)));
+Gz:Gz0B/Gz0A;/**/
+
+
+/*極*/
+rth:2e-4;
+Gzbunbo:denom(Gz);/*分母の抽出*/
+pG:allroots(Gzbunbo=0);
+fp:openw(concat("tmp/gpc-poles-P",nP,"M",nM,".dat"));
+/*for i:1 step 1 thru length(pG) do (if abs(pG[i])>rth then printf(fp,"~g ~g~%",realpart(rhs(pG[i])),imagpart(rhs(pG[i]))));*/
+for i:1 step 1 thru length(pG) do printf(fp,"~g ~g~%",realpart(rhs(pG[i])),imagpart(rhs(pG[i])));
+close(fp);
+rf(z):=[(if abs(z)>0 then float(abs(z))*%i+float(abs(imagpart(log(z))/2/%pi/TS)) else 0)];
+rfL:[];for i:1 step 1 thru length(pG) do rfL:append(rfL,rf(rhs(pG[i])));srfL:sort(rfL);
+fp:openw(concat("tmp/gpc-rf-poles-P",nP,"M",nM,".dat"));
+for i:1 step 1 thru length(pG) do printf(fp,"~g ~g~%",imagpart(srfL[i]),realpart(srfL[i]));
+close(fp);
+
+/*零*/
+Gzbunshi:num(Gz);/*分子の抽出*/
+pG:allroots(Gzbunshi=0);
+fp:openw(concat("tmp/gpc-zeros-P",nP,"M",nM,".dat"));
+for i:1 step 1 thru length(pG) do printf(fp,"~g ~g~%",realpart(rhs(pG[i])),imagpart(rhs(pG[i])));
+close(fp);
+/*rf*/
+rfL:[];for i:1 step 1 thru length(pG) do rfL:append(rfL,rf(rhs(pG[i])));srfL:sort(rfL);
+fp:openw(concat("tmp/gpc-rf-zeros-P",nP,"M",nM,".dat"));
+for i:1 step 1 thru length(pG) do printf(fp,"~g ~g~%",imagpart(srfL[i]),realpart(srfL[i]));
+close(fp);
+
+

@@ -1,0 +1,11 @@
+#/bin/bash
+cat $1|awk 'BEGIN{FS=" "}{
+for(i=1; i<=NF; i++) {a[NR,i]=$i}} NF>p{p = NF }END{
+ for(i=1; i<=NR; i++){
+    mi=0.0
+    for(j=1; j<=p; j++){
+      mi+=a[i,j]
+    }
+    printf("%.10e\n",mi/p);
+  }
+}'

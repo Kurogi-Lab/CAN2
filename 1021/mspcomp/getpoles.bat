@@ -1,0 +1,26 @@
+at1:a1+1;
+at2:a2-a1;
+at3:a3-a2;
+at4:a4-a3;
+at5:-a4;
+lu:0.01;
+At:matrix([at1,at2,at3,at4,at5],[1,0,0,0,0],[0,1,0,0,0],[0,0,1,0,0],[0,0,0,1,0]);
+AtT:transpose(At);
+load(eigen);/*eigenパッケージ;http://ynomura.dip.jp/archives/2009/02/maxima_3.htmlでバグ報告*/
+bt:columnvector([1,0,0,0,0]);/*bt:matrix([[1],[0],[0],[0],[0]]);はダメ*/
+btT:transpose(bt);
+b5:0;
+ct:columnvector([b1,b2,b3,b4,b5]);/*ct:([[b1],[b2],[b3],[b4],[b5]]);はダメ*/
+ctT:transpose(ct);
+Q:ct.ctT;
+P[20]:Q;
+for i:19 next i-1 while i>0 do P[i]:Q+AtT.P[i+1].At-(lu+btT.P[i+1].bt)^(-1)*AtT.P[i+1].bt.btT.P[i+1].At;/*Pの更新*/
+P[1];
+kT:(lu+btT.P[1].bt)^(-1)*btT.P[1].At;
+Z:columnvector([1,z^(-1),z^(-2),z^(-3),z^(-4)]);
+hzl:(b1+b2*z^(-1)+b3*(z)^(-2)+b4*z^(-3))^(-1);
+hz:hzl*Z;
+kThz:kT.hz;
+Gz:rat(((b1*z^(-1)+b2*z^(-2)+b3*(z)^(-3)+b4*z^(-4))*kThz)/((1-(a1*z^(-1)+a2*z^(-2)+a3*z^(-3)+a4*z^(-4)))*(1-z^(-1))+(b1*z^(-1)+b2*z^(-2)+b3*(z)^(-3)+b4*z^(-4))*kThz));/*一巡伝達関数とその有理化*/
+Gzbunbo:denom(Gz);/*分母の抽出*/
+allroots(Gzbunbo=0);
