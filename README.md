@@ -82,13 +82,13 @@ $ sudo apt install -y xterm
 ## Execution examples
 Execution examples of regression and time-series IOS prediction by the single and bagging CAN2s are shown below. See [1], [2] and [3] for the details of regression, bagging, IOS prediction by CAN2, respectively. 
 
-### Set the root directory
+### 1. Set the root directory
 ```
 $ export d0=$PWD;echo $d0 #set the root directory involving data, can2py, can2comp, etc.
 ```
 
-### Data preparation
-#### Regression data (Fig.1) : made by the following steps
+### 2. Data preparation
+- Regression data (Fig.1) : made by the following steps
 ```
 $ cd ${d0}/can2py
 $ export fn=Geo1d ntrain=100 restest=50 extest=10 k=1;
@@ -98,12 +98,12 @@ $ mkdir -p $dst
 $ cp tmp/train.csv tmp/test.csv $dst
 ```
 
-#### Time-series data (Fig.2): see [3] for data creation via using GMP:${d0}/data/lorenz1e-8T0.025n10000p256m1_gmp.txt
+- Time-series data (Fig.2): see [3] for data creation via using GMP:${d0}/data/lorenz1e-8T0.025n10000p256m1_gmp.txt
 Fig1 Fig2
 
-#### C program
-##### Regression
-###### Single CAN2
+### 3. C program
+- Regression
+  - Single CAN2
 ```
 $ cd $d0/can2comp;make
 $ export fn=Geo1d ntrain=100 restest=50 extest=10 k=1;
@@ -119,7 +119,7 @@ $ ensrs $fntrain -1:$fntest $N k:$k T:$T BIAS:1 Lstd:0:2 ib:0:0:0:0 vm2:-1 seed:
 #100(0.033s) 6.660e-06 1.161e-05 #ep(time),MSEtr,MSEtst k1 n100:71 N30 s0 ***
 #100(0.031s) 1.563e-05 3.368e-04 #ep(time),MSEtr,MSEtst k1 n100:71 N40 s0
 
-###### Bagging CAN2 
+  - Bagging CAN2 
 ```
 $ cd $d0/can2comp;make
 $ export N=50 a=2.2 b=100 seed=0 k=1 T=100;
@@ -134,8 +134,8 @@ $ export fntest=$fntest fnpred=predict+.dat;../sh/show${k}dpred.sh
 
 Fig3 Fig4
 
-##### Time-series IOS prediction (IOS:iterated one-step ahead prediction) 
-###### Single CAN2
+- Time-series IOS prediction (IOS:iterated one-step ahead prediction) 
+  - Single CAN2
 ```
 $ cd $d0/can2comp;make
 $ export fn=$d0/data/lorenz1e-8T0.025n10000p256m1_gmp.txt
@@ -154,7 +154,7 @@ gnuplot tmp/y.plt;eog tmp/y.png
 #[100,-1](0.3s) #[T,Tinv] k8 N50 b1(nens1) a1 seed1 nop1 m_cpu6 0-2000:2000-2500:15H153***
 #[100,-1](0.3s) #[T,Tinv] k8 N60 b1(nens1) a1 seed1 nop1 m_cpu6 0-2000:2000-2500:15H24
 
-###### Bagging CAN2
+  - Bagging CAN2
 ```
 $ cd $d0/can2comp; make
 $ export fn=$d0/data/lorenz1e-8T0.025n10000p256m1_gmp.txt
@@ -169,9 +169,9 @@ $ ensrs $fn 2:${b}:${a}:${seed} $N-$N:1 t:0-2000:$tp0-$(($tp0+500)):$tpD:$Ey bg:
 
 Fig5 Fig6
 
-#### Python program 
-##### Regression
-###### Single CAN2
+### 4. Python program 
+- Regression
+  - Single CAN2
 ```
 $ cd ${d0}/can2py
 $ export fn=Geo1d ntrain=100 restest=50 extest=10 k=1;
@@ -186,7 +186,7 @@ $ python can2.py -fn $fntrain,$fntest,$fnpred -k $k -in $N,6,0.2,3,0,0.5,0.2 -ex
 #100(1.228s) 5.843e-06 2.627e-05 #ep(time),MSEtr,MSE n100,71 k1 N100 T100,1000 seed0 nop1
 #100(1.249s) 5.843e-06 2.627e-05 #ep(time),MSEtr,MSE n100,71 k1 N110 T100,1000 seed0 nop1
 
-###### Bagging CAN2
+  - Bagging CAN2
 ```
 $ cd ${d0}/can2py
 $ export T=100 N=50 k=1 Tpinv=-1 seed=1 m_cpu=0 b=100 a=2.2 nop=1
@@ -201,8 +201,8 @@ $ ../sh/show${k}dpred.sh
 
 Fig7 Fig8 Fig9
 
-##### Time-series IOS prediction 
-###### Single CAN2 (try the following command with different seed=0,1,2,...) 
+- Time-series IOS prediction 
+  - Single CAN2 (try the following command with different seed=0,1,2,...) 
 ```
 $ export T=100 Tpinv=-1 k=10 N=50 seed=2 tp0=2000 tpD=1 Ey=15 nop=1 n_compare=6 v_thresh=0.2 vmin=3 vmin2=0 v_ratio=0.5 width=0.2 l_mode=1 gamma0=0.05 nentropy_thresh=0.7 n_display=5 rot_x=50 rot_y=350 y=-18.5,18.5,0,1
 $ export fn=$d0/data/lorenz1e-8T0.025n10000p256m1_gmp.txt
@@ -216,7 +216,7 @@ $ python can2.py -fn $fn -k $k -t 0-2000:$tp0-$(($tp0+500)):$tpD:$Ey -in $N,$n_c
 #100(17.034s) 4.211e-05 1.293e-04 #ep(time),MSEtr,MSE n1990,500 k10 N50 T100,-1 seed2 nop1 t0-2000:2000-2500:1:15H101 predTime0.017s
 ...
 
-###### Bagging CAN2
+  - Bagging CAN2
 ```
 $ export T=100 Tpinv=-1 k=10 N=50 seed=10 b=20 a=1.0 tp0=2000 Ey=15 nop=1 n_compare=6 v_thresh=0.2 vmin=3 vmin2=0 v_ratio=0.5 width=0.2 l_mode=1 gamma0=0.05 nentropy_thresh=0.7 n_display=5 rot_x=50 rot_y=350 y=-18.5,18.5,0,1 m_cpu=0 fn=$d0/data/lorenz1e-8T0.025n10000p256m1_gmp.txt
 $ make data-clean
