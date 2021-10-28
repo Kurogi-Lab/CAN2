@@ -98,7 +98,7 @@ $ mkdir -p $dst
 $ cp tmp/train.csv tmp/test.csv $dst
 ```
 
-- Time-series data (Fig.2): see [3] for data creation via using GMP:${d0}/data/lorenz1e-8T0.025n10000p256m1_gmp.txt
+- Time-series data (Fig.2): see [5] for data creation via using GMP:${d0}/data/lorenz1e-8T0.025n10000p256m1_gmp.txt
 Fig1 Fig2
 
 ### 3. C program
@@ -241,8 +241,8 @@ export fn=Geo1d  ntrain=1000 restest=50 extest=10 k=1;python makesamples.py -msd
 ## Notes
 - Results of C and Python are different owing mainly to slightly different algorithms and parameters optimized for each language. 
 - Execution time of C is smaller than Python. 
-- Computational cost of the CAN2 is lower than many other machine learning methods mainly because it uses the learning scheme consisting of iterated steps of (a) local gradient descent optimization of two weight vectors near the input vector, (b) linear least squre optimization of a selected associative matrix, (c) reinitialization based on asymptotic optimality of error distortions avoiding local minimum (see [1]). 
-- The CAN2 has advantages on (A) prediction accuracy in learning the functions with piecewise different smoothness (see [1]), (B) ability of extrapolation as well as interpolation (see [1]), (C) comutational cost, (D) extraction of piecewise linear predictive coefficients in the applications such as speech and speaker recognition (audio processing) and control (see [4],[5]). 
+- Computational cost of the CAN2 is lower than many other machine learning methods mainly because it uses the learning scheme consisting of iterated steps of (a) local gradient descent optimization of two weight vectors near the input vector, (b) linear least squre optimization of a selected associative matrix, (c) reinitialization based on asymptotic optimality of error distortions avoiding local minimum (see [3]). 
+- The CAN2 has advantages on (A) prediction accuracy in learning the functions with piecewise different smoothness (see [1]), (B) ability of extrapolation as well as interpolation (see [3]), (C) comutational cost, (D) extraction of piecewise linear predictive coefficients in the applications such as speech and speaker recognition (audio processing) and control (see [6],[7]). 
 
 ## References
 <a id="ref1">[1]</a>A.C. Ahalt, A.K. Krishnamurthy, P. Chen and D.E. Melton: Competitive learning algorithms for vector quantization, Neural Networks, 3, 277/290 (1990)<br>
