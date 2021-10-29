@@ -90,7 +90,7 @@ $ export d0=$PWD;echo $d0 #set the root directory involving data, can2py, can2co
 ```
 
 ### 2. Data preparation
-- Regression data (Fig.1) : made by the following steps
+- Regression data ([Fig.1](1021/docs/Geo1d_100_50_10.png)) : made by the following steps
 ```
 $ cd ${d0}/can2py
 $ export fn=Geo1d ntrain=100 restest=50 extest=10 k=1;
@@ -100,7 +100,7 @@ $ mkdir -p $dst
 $ cp tmp/train.csv tmp/test.csv $dst
 ```
 
-- Time-series data (Fig.2): see [5] for data creation via using GMP:${d0}/data/lorenz1e-8T0.025n10000p256m1_gmp.txt
+- Time-series data ([Fig.2](1021/docs/lorenz1e-8T0.025n10000p256m1_gmp.png)): see [5] for data creation via using GMP:${d0}/data/lorenz1e-8T0.025n10000p256m1_gmp.txt
 Fig1 Fig2
 <img src="https://github.com/Kurogi-Lab/CAN2/blob/master/1021/docs/Geo1d_100_50_10.png" width="200px"/> Fig1
 <img src="https://github.com/Kurogi-Lab/CAN2/blob/master/1021/docs/lorenz1e-8T0.025n10000p256m1_gmp.png" width="200px"/> Fig.2
