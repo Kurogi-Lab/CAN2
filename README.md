@@ -100,7 +100,8 @@ $ cp tmp/train.csv tmp/test.csv $dst
 
 - Time-series data (Fig.2): see [5] for data creation via using GMP:${d0}/data/lorenz1e-8T0.025n10000p256m1_gmp.txt
 Fig1 Fig2
-
+<img src="https://github.com/Kurogi-Lab/CAN2/blob/master/1021/docs/Geo1d_100_50_10.png" width="200px"/> Fig1
+<img src="https://github.com/Kurogi-Lab/CAN2/blob/master/1021/docs/lorenz1e-8T0.025n10000p256m1_gmp.png" width="200px"/> Fig.2
 ### 3. C program
 - Regression
   - Single CAN2
