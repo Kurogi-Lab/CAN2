@@ -80,9 +80,10 @@ $ sudo apt install -y xterm
 ```
 
 ## Execution examples 
+###### (Original document: https://htmlpreview.github.io/?https://github.com/Kurogi-Lab/CAN2/blob/master/1021/docs/exec_examples.html) 
+
 Execution examples of regression and time-series IOS prediction by the single and bagging CAN2s are shown below. See [3], [4] and [5] for the details of regression, bagging, IOS prediction by CAN2, respectively. 
 
-##### (-> original html document: https://htmlpreview.github.io/?https://github.com/Kurogi-Lab/CAN2/blob/master/1021/docs/exec_examples.html) 
 
 ### 1. Set the root directory
 ```
