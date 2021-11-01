@@ -38,10 +38,10 @@ See <a href="#ref1">[1]</a>,
 	    python makesamples.py -msd $fn,$ntrain,$restest,$extest <br>
 	    dst=${d0}/data/${fn}_${ntrain}_${restest}_${extest}<br>
 	    mkdir -p $dst<br>
-	    cp tmp/train.csv tmp/test.csv $dst<br>
+	    cp tmp/train.csv tmp/test.csv $dst/<br>
 	    </div>
 	<li> Time-series data (<a href="#Fig.2">Fig.2</a>): see <a href="#ref3">[3]</a> for data creation via using GMP: <br>
-	    ${d0}/data/lorenz1e-8T0.025n10000p256m1_gmp.txt<br>
+	    ${d0}/data/lorenz1e-8T0.025n10000p256m1_gmp.txt #Only the first column is used below<br>
 	    <img class="fit-picture" src="Geo1d_100_50_10.png" alt="Fig.1" height="200" width="300" > <a name="Fig.1">Fig.1</a>
 	    <img class="fit-picture" src="lorenz1e-8T0.025n10000p256m1_gmp.png" alt="Fig.2" height="200" width="300" > <a name="Fig.2">Fig.2</a>
 </ul>
@@ -49,12 +49,15 @@ See <a href="#ref1">[1]</a>,
       <ul>
 	<li> Regression
 	    <ol>
-	      <li> single CAN2 
+	      <li> common parameter setting<br>
 		  <div style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333; background-color: #ffff99;">
 		  cd $d0/can2comp;make<br>
 		  export fn=Geo1d ntrain=100 restest=50 extest=10 k=1;<br>
 		  export dst=${d0}/data/${fn}_${ntrain}_${restest}_${extest}<br>
 		  export fntrain=$dst/train.csv fntest=$dst/test.csv fnpred=predict+.dat<br>
+		  </div>
+	      <li> single CAN2 
+		  <div style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333; background-color: #ffff99;">
 		  make data-clean;<br>
 		  export N=30 seed=0 k=1 T=100;<br>
 		  ensrs $fntrain -1:$fntest $N k:$k T:$T BIAS:1 Lstd:0:2 ib:0:0:0:0 vm2:-1 seed:$seed Tpinv:-1 nop:1 DISP:0<br>
@@ -67,9 +70,8 @@ See <a href="#ref1">[1]</a>,
 		  #100(0.031s) 1.563e-05 3.368e-04 #ep(time),MSEtr,MSEtst k1 n100:71 N40 s0<br>
 	      <li> Bagging CAN2 
 		  <div style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333; background-color: #ffff99;">
-		  cd $d0/can2comp;make<br>
-		  export N=50 a=2.2 b=100 seed=0 k=1 T=100;<br>
 		  make data-clean;<br>
+		  export N=50 a=2.2 b=100 seed=0 k=1 T=100;<br>
 		  ensrs $fntrain 2:$b:$a:1 $N bg:$fntest k:$k T:$T BIAS:1 Lstd:0:2 ib:0:0:0:0 vm2:-1 seed:$seed Tpinv:-1 nop:1<br>
 		  export fntest=$fntest fnpred=predict+.dat;../sh/show${k}dpred.sh
 		  </div>
@@ -77,15 +79,55 @@ See <a href="#ref1">[1]</a>,
 		  #[100,-1](1.5s) 1.706e-05 #[T,Tpinv](time) n220,71 k1 N40 b100 a2.2 s0 nop1 m_cpu6<br>
 		  #[100,-1](1.6s) 1.186e-05 #[T,Tpinv](time) n220,71 k1 N50 b100 a2.2 s0 nop1 m_cpu6***<br>
 		  #[100,-1](1.8s) 1.616e-05 #[T,Tpinv](time) n220,71 k1 N60 b100 a2.2 s0 nop1 m_cpu6<br>
+	      <li> OOB(out-of-bag) estimate (see <a href="#ref2">[2]</a>):To obtain the above parameters a=2.2 and N=40  without test data
+		  <div style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333; background-color: #ffff99;">
+		  export fntrains=$dst/trains.csv<br>
+		  sort -g -k 1 $fntrain > $fntrains  #To display the result shown below<br>
+make data-clean<br>
+export N=50 a=2.2 b=300 seed=1 k=1 T=100; #Obtain optimal a and N by trial and ePCrror<br>
+		  ensrs $fntrains 2:$b:$a:$seed $N bg:/dev/null k:$k T:$T BIAS:1 Lstd:0:2 ib:0:0:0:0 vm2:-1 Tpinv:-1 nop:1 <br>
+		  export fntest=$fntrains fnpred=predict+oob.dat;../sh/show${k}dpred.sh #Display the result<br>
+		  </div>
+		  #Results of oob estimate for fntrain=$d0/data/Geo1d_100_50_10/train.csv<br>
+  #a=2.2 (Do not care about "inf H-nan" below<br>
+#Ltst(n10.6*100)2.443e-05 Lib(n89.4*100)inf H-nan, nTest10.6=11.1=exp(-2.20)*nGiven100method:2:100:2.2:1N30.<br>
+		  #Ltst(n10.6*100)2.287e-05 Lib(n89.4*100)inf H-nan, nTest10.6=11.1=exp(-2.20)*nGiven100method:2:100:2.2:1N40.***(2.287e-05)<br>
+		  #Ltst(n32.0*100)2.413e-05 Lib(n267.9*100)1.660e-01 H7.086e-01, nTest10.7=11.1=exp(-2.20)*nGiven100method:2:300:2.2:1N50.<br>
+#a=2.3<br>
+#Ltst(n9.7*100)6.488e-05 Lib(n90.3*100)inf H-nan, nTest9.7=10.0=exp(-2.30)*nGiven100method:2:100:2.3:0N40.<br>
+#Ltst(n9.7*100)4.635e-05 Lib(n90.3*100)inf H-nan, nTest9.7=10.0=exp(-2.30)*nGiven100method:2:100:2.3:0N50.<br>
+#Ltst(n9.7*100)5.402e-05 Lib(n90.3*100)inf H-nan, nTest9.7=10.0=exp(-2.30)*nGiven100method:2:100:2.3:0N60.<br>
+#a=2.1<br>
+#Ltst(n11.9*100)4.721e-05 Lib(n88.1*100)inf H-nan, nTest11.9=12.2=exp(-2.10)*nGiven100method:2:100:2.1:1N40.<br>
+#Ltst(n11.9*100)3.921e-05 Lib(n88.1*100)inf H-nan, nTest11.9=12.2=exp(-2.10)*nGiven100method:2:100:2.1:1N50.<br>
+		  #Ltst(n11.9*100)5.038e-05 Lib(n88.1*100)inf H-nan, nTest11.9=12.2=exp(-2.10)*nGiven100method:2:100:2.1:1N60.<br>
+#####<br>
+#Additional results of oob estimate for fntrain=$d0/data/Geo1d_1000_50_10/train.csv<br>
+#Ltst(n222.2*1000)2.805e-07 Lib(n77.8*1000)2.920e-01 H8.634e-01, nTest740.7=740.8=exp(-0.30)*nGiven1000method:2:300:0.3:1N50.<br>
+#Ltst(n149.0*1000)9.212e-08 Lib(n151.0*1000)2.920e-01 H8.657e-01, nTest496.5=496.6=exp(-0.70)*nGiven1000method:2:300:0.7:1N50. 2-fold CV<br>
+#Ltst(n110.4*1000)8.835e-08 Lib(n189.6*1000)2.920e-01 H8.660e-01, nTest368.1=367.9=exp(-1.00)*nGiven1000method:2:300:1.0:1N50. .632 bootstrap<br>
+#Ltst(n60.7*1000)8.224e-08 Lib(n239.3*1000)2.920e-01 H8.662e-01, nTest202.2=201.9=exp(-1.60)*nGiven1000method:2:300:1.6:1N50.*** 5-fold CV<br>
+#Ltst(n30.1*1000)1.020e-07 Lib(n269.9*1000)2.920e-01 H8.663e-01, nTest100.2=100.3=exp(-2.30)*nGiven1000method:2:300:2.3:1N50. 10-fold CV<br>
+#####<br>
+#Additional results of oob estimate for $d0/data/Geo1d_5000_50_10/train.csv<br>
+#Ltst(n222.2*5000)2.354e-08 Lib(n77.8*5000)2.831e-01 H8.853e-01, nTest3703.9=3704.1=exp(-0.30)*nGiven5000method:2:300:0.3:1N50.<br>
+#Ltst(n149.0*5000)2.300e-08 Lib(n151.0*5000)2.831e-01 H8.872e-01, nTest2482.6=2482.9=exp(-0.70)*nGiven5000method:2:300:0.7:1N50. 2-fold CV<br>
+#Ltst(n110.3*5000)2.256e-08 Lib(n189.7*5000)2.831e-01 H8.873e-01, nTest1838.7=1839.4=exp(-1.00)*nGiven5000method:2:300:1.0:1N50.***a=1.0 oob best for ntest5000<br>
+#Ltst(n60.6*5000)2.667e-08 Lib(n239.4*5000)2.831e-01 H8.877e-01, nTest1010.6=1009.5=exp(-1.60)*nGiven5000method:2:300:1.6:1N50. 5-fold CV<br>
+#Ltst(n30.2*5000)3.960e-08 Lib(n269.8*5000)2.831e-01 H8.878e-01, nTest503.5=501.3=exp(-2.30)*nGiven5000method:2:300:2.3:1N50.  10-fold CV<br>
+
 	    </ol>
 	    <img class="fit-picture" src="regression-singleCAN2N30s0.jpg" alt="Fig.3" height="200" width="300" > <a name="Fig.3">Fig.3</a>
 	    <img class="fit-picture" src="regression-baggingCAN2N50a2.2s0.jpg" alt="Fig.3" height="200" width="300" > <a name="Fig.4">Fig.4</a>
 	<li> Time-series IOS prediction (IOS:iterated one-step ahead prediction)
 	    <ol>
-	      <li> single CAN2 
+	      <li> common parameter setting<br>
 		  <div style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333; background-color: #ffff99;">
 		  cd $d0/can2comp;make<br>
 		  export fn=$d0/data/lorenz1e-8T0.025n10000p256m1_gmp.txt<br>
+</div>
+	      <li> single CAN2 
+		  <div style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333; background-color: #ffff99;">
 		  export T=100 Tpinv=-1 k=8 N=50 seed=1 tp0=2000 tpD=1 Ey=15 a=1 b=1 nop=1 n_compare=6 v_thresh=0.2 vmin=3 vmin2=0 v_ratio=0.5 width=0.2 l_mode=1 gamma=1.4e-4 nentropy_thresh=0.7 n_display=5 rot_x=50 rot_y=350 y=-18.5:18.5:0:1 <br>
 		  make data-clean;<br>
 		  ensrs $fn 2:${b}:${a}:${seed} $N-$N:1 t:0-2000:$tp0-$(($tp0+500)):$tpD:$Ey bg:/dev/null ib:0:0:0:0 k:$k g:$gamma w:$width T:$T vt:$v_thresh vr:$v_ratio lossall:1 DISP:2 y:$y x:$y nop:1 Tpinv:-1<br>
@@ -102,13 +144,11 @@ See <a href="#ref1">[1]</a>,
 		  #[100,-1](0.3s) #[T,Tinv] k8 N60 b1(nens1) a1 seed1 nop1 m_cpu6 0-2000:2000-2500:15H24<br>
 	      <li> Bagging CAN2 <br>
 		  <div style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333; background-color: #ffff99;">
-		  cd $d0/can2comp; make<br>
-		  export fn=$d0/data/lorenz1e-8T0.025n10000p256m1_gmp.txt<br>
 		  export T=100 Tpinv=-1 k=8 N=50 seed=1 tp0=2000 tpD=1 Ey=15 a=0.7 b=20 nop=1 n_compare=6 v_thresh=0.2 vmin=3 vmin2=0 v_ratio=0.5 width=0.2 l_mode=1 gamma=1.4e-4 nentropy_thresh=0.7 n_display=5 rot_x=50 rot_y=350 y=-18.5:18.5:0:1 <br>
 		  make data-clean;<br>
 		  ensrs $fn 2:${b}:${a}:${seed} $N-$N:1 t:0-2000:$tp0-$(($tp0+500)):$tpD:$Ey bg:/dev/null ib:0:0:0:0 k:$k g:$gamma w:$width T:$T vt:$v_thresh vr:$v_ratio lossall:1 DISP:2 y:$y x:$y nop:1 Tpinv:-1<br>
 		  </div>
-		  #Results (see <a href="#Fig.6">Fig.6</a>; <font color="#ff000">longest predictable horizon H=224 is achieved with N=60)</font><br>
+		  #Results (see <a href="#Fig.6">Fig.6</a>; <font color="#ff000">longest predictable horizon H=224 is achieved with N=60</font>; a method to obtain a good parameter N is proposed in <a href="#ref3">[3]</a><br>
 		  #[100,-1](0.9s) #[T,Tinv] k8 N40 b20(nens1) a0.7 seed1 nop1 m_cpu6 0-2000:2000-2500:15H157<br>
 		  #[100,-1](1.0s) #[T,Tinv] k8 N50 b20(nens1) a0.7 seed1 nop1 m_cpu6 0-2000:2000-2500:15H224 ***<br>
 		  #[100,-1](1.3s) #[T,Tinv] k8 N60 b20(nens1) a0.7 seed1 nop1 m_cpu6 0-2000:2000-2500:15H199<br>
@@ -208,10 +248,14 @@ See <a href="#ref1">[1]</a>,
   <li><a name="ref1">[1]</a>
       S.Kurogi:Asymptotic optimality of competitive associative nets for
 	their learning in function approximation.
-Proc. ICONIP2002, pp.507-511  (2002)<br>
-      (Detailed Journal: S.Kurogi: Asymptotic optimality of competitive associative nets and its Application to incremental learning of nonlinear functions,
+Proc. ICONIP2002, pp.507-511  (2007) https://doi.org/10.1002/scj.10538<br>
+      (Detailed Japanese Journal: S.Kurogi: Asymptotic optimality of competitive associative nets and its Application to incremental learning of nonlinear functions,
 	    Systems and Communications in Japan, Vol.J86-D-II, No.2, pp.184-194 (2003))<br>
-<li><a name="ref2">[2]</a> S.Kurogi: Improving generalization performance via out-of-bag estimate using variable size of bags, J. Japanese Neural Network Society, Vol.J.16, No.2, pp.81-92 (2009)<br>
+  <li><a name="ref2">[2]</a> S.Kurogi: Improving generalization performance via out-of-bag estimate using variable size of bags, J. Japanese Neural Network Society, Vol.J.16, No.2, pp.81-92 (2009) http://doi.org/10.3902/jnns.16.81<br>
+      (An application written in English)
+      S.Kurogi, R.Shigematsu, and K.Ono: Properties of Direct Multi-Step Ahead Prediction of Chaos Time Series and Out-of-Bag Estimate for Model selection 
+      ICONIP2014, Part II, LNCS8835, pp. 421-428 (2014) https://doi.org/10.1007/978-3-319-12640-1_51
+      <br>
 <li><a name="ref3">[3]</a> D.Miyazaki, K.Matsuo, and S.Kurogi: Entropy of LOO Predictable Horizons to Select a Learning Machine and a Representative
     Prediction of Chaotic Time Series, ICONIP 2020, CCIS 1333, pp. 778-787 (2020)
 <li> <a name="ref4">[4]</a>
@@ -232,6 +276,6 @@ https://doi.org/10.1007/978-3-030-63823-8_81
 <hr>
 <address></address>
 <!-- hhmts start -->
-Last modified: Thu Oct 21 18:09:26 JST 2021
+Last modified: Mon Nov  1 13:42:35 JST 2021
 <!-- hhmts end -->
 </body> </html>
