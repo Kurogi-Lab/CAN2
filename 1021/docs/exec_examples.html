@@ -2,21 +2,31 @@
 <html> <head>
 <title>Execution examples</title>
 </head>
-
- <meta charset="UTF-8">
-
+<meta charset="UTF-8">
+<!--<meta http-equiv="Content-Style-Type" content="text/css">-->
+<!-- ------------------------------- -->
+<!--from https://www.conifer.jp/csstest/css-list-marker-paren.html-->
+<style>
+ol.paren li  {
+        list-style-type:none;
+        counter-increment: cnt;
+        text-indent:-2.5em;
+        padding:0;
+        }
+    ol.paren0 li  {
+        list-style-type:none;
+        text-indent:-3em;
+        padding:0;
+        }
+    ol.paren li:before  {
+        display: marker;
+        content: "["counter(cnt) "] ";
+}
+</style>
+<!-- ------------------------------- -->
 </head>
 
 <body>
-
-<!--  <div class="box_head">
-
-    <p>表示したい文字列</p>
-
-  </div>
--->
-
-
 <h1>Execution examples of CAN2</h1>
 Execution examples of regression and time-series IOS prediction by the single and bagging CAN2s are shown below.
 See <a href="#ref1">[1]</a>,
@@ -244,28 +254,28 @@ export N=50 a=2.2 b=300 seed=1 k=1 T=100; #Obtain optimal a and N by trial and e
 	    (see <a href="#ref4">[4]</a>,<a href="#ref5">[5]</a>).
       </ul>
   <li> References<br>
-      <ul style="list-style:none">
-  <li><a name="ref1">[1]</a>
+<ol class="paren">
+  <li><a name="ref1"></a>
       S.Kurogi:Asymptotic optimality of competitive associative nets for
 	their learning in function approximation.
 Proc. ICONIP2002, pp.507-511  (2007) <a href="https://doi.org/10.1002/scj.10538">https://doi.org/10.1002/scj.10538</a><br>
       (Detailed Japanese Journal: S.Kurogi: Asymptotic optimality of competitive associative nets and its Application to incremental learning of nonlinear functions,
-	    Systems and Communications in Japan, Vol.J86-D-II, No.2, pp.184-194 (2003))<br>
-  <li><a name="ref2">[2]</a> S.Kurogi: Improving generalization performance via out-of-bag estimate using variable size of bags, J. Japanese Neural Network Society, Vol.J.16, No.2, pp.81-92 (2009) http://doi.org/10.3902/jnns.16.81<br>
+	    Systems and Communications in Japan, Vol.J86-D-II, No.2, pp.184-194 (2003))<br><br>
+  <li><a name="ref2"></a> S.Kurogi: Improving generalization performance via out-of-bag estimate using variable size of bags, J. Japanese Neural Network Society, Vol.J.16, No.2, pp.81-92 (2009) http://doi.org/10.3902/jnns.16.81<br>
       (An application written in English)
       S.Kurogi, R.Shigematsu, and K.Ono: Properties of Direct Multi-Step Ahead Prediction of Chaos Time Series and Out-of-Bag Estimate for Model selection 
       ICONIP2014, Part II, LNCS8835, pp. 421-428 (2014) <a href="https://doi.org/10.1007/978-3-319-12640-1_51">https://doi.org/10.1007/978-3-319-12640-1_51</a>
-      <br>
-<li><a name="ref3">[3]</a> D.Miyazaki, K.Matsuo, and S.Kurogi: Entropy of LOO Predictable Horizons to Select a Learning Machine and a Representative
+      <br><br>
+<li><a name="ref3"></a> D.Miyazaki, K.Matsuo, and S.Kurogi: Entropy of LOO Predictable Horizons to Select a Learning Machine and a Representative
     Prediction of Chaotic Time Series, ICONIP 2020, CCIS 1333, pp. 778-787 (2020)
-    <a href="https://doi.org/10.1007/978-3-030-63823-8_88">https://doi.org/10.1007/978-3-030-63823-8_88</a>
-<li> <a name="ref4">[4]</a>
+    <a href="https://doi.org/10.1007/978-3-030-63823-8_88">https://doi.org/10.1007/978-3-030-63823-8_88</a><br><br>
+<li> <a name="ref4"></a>
     T.Tagomori, R.Tsuruda, K.Matsuo, S.Kurogi:
 Speaker verification from mixture of speech and
 non-speech audio signals via using pole distribution 
 of piecewise linear predictive coding coefficients, 
-    J Ambient Intell Human Comput (2020) <a href="https://doi.org/10.1007/s12652-020-01716-6">https://doi.org/10.1007/s12652-020-01716-6</a>
-<li> <li> <a name="ref5">[5]</a>
+    J Ambient Intell Human Comput (2020) <a href="https://doi.org/10.1007/s12652-020-01716-6">https://doi.org/10.1007/s12652-020-01716-6</a><br><br>
+<li> <a name="ref5"></a>
     H.Nakayama, K.Ogi, K.Matsuo, and S.Kuro: 
 Composition and Analysis of Pareto
 Optimal Compromise Solutions
@@ -273,10 +283,10 @@ for Multiobjective Robust Controller
     Using GPC and CAN2s,
     ICONIP 2020, CCIS 1333, pp. 713-722, 2020.
 <a href="https://doi.org/10.1007/978-3-030-63823-8_81">https://doi.org/10.1007/978-3-030-63823-8_81</a>
-    </ul>
+    </ol>
 <hr>
 <address></address>
 <!-- hhmts start -->
-Last modified: Tue Nov  2 10:14:48 JST 2021
+Last modified: Tue Nov  2 11:19:39 JST 2021
 <!-- hhmts end -->
 </body> </html>
