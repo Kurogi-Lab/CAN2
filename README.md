@@ -10,23 +10,23 @@ The effectiveness of this net has already been shown by applications to nonlinea
 The diagram of function approximation by CAN2 is shown below.<br>
 Suppose you want to learn a nonlinear function <img src="https://latex.codecogs.com/gif.latex?y=f(x)"/>, as shown by the dashed line in the diagram.<br>
 
-<img src="https://user-images.githubusercontent.com/49471144/125508173-2dac6131-b529-4d7e-bff0-b8832cb4181f.png" width="500px"/>
+<img src="https://user-images.githubusercontent.com/49471144/125508173-2dac6131-b529-4d7e-bff0-b8832cb4181f.png" width="300px"/>
 
 ①The CAN2 divides the input area by weight vector. (The divided area is called the Voronoi area)<br>
 
-<img src="https://user-images.githubusercontent.com/49471144/125510016-91682a9b-715f-472f-bd8f-5b7451dd8780.png" width="600px"/>
+<img src="https://user-images.githubusercontent.com/49471144/125510016-91682a9b-715f-472f-bd8f-5b7451dd8780.png" width="400px"/>
 
 ②Each region has an associative matrix M, and linear approximation is performed using the associative matrix. <br>
 
-<img src="https://user-images.githubusercontent.com/49471144/125510657-82077e97-918e-494a-9f0a-9a36a0924438.png" width="700px"/>
+<img src="https://user-images.githubusercontent.com/49471144/125510657-82077e97-918e-494a-9f0a-9a36a0924438.png" width="500px"/>
 
 ③Given the input vector x, it looks for the weight vector wc that is closest to the input vector. <br>
 
-<img src="https://user-images.githubusercontent.com/49471144/125511004-fee2d4f0-d062-4170-b9d7-5cb79eae2a65.png" width="800px"/>
+<img src="https://user-images.githubusercontent.com/49471144/125511004-fee2d4f0-d062-4170-b9d7-5cb79eae2a65.png" width="600px"/>
 
 ④The prediction can be obtained by using the associative matrix Mc in this weight vector wc. <br>
 
-<img src="function_approximation_by_CAN2.png">
+<img src="function_approximation_by_CAN2.png" width="600px">
 
 Consider a system that inputs and outputs K-dimensional vectors <img src="https://latex.codecogs.com/gif.latex?\textbf{x}_{j}\triangleq&space;(x_{j1},x_{j2},\cdots,x_{jk})^{T}&space;\in&space;\mathbb{R}^{k\times1}"/> and scalar values <img src="https://latex.codecogs.com/gif.latex?y_{j}&space;\in&space;\mathbb{R}"/>
 
@@ -303,15 +303,21 @@ $ python ensrs.py -fn $fn,,tmp/msp${tp0}.dat -k $k -t 0-2000:$tp0-$(($tp0+500)):
 
 ## References
 <a id="ref1">[1]</a>A.C. Ahalt, A.K. Krishnamurthy, P. Chen and D.E. Melton: Competitive learning algorithms for vector quantization, Neural Networks, 3, 277/290 (1990)<br>
+
 <a id="ref2">[2]</a>T. Kohonen: Associative Memory, Springer Verlag (1977)<br>
+
 <a id="ref3">[3]</a>S.Kurogi:Asymptotic optimality of competitive associative nets for their learning in function approximation. Proc. ICONIP2002, pp.507-511 (2002)  https://doi.org/10.1002/scj.10538<br>
 (Detailed Journal: S.Kurogi: Asymptotic optimality of competitive associative nets and its Application to incremental learning of nonlinear functions, Systems and Communications in Japan, Vol.J86-D-II, No.2, pp.184-194 (2003))<br>
+
 <a id="ref4">[4]</a>S.Kurogi: Improving generalization performance via out-of-bag estimate using variable size of bags, J. Japanese Neural Network Society, Vol.J.16, No.2, pp.81-92 (2009) http://doi.org/10.3902/jnns.16.81<br>
 (An application written in English)
       S.Kurogi, R.Shigematsu, and K.Ono: Properties of Direct Multi-Step Ahead Prediction of Chaos Time Series and Out-of-Bag Estimate for Model selection 
-      ICONIP2014, Part II, LNCS8835, pp. 421-428 (2014) https://doi.org/10.1007/978-3-319-12640-1_51
-<a id="ref5">[5]</a>D.Miyazaki, K.Matsuo, and S.Kurogi: Entropy of LOO Predictable Horizons to Select a Learning Machine and a Representative Prediction of Chaotic Time Series, ICONIP 2020, CCIS 1333, pp. 778-787 (2020)<br>
+      ICONIP2014, Part II, LNCS8835, pp. 421-428 (2014) https://doi.org/10.1007/978-3-319-12640-1_51 <br>
+
+<a id="ref5">[5]</a>D.Miyazaki, K.Matsuo, and S.Kurogi: Entropy of LOO Predictable Horizons to Select a Learning Machine and a Representative Prediction of Chaotic Time Series, ICONIP 2020, CCIS 1333, pp. 778-787 (2020) https://doi.org/10.1007/978-3-030-63823-8_88
+
 <a id="ref6">[6]</a>T.Tagomori, R.Tsuruda, K.Matsuo, S.Kurogi: Speaker verification from mixture of speech and non-speech audio signals via using pole distribution of piecewise linear predictive coding coefficients, J Ambient Intell Human Comput (2020) https://doi.org/10.1007/s12652-020-01716-6<br>
+
 <a id="ref7">[7]</a> H.Nakayama, K.Ogi, K.Matsuo, and S.Kuro: Composition and Analysis of Pareto Optimal Compromise Solutions for Multiobjective Robust Controller Using GPC and CAN2s, ICONIP 2020, CCIS 1333, pp. 713-722, 2020. https://doi.org/10.1007/978-3-030-63823-8_81<br> 
 
 ### function approximation
