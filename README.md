@@ -136,7 +136,7 @@ $ sudo apt install -y xterm
 Execution examples of regression and time-series IOS prediction by the single and bagging CAN2s are shown below.
 The details of regression, bagging, and IOS prediction by the CAN2 are shown in 
 [[3]](#ref3), [[4]](#ref4) and [[5]](#ref5).
-The following contents are also written in the html format: [./1021/docs/exec_examples.html](https://htmlpreview.github.io/?https://github.com/Kurogi-Lab/CAN2/blob/master/1021/docs/exec_examples.html), where you can execute cut&paste easily.
+The following contents are also written in the html format: [./1021/docs/exec_examples.html](https://htmlpreview.github.io/?https://github.com/Kurogi-Lab/CAN2/blob/master/1021/docs/exec_examples.html), where you can execute copy&paste easily.
 <!--%For the reader's convenience,-->
 
 ### 1. Set the root directory
