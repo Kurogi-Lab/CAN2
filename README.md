@@ -4,7 +4,7 @@
 
 ## Introduction 
 <!--## Description-->
-The competitive associative net, or CAN2,
+The competitive associative net called CAN2
 is a neural network for learning efficient piecewise linear approximation
 of nonlinear functions.
 It consists of weight vectors to divide the input space into Voronoi regions
