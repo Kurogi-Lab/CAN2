@@ -12,7 +12,7 @@ and associative matrices to execute linear approximation in each Voronoi region.
 We have developed a learning method consisting of
 a gradient learning to optimize weight vectors,
 an incremental least-squares to optimize associative matrices,
-and a reinitialization using asymptotic optimality
+and a reinitialization based on asymptotic optimality
 to avoide local minima of gradient method.
  As a result, the learning has achieved (a) a high accuracy and precision
  in the approximation of nonlinear functions
