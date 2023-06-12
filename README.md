@@ -9,14 +9,15 @@ is a neural network for learning efficient piecewise linear approximation
 of nonlinear functions.
 It consists of weight vectors to divide the input space into Voronoi regions
 and associative matrices to execute linear approximation in each Voronoi region.
-We have developed a gradient learning method to optimize weight vectors,
-an incremental least-squares method to optimize associative matrices,
-and a reinitialization method using asymptotic optimality
-to avoide local minima.
- As a result, it achieves (a) a high accuracy and precision
+We have developed a learning method consisting of
+a gradient learning to optimize weight vectors,
+an incremental least-squares to optimize associative matrices,
+and a reinitialization using asymptotic optimality
+to avoide local minima of gradient method.
+ As a result, the learning has achieved (a) a high accuracy and precision
  in the approximation of nonlinear functions
  consisting of different smoothness from region to region,
- (b) a high exploration ability,
+ (b) a high interpolation and extrapolation ability,
  (c) a small computational cost,
  (d) an extraction of piecewise linear predictive coefficients
  useful in many engineering applications <a href="#ref1">[1]</a>, <a href="#ref2">[2]</a>, <a href="#ref3">[3]</a>.
