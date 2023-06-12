@@ -14,7 +14,7 @@ a gradient learning to optimize weight vectors,
 an incremental least-squares to optimize associative matrices,
 and a reinitialization based on asymptotic optimality
 to avoide local minima of gradient method.
- As a result, the learning has achieved (a) a high accuracy and precision
+ As a result, the CAN2 has achieved (a) a high accuracy and precision
  in the approximation of nonlinear functions
  consisting of different smoothness from region to region,
  (b) a high interpolation and extrapolation ability,
