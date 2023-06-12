@@ -1,46 +1,85 @@
-# CAN2
-
+# CAN2 
+                                                                                modified 2023/6/12
 <hr>
 
-## Description
-The competitive associative net CAN2 is a neural network that learns a nonlinear function using the functions of the competitive net<a href="#ref1">[1]</a> and the associative net<a href="#ref2">[2]</a> and approximates it as a piecewise-linear function.<br>
-The effectiveness of this net has already been shown by applications to nonlinear time-varying plant control, estimation of recipitation, learning problem of nonlinear function and other problems. <br>
+## Introduction 
+<!--## Description-->
+The competitive associative net, or CAN2,
+is a neural network for learning efficient piecewise linear approximation
+of nonlinear functions.
+It consists of weight vectors to divide the input space into Voronoi regions
+and associative matrices to execute linear approximation in each Voronoi region.
+We have developed a gradient learning method to optimize weight vectors,
+an incremental least-squares method to optimize associative matrices,
+and a reinitialization method using asymptotic optimality
+to avoide local minima.
+ As a result, it achieves (a) a high accuracy and precision
+ in the approximation of nonlinear functions
+ consisting of different smoothness from region to region,
+ (b) a high exploration ability,
+ (c) a small computational cost,
+ (d) an extraction of piecewise linear predictive coefficients
+ useful in many engineering applications <a href="#ref1">[1]</a>, <a href="#ref2">[2]</a>, <a href="#ref3">[3]</a>.
 
-### Function approximation by CAN2
-The diagram of function approximation by CAN2 is shown below.<br>
-Suppose you want to learn a nonlinear function <img src="https://latex.codecogs.com/gif.latex?y=f(x)"/>, as shown by the dashed line in the diagram.<br>
+<!-- that learns a nonlinear function using the functions of
+the competitive net <a href="#ref1">[1]</a>
+and the associative net<a href="#ref2">[2]</a>
+and approximates it as a piecewise-linear function.<br>
+The effectiveness of this net has already been shown by applications to nonlinear time-varying plant control, estimation of recipitation, learning problem of nonlinear function and other problems. <br>
+-->
+
+### Function approximation by the CAN2
+<!--The diagram of function approximation by CAN2 is shown below.<br>-->
+Suppose we have a nonlinear function <img src="https://latex.codecogs.com/gif.latex?y=f(\pmb{x})"/> as:
 
 <img src="https://user-images.githubusercontent.com/49471144/125508173-2dac6131-b529-4d7e-bff0-b8832cb4181f.png" width="300px"/>
 
-①The CAN2 divides the input area by weight vector. (The divided area is called the Voronoi area)<br>
+① The input space is divided into Voronoi regions by the weight vectors 
+<img src="https://latex.codecogs.com/gif.latex?\pmb{w}_i"/> :
+<br>
 
 <img src="https://user-images.githubusercontent.com/49471144/125510016-91682a9b-715f-472f-bd8f-5b7451dd8780.png" width="400px"/>
 
-②Each region has an associative matrix M, and linear approximation is performed using the associative matrix. <br>
+② For an input vector
+<img src="https://latex.codecogs.com/gif.latex?\pmb{x}"/>,
+the nearest weight vector
+<img src="https://latex.codecogs.com/gif.latex?\pmb{w}_c\equiv\pmb{w}_i"/>
+is selected, and the corresponding associative matrix
+<img src="https://latex.codecogs.com/gif.latex?\pmb{M}_c\equiv\pmb{M}_i"/>
+is used to obtain
+<img src="https://latex.codecogs.com/gif.latex?\hat{y}=\pmb{M}_c \tilde{\pmb{x}}"/> as a linear approximation of
+<img src="https://latex.codecogs.com/gif.latex?y=f(\pmb{x})"/>, where the first element of
+<img src="https://latex.codecogs.com/gif.latex?\tilde{\pmb{x}}\equiv(1,\pmb{x})^T"/>
+is to deal with the bias.
 
+<!--
+------------------------------
 <img src="https://user-images.githubusercontent.com/49471144/125510657-82077e97-918e-494a-9f0a-9a36a0924438.png" width="500px"/>
 
-③Given the input vector x, it looks for the weight vector wc that is closest to the input vector. <br>
+③ Given the input vector x, it looks for the weight vector wc that is closest to the input vector. <br>
 
 <img src="https://user-images.githubusercontent.com/49471144/125511004-fee2d4f0-d062-4170-b9d7-5cb79eae2a65.png" width="600px"/>
 
 ④The prediction can be obtained by using the associative matrix Mc in this weight vector wc. <br>
+------
+-->
 
 <img src="function_approximation_by_CAN2.png" width="600px">
 
-Consider a system that inputs and outputs K-dimensional vectors <img src="https://latex.codecogs.com/gif.latex?\textbf{x}_{j}\triangleq&space;(x_{j1},x_{j2},\cdots,x_{jk})^{T}&space;\in&space;\mathbb{R}^{k\times1}"/> and scalar values <img src="https://latex.codecogs.com/gif.latex?y_{j}&space;\in&space;\mathbb{R}"/>
+<!--Consider a system that inputs and outputs K-dimensional vectors <img src="https://latex.codecogs.com/gif.latex?\textbf{x}_{j}\triangleq&space;(x_{j1},x_{j2},\cdots,x_{jk})^{T}&space;\in&space;\mathbb{R}^{k\times1}"/> and scalar values <img src="https://latex.codecogs.com/gif.latex?y_{j}&space;\in&space;\mathbb{R}"/>
 
 <img src="https://latex.codecogs.com/gif.latex?y_{j}\triangleq&space;f(\textbf{x}_{j})&plus;d_{j}"/>
 
 <img src="https://latex.codecogs.com/gif.latex?\hat{y}\triangleq\hat{y_{c}}\triangleq&space;\textbf{M}_{c}&space;\tilde{\textbf{x}}"/>
 
 <img src="https://latex.codecogs.com/gif.latex?c\triangleq&space;\underset{i\in&space;l}{\arg\min}&space;\left&space;\|\textbf{x}-\textbf{w}_{i}&space;\right&space;\|"/>
-
+-->
 <hr>
 
 ## Requirements
 ### Compatible operating systems
-The below list contains distribution versions with compatibility. However, it may work on other operating systems.
+The present softwares shown below are executable in the following distribution versions.
+<!--However, it may work on other operating systems.-->
 * Ubuntu 12.04 LTS
 * Ubuntu 14.04 LTS
 * Ubuntu 16.04 LTS
@@ -53,8 +92,8 @@ The below list contains distribution versions with compatibility. However, it ma
 
 <hr>
 
-## Installation
-We installed the following software to operate the CAN2. However, it may work with other software. 
+## Utilities
+The following utilities are also used. 
 
 ### Anaconda
 ```
@@ -81,21 +120,23 @@ $ pip3 install chainer
 $ conda install opencv #for install cv2
 ```
 
-### Other software
+### Other applications
 ```
 $ sudo apt install -y gv
 $ sudo apt install -y gnuplot
 $ sudo apt install -y xterm
 ```
 
-### Intel c compiler (icc) (about 3 times faster than gcc)
+### Intel C compiler (icc) (about 3 times faster than gcc)
 
 <hr>
 
 ## Execution examples 
 Execution examples of regression and time-series IOS prediction by the single and bagging CAN2s are shown below.
-See [[3]](#ref3), [[4]](#ref4) and [[5]](#ref5) for the details of regression, bagging, IOS prediction by CAN2, respectively. 
-For the reader's convenience, we have also prepared the original html document: [./1021/docs/exec_examples.html](https://htmlpreview.github.io/?https://github.com/Kurogi-Lab/CAN2/blob/master/1021/docs/exec_examples.html).
+The details of regression, bagging, and IOS prediction by the CAN2 are shown in 
+[[3]](#ref3), [[4]](#ref4) and [[5]](#ref5).
+The following contents are also written in the html format: [./1021/docs/exec_examples.html](https://htmlpreview.github.io/?https://github.com/Kurogi-Lab/CAN2/blob/master/1021/docs/exec_examples.html).
+<!--%For the reader's convenience,-->
 
 ### 1. Set the root directory
 ```
@@ -135,8 +176,7 @@ $ export fntrain=$dst/train.csv fntest=$dst/test.csv fnpred=predict+.dat
 $ make data-clean;
 $ export N=30 seed=0 k=1 T=100;
 $ ensrs $fntrain -1:$fntest $N k:$k T:$T BIAS:1 Lstd:0:2 ib:0:0:0:0 vm2:-1 seed:$seed Tpinv:-1 nop:1 DISP:0
-#(or) ensrs $fntrain 2:1:1:1 $N bg:$fntest k:$k T:$T BIAS:1 Lstd:0:2 ib:0:0:0:0 vm2:-1 seed:$seed Tpinv:-1 nop:1
-$ export fntest=$fntest fnpred=./result-ensrs/tmp/train+test+s${seed}0j0k${k}N${N}pred.dat;../sh/show${k}dpred.sh
+#(or) ensrs $fntrain 2:1:1:1 $N bg:$fntest k:$k T:$T BIAS:1 Lstd:0:2 ib:0:0:0:0 vm2:-1 seed:$seed Tpinv:-1 nop:1 export fntest=$fntest fnpred=./result-ensrs/tmp/train+test+s${s}0j0k${k}N${N}pred.dat;../sh/show${k}dpred.sh
 ```
 #Results (see [Fig.3](1021/docs/regression-singleCAN2N30s0.jpg) (smallest MSEtst=1.161e-05 (MSE for the test data) is achieved with N=30)<br>
 #100(0.030s) 7.274e-05 5.076e-04 #ep(time),MSEtr,MSEtst k1 n100:71 N20 s0<br>
@@ -303,20 +343,30 @@ $ python ensrs.py -fn $fn,,tmp/msp${tp0}.dat -k $k -t 0-2000:$tp0-$(($tp0+500)):
 - The CAN2 has advantages on (A) prediction accuracy in learning the functions with piecewise different smoothness (see [[3]](#ref3)), (B) ability of extrapolation as well as interpolation (see [3]), (C) comutational cost, (D) extraction of piecewise linear predictive coefficients in the applications such as speech and speaker recognition (audio processing) and control (see [[6]](#ref6),[[7]](#ref7)). 
 
 ## References
-<a id="ref1">[1]</a>A.C. Ahalt, A.K. Krishnamurthy, P. Chen and D.E. Melton: Competitive learning algorithms for vector quantization, Neural Networks, 3, 277/290 (1990)<br>
-
-<a id="ref2">[2]</a>T. Kohonen: Associative Memory, Springer Verlag (1977)<br>
-
-<a id="ref3">[3]</a>S.Kurogi:Asymptotic optimality of competitive associative nets for their learning in function approximation. Proc. ICONIP2002, pp.507-511 (2002)  https://doi.org/10.1002/scj.10538<br>
+<a id="ref1">[1]</a> S.Kurogi:Asymptotic optimality of competitive associative nets for their learning in function approximation. Proc. ICONIP2002, pp.507-511 (2002)  https://doi.org/10.1002/scj.10538<br>
 (Detailed Journal: S.Kurogi: Asymptotic optimality of competitive associative nets and its Application to incremental learning of nonlinear functions, Systems and Communications in Japan, Vol.J86-D-II, No.2, pp.184-194 (2003))<br>
 
-<a id="ref4">[4]</a>S.Kurogi: Improving generalization performance via out-of-bag estimate using variable size of bags, J. Japanese Neural Network Society, Vol.J.16, No.2, pp.81-92 (2009) http://doi.org/10.3902/jnns.16.81<br>
+<a id="ref2">[2]</a> A.C. Ahalt, A.K. Krishnamurthy, P. Chen and D.E. Melton: Competitive learning algorithms for vector quantization, Neural Networks, 3, 277/290 (1990)<br>
+
+<a id="ref3">[3]</a> T. Kohonen: Associative Memory, Springer Verlag (1977)<br>
+
+<a id="ref4">[4]</a> S.Kurogi: Improving generalization performance via out-of-bag estimate using variable size of bags, J. Japanese Neural Network Society, Vol.J.16, No.2, pp.81-92 (2009) http://doi.org/10.3902/jnns.16.81<br>
 (An application written in English)
       S.Kurogi, R.Shigematsu, and K.Ono: Properties of Direct Multi-Step Ahead Prediction of Chaos Time Series and Out-of-Bag Estimate for Model selection 
       ICONIP2014, Part II, LNCS8835, pp. 421-428 (2014) https://doi.org/10.1007/978-3-319-12640-1_51 <br>
 
-<a id="ref5">[5]</a>D.Miyazaki, K.Matsuo, and S.Kurogi: Entropy of LOO Predictable Horizons to Select a Learning Machine and a Representative Prediction of Chaotic Time Series, ICONIP 2020, CCIS 1333, pp. 778-787 (2020) https://doi.org/10.1007/978-3-030-63823-8_88
+<a id="ref5">[5]</a> D.Miyazaki, K.Matsuo, and S.Kurogi: Entropy of LOO Predictable Horizons to Select a Learning Machine and a Representative Prediction of Chaotic Time Series, ICONIP 2020, CCIS 1333, pp. 778-787 (2020) https://doi.org/10.1007/978-3-030-63823-8_88
 
-<a id="ref6">[6]</a>T.Tagomori, R.Tsuruda, K.Matsuo, S.Kurogi: Speaker verification from mixture of speech and non-speech audio signals via using pole distribution of piecewise linear predictive coding coefficients, J Ambient Intell Human Comput (2020) https://doi.org/10.1007/s12652-020-01716-6<br>
+<a id="ref6">[6]</a> T.Tagomori, R.Tsuruda, K.Matsuo, S.Kurogi: Speaker verification from mixture of speech and non-speech audio signals via using pole distribution of piecewise linear predictive coding coefficients, J Ambient Intell Human Comput (2020) https://doi.org/10.1007/s12652-020-01716-6<br>
 
 <a id="ref7">[7]</a> H.Nakayama, K.Ogi, K.Matsuo, and S.Kuro: Composition and Analysis of Pareto Optimal Compromise Solutions for Multiobjective Robust Controller Using GPC and CAN2s, ICONIP 2020, CCIS 1333, pp. 713-722, 2020. https://doi.org/10.1007/978-3-030-63823-8_81<br> 
+
+### function approximation
+
+```
+export fn=Geo1d  ntrain=1000 restest=50 extest=10 k=1;python makesamples.py -msd $fn,$ntrain,$restest,$extest
+```
+
+![kunren](https://user-images.githubusercontent.com/49471144/117872656-e71cbe00-b2d9-11eb-93fd-26f737b90826.png)
+
+<img src="https://latex.codecogs.com/gif.latex?f(x)=\left\{\begin{matrix}&space;1.0~~~~~~~~~~~~~~~~~~~~~~~(0.0\leq&space;x\leq&space;0.2)\\&space;1.0-(x-0.2)/0.2~~(0.2\leq&space;x\leq&space;0.4)\\&space;0~~~~~~~~~~~~~~~~~~~~~~~~~(0.4\leq&space;x\leq&space;0.6)\\&space;\cos&space;5\pi&space;(x-0.7)/2.0~~(0.6\leq&space;x\leq&space;0.8)\\&space;0~~~~~~~~~~~~~~~~~~~~~~~~~(0.8\leq&space;x\leq&space;1.0)\\&space;\end{matrix}\right."/>
