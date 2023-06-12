@@ -71,8 +71,8 @@ See <a href="#ref1">[1]</a>,
 		  make data-clean;<br>
 		  export N=30 seed=0 k=1 T=100;<br>
 		  ensrs $fntrain -1:$fntest $N k:$k T:$T BIAS:1 Lstd:0:2 ib:0:0:0:0 vm2:-1 seed:$seed Tpinv:-1 nop:1 DISP:0<br>
-		  #(or) ensrs $fntrain 2:1:1:1 $N bg:$fntest k:$k T:$T BIAS:1 Lstd:0:2 ib:0:0:0:0 vm2:-1 seed:$seed Tpinv:-1 nop:1 <br>
-		  export fntest=$fntest fnpred=./result-ensrs/tmp/train+test+s${seed}j0k${k}N${N}pred.dat;../sh/show${k}dpred.sh<br>
+		  #(or) ensrs $fntrain 2:1:1:1 $N bg:$fntest k:$k T:$T BIAS:1 Lstd:0:2 ib:0:0:0:0 vm2:-1 seed:$seed Tpinv:-1 nop:1 
+		  export fntest=$fntest fnpred=./result-ensrs/tmp/train+test+s${s}0j0k${k}N${N}pred.dat;../sh/show${k}dpred.sh<br>
 		  </div>
 		  #Results (see <a href="#Fig.3">Fig.3</a>) (smallest MSEtst=1.161e-05 (MSE for the test data) is achieved with N=30)<br>
 		  #100(0.030s) 7.274e-05 5.076e-04 #ep(time),MSEtr,MSEtst k1 n100:71 N20 s0<br>
@@ -283,10 +283,18 @@ for Multiobjective Robust Controller
     Using GPC and CAN2s,
     ICONIP 2020, CCIS 1333, pp. 713-722, 2020.
 <a href="https://doi.org/10.1007/978-3-030-63823-8_81">https://doi.org/10.1007/978-3-030-63823-8_81</a>
+<li> <a name="ref6"></a> T.Tagomori, R.Tsuruda, K.Matsuo, S.Kurogi: Speaker verification from mixture of speech and non-speech audio signals via using pole distribution of piecewise linear predictive coding coefficients, J Ambient Intell Human Comput (2020) <a href="https://doi.org/10.1007/s12652-020-01716-6">https://doi.org/10.1007/s12652-020-01716-6</a>
+<li> <a name="ref7"></a> H.Nakayama, K.Ogi, K.Matsuo, and S.Kuro: Composition and Analysis of Pareto Optimal Compromise Solutions for Multiobjective Robust Controller Using GPC and CAN2s, ICONIP 2020, CCIS 1333, pp. 713-722, 2020. <a href="https://doi.org/10.1007/978-3-030-63823-8_81">https://doi.org/10.1007/978-3-030-63823-8_81</a>
+<li> <a name="ref8"></a> K.Taniguchi, S.Kurogi:Performance Improvement of a Method Using Entropy of LOO Predictable Horizons to Select a Representative Prediction of Chaotic Time Series, Proceedings of IEEE-CSDE 2022 (2022/12/19)
+<li> <a name="ref9"></a> K.Komatsu, S.Oyabu, S.Kurogi: Performance Improvement and Analysis of a Method for Piano Authentication from Audio Signal by Combining Feature Vectors of LPC Spectral Envelope, MFCC, and pLPC Pole Distribution, 
+Proceedings of IEEE-CSDE 2022 (2022/12/19) 
+<li> <a name="ref10"></a> K.Komatsu, S.Kurogi: Performance Improvement for Speaker Detection from Mixed Speech of Multiple Speakers Using Probabilistic Prediction and Combining LPCSE, MFCC and pLPCPD, 
+Proceedings of IEEE-CSDE 2022 (2022/12/19) 
     </ol>
-<hr>
+
+    <hr>
 <address></address>
 <!-- hhmts start -->
-Last modified: Tue Nov 16 11:22:21 JST 2021
+Last modified: Mon Jun 12 15:19:51 JST 2023
 <!-- hhmts end -->
 </body> </html>
