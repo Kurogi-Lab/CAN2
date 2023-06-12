@@ -365,10 +365,10 @@ $ python ensrs.py -fn $fn,,tmp/msp${tp0}.dat -k $k -t 0-2000:$tp0-$(($tp0+500)):
 <a id="ref8">[8]</a> K.Taniguchi, S.Kurogi:Performance Improvement of a Method Using Entropy of LOO Predictable Horizons to Select a Representative Prediction of Chaotic Time Series, Proceedings of IEEE-CSDE 2022 (2022/12/19)
 
 <a id="ref9">[9]</a> K.Komatsu, S.Oyabu, S.Kurogi: Performance Improvement and Analysis of a Method for Piano Authentication from Audio Signal by Combining Feature Vectors of LPC Spectral Envelope, MFCC, and pLPC Pole Distribution, 
-Proceedings of IEEE CSDE 2022 (2022/12/19) 
+Proceedings of IEEE-CSDE 2022 (2022/12/19) 
 
 <a id="ref10">[10]</a> K.Komatsu, S.Kurogi: Performance Improvement for Speaker Detection from Mixed Speech of Multiple Speakers Using Probabilistic Prediction and Combining LPCSE, MFCC and pLPCPD, 
-Proceedings of IEEE CSDE 2022 (2022/12/19) 
+Proceedings of IEEE-CSDE 2022 (2022/12/19) 
 
 <!--
 ### function approximation
