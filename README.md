@@ -362,6 +362,15 @@ $ python ensrs.py -fn $fn,,tmp/msp${tp0}.dat -k $k -t 0-2000:$tp0-$(($tp0+500)):
 
 <a id="ref7">[7]</a> H.Nakayama, K.Ogi, K.Matsuo, and S.Kuro: Composition and Analysis of Pareto Optimal Compromise Solutions for Multiobjective Robust Controller Using GPC and CAN2s, ICONIP 2020, CCIS 1333, pp. 713-722, 2020. https://doi.org/10.1007/978-3-030-63823-8_81<br> 
 
+<a id="ref8">[8]</a> K.Taniguchi, S.Kurogi:Performance Improvement of a Method Using Entropy of LOO Predictable Horizons to Select a Representative Prediction of Chaotic Time Series, Proceedings of IEEE-CSDE 2022 (2022/12/19)
+
+<a id="ref9">[9]</a> K.Komatsu, S.Oyabu, S.Kurogi: Performance Improvement and Analysis of a Method for Piano Authentication from Audio Signal by Combining Feature Vectors of LPC Spectral Envelope, MFCC, and pLPC Pole Distribution, 
+Proceedings of IEEE CSDE 2022 (2022/12/19) 
+
+<a id="ref10">[10]</a> K.Komatsu, S.Kurogi: Performance Improvement for Speaker Detection from Mixed Speech of Multiple Speakers Using Probabilistic Prediction and Combining LPCSE, MFCC and pLPCPD, 
+Proceedings of IEEE CSDE 2022 (2022/12/19) 
+
+<!--
 ### function approximation
 
 ```
@@ -371,3 +380,4 @@ export fn=Geo1d  ntrain=1000 restest=50 extest=10 k=1;python makesamples.py -msd
 ![kunren](https://user-images.githubusercontent.com/49471144/117872656-e71cbe00-b2d9-11eb-93fd-26f737b90826.png)
 
 <img src="https://latex.codecogs.com/gif.latex?f(x)=\left\{\begin{matrix}&space;1.0~~~~~~~~~~~~~~~~~~~~~~~(0.0\leq&space;x\leq&space;0.2)\\&space;1.0-(x-0.2)/0.2~~(0.2\leq&space;x\leq&space;0.4)\\&space;0~~~~~~~~~~~~~~~~~~~~~~~~~(0.4\leq&space;x\leq&space;0.6)\\&space;\cos&space;5\pi&space;(x-0.7)/2.0~~(0.6\leq&space;x\leq&space;0.8)\\&space;0~~~~~~~~~~~~~~~~~~~~~~~~~(0.8\leq&space;x\leq&space;1.0)\\&space;\end{matrix}\right."/>
+-->
