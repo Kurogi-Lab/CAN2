@@ -141,7 +141,7 @@ The following contents are also written in the html format: [./1021/docs/exec_ex
 
 ### 1. Set the root directory
 ```
-$ export d0=$PWD;echo $d0 #set the root directory involving data, can2py, can2comp, etc.
+$ export d0=./0522 #set the root directory involving data, can2py, can2comp, etc. 
 ```
 
 ### 2. Data preparation
