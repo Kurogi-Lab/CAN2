@@ -163,8 +163,7 @@ $ cp tmp/train.csv tmp/test.csv $dst
 
 
 <img src="./1021/docs/lorenz1e-8T0.025n10000p256m1_gmp.png" width="200px"/>
-<img src="https://latex.codecogs.com/gif.latex?\begin{align*}&{dx}/{dt}=-\sigma x+\sigma y,\\&{dy}/{dt}=-xz+rx-y,\\&{dz}/{dt}=xy-bz\\ &(\sigma=10,b=8/3,r=28)\\
-&\mathbf{Fig.2~}~x\mathrm{~vs.~}t\end{align*}\\"/> 
+<img src="https://latex.codecogs.com/gif.latex?\begin{align*}&{dx}/{dt}=-\sigma~x+\sigma~y,\\&{dy}/{dt}=-xz+rx-y,\\&{dz}/{dt}=xy-bz\\&(\sigma=10,b=8/3,r=28)\\&\mathbf{Fig.2~}~x\mathrm{~vs.~}t\end{align*}\\"/> 
 
 ### 3. C program
 - Regression
