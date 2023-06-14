@@ -13,14 +13,14 @@ We have developed a learning method consisting of
 a gradient learning to optimize weight vectors,
 an incremental least-squares to optimize associative matrices,
 and a reinitialization based on asymptotic optimality
-to avoide local minima of gradient method.
+to avoide local minima of gradient method <a href="#ref1">[1]</a>, <a href="#ref2">[2]</a>, <a href="#ref3">[3]</a>.
  As a result, the CAN2 has achieved (a) a high accuracy and precision
  in the approximation of nonlinear functions
  consisting of different smoothness from region to region,
  (b) a high interpolation and extrapolation ability,
  (c) a small computational cost,
  (d) an extraction of piecewise linear predictive coefficients
- useful in many engineering applications <a href="#ref1">[1]</a>, <a href="#ref2">[2]</a>, <a href="#ref3">[3]</a>.
+ useful in many engineering applications (see <a href="#ref4">[4]</a>-<a href="#ref10">[10]</a>).
 
 <!-- that learns a nonlinear function using the functions of
 the competitive net <a href="#ref1">[1]</a>
@@ -164,7 +164,7 @@ $ cp tmp/train.csv tmp/test.csv $dst
 
 <img src="./1021/docs/lorenz1e-8T0.025n10000p256m1_gmp.png" width="200px"/>
 <img src="https://latex.codecogs.com/gif.latex?\begin{align*}&{dx}/{dt}=-\sigma x+\sigma y,\\&{dy}/{dt}=-xz+rx-y,\\&{dz}/{dt}=xy-bz\\ &(\sigma=10,b=8/3,r=28)\\
-&\mathbf{Fig.2~} x \mathrm{~vs.~} t\end{align*}\\"/> 
+&\mathbf{Fig.2~} x\mathrm{~vs.~}t\end{align*}\\"/> 
 
 ### 3. C program
 - Regression
