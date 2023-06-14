@@ -1,5 +1,5 @@
 # CAN2 
-modified 2023/6/14
+Modified 2023/6/14 by Shuichi Kurogi (kurogi.shuichi172@mail.kyutech.jp)
 <hr>
 
 ## Introduction 
