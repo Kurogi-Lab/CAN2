@@ -1,5 +1,5 @@
 # CAN2 
-                                                                                modified 2023/6/12
+modified 2023/6/14
 <hr>
 
 ## Introduction 
