@@ -49,9 +49,10 @@ is selected, and the corresponding associative matrix
 <img src="https://latex.codecogs.com/gif.latex?\pmb{M}_c\equiv\pmb{M}_i"/>
 is used to obtain
 <img src="https://latex.codecogs.com/gif.latex?\hat{y}=\pmb{M}_c\tilde{\pmb{x}}"/> as a piecewise linear approximation of
-<img src="https://latex.codecogs.com/gif.latex?y=f(\pmb{x})"/>, where the first element of
+<img src="https://latex.codecogs.com/gif.latex?y=f(\pmb{x})"/>,
+where the first element of the extended input vector
 <img src="https://latex.codecogs.com/gif.latex?\tilde{\pmb{x}}\equiv(1,\pmb{x})^T"/>
-is for the bias.
+is for the bias of the linear approximation.
 
 <!--
 ------------------------------
