@@ -67,7 +67,7 @@ is for the bias.
 
 <!--<img src="function_approximation_by_CAN2.png" width="600px">-->
 <!--<img src="1021/docs/function_approximation_by_CAN2.png" width="600px">-->
-<img src="./docs/PiecewiseLinearApproximationByCAN2.png" width="600px">
+<img src="./1021/docs/PiecewiseLinearApproximationByCAN2.png" width="600px">
 
 <!--Consider a system that inputs and outputs K-dimensional vectors <img src="https://latex.codecogs.com/gif.latex?\textbf{x}_{j}\triangleq&space;(x_{j1},x_{j2},\cdots,x_{jk})^{T}&space;\in&space;\mathbb{R}^{k\times1}"/> and scalar values <img src="https://latex.codecogs.com/gif.latex?y_{j}&space;\in&space;\mathbb{R}"/>
 
