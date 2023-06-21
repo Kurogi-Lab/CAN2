@@ -23,7 +23,7 @@ to avoide local minima of gradient method <a href="#ref1">[1]</a>, <a href="#ref
  (d) an extraction of piecewise linear predictive coefficients
  useful in many engineering applications (see <a href="#ref4">[4]</a>-<a href="#ref10">[10]</a>).
 
-  In the follwoing, we show a brief explanation of
+  This page shows a brief explanation of
   the piecewise linear approximation by the CAN2 in 2,
   software requirements in 3, execution examples in 4, several remarks in 5, followed by references in 6.
 ## 2 Piecewise linear approximation by the CAN2
@@ -57,7 +57,7 @@ is for the bias of the linear approximation.
 
 <hr>
 
-## 3. Software Requirements
+## 3 Software Requirements
 ### 3.1 Operating system
 <!--The present softwares shown below are executable in the following distribution versions.-->
 * Ubuntu 20.04 LTS installed on Virtualbox as well as an external hard drive,
@@ -107,7 +107,7 @@ $ sudo apt install -y xterm
 
 <hr>
 
-## 4. Execution examples 
+## 4 Execution examples 
 Execution examples of regression and time-series IOS prediction by the single and bagging CAN2s are shown below.
 The details of regression, bagging, and IOS prediction by the CAN2 are shown in 
 [[3]](#ref3), [[4]](#ref4) and [[5]](#ref5).
