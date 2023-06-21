@@ -1,11 +1,12 @@
 # CAN2 
-Modified at 2023/6/21 by Shuichi Kurogi (kurogi.shuichi172@mail.kyutech.jp)
+Modified 2023/6/14 by Shuichi Kurogi (kurogi.shuichi172@mail.kyutech.jp)
 <hr>
 
-## Introduction 
+##  1 Introduction
 <!--## Description-->
-The competitive associative net called CAN2
-is a neural network for learning efficient piecewise linear approximation
+  This repository provides C and Python code and execution examples of 
+the competitive associative net called CAN2.
+The CAN2 is a neural network for learning efficient piecewise linear approximation
 of nonlinear functions.
 It consists of weight vectors to divide the input space into Voronoi regions
 and associative matrices to execute linear approximation in each Voronoi region.
@@ -15,33 +16,34 @@ an incremental least-squares to optimize associative matrices,
 and a reinitialization based on asymptotic optimality
 to avoide local minima of gradient method <a href="#ref1">[1]</a>, <a href="#ref2">[2]</a>, <a href="#ref3">[3]</a>.
  As a result, the CAN2 has achieved (a) a high accuracy and precision
- in the approximation of nonlinear functions
+ in approximation of nonlinear functions
  consisting of different smoothness from region to region,
  (b) a high interpolation and extrapolation ability,
  (c) a small computational cost,
  (d) an extraction of piecewise linear predictive coefficients
  useful in many engineering applications (see <a href="#ref4">[4]</a>-<a href="#ref10">[10]</a>).
 
-<!-- that learns a nonlinear function using the functions of
-the competitive net <a href="#ref1">[1]</a>
-and the associative net<a href="#ref2">[2]</a>
-and approximates it as a piecewise-linear function.<br>
-The effectiveness of this net has already been shown by applications to nonlinear time-varying plant control, estimation of recipitation, learning problem of nonlinear function and other problems. <br>
--->
+  In the follwoing, we show a brief explanation of
+  the piecewise linear approximation by the CAN2 in 2,
+  software requirements in 3, execution examples in 4, several remarks in 5, followed by references in 6.
+## 2 Piecewise linear approximation by the CAN2
 
-### Function approximation by the CAN2
-<!--The diagram of function approximation by CAN2 is shown below.<br>-->
-Suppose we have a nonlinear function <img src="https://latex.codecogs.com/gif.latex?y=f(\pmb{x})"/> as:
+<img src="./docs/PiecewiseLinearApproximationByCAN2-2.png" width="600px">
+<!--<img src="./docs/PiecewiseLinearApproximationByCAN2.png" width="600px">-->
+<!--<img src="./docs/function_approximation_by_CAN2.png" width="600px">-->
 
-<img src="https://user-images.githubusercontent.com/49471144/125508173-2dac6131-b529-4d7e-bff0-b8832cb4181f.png" width="300px"/>
+(1) For a target nonlinear function
+<img src="https://latex.codecogs.com/gif.latex?y=f(\pmb{x})"/> of
+the input vector 
+<img src="https://latex.codecogs.com/gif.latex?\pmb{x}\in\mathbb{R}^{k\times1}"/>,
+the CAN2 has weight vectors
+<img src="https://latex.codecogs.com/gif.latex?\pmb{w}_i\in\mathbb{R}^{k\times1}"/>
+for <img src="https://latex.codecogs.com/gif.latex?i=1,2,\cdots"/>
+to divide the input space into Voronoi regions, 
+and associative matrices 
+<img src="https://latex.codecogs.com/gif.latex?\pmb{M}_i\in\mathbb{R}^{1\times(k+1)"/> to execute linear approximation in each Voronoi region.
 
-① The input space is divided into Voronoi regions by the weight vectors 
-<img src="https://latex.codecogs.com/gif.latex?\pmb{w}_i"/> :
-<br>
-
-<img src="https://user-images.githubusercontent.com/49471144/125510016-91682a9b-715f-472f-bd8f-5b7451dd8780.png" width="400px"/>
-
-② For an input vector
+(2) For an input vector
 <img src="https://latex.codecogs.com/gif.latex?\pmb{x}"/>,
 the nearest weight vector
 <img src="https://latex.codecogs.com/gif.latex?\pmb{w}_c\equiv\pmb{w}_i"/>
@@ -49,58 +51,26 @@ is selected, and the corresponding associative matrix
 <img src="https://latex.codecogs.com/gif.latex?\pmb{M}_c\equiv\pmb{M}_i"/>
 is used to obtain
 <img src="https://latex.codecogs.com/gif.latex?\hat{y}=\pmb{M}_c\tilde{\pmb{x}}"/> as a piecewise linear approximation of
-<img src="https://latex.codecogs.com/gif.latex?y=f(\pmb{x})"/>,
-where the first element of the extended input vector
+<img src="https://latex.codecogs.com/gif.latex?y=f(\pmb{x})"/>, where the first element of
 <img src="https://latex.codecogs.com/gif.latex?\tilde{\pmb{x}}\equiv(1,\pmb{x})^T"/>
 is for the bias of the linear approximation.
 
-<!--
-------------------------------
-<img src="https://user-images.githubusercontent.com/49471144/125510657-82077e97-918e-494a-9f0a-9a36a0924438.png" width="500px"/>
-
-③ Given the input vector x, it looks for the weight vector wc that is closest to the input vector. <br>
-
-<img src="https://user-images.githubusercontent.com/49471144/125511004-fee2d4f0-d062-4170-b9d7-5cb79eae2a65.png" width="600px"/>
-
-④The prediction can be obtained by using the associative matrix Mc in this weight vector wc. <br>
-------
--->
-
-<img src="./1021/docs/PiecewiseLinearApproximationByCAN2-2.png" width="600px">
-<!--<img src="./1021/docs/PiecewiseLinearApproximationByCAN2.png" width="600px">-->
-<!--<img src="1021/docs/function_approximation_by_CAN2.png" width="600px">-->
-<!--<img src="function_approximation_by_CAN2.png" width="600px">-->
-
-<!--Consider a system that inputs and outputs K-dimensional vectors <img src="https://latex.codecogs.com/gif.latex?\textbf{x}_{j}\triangleq&space;(x_{j1},x_{j2},\cdots,x_{jk})^{T}&space;\in&space;\mathbb{R}^{k\times1}"/> and scalar values <img src="https://latex.codecogs.com/gif.latex?y_{j}&space;\in&space;\mathbb{R}"/>
-
-<img src="https://latex.codecogs.com/gif.latex?y_{j}\triangleq&space;f(\textbf{x}_{j})&plus;d_{j}"/>
-
-<img src="https://latex.codecogs.com/gif.latex?\hat{y}\triangleq\hat{y_{c}}\triangleq&space;\textbf{M}_{c}&space;\tilde{\textbf{x}}"/>
-
-<img src="https://latex.codecogs.com/gif.latex?c\triangleq&space;\underset{i\in&space;l}{\arg\min}&space;\left&space;\|\textbf{x}-\textbf{w}_{i}&space;\right&space;\|"/>
--->
 <hr>
 
-## Requirements
-### Compatible operating systems
-The present softwares shown below are executable in the following distribution versions.
-<!--However, it may work on other operating systems.-->
-* Ubuntu 12.04 LTS
-* Ubuntu 14.04 LTS
-* Ubuntu 16.04 LTS
-* Ubuntu 18.04 LTS
-* Ubuntu 20.04 LTS
+## 3. Software Requirements
+### 3.1 Operating system
+<!--The present softwares shown below are executable in the following distribution versions.-->
+* Ubuntu 20.04 LTS installed on Virtualbox as well as an external hard drive,
+while Ubuntu 18.04 LTS, 16.04 LTS, 14.04 LTS, 12.04 LTS are sometimes used for comparison.
 
-### System dependencies
-* Python2.7 (confirmed)
-* Python3.8 (not confident; developing)
+### 3.2 Version of C and Python
+* icc version 2021.9.0 (gcc version 9.4.0 compatibility) (icc is about 3 times faster than gcc)
+* Python2.7 (Python3.8 is invalid)
 
-<hr>
+### 3.3 Utilities
+<!--The following utilities are also used. -->
 
-## Utilities
-The following utilities are also used. 
-
-### Anaconda
+#### 3.3.1 Anaconda and OpenCV for Python
 ```
 $ cd ~/Downloads
 $ wget https://repo.anaconda.com/archive/Anaconda3-2020.11-Linux-x86_64.sh
@@ -108,7 +78,8 @@ $ sh Anaconda3-2020.11-Linux-x86_64.sh
 $ conda create --name py27 python=2.7 anaconda
 $ conda create -n py27 python=2.7 anaconda
 $ conda activate py27 (python2.7)
-$ conda deactivate 　 (python3.8)
+$ conda deactivate 　 (deactivate python3.8)
+$ conda install opencv #for install cv2
 ```
 
 <!--
@@ -120,36 +91,36 @@ $ pip3 install chainer
 ```
 -->
 
-### OpenCV
+<!--#### 3.3.2 OpenCV
 ```
 $ conda install opencv #for install cv2
 ```
-
-### Other applications
+-->
+#### 3.3.2 Other applications
 ```
 $ sudo apt install -y gv
 $ sudo apt install -y gnuplot
 $ sudo apt install -y xterm
 ```
 
-### Intel C compiler (icc) (about 3 times faster than gcc)
+<!--### 3.3.4 Intel C compiler (icc) (about 3 times faster than gcc)-->
 
 <hr>
 
-## Execution examples 
+## 4. Execution examples 
 Execution examples of regression and time-series IOS prediction by the single and bagging CAN2s are shown below.
 The details of regression, bagging, and IOS prediction by the CAN2 are shown in 
 [[3]](#ref3), [[4]](#ref4) and [[5]](#ref5).
-The following contents are also written in the html format: [./1021/docs/exec_examples.html](https://htmlpreview.github.io/?https://github.com/Kurogi-Lab/CAN2/blob/master/1021/docs/exec_examples.html), where you can execute copy&paste easily.
+The following contents are also written in the html format: [./docs/exec_examples.html](./docs/exec_examples.html), where you can execute copy&paste easily.
 <!--%For the reader's convenience,-->
 
-### 1. Set the root directory
+### 4.1 Set the root directory
 ```
 $ export d0=./0522 #set the root directory involving data, can2py, can2comp, etc. 
 ```
 
-### 2. Data preparation
-- Regression data ([Fig.1](1021/docs/Geo1d_100_50_10.png)) : made by the following steps
+### 4.2 Data preparation
+- Regression data ([Fig.1](./docs/Geo1d_100_50_10.png)) : made by the following steps
 ```
 $ cd ${d0}/can2py
 $ export fn=Geo1d ntrain=100 restest=50 extest=10 k=1;
@@ -161,15 +132,15 @@ $ cp tmp/train.csv tmp/test.csv $dst
 
 - Time-series data ([Fig.2](1021/docs/lorenz1e-8T0.025n10000p256m1_gmp.png)): see [[5]](#ref5) for data creation via using GMP:${d0}/data/lorenz1e-8T0.025n10000p256m1_gmp.txt
 
-<img src="./1021/docs/Geo1d_100_50_10.png" width="200px"/> 
+<img src="./docs/Geo1d_100_50_10.png" width="200px"/> 
 <img src="https://latex.codecogs.com/gif.latex?f(x)=\left\{\begin{matrix}&space;1.0~~~~~~~~~~~~~~~~~~~~~~~(0.0\leq&space;x\leq&space;0.2)\\&space;1.0-(x-0.2)/0.2~~(0.2\leq&space;x\leq&space;0.4)\\&space;0~~~~~~~~~~~~~~~~~~~~~~~~~(0.4\leq&space;x\leq&space;0.6)\\&space;\cos&space;5\pi&space;(x-0.7)/2.0~~(0.6\leq&space;x\leq&space;0.8)\\&space;0~~~~~~~~~~~~~~~~~~~~~~~~~(0.8\leq&space;x\leq&space;1.0)\\&space;\end{matrix}\right.\\\mathbf{Fig.1~}~f(x)\mathrm{~vs.~}x"/>
 <br>
 
 
-<img src="./1021/docs/lorenz1e-8T0.025n10000p256m1_gmp.png" width="200px"/>
+<img src="./docs/lorenz1e-8T0.025n10000p256m1_gmp.png" width="200px"/>
 <img src="https://latex.codecogs.com/gif.latex?\begin{align*}&{dx}/{dt}=-{\sigma}x+{\sigma}y,\\&{dy}/{dt}=-xz+rx-y,\\&{dz}/{dt}=xy-bz\\&(\sigma=10,b=8/3,r=28)\\&\mathbf{Fig.2~}~x\mathrm{~vs.~}t\end{align*}\\"/> 
 
-### 3. C program
+### 4.3 C program
 - Regression
   - Single CAN2
 ```
@@ -182,7 +153,7 @@ $ export N=30 seed=0 k=1 T=100;
 $ ensrs $fntrain -1:$fntest $N k:$k T:$T BIAS:1 Lstd:0:2 ib:0:0:0:0 vm2:-1 seed:$seed Tpinv:-1 nop:1 DISP:0
 #(or) ensrs $fntrain 2:1:1:1 $N bg:$fntest k:$k T:$T BIAS:1 Lstd:0:2 ib:0:0:0:0 vm2:-1 seed:$seed Tpinv:-1 nop:1 export fntest=$fntest fnpred=./result-ensrs/tmp/train+test+s${s}0j0k${k}N${N}pred.dat;../sh/show${k}dpred.sh
 ```
-#Results (see [Fig.3](1021/docs/regression-singleCAN2N30s0.jpg) (smallest MSEtst=1.161e-05 (MSE for the test data) is achieved with N=30)<br>
+#Results (see [Fig.3](./1021/docs/regression-singleCAN2N30s0.jpg) (smallest MSEtst=1.161e-05 (MSE for the test data) is achieved with N=30)<br>
 #100(0.030s) 7.274e-05 5.076e-04 #ep(time),MSEtr,MSEtst k1 n100:71 N20 s0<br>
 #100(0.033s) 6.660e-06 1.161e-05 #ep(time),MSEtr,MSEtst k1 n100:71 N30 s0 ***<br>
 #100(0.031s) 1.563e-05 3.368e-04 #ep(time),MSEtr,MSEtst k1 n100:71 N40 s0<br>
@@ -195,13 +166,13 @@ $ make data-clean;
 $ ensrs $fntrain 2:$b:$a:1 $N bg:$fntest k:$k T:$T BIAS:1 Lstd:0:2 ib:0:0:0:0 vm2:-1 seed:$seed Tpinv:-1 nop:1
 $ export fntest=$fntest fnpred=predict+.dat;../sh/show${k}dpred.sh 
 ```
-#Results (see [Fig.4](1021/docs/regression-baggingCAN2N50a2.2s0.jpg) (stably small MSE w.r.t. change of N)<br>
+#Results (see [Fig.4](./1021/docs/regression-baggingCAN2N50a2.2s0.jpg) (stably small MSE w.r.t. change of N)<br>
 #\[100,-1\](1.5s) 1.706e-05 #\[T,Tpinv\](time) n220,71 k1 N40 b100 a2.2 s0 nop1 m_cpu6<br>
 #\[100,-1\](1.6s) 1.186e-05 #\[T,Tpinv\](time) n220,71 k1 N50 b100 a2.2 s0 nop1 m_cpu6***<br>
 #\[100,-1\](1.8s) 1.616e-05 #\[T,Tpinv\](time) n220,71 k1 N60 b100 a2.2 s0 nop1 m_cpu6<br>
 
-<img src="1021/docs/regression-singleCAN2N30s0.jpg" width="200px"/> Fig.3
-<img src="1021/docs/regression-baggingCAN2N50a2.2s0.jpg" width="200px"/> Fig.4
+<img src="./1021/docs/regression-singleCAN2N30s0.jpg" width="200px"/> Fig.3
+<img src="./1021/docs/regression-baggingCAN2N50a2.2s0.jpg" width="200px"/> Fig.4
 
 
   - OOB(out-of-bag) estimate (see [[4]](#ref4)):To obtain the above parameters a=2.2 and N=40  without test data
@@ -256,7 +227,7 @@ $ plot "tmp/pred2000-2500.dat" using 2:1 w l t "yp", "" using 2:3 w l t "y", "" 
 $ EOF
 gnuplot tmp/y.plt;eog tmp/y.png
 ```
-#Results (see [Fig.5](1021/docs/IOSpred-singleCAN2cN50s1-y.png)(H:predictable horison with the error threshold Ey=15)<br>
+#Results (see [Fig.5](./1021/docs/IOSpred-singleCAN2cN50s1-y.png)(H:predictable horison with the error threshold Ey=15)<br>
 #\[100,-1\](0.2s) #[T,Tinv] k8 N40 b1(nens1) a1 seed1 nop1 m_cpu6 0-2000:2000-2500:15H126<br>
 #\[100,-1\](0.3s) #[T,Tinv] k8 N50 b1(nens1) a1 seed1 nop1 m_cpu6 0-2000:2000-2500:15H153***<br>
 #\[100,-1\](0.3s) #[T,Tinv] k8 N60 b1(nens1) a1 seed1 nop1 m_cpu6 0-2000:2000-2500:15H24<br>
@@ -269,15 +240,15 @@ $ export T=100 Tpinv=-1 k=8 N=50 seed=1 tp0=2000 tpD=1 Ey=15 a=0.7 b=20 nop=1 n_
 $ make data-clean;
 $ ensrs $fn 2:${b}:${a}:${seed} $N-$N:1 t:0-2000:$tp0-$(($tp0+500)):$tpD:$Ey bg:/dev/null ib:0:0:0:0 k:$k g:$gamma w:$width T:$T vt:$v_thresh vr:$v_ratio lossall:1 DISP:2 y:$y x:$y nop:1 Tpinv:-1
 ```
-#Results (see [Fig.6](1021/docs/IOSpred-baggingCAN2cN50a0.7b20s1-y.png); longest predictable horizon H=224 is achieved with N=60)<br>
+#Results (see [Fig.6](./1021/docs/IOSpred-baggingCAN2cN50a0.7b20s1-y.png); longest predictable horizon H=224 is achieved with N=60)<br>
 #\[100,-1\](0.9s) #[T,Tinv] k8 N40 b20(nens1) a0.7 seed1 nop1 m_cpu6 0-2000:2000-2500:15H157<br>
 #\[100,-1\](1.0s) #[T,Tinv] k8 N50 b20(nens1) a0.7 seed1 nop1 m_cpu6 0-2000:2000-2500:15H224 ***<br>
 #\[100,-1\](1.3s) #[T,Tinv] k8 N60 b20(nens1) a0.7 seed1 nop1 m_cpu6 0-2000:2000-2500:15H199<br>
 
-<img src="1021/docs/IOSpred-singleCAN2cN50s1-y.png" width="200px"/> Fig.5
-<img src="1021/docs/IOSpred-baggingCAN2cN50a0.7b20s1-y.png" width="200px"/> Fig.6
+<img src="./1021/docs/IOSpred-singleCAN2cN50s1-y.png" width="200px"/> Fig.5
+<img src="./1021/docs/IOSpred-baggingCAN2cN50a0.7b20s1-y.png" width="200px"/> Fig.6
 
-### 4. Python program 
+### 4.4 Python program 
 - Regression
   - Single CAN2
 ```
@@ -289,7 +260,7 @@ $ make data-clean
 $ python can2.py -fn $fntrain,$fntest,$fnpred -k $k -in $N,6,0.2,3,0,0.5,0.2 -ex 1,0.05,2.2,$T,5,50,350 --gpu -1 -DISP 1 -nop 1
 ../sh/show${k}dpred.sh 
 ```
-#Results (see [Fig.7](1021/docs/regression-singleCAN2pyN100s0-mse.jpg),[Fig.8](1021/docs/regression-singleCAN2pyN100s0.jpg)) (smallest MSE=2.627e-05 (for the test data) is achieved with N=100)<br>
+#Results (see [Fig.7](./1021/docs/regression-singleCAN2pyN100s0-mse.jpg),[Fig.8](./1021/docs/regression-singleCAN2pyN100s0.jpg)) (smallest MSE=2.627e-05 (for the test data) is achieved with N=100)<br>
 #100(1.050s) 7.310e-06 4.198e-05 #ep(time),MSEtr,MSE n100,71 k1 N90 T100,1000 seed0 nop1<br>
 #100(1.228s) 5.843e-06 2.627e-05 #ep(time),MSEtr,MSE n100,71 k1 N100 T100,1000 seed0 nop1<br>
 #100(1.249s) 5.843e-06 2.627e-05 #ep(time),MSEtr,MSE n100,71 k1 N110 T100,1000 seed0 nop1<br>
@@ -302,14 +273,14 @@ $ make data-clean
 $ python ensrs.py -fn $fntrain,$fntest,$fnpred -k $k,0 -in $N,6,0.2,3,0,0.5,0.2 -ex 1,0.05,0.7,$T,5,50,350 -DISP 0 -Tpinv $Tpinv -s $seed -nop $nop -bag $b,$a,$seed,$m_cpu
 $ ../sh/show${k}dpred.sh 
 ```
-#Results (see [Fig.9](1021/docs/regression-baggingCAN2pyN60a2.2b100s1.jpg))<br>
+#Results (see [Fig.9](./1021/docs/regression-baggingCAN2pyN60a2.2b100s1.jpg))<br>
 #\[100,-1\](53.1s) 3.052e-05 #\[T,Tpinv\] MSE n100,71 k1 N40 b100 a2.2 s1 m6 seed1 nop1<br>
 #\[100,-1\](55.5s) 2.105e-05 #\[T,Tpinv\] MSE n100,71 k1 N50 b100 a2.2 s1 m6 seed1 nop1***
 #\[100,-1\](74.9s) 2.275e-05 #\[T,Tpinv\] MSE n100,71 k1 N60 b100 a2.2 s1 m6 seed1 nop1<br>
 
-<img src="1021/docs/regression-singleCAN2pyN100s0-mse.jpg" width="200px"/> Fig.7
-<img src="1021/docs/regression-singleCAN2pyN100s0.jpg" width="200px"/> Fig.8
-<img src="1021/docs/regression-baggingCAN2pyN60a2.2b100s1.jpg" width="200px"/> Fig.9
+<img src="./1021/docs/regression-singleCAN2pyN100s0-mse.jpg" width="200px"/> Fig.7
+<img src="./1021/docs/regression-singleCAN2pyN100s0.jpg" width="200px"/> Fig.8
+<img src="./1021/docs/regression-baggingCAN2pyN60a2.2b100s1.jpg" width="200px"/> Fig.9
 
 - Time-series IOS prediction 
   - Single CAN2 (try the following command with different seed=0,1,2,...) 
@@ -320,7 +291,7 @@ $ export fns=$d0/data/lorenz1e-8T0.025n10000p256m1_gmp+null+N50k10s${seed}.net
 $ make data-clean
 $ python can2.py -fn $fn -k $k -t 0-2000:$tp0-$(($tp0+500)):$tpD:$Ey -in $N,$n_compare,$v_thresh,$vmin,$vmin2,$v_ratio,$width -ex $l_mode,$gamma0,$nentropy_thresh,$T,$n_display,$rot_x,$rot_y --gpu -1 -DISP 1 -Tpinv $Tpinv -s $seed -nop $nop -y " $y" -fns $fns
 ```
-#Results (see [Fig.10](1021/docs/IOSpred-singleCAN2pyN50s2-mse.jpg),[Fig.11](1021/docs/IOSpred-singleCAN2pyN50s2-y.jpg))<br>
+#Results (see [Fig.10](./1021/docs/IOSpred-singleCAN2pyN50s2-mse.jpg),[Fig.11](./1021/docs/IOSpred-singleCAN2pyN50s2-y.jpg))<br>
 #100(16.821s) 4.635e-05 1.238e-04 #ep(time),MSEtr,MSE n1990,500 k10 N50 T100,-1 seed0 nop1 t0-2000:2000-2500:1:15H22 predTime0.018s<br>
 #100(16.885s) 4.113e-05 1.174e-04 #ep(time),MSEtr,MSE n1990,500 k10 N50 T100,-1 seed1 nop1 t0-2000:2000-2500:1:15H194 predTime0.018s<br>
 #100(17.034s) 4.211e-05 1.293e-04 #ep(time),MSEtr,MSE n1990,500 k10 N50 T100,-1 seed2 nop1 t0-2000:2000-2500:1:15H101 predTime0.017s<br>
@@ -332,21 +303,21 @@ $ export T=100 Tpinv=-1 k=10 N=50 seed=10 b=20 a=1.0 tp0=2000 Ey=15 nop=1 n_comp
 $ make data-clean
 $ python ensrs.py -fn $fn,,tmp/msp${tp0}.dat -k $k -t 0-2000:$tp0-$(($tp0+500)):1:$Ey -in $N,$n_compare,$v_thresh,$vmin,$vmin2,$v_ratio,$width -ex $l_mode,$gamma0,$nentropy_thresh,$T,$n_display,$rot_x,$rot_y --gpu -1 -DISP 0 -Tpinv $Tpinv -nop $nop -y " $y" -bag $b,$a,$seed,$m_cpu 
 ```
-#Results (see [Fig.12](1021/docs/IOSpred-baggingCAN2pyN50a1b20s10-y.jpg))<br>
+#Results (see [Fig.12](./1021/docs/IOSpred-baggingCAN2pyN50a1b20s10-y.jpg))<br>
 #\[100,-1\](226.9s) #\[T,Tpinv\] k10 N50 b20a1.0s10m6 nop1 t0-2000:2000-2500:1:15H159 seed0<br>
 #\[100,-1\](227.1s) #\[T,Tpinv\] k10 N50 b20a1.0s0m6 nop1 t0-2000:2000-2500:1:15H158 seed1<br>
 
-<img src="1021/docs/IOSpred-singleCAN2pyN50s2-mse.jpg" width="200px"/> Fig.10
-<img src="1021/docs/IOSpred-singleCAN2pyN50s2-y.jpg" width="200px"/> Fig.11
-<img src="1021/docs/IOSpred-baggingCAN2pyN50a1b20s10-y.jpg" width="200px"/> Fig.12
+<img src="./1021/docs/IOSpred-singleCAN2pyN50s2-mse.jpg" width="200px"/> Fig.10
+<img src="./1021/docs/IOSpred-singleCAN2pyN50s2-y.jpg" width="200px"/> Fig.11
+<img src="./1021/docs/IOSpred-baggingCAN2pyN50a1b20s10-y.jpg" width="200px"/> Fig.12
 
-## Notes
+## 5 Remarks
 - Results of C and Python are different owing mainly to slightly different algorithms and parameters optimized for each language. 
 - Execution time of C is smaller than Python. 
 - Computational cost of the CAN2 is lower than many other machine learning methods mainly because it uses the learning scheme consisting of iterated steps of (a) local gradient descent optimization of two weight vectors near the input vector, (b) linear least squre optimization of a selected associative matrix, (c) reinitialization based on asymptotic optimality of error distortions avoiding local minimum (see [[3]](#ref3)). 
 - The CAN2 has advantages on (A) prediction accuracy in learning the functions with piecewise different smoothness (see [[3]](#ref3)), (B) ability of extrapolation as well as interpolation (see [3]), (C) comutational cost, (D) extraction of piecewise linear predictive coefficients in the applications such as speech and speaker recognition (audio processing) and control (see [[6]](#ref6),[[7]](#ref7)). 
 
-## References
+## 6 References
 <a id="ref1">[1]</a> S.Kurogi:Asymptotic optimality of competitive associative nets for their learning in function approximation. Proc. ICONIP2002, pp.507-511 (2002)  https://doi.org/10.1002/scj.10538<br>
 (Detailed Journal: S.Kurogi: Asymptotic optimality of competitive associative nets and its Application to incremental learning of nonlinear functions, Systems and Communications in Japan, Vol.J86-D-II, No.2, pp.184-194 (2003))<br>
 
@@ -368,7 +339,7 @@ $ python ensrs.py -fn $fn,,tmp/msp${tp0}.dat -k $k -t 0-2000:$tp0-$(($tp0+500)):
 <a id="ref8">[8]</a> K.Taniguchi, S.Kurogi:Performance Improvement of a Method Using Entropy of LOO Predictable Horizons to Select a Representative Prediction of Chaotic Time Series, Proceedings of IEEE-CSDE 2022 (2022/12/19)
 
 <a id="ref9">[9]</a> K.Komatsu, S.Oyabu, S.Kurogi: Performance Improvement and Analysis of a Method for Piano Authentication from Audio Signal by Combining Feature Vectors of LPC Spectral Envelope, MFCC, and pLPC Pole Distribution, 
-Proceedings of IEEE-CSDE 2022 (2022/12/19) 
+Proceedings of IEEE-CSDE 2022 (2022/12/19) (Best Paper Award)
 
 <a id="ref10">[10]</a> K.Komatsu, S.Kurogi: Performance Improvement for Speaker Detection from Mixed Speech of Multiple Speakers Using Probabilistic Prediction and Combining LPCSE, MFCC and pLPCPD, 
 Proceedings of IEEE-CSDE 2022 (2022/12/19) 
