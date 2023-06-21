@@ -28,9 +28,9 @@ to avoide local minima of gradient method <a href="#ref1">[1]</a>, <a href="#ref
   software requirements in 3, execution examples in 4, several remarks in 5, followed by references in 6.
 ## 2 Piecewise linear approximation by the CAN2
 
-<img src="./docs/PiecewiseLinearApproximationByCAN2-2.png" width="600px">
-<!--<img src="./docs/PiecewiseLinearApproximationByCAN2.png" width="600px">-->
-<!--<img src="./docs/function_approximation_by_CAN2.png" width="600px">-->
+<img src="./1021/docs/PiecewiseLinearApproximationByCAN2-2.png" width="600px">
+<!--<img src="./1021/docs/PiecewiseLinearApproximationByCAN2.png" width="600px">-->
+<!--<img src="./1021/docs/function_approximation_by_CAN2.png" width="600px">-->
 
 (1) For a target nonlinear function
 <img src="https://latex.codecogs.com/gif.latex?y=f(\pmb{x})"/> of
@@ -111,7 +111,7 @@ $ sudo apt install -y xterm
 Execution examples of regression and time-series IOS prediction by the single and bagging CAN2s are shown below.
 The details of regression, bagging, and IOS prediction by the CAN2 are shown in 
 [[3]](#ref3), [[4]](#ref4) and [[5]](#ref5).
-The following contents are also written in the html format: [./docs/exec_examples.html](./docs/exec_examples.html), where you can execute copy&paste easily.
+The following contents are also written in the html format: [./1021/docs/exec_examples.html](./1021/docs/exec_examples.html), where you can execute copy&paste easily.
 <!--%For the reader's convenience,-->
 
 ### 4.1 Set the root directory
@@ -120,7 +120,7 @@ $ export d0=./0522 #set the root directory involving data, can2py, can2comp, etc
 ```
 
 ### 4.2 Data preparation
-- Regression data ([Fig.1](./docs/Geo1d_100_50_10.png)) : made by the following steps
+- Regression data ([Fig.1](./1021/docs/Geo1d_100_50_10.png)) : made by the following steps
 ```
 $ cd ${d0}/can2py
 $ export fn=Geo1d ntrain=100 restest=50 extest=10 k=1;
@@ -130,14 +130,14 @@ $ mkdir -p $dst
 $ cp tmp/train.csv tmp/test.csv $dst
 ```
 
-- Time-series data ([Fig.2](1021/docs/lorenz1e-8T0.025n10000p256m1_gmp.png)): see [[5]](#ref5) for data creation via using GMP:${d0}/data/lorenz1e-8T0.025n10000p256m1_gmp.txt
+- Time-series data ([Fig.2](./1021/docs/lorenz1e-8T0.025n10000p256m1_gmp.png)): see [[5]](#ref5) for data creation via using GMP:${d0}/data/lorenz1e-8T0.025n10000p256m1_gmp.txt
 
-<img src="./docs/Geo1d_100_50_10.png" width="200px"/> 
+<img src="./1021/docs/Geo1d_100_50_10.png" width="200px"/> 
 <img src="https://latex.codecogs.com/gif.latex?f(x)=\left\{\begin{matrix}&space;1.0~~~~~~~~~~~~~~~~~~~~~~~(0.0\leq&space;x\leq&space;0.2)\\&space;1.0-(x-0.2)/0.2~~(0.2\leq&space;x\leq&space;0.4)\\&space;0~~~~~~~~~~~~~~~~~~~~~~~~~(0.4\leq&space;x\leq&space;0.6)\\&space;\cos&space;5\pi&space;(x-0.7)/2.0~~(0.6\leq&space;x\leq&space;0.8)\\&space;0~~~~~~~~~~~~~~~~~~~~~~~~~(0.8\leq&space;x\leq&space;1.0)\\&space;\end{matrix}\right.\\\mathbf{Fig.1~}~f(x)\mathrm{~vs.~}x"/>
 <br>
 
 
-<img src="./docs/lorenz1e-8T0.025n10000p256m1_gmp.png" width="200px"/>
+<img src="./1021/docs/lorenz1e-8T0.025n10000p256m1_gmp.png" width="200px"/>
 <img src="https://latex.codecogs.com/gif.latex?\begin{align*}&{dx}/{dt}=-{\sigma}x+{\sigma}y,\\&{dy}/{dt}=-xz+rx-y,\\&{dz}/{dt}=xy-bz\\&(\sigma=10,b=8/3,r=28)\\&\mathbf{Fig.2~}~x\mathrm{~vs.~}t\end{align*}\\"/> 
 
 ### 4.3 C program
