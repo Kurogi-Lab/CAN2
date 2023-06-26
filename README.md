@@ -54,7 +54,6 @@ is used to obtain
 <img src="https://latex.codecogs.com/gif.latex?y=f(\pmb{x})"/>, where the first element of
 <img src="https://latex.codecogs.com/gif.latex?\tilde{\pmb{x}}\equiv(1,\pmb{x})^T"/>
 is for the bias of the linear approximation.
-
 <hr>
 
 ## 3 Software Requirements
@@ -275,7 +274,7 @@ $ ../sh/show${k}dpred.sh
 ```
 #Results (see [Fig.9](./1021/docs/regression-baggingCAN2pyN60a2.2b100s1.jpg))<br>
 #\[100,-1\](53.1s) 3.052e-05 #\[T,Tpinv\] MSE n100,71 k1 N40 b100 a2.2 s1 m6 seed1 nop1<br>
-#\[100,-1\](55.5s) 2.105e-05 #\[T,Tpinv\] MSE n100,71 k1 N50 b100 a2.2 s1 m6 seed1 nop1***
+#\[100,-1\](55.5s) 2.105e-05 #\[T,Tpinv\] MSE n100,71 k1 N50 b100 a2.2 s1 m6 seed1 nop1***<br>
 #\[100,-1\](74.9s) 2.275e-05 #\[T,Tpinv\] MSE n100,71 k1 N60 b100 a2.2 s1 m6 seed1 nop1<br>
 
 <img src="./1021/docs/regression-singleCAN2pyN100s0-mse.jpg" width="200px"/> Fig.7
